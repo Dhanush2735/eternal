@@ -1,0 +1,227 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'idea'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = mod_id
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+def optionalId = { String propName ->
+    def v = (project.findProperty(propName) ?: '').toString().trim()
+    return (v && v != 'REPLACE_WITH_REAL_ID' && v != 'REPLACE_ME') ? v : null
+}
+
+println "Java: ${System.getProperty('java.version')}, JVM: ${System.getProperty('java.vm.version')} (${System.getProperty('java.vendor')}), Arch: ${System.getProperty('os.arch')}"
+
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+
+    copyIdeResources = true
+
+    runs {
+        configureEach {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            property 'forge.enabledGameTestNamespaces', mod_id
+
+            mods {
+                "${mod_id}" {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        client {
+            property 'forge.enabledGameTestNamespaces', mod_id
+        }
+
+        server {
+            property 'forge.enabledGameTestNamespaces', mod_id
+            args '--nogui'
+        }
+
+        gameTestServer {
+            property 'forge.enabledGameTestNamespaces', mod_id
+        }
+
+        data {
+            workingDirectory project.file('run-data')
+            args '--mod', mod_id,
+                 '--all',
+                 '--output', file('src/generated/resources/'),
+                 '--existing', file('src/main/resources/')
+        }
+    }
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs = ['src/main/resources', 'src/generated/resources']
+        }
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+
+    maven {
+        name = 'Forge'
+        url = 'https://maven.minecraftforge.net'
+    }
+
+    maven {
+        name = 'CurseMaven'
+        url = 'https://cursemaven.com'
+        content {
+            includeGroup 'curse.maven'
+        }
+    }
+
+    maven {
+        name = 'ModMaven'
+        url = 'https://modmaven.dev/'
+    }
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+
+    // Terra++ must be provided locally because the remote artifact is not resolving.
+    def terraCandidates = [
+        file("libs/terraplusplus-${terraplusplus_version}.jar"),
+        file("libs/terraplusplus-${terraplusplus_version}-slim.jar"),
+        file("libs/terraplusplus-${terraplusplus_version}-all.jar")
+    ]
+
+    def terraJar = terraCandidates.find { it.exists() }
+
+    if (terraJar == null) {
+        throw new GradleException(
+            "Missing Terra++ jar.\n" +
+            "Put one of these files in the project's libs folder:\n" +
+            " - libs/terraplusplus-${terraplusplus_version}.jar\n" +
+            " - libs/terraplusplus-${terraplusplus_version}-slim.jar\n" +
+            " - libs/terraplusplus-${terraplusplus_version}-all.jar"
+        )
+    }
+
+    println "Using local Terra++ jar: ${terraJar.name}"
+    implementation fg.deobf(files(terraJar))
+
+    // Optional integrations - only enabled if real CurseForge file IDs are set
+    def mcaId = optionalId('mca_file_id')
+    if (mcaId) {
+        compileOnly fg.deobf("curse.maven:mca-reborn-460286:${mcaId}")
+        println "Enabled MCA Reborn: ${mcaId}"
+    }
+
+    def minecoloniesId = optionalId('minecolonies_file_id')
+    if (minecoloniesId) {
+        compileOnly fg.deobf("curse.maven:minecolonies-245506:${minecoloniesId}")
+        println "Enabled MineColonies: ${minecoloniesId}"
+    }
+
+    def createId = optionalId('create_file_id')
+    if (createId) {
+        compileOnly fg.deobf("curse.maven:create-328085:${createId}")
+        println "Enabled Create: ${createId}"
+    }
+
+    def sereneSeasonsId = optionalId('sereneseasons_file_id')
+    if (sereneSeasonsId) {
+        compileOnly fg.deobf("curse.maven:serene-seasons-291874:${sereneSeasonsId}")
+        println "Enabled Serene Seasons: ${sereneSeasonsId}"
+    }
+
+    def gameStagesId = optionalId('gamestages_file_id')
+    if (gameStagesId) {
+        compileOnly fg.deobf("curse.maven:gamestages-268673:${gameStagesId}")
+        println "Enabled Game Stages: ${gameStagesId}"
+    }
+
+    def supplementariesId = optionalId('supplementaries_file_id')
+    if (supplementariesId) {
+        compileOnly fg.deobf("curse.maven:supplementaries-412082:${supplementariesId}")
+        println "Enabled Supplementaries: ${supplementariesId}"
+    }
+
+    def journeyMapId = optionalId('journeymap_file_id')
+    if (journeyMapId) {
+        compileOnly fg.deobf("curse.maven:journeymap-32274:${journeyMapId}")
+        println "Enabled JourneyMap: ${journeyMapId}"
+    }
+
+    def xaerosId = optionalId('xaeros_file_id')
+    if (xaerosId) {
+        compileOnly fg.deobf("curse.maven:xaeros-minimap-263420:${xaerosId}")
+        println "Enabled Xaero's Minimap: ${xaerosId}"
+    }
+
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.14'
+}
+
+tasks.named('processResources', ProcessResources).configure {
+    def replaceProperties = [
+        minecraft_version      : minecraft_version,
+        minecraft_version_range: minecraft_version_range,
+        forge_version          : forge_version,
+        forge_version_range    : forge_version_range,
+        loader_version_range   : loader_version_range,
+        mod_id                 : mod_id,
+        mod_name               : mod_name,
+        mod_license            : mod_license,
+        mod_version            : mod_version,
+        mod_authors            : mod_authors,
+        mod_description        : mod_description
+    ]
+
+    inputs.properties replaceProperties
+
+    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
+        expand replaceProperties + [project: project]
+    }
+}
+
+tasks.named('jar', Jar).configure {
+    manifest {
+        attributes([
+            'Specification-Title'     : mod_id,
+            'Specification-Vendor'    : mod_authors,
+            'Specification-Version'   : '1',
+            'Implementation-Title'    : project.name,
+            'Implementation-Version'  : project.jar.archiveVersion,
+            'Implementation-Vendor'   : mod_authors,
+            'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+}
+
+publishing {
+    publications {
+        register('mavenJava', MavenPublication) {
+            artifact jar
+        }
+    }
+    repositories {
+        maven {
+            url = "file://${project.projectDir}/mcmodsrepo"
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

@@ -1,0 +1,367 @@
+Folder PATH listing for volume New Volume
+Volume serial number is 00000001 4AE0:021D
+D:.
+¦   .gitattributes
+¦   .gitignore
+¦   build.gradle
+¦   changelog.txt
+¦   CREDITS.txt
+¦   gradle.properties
+¦   gradlew
+¦   gradlew.bat
+¦   LICENSE.txt
+¦   README.md
+¦   settings.gradle
+¦   structure.txt
+¦   
++---.gradle
+¦   ¦   file-system.probe
+¦   ¦   
+¦   +---8.8
+¦   ¦   ¦   gc.properties
+¦   ¦   ¦   
+¦   ¦   +---checksums
+¦   ¦   ¦       checksums.lock
+¦   ¦   ¦       md5-checksums.bin
+¦   ¦   ¦       sha1-checksums.bin
+¦   ¦   ¦       
+¦   ¦   +---dependencies-accessors
+¦   ¦   ¦       gc.properties
+¦   ¦   ¦       
+¦   ¦   +---executionHistory
+¦   ¦   ¦       executionHistory.bin
+¦   ¦   ¦       executionHistory.lock
+¦   ¦   ¦       
+¦   ¦   +---expanded
+¦   ¦   ¦       expanded.lock
+¦   ¦   ¦       
+¦   ¦   +---fileChanges
+¦   ¦   ¦       last-build.bin
+¦   ¦   ¦       
+¦   ¦   +---fileHashes
+¦   ¦   ¦       fileHashes.bin
+¦   ¦   ¦       fileHashes.lock
+¦   ¦   ¦       resourceHashesCache.bin
+¦   ¦   ¦       
+¦   ¦   +---vcsMetadata
+¦   +---buildOutputCleanup
+¦   ¦       buildOutputCleanup.lock
+¦   ¦       cache.properties
+¦   ¦       outputFiles.bin
+¦   ¦       
+¦   +---vcs-1
+¦           gc.properties
+¦           
++---.vscode
+¦       settings.json
+¦       
++---bin
+¦   +---main
+¦       ¦   pack.mcmeta
+¦       ¦   
+¦       +---com
+¦       ¦   +---eternalengine
+¦       ¦       ¦   EternalEngineMod.class
+¦       ¦       ¦   
+¦       ¦       +---capability
+¦       ¦       ¦       ChunkEraCapability$Provider.class
+¦       ¦       ¦       ChunkEraCapability.class
+¦       ¦       ¦       EntityCivilizationCapability$Provider.class
+¦       ¦       ¦       EntityCivilizationCapability.class
+¦       ¦       ¦       EternalEngineCapabilities$1.class
+¦       ¦       ¦       EternalEngineCapabilities$2.class
+¦       ¦       ¦       EternalEngineCapabilities$3.class
+¦       ¦       ¦       EternalEngineCapabilities.class
+¦       ¦       ¦       IChunkEraData.class
+¦       ¦       ¦       IEntityCivilizationData.class
+¦       ¦       ¦       IPlayerSimulationData$ActionRecord.class
+¦       ¦       ¦       IPlayerSimulationData.class
+¦       ¦       ¦       PlayerSimulationCapability$Provider.class
+¦       ¦       ¦       PlayerSimulationCapability.class
+¦       ¦       ¦       
+¦       ¦       +---clock
+¦       ¦       ¦       SimulationClockManager$SlowdownConfig.class
+¦       ¦       ¦       SimulationClockManager$SlowdownEntry.class
+¦       ¦       ¦       SimulationClockManager$VipLockEntry.class
+¦       ¦       ¦       SimulationClockManager.class
+¦       ¦       ¦       
+¦       ¦       +---commands
+¦       ¦       ¦       EternalEngineCommands.class
+¦       ¦       ¦       
+¦       ¦       +---compatibility
+¦       ¦       ¦       ModCompatibilityChecker.class
+¦       ¦       ¦       
+¦       ¦       +---config
+¦       ¦       ¦       EternalEngineConfig$ClientConfig.class
+¦       ¦       ¦       EternalEngineConfig$CommonConfig.class
+¦       ¦       ¦       EternalEngineConfig$ServerConfig.class
+¦       ¦       ¦       EternalEngineConfig.class
+¦       ¦       ¦       
+¦       ¦       +---core
+¦       ¦       ¦       AsyncTaskManager$1.class
+¦       ¦       ¦       AsyncTaskManager$PriorityRunnable.class
+¦       ¦       ¦       AsyncTaskManager.class
+¦       ¦       ¦       PerformanceMonitor$SystemMetrics.class
+¦       ¦       ¦       PerformanceMonitor.class
+¦       ¦       ¦       PersistenceManager.class
+¦       ¦       ¦       SimulationEngine.class
+¦       ¦       ¦       SimulationTickScheduler$ScheduleEntry.class
+¦       ¦       ¦       SimulationTickScheduler.class
+¦       ¦       ¦       VersionManager$1.class
+¦       ¦       ¦       VersionManager$Migration.class
+¦       ¦       ¦       VersionManager.class
+¦       ¦       ¦       WorldStateManager$CivilizationState.class
+¦       ¦       ¦       WorldStateManager$DiseaseState.class
+¦       ¦       ¦       WorldStateManager$ReligionState.class
+¦       ¦       ¦       WorldStateManager$TimelineBranchState.class
+¦       ¦       ¦       WorldStateManager$TradeRouteState.class
+¦       ¦       ¦       WorldStateManager$VipState.class
+¦       ¦       ¦       WorldStateManager$WarState.class
+¦       ¦       ¦       WorldStateManager.class
+¦       ¦       ¦       
+¦       ¦       +---network
+¦       ¦       ¦   ¦   EternalEnginePacketHandler.class
+¦       ¦       ¦   ¦   
+¦       ¦       ¦   +---packets
+¦       ¦       ¦           BasePacket.class
+¦       ¦       ¦           BuildingInfoPacket$StateChange.class
+¦       ¦       ¦           BuildingInfoPacket.class
+¦       ¦       ¦           CivilizationStatePacket.class
+¦       ¦       ¦           EternalEngineConfig$BoolValue.class
+¦       ¦       ¦           EternalEngineConfig$COMMON.class
+¦       ¦       ¦           EternalEngineConfig.class
+¦       ¦       ¦           EventNotificationPacket.class
+¦       ¦       ¦           HistoryLogPacket$HistoryEntry.class
+¦       ¦       ¦           HistoryLogPacket.class
+¦       ¦       ¦           MapOverlayPacket$OverlayPoint.class
+¦       ¦       ¦           MapOverlayPacket.class
+¦       ¦       ¦           ReputationUpdatePacket.class
+¦       ¦       ¦           RequestDataPacket$RequestType.class
+¦       ¦       ¦           RequestDataPacket.class
+¦       ¦       ¦           SimulationStatePacket.class
+¦       ¦       ¦           SpeedChangePacket.class
+¦       ¦       ¦           SpeedVotePacket.class
+¦       ¦       ¦           VipCommandPacket.class
+¦       ¦       ¦           VipStatusPacket.class
+¦       ¦       ¦           
+¦       ¦       +---terrabridge
+¦       ¦               TerraBridge$TerrainType.class
+¦       ¦               TerraBridge.class
+¦       ¦               TerraCoordinateHelper.class
+¦       ¦               TerraOsmBridge$CachedResult.class
+¦       ¦               TerraOsmBridge$OsmStructure.class
+¦       ¦               TerraOsmBridge.class
+¦       ¦               
+¦       +---META-INF
+¦               mods.toml
+¦               
++---build
+¦   +---classes
+¦   ¦   +---java
+¦   ¦       +---main
+¦   ¦           +---com
+¦   ¦               +---eternalengine
+¦   ¦                   ¦   EternalEngineMod.class
+¦   ¦                   ¦   
+¦   ¦                   +---capability
+¦   ¦                   ¦       ChunkEraCapability$Provider.class
+¦   ¦                   ¦       ChunkEraCapability.class
+¦   ¦                   ¦       EntityCivilizationCapability$Provider.class
+¦   ¦                   ¦       EntityCivilizationCapability.class
+¦   ¦                   ¦       EternalEngineCapabilities$1.class
+¦   ¦                   ¦       EternalEngineCapabilities$2.class
+¦   ¦                   ¦       EternalEngineCapabilities$3.class
+¦   ¦                   ¦       EternalEngineCapabilities.class
+¦   ¦                   ¦       IChunkEraData.class
+¦   ¦                   ¦       IEntityCivilizationData.class
+¦   ¦                   ¦       IPlayerSimulationData$ActionRecord.class
+¦   ¦                   ¦       IPlayerSimulationData.class
+¦   ¦                   ¦       PlayerSimulationCapability$Provider.class
+¦   ¦                   ¦       PlayerSimulationCapability.class
+¦   ¦                   ¦       
+¦   ¦                   +---clock
+¦   ¦                   ¦       SimulationClockManager$SlowdownConfig.class
+¦   ¦                   ¦       SimulationClockManager$SlowdownEntry.class
+¦   ¦                   ¦       SimulationClockManager$VipLockEntry.class
+¦   ¦                   ¦       SimulationClockManager.class
+¦   ¦                   ¦       
+¦   ¦                   +---commands
+¦   ¦                   ¦       EternalEngineCommands.class
+¦   ¦                   ¦       
+¦   ¦                   +---compatibility
+¦   ¦                   ¦       ModCompatibilityChecker.class
+¦   ¦                   ¦       
+¦   ¦                   +---config
+¦   ¦                   ¦       EternalEngineConfig$ClientConfig.class
+¦   ¦                   ¦       EternalEngineConfig$CommonConfig.class
+¦   ¦                   ¦       EternalEngineConfig$ServerConfig.class
+¦   ¦                   ¦       EternalEngineConfig.class
+¦   ¦                   ¦       
+¦   ¦                   +---core
+¦   ¦                   ¦       AsyncTaskManager$1.class
+¦   ¦                   ¦       AsyncTaskManager$PriorityRunnable.class
+¦   ¦                   ¦       AsyncTaskManager.class
+¦   ¦                   ¦       PerformanceMonitor$SystemMetrics.class
+¦   ¦                   ¦       PerformanceMonitor.class
+¦   ¦                   ¦       PersistenceManager.class
+¦   ¦                   ¦       SimulationEngine.class
+¦   ¦                   ¦       SimulationTickScheduler$ScheduleEntry.class
+¦   ¦                   ¦       SimulationTickScheduler.class
+¦   ¦                   ¦       VersionManager$1.class
+¦   ¦                   ¦       VersionManager$Migration.class
+¦   ¦                   ¦       VersionManager.class
+¦   ¦                   ¦       WorldStateManager$CivilizationState.class
+¦   ¦                   ¦       WorldStateManager$DiseaseState.class
+¦   ¦                   ¦       WorldStateManager$ReligionState.class
+¦   ¦                   ¦       WorldStateManager$TimelineBranchState.class
+¦   ¦                   ¦       WorldStateManager$TradeRouteState.class
+¦   ¦                   ¦       WorldStateManager$VipState.class
+¦   ¦                   ¦       WorldStateManager$WarState.class
+¦   ¦                   ¦       WorldStateManager.class
+¦   ¦                   ¦       
+¦   ¦                   +---network
+¦   ¦                   ¦   ¦   EternalEnginePacketHandler.class
+¦   ¦                   ¦   ¦   
+¦   ¦                   ¦   +---packets
+¦   ¦                   ¦           BasePacket.class
+¦   ¦                   ¦           BuildingInfoPacket$StateChange.class
+¦   ¦                   ¦           BuildingInfoPacket.class
+¦   ¦                   ¦           CivilizationStatePacket.class
+¦   ¦                   ¦           EternalEngineConfig$BoolValue.class
+¦   ¦                   ¦           EternalEngineConfig$COMMON.class
+¦   ¦                   ¦           EternalEngineConfig.class
+¦   ¦                   ¦           EventNotificationPacket.class
+¦   ¦                   ¦           HistoryLogPacket$HistoryEntry.class
+¦   ¦                   ¦           HistoryLogPacket.class
+¦   ¦                   ¦           MapOverlayPacket$OverlayPoint.class
+¦   ¦                   ¦           MapOverlayPacket.class
+¦   ¦                   ¦           ReputationUpdatePacket.class
+¦   ¦                   ¦           RequestDataPacket$RequestType.class
+¦   ¦                   ¦           RequestDataPacket.class
+¦   ¦                   ¦           SimulationStatePacket.class
+¦   ¦                   ¦           SpeedChangePacket.class
+¦   ¦                   ¦           SpeedVotePacket.class
+¦   ¦                   ¦           VipCommandPacket.class
+¦   ¦                   ¦           VipStatusPacket.class
+¦   ¦                   ¦           
+¦   ¦                   +---terrabridge
+¦   ¦                           TerraBridge$TerrainType.class
+¦   ¦                           TerraBridge.class
+¦   ¦                           TerraCoordinateHelper.class
+¦   ¦                           TerraOsmBridge$CachedResult.class
+¦   ¦                           TerraOsmBridge$OsmStructure.class
+¦   ¦                           TerraOsmBridge.class
+¦   ¦                           
+¦   +---createMcpToSrg
+¦   ¦       output.tsrg
+¦   ¦       
+¦   +---downloadMcpConfig
+¦   ¦       output.zip
+¦   ¦       
+¦   +---extractSrg
+¦   ¦       output.srg
+¦   ¦       
+¦   +---generated
+¦   ¦   +---sources
+¦   ¦       +---annotationProcessor
+¦   ¦       ¦   +---java
+¦   ¦       ¦       +---main
+¦   ¦       +---headers
+¦   ¦           +---java
+¦   ¦               +---main
+¦   +---libs
+¦   ¦       eternalengine-1.0.0.jar
+¦   ¦       
+¦   +---reobfJar
+¦   ¦       log.txt
+¦   ¦       mappings.tsrg
+¦   ¦       output.jar
+¦   ¦       
+¦   +---resources
+¦   ¦   +---main
+¦   ¦       ¦   pack.mcmeta
+¦   ¦       ¦   
+¦   ¦       +---META-INF
+¦   ¦               mods.toml
+¦   ¦               
+¦   +---tmp
+¦       +---compileJava
+¦       ¦       previous-compilation-data.bin
+¦       ¦       
+¦       +---jar
+¦               MANIFEST.MF
+¦               
++---gradle
+¦   +---wrapper
+¦           gradle-wrapper.jar
+¦           gradle-wrapper.properties
+¦           
++---libs
+¦       terraplusplus-2.0.0-alpha.jar
+¦       
++---src
+    +---main
+        +---java
+        ¦   +---com
+        ¦       +---eternalengine
+        ¦           ¦   EternalEngineMod.java
+        ¦           ¦   
+        ¦           +---capability
+        ¦           ¦       ChunkEraCapability.java
+        ¦           ¦       EntityCivilizationCapability.java
+        ¦           ¦       EternalEngineCapabilities.java
+        ¦           ¦       IChunkEraData.java
+        ¦           ¦       IEntityCivilizationData.java
+        ¦           ¦       IPlayerSimulationData.java
+        ¦           ¦       PlayerSimulationCapability.java
+        ¦           ¦       
+        ¦           +---clock
+        ¦           ¦       SimulationClockManager.java
+        ¦           ¦       
+        ¦           +---commands
+        ¦           ¦       EternalEngineCommands.java
+        ¦           ¦       
+        ¦           +---compatibility
+        ¦           ¦       ModCompatibilityChecker.java
+        ¦           ¦       
+        ¦           +---config
+        ¦           ¦       EternalEngineConfig.java
+        ¦           ¦       
+        ¦           +---core
+        ¦           ¦       AsyncTaskManager.java
+        ¦           ¦       PerformanceMonitor.java
+        ¦           ¦       PersistenceManager.java
+        ¦           ¦       SimulationEngine.java
+        ¦           ¦       SimulationTickScheduler.java
+        ¦           ¦       VersionManager.java
+        ¦           ¦       WorldStateManager.java
+        ¦           ¦       
+        ¦           +---network
+        ¦           ¦   ¦   EternalEnginePacketHandler.java
+        ¦           ¦   ¦   
+        ¦           ¦   +---packets
+        ¦           ¦           BasePacket.java
+        ¦           ¦           BuildingInfoPacket.java
+        ¦           ¦           CivilizationStatePacket.java
+        ¦           ¦           EventNotificationPacket.java
+        ¦           ¦           HistoryLogPacket.java
+        ¦           ¦           MapOverlayPacket.java
+        ¦           ¦           ReputationUpdatePacket.java
+        ¦           ¦           RequestDataPacket.java
+        ¦           ¦           SimulationStatePacket.java
+        ¦           ¦           SpeedChangePacket.java
+        ¦           ¦           SpeedVotePacket.java
+        ¦           ¦           VipCommandPacket.java
+        ¦           ¦           VipStatusPacket.java
+        ¦           ¦           
+        ¦           +---terrabridge
+        ¦                   TerraBridge.java
+        ¦                   TerraCoordinateHelper.java
+        ¦                   TerraOsmBridge.java
+        ¦                   
+        +---resources
+            ¦   pack.mcmeta
+            ¦   
+            +---META-INF
+                    mods.toml
+                    
