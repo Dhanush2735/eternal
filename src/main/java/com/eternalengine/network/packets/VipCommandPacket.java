@@ -1,6 +1,10 @@
 package com.eternalengine.network.packets;
 
 import com.eternalengine.EternalEngineMod;
+import com.eternalengine.capability.EternalEngineCapabilities;
+import com.eternalengine.capability.IPlayerSimulationData;
+import com.eternalengine.core.SimulationEngine;
+import com.eternalengine.vip.VipSlot;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkEvent;
@@ -69,9 +73,26 @@ public class VipCommandPacket implements BasePacket {
         LOGGER.info("[VipCommand] {} issued command: {} / {} -> {}",
             player.getName().getString(), commandType, commandId, targetId);
         
-        // Validate player is a VIP
-        // Process command through VipCommandSystem
-        // This would be handled by VipCommandSystem.processCommand(player, this)
+        if (!SimulationEngine.isInitialized()) {
+            return;
+        }
+        IPlayerSimulationData data = EternalEngineCapabilities.getPlayerData(player);
+        if (!data.isVip()) {
+            LOGGER.warn("[VipCommand] Rejected command from non-VIP player {}", player.getName().getString());
+            return;
+        }
+        VipSlot vip = SimulationEngine.getInstance().getVipSystem().getVip(data.getVipId()).orElse(null);
+        if (vip == null) {
+            LOGGER.warn("[VipCommand] Rejected command because VIP slot {} is missing", data.getVipId());
+            return;
+        }
+        Map<String, Object> params = new HashMap<>(parameters);
+        params.put("targetId", targetId == null ? "" : targetId);
+        var result = SimulationEngine.getInstance().getVipCommandSystem()
+            .executeCommand(vip, commandId, params, player.getServer(), com.eternalengine.core.WorldStateManager.getInstance());
+        if (!result.success()) {
+            LOGGER.warn("[VipCommand] Command rejected: {}", result.message());
+        }
     }
     
     // Getters

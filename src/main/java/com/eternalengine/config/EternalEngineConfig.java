@@ -77,12 +77,6 @@ public class EternalEngineConfig {
         public final ForgeConfigSpec.IntValue virtualizationDistance;
         public final ForgeConfigSpec.IntValue maxEntitiesPerPlayer;
         
-        // Ollama integration
-        public final ForgeConfigSpec.BooleanValue ollamaEnabled;
-        public final ForgeConfigSpec.ConfigValue<String> ollamaEndpoint;
-        public final ForgeConfigSpec.ConfigValue<String> ollamaModel;
-        public final ForgeConfigSpec.IntValue ollamaTimeoutMs;
-        
         // OSM/External data
         public final ForgeConfigSpec.IntValue osmTimeoutMs;
         
@@ -167,28 +161,6 @@ public class EternalEngineConfig {
             
             builder.pop();
             
-            // Ollama
-            builder.comment("Ollama LLM integration (OPTIONAL - for narrative text only)")
-                   .push("ollama");
-            
-            ollamaEnabled = builder
-                .comment("Enable Ollama integration for narrative text generation")
-                .define("ollamaEnabled", false);
-            
-            ollamaEndpoint = builder
-                .comment("Ollama API endpoint (localhost only)")
-                .define("ollamaEndpoint", "http://localhost:11434/api/generate");
-            
-            ollamaModel = builder
-                .comment("Ollama model to use")
-                .define("ollamaModel", "llama2");
-            
-            ollamaTimeoutMs = builder
-                .comment("Ollama request timeout in milliseconds")
-                .defineInRange("ollamaTimeoutMs", 2000, 500, 10000);
-            
-            builder.pop();
-            
             // External data
             builder.comment("External data settings")
                    .push("external");
@@ -262,6 +234,25 @@ public class EternalEngineConfig {
         // Performance
         public final ForgeConfigSpec.IntValue maxTickBudgetMs;
         public final ForgeConfigSpec.IntValue blockUpdateBudgetPerTick;
+
+        // Remote brain gateway for multiplayer servers
+        public final ForgeConfigSpec.BooleanValue remoteBrainEnabled;
+        public final ForgeConfigSpec.ConfigValue<String> liteLlmEndpoint;
+        public final ForgeConfigSpec.ConfigValue<String> liteLlmModel;
+        public final ForgeConfigSpec.ConfigValue<String> liteLlmToken;
+        public final ForgeConfigSpec.ConfigValue<String> liteLlmExtraHeaders;
+        public final ForgeConfigSpec.ConfigValue<String> portkeyEndpoint;
+        public final ForgeConfigSpec.ConfigValue<String> portkeyModel;
+        public final ForgeConfigSpec.ConfigValue<String> portkeyProviderToken;
+        public final ForgeConfigSpec.ConfigValue<String> portkeyApiKey;
+        public final ForgeConfigSpec.ConfigValue<String> portkeyProvider;
+        public final ForgeConfigSpec.ConfigValue<String> portkeyConfig;
+        public final ForgeConfigSpec.IntValue remoteBrainTimeoutMs;
+
+        // Local developer web console
+        public final ForgeConfigSpec.BooleanValue webConsoleEnabled;
+        public final ForgeConfigSpec.IntValue webConsolePort;
+        public final ForgeConfigSpec.ConfigValue<String> webConsoleToken;
         
         public ServerConfig(ForgeConfigSpec.Builder builder) {
             builder.comment("Eternal Engine Server Configuration")
@@ -340,6 +331,76 @@ public class EternalEngineConfig {
                 .comment("Maximum block updates per tick")
                 .defineInRange("blockUpdateBudgetPerTick", 500, 50, 2000);
             
+            builder.pop();
+
+            builder.comment("Remote advisory brain gateway for multiplayer servers. This is server-side only and advisory-only; the Minecraft server remains authoritative.")
+                   .push("brainGateway");
+
+            remoteBrainEnabled = builder
+                .comment("Use remote HTTPS brain gateways. Eternal Engine does not use local LLM processes. Can also be set with env EE_BRAIN_ENABLED or JVM -Dee.brain.enabled=true.")
+                .define("remoteBrainEnabled", false);
+
+            liteLlmEndpoint = builder
+                .comment("PRIMARY brain source: LiteLLM/OpenAI-compatible HTTPS endpoint, usually https://your-litellm/v1/chat/completions. Can also be set with env EE_LITELLM_ENDPOINT or JVM -Dee.brain.litellm.endpoint=...")
+                .define("liteLlmEndpoint", "");
+
+            liteLlmModel = builder
+                .comment("Primary LiteLLM model name")
+                .define("liteLlmModel", "default");
+
+            liteLlmToken = builder
+                .comment("Primary LiteLLM virtual key / bearer token. Server-side only; never sent to clients.")
+                .define("liteLlmToken", "");
+
+            liteLlmExtraHeaders = builder
+                .comment("Optional extra headers for LiteLLM. Format: name=value;name2=value2")
+                .define("liteLlmExtraHeaders", "");
+
+            portkeyEndpoint = builder
+                .comment("SECONDARY fallback source: Portkey HTTPS endpoint")
+                .define("portkeyEndpoint", "https://api.portkey.ai/v1/chat/completions");
+
+            portkeyModel = builder
+                .comment("Secondary Portkey model name")
+                .define("portkeyModel", "default");
+
+            portkeyProviderToken = builder
+                .comment("Provider token forwarded in Authorization: Bearer <token> when using Portkey. Server-side only.")
+                .define("portkeyProviderToken", "");
+
+            portkeyApiKey = builder
+                .comment("Portkey API key sent as x-portkey-api-key. Leave blank to disable Portkey fallback. Can also be set with env EE_PORTKEY_API_KEY or JVM -Dee.brain.portkey.apiKey=...")
+                .define("portkeyApiKey", "");
+
+            portkeyProvider = builder
+                .comment("Portkey provider header, e.g. openai, anthropic, google, groq")
+                .define("portkeyProvider", "openai");
+
+            portkeyConfig = builder
+                .comment("Optional Portkey config id or JSON sent as x-portkey-config")
+                .define("portkeyConfig", "");
+
+            remoteBrainTimeoutMs = builder
+                .comment("Remote brain request timeout in milliseconds")
+                .defineInRange("remoteBrainTimeoutMs", 10000, 1000, 60000);
+
+            builder.pop();
+
+            builder.comment("Localhost-only developer web chat. Advisory/read-only; uses the same server-side brain bridge as Minecraft.")
+                   .push("webConsole");
+
+            webConsoleEnabled = builder
+                .comment("Start the localhost web console automatically on server start")
+                .define("webConsoleEnabled", false);
+
+            webConsolePort = builder
+                .comment("Localhost port for the web console")
+                .defineInRange("webConsolePort", 8765, 1024, 65535);
+
+            webConsoleToken = builder
+                .comment("Access token for the web console. Leave blank to generate one per server run.")
+                .define("webConsoleToken", "");
+
             builder.pop();
         }
     }

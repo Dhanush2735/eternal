@@ -91,45 +91,50 @@ public class PersistenceManager {
      * This is thread-safe and prevents corruption.
      */
     public boolean saveJsonAtomic(Path filePath, JsonObject data) {
+        if (filePath == null || data == null) {
+            LOGGER.warn("[PersistenceManager] saveJsonAtomic called with null file/data");
+            return false;
+        }
+
         Path tempFile = filePath.resolveSibling(filePath.getFileName() + ".tmp");
         String pathKey = filePath.toString();
 
         try {
-            // Ensure parent directory exists
             Files.createDirectories(filePath.getParent());
 
-            // Write to temp file
+            // Backup existing data before overwrite. If backup fails, continue but log;
+            // gameplay should not halt because backup rotation failed.
+            if (Files.exists(filePath)) {
+                createBackup(filePath);
+            }
+
             try (FileOutputStream fos = new FileOutputStream(tempFile.toFile());
                  FileChannel channel = fos.getChannel();
                  FileLock lock = channel.lock()) {
 
-                // Store lock reference
                 activeLocks.put(pathKey, lock);
-
-                // Write data
                 String json = gson.toJson(data);
                 fos.write(json.getBytes(StandardCharsets.UTF_8));
                 fos.flush();
-                channel.force(true); // Force write to disk
+                channel.force(true);
             }
 
-            // Atomic rename
-            Files.move(tempFile, filePath,
-                StandardCopyOption.REPLACE_EXISTING,
-                StandardCopyOption.ATOMIC_MOVE);
+            try {
+                Files.move(tempFile, filePath,
+                    StandardCopyOption.REPLACE_EXISTING,
+                    StandardCopyOption.ATOMIC_MOVE);
+            } catch (AtomicMoveNotSupportedException e) {
+                Files.move(tempFile, filePath, StandardCopyOption.REPLACE_EXISTING);
+            }
 
             return true;
 
         } catch (Exception e) {
             LOGGER.error("[PersistenceManager] Failed to save {}: {}", filePath, e.getMessage());
-
-            // Clean up temp file if it exists
             try {
                 Files.deleteIfExists(tempFile);
             } catch (IOException ignored) {}
-
             return false;
-
         } finally {
             activeLocks.remove(pathKey);
         }
@@ -155,32 +160,40 @@ public class PersistenceManager {
      */
     @Nullable
     public JsonObject loadJson(Path filePath) {
+        if (filePath == null) {
+            LOGGER.warn("[PersistenceManager] loadJson called with null filePath");
+            return null;
+        }
         if (!Files.exists(filePath)) {
             LOGGER.debug("[PersistenceManager] File not found: {}", filePath);
             return null;
         }
 
-        try {
-            String content = Files.readString(filePath, StandardCharsets.UTF_8);
+        String pathKey = filePath.toString();
+        try (FileInputStream fis = new FileInputStream(filePath.toFile());
+             FileChannel channel = fis.getChannel();
+             FileLock lock = channel.lock(0L, Long.MAX_VALUE, true)) {
 
-            // Validate JSON
-            if (content == null || content.trim().isEmpty()) {
+            activeLocks.put(pathKey, lock);
+            String content = new String(fis.readAllBytes(), StandardCharsets.UTF_8);
+
+            if (content.trim().isEmpty()) {
                 LOGGER.warn("[PersistenceManager] Empty file: {}", filePath);
                 return tryLoadBackup(filePath);
             }
 
             JsonObject json = gson.fromJson(content, JsonObject.class);
-
             if (json == null) {
                 LOGGER.warn("[PersistenceManager] Invalid JSON in: {}", filePath);
                 return tryLoadBackup(filePath);
             }
-
             return json;
 
         } catch (Exception e) {
             LOGGER.error("[PersistenceManager] Failed to load {}: {}", filePath, e.getMessage());
             return tryLoadBackup(filePath);
+        } finally {
+            activeLocks.remove(pathKey);
         }
     }
 
@@ -188,15 +201,19 @@ public class PersistenceManager {
      * Load JSON asynchronously
      */
     public void loadJsonAsync(Path filePath, java.util.function.Consumer<JsonObject> callback) {
+        if (filePath == null) {
+            if (callback != null) {
+                AsyncTaskManager.getInstance().submitToMainThread(() -> callback.accept(null));
+            }
+            return;
+        }
         AsyncTaskManager.getInstance().submit(
             "load_" + filePath.getFileName(),
             () -> {
                 JsonObject result = loadJson(filePath);
-                AsyncTaskManager.getInstance().submit(
-                    "callback_" + filePath.getFileName(),
-                    () -> callback.accept(result),
-                    null
-                );
+                if (callback != null) {
+                    AsyncTaskManager.getInstance().submitToMainThread(() -> callback.accept(result));
+                }
             }
         );
     }

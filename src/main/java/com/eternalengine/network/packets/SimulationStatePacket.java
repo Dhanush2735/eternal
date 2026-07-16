@@ -1,6 +1,7 @@
 package com.eternalengine.network.packets;
 
 import com.eternalengine.EternalEngineMod;
+import com.eternalengine.config.EternalEngineConfig;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent;
 import org.slf4j.Logger;
@@ -80,10 +81,6 @@ public class SimulationStatePacket implements BasePacket {
     
     @Override
     public void handle(NetworkEvent.Context context) {
-        // Client-side handling
-        // Update client simulation state display
-        // This would be handled by a client-side state manager
-        
         if (EternalEngineConfig.COMMON.debugLogging.get()) {
             LOGGER.debug("[Client] Received simulation state: year={}, speed={}x", 
                 currentYear, effectiveSpeed);
@@ -101,14 +98,3 @@ public class SimulationStatePacket implements BasePacket {
     public List<String> getActiveEvents() { return activeEvents; }
 }
 
-// Helper class for config access
-class EternalEngineConfig {
-    static class COMMON {
-        static BoolValue debugLogging = new BoolValue(false);
-    }
-    static class BoolValue {
-        private boolean value;
-        BoolValue(boolean v) { value = v; }
-        boolean get() { return value; }
-    }
-}

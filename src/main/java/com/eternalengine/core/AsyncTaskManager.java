@@ -3,67 +3,66 @@ package com.eternalengine.core;
 import com.eternalengine.EternalEngineMod;
 import org.slf4j.Logger;
 
-import java.util.concurrent.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.PriorityBlockingQueue;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
 
 /**
- * AsyncTaskManager - Manages asynchronous tasks off the server thread.
- * 
- * Features:
- * - ThreadPoolExecutor with 4 daemon threads
- * - Named threads (EE-Async-N)
- * - Priority queue ordering
- * - Cancellation support
- * - Retry with exponential backoff
- * - 2000ms timeout per task
- * - Main thread callback queue
- * - Drains callbacks each server tick
+ * AsyncTaskManager - safe asynchronous execution for Eternal Engine.
+ *
+ * Rules:
+ * - Heavy work runs off the server thread.
+ * - Minecraft world edits must be scheduled back through submitToMainThread().
+ * - Main-thread callback draining is time-budgeted, not count-only.
+ * - Priority queue uses comparable FutureTask objects to avoid runtime queue errors.
  */
 public class AsyncTaskManager {
-    
+
     private static final Logger LOGGER = EternalEngineMod.getLogger();
-    
+
     private static AsyncTaskManager instance;
     private static boolean initialized = false;
-    
-    // Thread pool configuration
+
     private static final int CORE_POOL_SIZE = 4;
     private static final int MAX_POOL_SIZE = 4;
-    private static final long KEEP_ALIVE_SECONDS = 60;
-    private static final int DEFAULT_TIMEOUT_MS = 2000;
-    private static final int MAX_RETRIES = 3;
-    
-    // Thread pool
+    private static final long KEEP_ALIVE_SECONDS = 60L;
+    private static final long MAIN_THREAD_BUDGET_NANOS = 2_000_000L;
+
     private final ThreadPoolExecutor executor;
-    
-    // Main thread callback queue
     private final ConcurrentLinkedQueue<Runnable> mainThreadCallbacks;
-    
-    // Active task tracking
     private final ConcurrentHashMap<String, Future<?>> activeTasks;
-    
-    // Statistics
+    private final AtomicBoolean shutdown = new AtomicBoolean(false);
+
     private final AtomicInteger tasksSubmitted = new AtomicInteger(0);
     private final AtomicInteger tasksCompleted = new AtomicInteger(0);
     private final AtomicInteger tasksFailed = new AtomicInteger(0);
-    private final AtomicInteger tasksTimedOut = new AtomicInteger(0);
-    
+    private final AtomicInteger tasksCancelled = new AtomicInteger(0);
+
     private AsyncTaskManager() {
-        // Create thread factory with named threads
         ThreadFactory threadFactory = new ThreadFactory() {
             private final AtomicInteger threadNumber = new AtomicInteger(0);
-            
+
             @Override
-            public Thread newThread(Runnable r) {
-                Thread t = new Thread(r, "EE-Async-" + threadNumber.getAndIncrement());
-                t.setDaemon(true); // Don't prevent JVM shutdown
-                t.setPriority(Thread.NORM_PRIORITY - 1); // Slightly lower priority
-                return t;
+            public Thread newThread(Runnable runnable) {
+                Thread thread = new Thread(runnable, "EE-Async-" + threadNumber.getAndIncrement());
+                thread.setDaemon(true);
+                thread.setPriority(Thread.NORM_PRIORITY - 1);
+                return thread;
             }
         };
-        
-        // Create thread pool with priority queue
+
         this.executor = new ThreadPoolExecutor(
             CORE_POOL_SIZE,
             MAX_POOL_SIZE,
@@ -71,233 +70,226 @@ public class AsyncTaskManager {
             TimeUnit.SECONDS,
             new PriorityBlockingQueue<>(),
             threadFactory,
-            new ThreadPoolExecutor.CallerRunsPolicy() // Fallback to caller thread if pool full
+            new ThreadPoolExecutor.AbortPolicy()
         );
-        
         this.mainThreadCallbacks = new ConcurrentLinkedQueue<>();
         this.activeTasks = new ConcurrentHashMap<>();
     }
-    
-    /**
-     * Initialize the async task manager
-     */
-    public static void initialize() {
+
+    public static synchronized void initialize() {
         if (initialized) {
             LOGGER.warn("[AsyncTaskManager] Already initialized");
             return;
         }
-        
         instance = new AsyncTaskManager();
         initialized = true;
-        
         LOGGER.info("[AsyncTaskManager] Initialized with {} threads", CORE_POOL_SIZE);
     }
-    
-    /**
-     * Get the singleton instance
-     */
+
     public static AsyncTaskManager getInstance() {
         if (!initialized) {
             throw new IllegalStateException("AsyncTaskManager not initialized!");
         }
         return instance;
     }
-    
-    /**
-     * Submit a task for async execution
-     * 
-     * @param taskId Unique identifier for the task
-     * @param task The task to execute
-     * @param onComplete Callback to run on main thread when complete (can be null)
-     * @param priority Task priority (higher = more urgent)
-     */
+
     public void submit(String taskId, Runnable task, Consumer<Boolean> onComplete, int priority) {
+        if (task == null) {
+            if (onComplete != null) {
+                submitToMainThread(() -> onComplete.accept(false));
+            }
+            return;
+        }
+        if (shutdown.get()) {
+            LOGGER.warn("[AsyncTaskManager] Rejecting task {} because manager is shut down", taskId);
+            if (onComplete != null) {
+                submitToMainThread(() -> onComplete.accept(false));
+            }
+            return;
+        }
+
+        String safeId = safeTaskId(taskId);
         tasksSubmitted.incrementAndGet();
-        
-        PriorityRunnable priorityTask = new PriorityRunnable(priority, () -> {
+
+        PriorityFutureTask<Void> futureTask = new PriorityFutureTask<>(priority, () -> {
             boolean success = false;
             try {
                 task.run();
                 success = true;
                 tasksCompleted.incrementAndGet();
+            } catch (CancellationException e) {
+                tasksCancelled.incrementAndGet();
+                LOGGER.debug("[AsyncTaskManager] Task {} cancelled", safeId);
             } catch (Exception e) {
                 tasksFailed.incrementAndGet();
-                LOGGER.error("[AsyncTaskManager] Task {} failed: {}", taskId, e.getMessage());
+                LOGGER.error("[AsyncTaskManager] Task {} failed: {}", safeId, e.getMessage());
             } finally {
-                activeTasks.remove(taskId);
-                
-                // Queue callback for main thread
+                activeTasks.remove(safeId);
                 if (onComplete != null) {
-                    final boolean finalSuccess = success;
-                    mainThreadCallbacks.offer(() -> onComplete.accept(finalSuccess));
+                    boolean finalSuccess = success;
+                    submitToMainThread(() -> onComplete.accept(finalSuccess));
                 }
             }
+            return null;
         });
-        
-        Future<?> future = executor.submit(priorityTask);
-        activeTasks.put(taskId, future);
+
+        activeTasks.put(safeId, futureTask);
+        executor.execute(futureTask);
     }
-    
-    /**
-     * Submit a task with default priority
-     */
+
     public void submit(String taskId, Runnable task, Consumer<Boolean> onComplete) {
         submit(taskId, task, onComplete, 0);
     }
-    
-    /**
-     * Submit a task with no callback
-     */
+
     public void submit(String taskId, Runnable task) {
         submit(taskId, task, null, 0);
     }
-    
-    /**
-     * Submit a callable that returns a result
-     */
+
     public <T> CompletableFuture<T> submitCallable(String taskId, Callable<T> task) {
+        CompletableFuture<T> result = new CompletableFuture<>();
+        if (task == null) {
+            result.completeExceptionally(new IllegalArgumentException("task is null"));
+            return result;
+        }
+        if (shutdown.get()) {
+            result.completeExceptionally(new IllegalStateException("AsyncTaskManager is shut down"));
+            return result;
+        }
+
+        String safeId = safeTaskId(taskId);
         tasksSubmitted.incrementAndGet();
-        
-        CompletableFuture<T> future = new CompletableFuture<>();
-        
-        executor.submit(() -> {
+        PriorityFutureTask<T> futureTask = new PriorityFutureTask<>(0, () -> {
             try {
-                T result = task.call();
+                T value = task.call();
                 tasksCompleted.incrementAndGet();
-                future.complete(result);
+                result.complete(value);
+                return value;
+            } catch (CancellationException e) {
+                tasksCancelled.incrementAndGet();
+                result.completeExceptionally(e);
+                throw e;
             } catch (Exception e) {
                 tasksFailed.incrementAndGet();
-                LOGGER.error("[AsyncTaskManager] Callable {} failed: {}", taskId, e.getMessage());
-                future.completeExceptionally(e);
+                LOGGER.error("[AsyncTaskManager] Callable {} failed: {}", safeId, e.getMessage());
+                result.completeExceptionally(e);
+                throw e;
             } finally {
-                activeTasks.remove(taskId);
+                activeTasks.remove(safeId);
             }
         });
-        
-        return future;
+        activeTasks.put(safeId, futureTask);
+        executor.execute(futureTask);
+        return result;
     }
-    
-    /**
-     * Submit a task with retry on failure
-     */
-    public void submitWithRetry(String taskId, Runnable task, Consumer<Boolean> onComplete, 
-                                 int priority, int maxRetries) {
-        submitWithRetryInternal(taskId, task, onComplete, priority, maxRetries, 0);
+
+    public void submitWithRetry(String taskId, Runnable task, Consumer<Boolean> onComplete,
+                                int priority, int maxRetries) {
+        submitWithRetryInternal(safeTaskId(taskId), task, onComplete, priority, Math.max(0, maxRetries), 0);
     }
-    
+
     private void submitWithRetryInternal(String taskId, Runnable task, Consumer<Boolean> onComplete,
                                          int priority, int maxRetries, int attempt) {
         submit(taskId + "_attempt" + attempt, () -> {
             try {
                 task.run();
-                // Success - queue callback
                 if (onComplete != null) {
-                    mainThreadCallbacks.offer(() -> onComplete.accept(true));
+                    submitToMainThread(() -> onComplete.accept(true));
                 }
             } catch (Exception e) {
                 if (attempt < maxRetries) {
-                    // Retry with exponential backoff
-                    long delay = (long) Math.pow(2, attempt) * 100; // 100ms, 200ms, 400ms...
-                    LOGGER.debug("[AsyncTaskManager] Task {} failed, retrying in {}ms (attempt {})", 
-                        taskId, delay, attempt + 1);
-                    
+                    long delayMs = (long) Math.pow(2, attempt) * 100L;
+                    LOGGER.debug("[AsyncTaskManager] Task {} failed, retrying in {}ms", taskId, delayMs);
                     try {
-                        Thread.sleep(delay);
-                    } catch (InterruptedException ie) {
+                        Thread.sleep(delayMs);
+                    } catch (InterruptedException interrupted) {
                         Thread.currentThread().interrupt();
+                        throw new RuntimeException(interrupted);
                     }
-                    
                     submitWithRetryInternal(taskId, task, onComplete, priority, maxRetries, attempt + 1);
                 } else {
-                    // Max retries exceeded
-                    LOGGER.error("[AsyncTaskManager] Task {} failed after {} attempts", taskId, maxRetries);
+                    LOGGER.error("[AsyncTaskManager] Task {} failed after {} attempts", taskId, maxRetries + 1);
                     if (onComplete != null) {
-                        mainThreadCallbacks.offer(() -> onComplete.accept(false));
+                        submitToMainThread(() -> onComplete.accept(false));
                     }
                 }
             }
         }, null, priority);
     }
-    
-    /**
-     * Cancel a task by ID
-     */
-    public boolean cancelTask(String taskId) {
-        Future<?> future = activeTasks.get(taskId);
-        if (future != null) {
-            boolean cancelled = future.cancel(true);
-            if (cancelled) {
-                activeTasks.remove(taskId);
-                LOGGER.debug("[AsyncTaskManager] Cancelled task {}", taskId);
-            }
-            return cancelled;
+
+    public void submitToMainThread(Runnable task) {
+        if (task != null && !shutdown.get()) {
+            mainThreadCallbacks.offer(task);
         }
-        return false;
     }
-    
+
+    public boolean cancelTask(String taskId) {
+        Future<?> future = activeTasks.remove(safeTaskId(taskId));
+        if (future == null) {
+            return false;
+        }
+        boolean cancelled = future.cancel(true);
+        if (cancelled) {
+            tasksCancelled.incrementAndGet();
+        }
+        return cancelled;
+    }
+
     /**
-     * Process main thread callbacks - MUST be called from server tick
+     * Drain callbacks within a 2ms budget. Must be called on the server thread.
      */
     public void processMainThreadCallbacks() {
+        long start = System.nanoTime();
         int processed = 0;
-        int maxPerTick = 100; // Limit to prevent blocking
-        
         Runnable callback;
-        while (processed < maxPerTick && (callback = mainThreadCallbacks.poll()) != null) {
+        while ((callback = mainThreadCallbacks.poll()) != null) {
             try {
                 callback.run();
                 processed++;
             } catch (Exception e) {
-                LOGGER.error("[AsyncTaskManager] Callback failed: {}", e.getMessage());
+                LOGGER.error("[AsyncTaskManager] Main-thread callback failed: {}", e.getMessage());
+            }
+            if (System.nanoTime() - start >= MAIN_THREAD_BUDGET_NANOS) {
+                break;
             }
         }
+        if (processed > 0 && !mainThreadCallbacks.isEmpty()) {
+            LOGGER.debug("[AsyncTaskManager] Drained {} callbacks; {} remain", processed, mainThreadCallbacks.size());
+        }
     }
-    
-    /**
-     * Check if a task is still running
-     */
+
     public boolean isTaskRunning(String taskId) {
-        Future<?> future = activeTasks.get(taskId);
+        Future<?> future = activeTasks.get(safeTaskId(taskId));
         return future != null && !future.isDone();
     }
-    
-    /**
-     * Get number of active tasks
-     */
+
     public int getActiveTaskCount() {
         return activeTasks.size();
     }
-    
-    /**
-     * Get number of queued tasks
-     */
+
     public int getQueuedTaskCount() {
         return executor.getQueue().size();
     }
-    
-    /**
-     * Get statistics
-     */
+
+    public boolean isShutdown() {
+        return shutdown.get();
+    }
+
     public String getStatistics() {
         return String.format(
-            "Tasks - Submitted: %d, Completed: %d, Failed: %d, Timed Out: %d, Active: %d, Queued: %d",
-            tasksSubmitted.get(), tasksCompleted.get(), tasksFailed.get(), tasksTimedOut.get(),
+            "Tasks - Submitted: %d, Completed: %d, Failed: %d, Cancelled: %d, Active: %d, Queued: %d",
+            tasksSubmitted.get(), tasksCompleted.get(), tasksFailed.get(), tasksCancelled.get(),
             getActiveTaskCount(), getQueuedTaskCount()
         );
     }
-    
-    /**
-     * Shutdown the task manager
-     */
+
     public void shutdown() {
+        if (!shutdown.compareAndSet(false, true)) {
+            return;
+        }
         LOGGER.info("[AsyncTaskManager] Shutting down...");
-        
-        // Cancel all active tasks
         for (String taskId : activeTasks.keySet()) {
             cancelTask(taskId);
         }
-        
-        // Shutdown executor
         executor.shutdown();
         try {
             if (!executor.awaitTermination(5, TimeUnit.SECONDS)) {
@@ -307,41 +299,32 @@ public class AsyncTaskManager {
             executor.shutdownNow();
             Thread.currentThread().interrupt();
         }
-        
-        // Process remaining callbacks
         processMainThreadCallbacks();
-        
         LOGGER.info("[AsyncTaskManager] Shutdown complete. {}", getStatistics());
     }
-    
-    /**
-     * Priority runnable wrapper for priority queue
-     */
-    private static class PriorityRunnable implements Runnable, Comparable<PriorityRunnable> {
+
+    private String safeTaskId(String taskId) {
+        return taskId == null || taskId.isBlank() ? "task_" + System.nanoTime() : taskId;
+    }
+
+    private static final class PriorityFutureTask<T> extends FutureTask<T> implements Comparable<PriorityFutureTask<?>> {
+        private static final AtomicInteger SEQUENCE = new AtomicInteger(0);
         private final int priority;
-        private final Runnable task;
-        private final long timestamp;
-        
-        PriorityRunnable(int priority, Runnable task) {
+        private final int sequence;
+
+        private PriorityFutureTask(int priority, Callable<T> callable) {
+            super(callable);
             this.priority = priority;
-            this.task = task;
-            this.timestamp = System.nanoTime();
+            this.sequence = SEQUENCE.getAndIncrement();
         }
-        
+
         @Override
-        public void run() {
-            task.run();
-        }
-        
-        @Override
-        public int compareTo(PriorityRunnable other) {
-            // Higher priority first
+        public int compareTo(PriorityFutureTask<?> other) {
             int priorityCompare = Integer.compare(other.priority, this.priority);
             if (priorityCompare != 0) {
                 return priorityCompare;
             }
-            // FIFO for same priority
-            return Long.compare(this.timestamp, other.timestamp);
+            return Integer.compare(this.sequence, other.sequence);
         }
     }
 }

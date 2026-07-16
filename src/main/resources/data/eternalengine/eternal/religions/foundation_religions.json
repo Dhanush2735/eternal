@@ -1,0 +1,26 @@
+[
+  {
+    "id": "buddhism",
+    "name": "Buddhism",
+    "foundedYear": -500,
+    "originLat": 26.0,
+    "originLon": 85.0,
+    "spreadRatePerYear": 0.015,
+    "currentFollowers": 100000,
+    "politicalPower": 40,
+    "allowsHolyWar": false,
+    "requiresConversion": false
+  },
+  {
+    "id": "christianity",
+    "name": "Christianity",
+    "foundedYear": 30,
+    "originLat": 31.8,
+    "originLon": 35.2,
+    "spreadRatePerYear": 0.02,
+    "currentFollowers": 100000,
+    "politicalPower": 50,
+    "allowsHolyWar": true,
+    "requiresConversion": false
+  }
+]

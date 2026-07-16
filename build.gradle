@@ -93,6 +93,10 @@ repositories {
         name = 'ModMaven'
         url = 'https://modmaven.dev/'
     }
+
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 dependencies {
@@ -118,7 +122,9 @@ dependencies {
     }
 
     println "Using local Terra++ jar: ${terraJar.name}"
-    implementation fg.deobf(files(terraJar))
+    // Use module notation for ForgeGradle deobf so the dependency has a real version.
+    // flatDir resolves libs/terraplusplus-${terraplusplus_version}.jar for this module.
+    implementation fg.deobf("local.terra:terraplusplus:${terraplusplus_version}")
 
     // Optional integrations - only enabled if real CurseForge file IDs are set
     def mcaId = optionalId('mca_file_id')

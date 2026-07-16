@@ -60,8 +60,12 @@ public class RequestDataPacket implements BasePacket {
             return;
         }
         
-        // Process request and send appropriate response packet
-        // DataRequestHandler.handleRequest(player, this);
+        if (requestType == null) {
+            return;
+        }
+        // Request handling is intentionally minimal in the foundation phase.
+        // Server-authoritative GUI/data responses are routed through commands and
+        // dedicated packets as each subsystem matures.
     }
     
     public RequestType getRequestType() { return requestType; }

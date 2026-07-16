@@ -1,0 +1,22 @@
+{
+  "WAR": [
+    "{YEAR}: {REGION} reports active conflict pressure. {EVENT}",
+    "Military dispatch for {REGION}: {EVENT}"
+  ],
+  "DISEASE": [
+    "Health report, {YEAR}: {EVENT}",
+    "Physicians in {REGION} warn: {EVENT}"
+  ],
+  "TIMELINE": [
+    "Historian note for branch {BRANCH}: {EVENT}",
+    "Timeline report: {EVENT}"
+  ],
+  "ANOMALY": [
+    "Debug finding at {REGION}: {EVENT}",
+    "Anomaly report: {EVENT}"
+  ],
+  "GENERAL": [
+    "Current affairs for {REGION}, {YEAR}: {EVENT}",
+    "Local report: {EVENT}"
+  ]
+}

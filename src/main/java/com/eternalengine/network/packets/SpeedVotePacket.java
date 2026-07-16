@@ -1,5 +1,6 @@
 package com.eternalengine.network.packets;
 
+import com.eternalengine.clock.SimulationClockManager;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkEvent;
@@ -42,8 +43,14 @@ public class SpeedVotePacket implements BasePacket {
             return;
         }
         
-        // Process vote through SimulationClockManager
-        // SimulationClockManager.getInstance().processVote(player, this);
+        if (!SimulationClockManager.isInitialized()) {
+            return;
+        }
+        if (isOverrideVote) {
+            SimulationClockManager.getInstance().activateOverride(votedSpeed, 10L * 60L * 1000L);
+        } else {
+            SimulationClockManager.getInstance().processVote(player, votedSpeed);
+        }
     }
     
     public int getVotedSpeed() { return votedSpeed; }

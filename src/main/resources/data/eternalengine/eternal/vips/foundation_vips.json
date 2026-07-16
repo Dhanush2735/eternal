@@ -1,0 +1,24 @@
+[
+  {
+    "vipId": "ashoka",
+    "name": "Ashoka Maurya",
+    "birthYear": -304,
+    "historicalDeathYear": -232,
+    "civilizationId": "maurya",
+    "roleType": "POLITICAL",
+    "spawnLat": 25.6,
+    "spawnLon": 85.1,
+    "authorityLevel": 8
+  },
+  {
+    "vipId": "caesar",
+    "name": "Julius Caesar",
+    "birthYear": -100,
+    "historicalDeathYear": -44,
+    "civilizationId": "rome",
+    "roleType": "MILITARY_POLITICAL",
+    "spawnLat": 41.9,
+    "spawnLon": 12.5,
+    "authorityLevel": 9
+  }
+]

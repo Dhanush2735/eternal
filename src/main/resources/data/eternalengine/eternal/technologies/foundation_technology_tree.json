@@ -1,0 +1,9 @@
+[
+  { "id": "agriculture", "name": "Agriculture", "era": "ANCIENT", "level": 1, "prerequisites": [] },
+  { "id": "writing", "name": "Writing", "era": "ANCIENT", "level": 2, "prerequisites": ["agriculture"] },
+  { "id": "steel", "name": "Steel Working", "era": "MEDIEVAL", "level": 3, "prerequisites": ["writing"] },
+  { "id": "printing_press", "name": "Printing Press", "era": "RENAISSANCE", "level": 4, "prerequisites": ["writing"] },
+  { "id": "steam_power", "name": "Steam Power", "era": "INDUSTRIAL", "level": 6, "prerequisites": ["steel"] },
+  { "id": "electricity", "name": "Electricity", "era": "INDUSTRIAL", "level": 7, "prerequisites": ["steam_power"] },
+  { "id": "computing", "name": "Computing", "era": "MODERN", "level": 9, "prerequisites": ["electricity"] }
+]

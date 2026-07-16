@@ -76,7 +76,7 @@ public class VersionManager {
             }
         });
         
-        // Future migrations would be added here:
+        // Register migrations here as data versions advance:
         // migrations.add(new Migration(1, 2, "Add new feature data") { ... });
     }
     

@@ -235,6 +235,10 @@ public class EternalEngineMod {
         }
         
         try {
+            // Bind TerraBridge to the active Terra++ chunk generator now that a server exists.
+            // The common setup phase can only verify classes; the real generator is world-bound.
+            TerraBridge.initialize(event.getServer());
+
             // Load world-specific state
             WorldStateManager.getInstance().loadWorldState(event.getServer());
             

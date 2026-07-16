@@ -54,17 +54,22 @@ public class EternalEngineCapabilities {
     }
     
     /**
-     * Register capability classes
+     * Mod-bus capability registration. Attach events below stay on the Forge bus.
      */
-    @SubscribeEvent
-    public static void registerCapabilities(RegisterCapabilitiesEvent event) {
-        event.register(IPlayerSimulationData.class);
-        event.register(IEntityCivilizationData.class);
-        event.register(IChunkEraData.class);
-        
-        LOGGER.info("[Capabilities] Registered 3 capability classes");
+    @Mod.EventBusSubscriber(modid = EternalEngineMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+    public static final class ModBusEvents {
+        private ModBusEvents() {}
+
+        @SubscribeEvent
+        public static void registerCapabilities(RegisterCapabilitiesEvent event) {
+            event.register(IPlayerSimulationData.class);
+            event.register(IEntityCivilizationData.class);
+            event.register(IChunkEraData.class);
+
+            LOGGER.info("[Capabilities] Registered 3 capability classes");
+        }
     }
-    
+
     /**
      * Attach capabilities to players
      */
@@ -114,8 +119,15 @@ public class EternalEngineCapabilities {
      * Get player simulation data
      */
     public static IPlayerSimulationData getPlayerData(Player player) {
+        if (player == null) {
+            LOGGER.warn("[Capabilities] getPlayerData called with null player");
+            return new PlayerSimulationCapability();
+        }
         return player.getCapability(PLAYER_SIMULATION)
-            .orElseThrow(() -> new IllegalStateException("Player missing simulation capability"));
+            .orElseGet(() -> {
+                LOGGER.warn("[Capabilities] Player {} missing simulation capability; returning transient fallback", player.getName().getString());
+                return new PlayerSimulationCapability();
+            });
     }
     
     /**

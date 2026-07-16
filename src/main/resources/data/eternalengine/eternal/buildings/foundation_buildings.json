@@ -1,0 +1,39 @@
+{
+  "regionId": "foundation",
+  "buildings": [
+    {
+      "buildingId": "colosseum_foundation",
+      "osmId": "",
+      "wikidataId": "Q10285",
+      "name": "Colosseum",
+      "latitude": 41.8902,
+      "longitude": 12.4922,
+      "constructionYear": 80,
+      "era": "ANCIENT",
+      "currentState": "STANDING",
+      "ownerCivId": "rome",
+      "purpose": "amphitheatre",
+      "damagePercent": 40,
+      "culturalSignificance": 100,
+      "destroyedYear": 2147483647,
+      "stateHistory": []
+    },
+    {
+      "buildingId": "sanchi_foundation",
+      "osmId": "",
+      "wikidataId": "Q205961",
+      "name": "Great Stupa at Sanchi",
+      "latitude": 23.4793,
+      "longitude": 77.7391,
+      "constructionYear": -250,
+      "era": "ANCIENT",
+      "currentState": "STANDING",
+      "ownerCivId": "maurya",
+      "purpose": "religious_site",
+      "damagePercent": 10,
+      "culturalSignificance": 95,
+      "destroyedYear": 2147483647,
+      "stateHistory": []
+    }
+  ]
+}

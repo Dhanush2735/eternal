@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "offlineFirst": true,
+  "allowOverpassFallback": false,
+  "allowWikidataFallback": false,
+  "terraPlusPlusRequired": true,
+  "localBrainOnly": true,
+  "ollamaDefaultEndpoint": "http://127.0.0.1:11434/api/generate",
+  "notes": [
+    "Server facts are authoritative.",
+    "LLM output must be treated as proposal only.",
+    "Terra++ is the only projection/elevation truth source."
+  ]
+}

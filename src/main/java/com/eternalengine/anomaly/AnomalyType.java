@@ -1,0 +1,19 @@
+package com.eternalengine.anomaly;
+
+/**
+ * Types of world anomalies detected from server-provided telemetry.
+ */
+public enum AnomalyType {
+    INVALID_TERRA_PROBE,
+    HEIGHT_JUMP,
+    SURFACE_BLOCK_MISMATCH,
+    WATER_LAND_CONFLICT,
+    WORLDCOVER_UNKNOWN,
+    FLOATING_STRUCTURE_RISK,
+    SUNKEN_STRUCTURE_RISK,
+    BUILDING_BEFORE_CONSTRUCTION,
+    BUILDING_AFTER_DESTRUCTION,
+    BUILDING_ERA_MISMATCH,
+    BUILDING_STATE_CONTRADICTION,
+    BUILDING_Y_MISMATCH_RISK
+}

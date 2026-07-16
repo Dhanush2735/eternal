@@ -1,0 +1,22 @@
+{
+  "rome": {
+    "firstNamesMale": ["Gaius", "Marcus", "Lucius"],
+    "firstNamesFemale": ["Julia", "Aurelia", "Cornelia"],
+    "surnames": ["Julius", "Cornelius", "Aurelius"],
+    "rolesTitles": {
+      "soldier": ["Legionary", "Centurion"],
+      "merchant": ["Trader", "Factor"],
+      "advisor": ["Senator", "Magistrate"]
+    }
+  },
+  "maurya": {
+    "firstNamesMale": ["Chandra", "Bindu", "Ashoka"],
+    "firstNamesFemale": ["Devi", "Kaurwaki", "Subhadrangi"],
+    "surnames": ["Maurya", "Gupta", "Sharma"],
+    "rolesTitles": {
+      "soldier": ["Senapati", "Guard"],
+      "merchant": ["Vanij", "Trader"],
+      "advisor": ["Mantri", "Scholar"]
+    }
+  }
+}

@@ -1,0 +1,70 @@
+[
+  {
+    "id": "black_death",
+    "name": "The Black Death reaches Europe",
+    "type": "DISEASE",
+    "severity": "CATASTROPHIC",
+    "year": 1347,
+    "month": 10,
+    "day": 1,
+    "latitude": 44.4056,
+    "longitude": 33.9938,
+    "regionId": "crimea_black_sea",
+    "conditions": [
+      {
+        "conditionId": "flag:black_death_prevented",
+        "required": true,
+        "operator": "NOT_EXISTS",
+        "threshold": 0
+      }
+    ],
+    "preconditionIds": [],
+    "alliedFactionIds": [],
+    "opposedFactionIds": [],
+    "durationYears": 5,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 50000000,
+    "economicImpactPercent": -35.0,
+    "outcomesIfHappens": ["disease:black_death", "population_decline:europe", "labor_shortage:europe"],
+    "nextChainEventIds": [],
+    "preventionConsequences": ["trade_disruption_reduced", "population_decline_avoided"],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 60,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": "alt_branches/black_death_prevented.json"
+  },
+  {
+    "id": "caesar_assassination",
+    "name": "Assassination of Julius Caesar",
+    "type": "ASSASSINATION",
+    "severity": "MAJOR",
+    "year": -44,
+    "month": 3,
+    "day": 15,
+    "latitude": 41.8955,
+    "longitude": 12.4823,
+    "regionId": "rome",
+    "conditions": [
+      {
+        "conditionId": "civ:rome",
+        "required": false,
+        "operator": "EXISTS",
+        "threshold": 0
+      }
+    ],
+    "preconditionIds": [],
+    "alliedFactionIds": ["rome"],
+    "opposedFactionIds": ["senate_conspirators"],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 1,
+    "economicImpactPercent": -5.0,
+    "outcomesIfHappens": ["roman_civil_war_pressure", "vip_death:caesar"],
+    "nextChainEventIds": [],
+    "preventionConsequences": ["roman_republic_branch", "caesar_survives"],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 20,
+    "vipSlotsActivated": ["caesar"],
+    "alternativeBranchesFile": "alt_branches/caesar_survives.json"
+  }
+]

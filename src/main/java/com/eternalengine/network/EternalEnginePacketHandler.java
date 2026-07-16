@@ -58,16 +58,16 @@ public class EternalEnginePacketHandler {
                         return packet;
                     } catch (Exception e) {
                         LOGGER.error("[EE Network] Failed to decode packet {}: {}", packetClass.getSimpleName(), e.getMessage());
-                        return null;
+                        try {
+                            return packetClass.getDeclaredConstructor().newInstance();
+                        } catch (Exception reflectionError) {
+                            throw new IllegalStateException("Unable to construct fallback packet " + packetClass.getSimpleName(), reflectionError);
+                        }
                     }
                 })
                 .consumerMainThread((packet, contextSupplier) -> {
                     net.minecraftforge.network.NetworkEvent.Context context = contextSupplier.get();
-
-                    if (packet != null) {
-                        packet.handle(context);
-                    }
-
+                    packet.handle(context);
                     context.setPacketHandled(true);
                 })
                 .add();
@@ -78,22 +78,27 @@ public class EternalEnginePacketHandler {
     }
 
     public static void sendToPlayer(BasePacket packet, ServerPlayer player) {
+        if (CHANNEL == null || packet == null || player == null) return;
         CHANNEL.send(PacketDistributor.PLAYER.with(() -> player), packet);
     }
 
     public static void sendToAll(BasePacket packet) {
+        if (CHANNEL == null || packet == null) return;
         CHANNEL.send(PacketDistributor.ALL.noArg(), packet);
     }
 
     public static void sendToDimension(BasePacket packet, ResourceKey<Level> dimension) {
+        if (CHANNEL == null || packet == null || dimension == null) return;
         CHANNEL.send(PacketDistributor.DIMENSION.with(() -> dimension), packet);
     }
 
     public static void sendToServer(BasePacket packet) {
+        if (CHANNEL == null || packet == null) return;
         CHANNEL.sendToServer(packet);
     }
 
     public static void sendToNear(BasePacket packet, double x, double y, double z, double radius, ResourceKey<Level> dimension) {
+        if (CHANNEL == null || packet == null || dimension == null) return;
         CHANNEL.send(
             PacketDistributor.NEAR.with(() -> new PacketDistributor.TargetPoint(x, y, z, radius, dimension)),
             packet

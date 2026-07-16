@@ -1,0 +1,28 @@
+[
+  {
+    "id": "rome",
+    "name": "Rome",
+    "laterName": "Roman Empire",
+    "nameChangeYear": -27,
+    "foundingYear": -753,
+    "capitalLat": 41.9028,
+    "capitalLon": 12.4964,
+    "population": 1000000,
+    "treasury": 50000,
+    "technologyLevel": 3,
+    "religionId": "roman_polytheism",
+    "governmentType": "republic"
+  },
+  {
+    "id": "maurya",
+    "name": "Maurya Empire",
+    "foundingYear": -322,
+    "capitalLat": 25.6,
+    "capitalLon": 85.1,
+    "population": 5000000,
+    "treasury": 75000,
+    "technologyLevel": 3,
+    "religionId": "buddhism",
+    "governmentType": "empire"
+  }
+]

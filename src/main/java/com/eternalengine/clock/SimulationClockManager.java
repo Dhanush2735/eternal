@@ -2,8 +2,10 @@ package com.eternalengine.clock;
 
 import com.eternalengine.EternalEngineMod;
 import com.eternalengine.config.EternalEngineConfig;
+import com.eternalengine.core.SimulationEngine;
 import com.eternalengine.core.WorldStateManager;
 import com.eternalengine.network.EternalEnginePacketHandler;
+import com.eternalengine.terrabridge.TerraTimeBridge;
 import com.eternalengine.network.packets.SimulationStatePacket;
 import com.eternalengine.network.packets.SpeedChangePacket;
 import net.minecraft.server.level.ServerPlayer;
@@ -118,10 +120,10 @@ public class SimulationClockManager {
      * Start the clock
      */
     public void start() {
-        // Load state from world state manager
+        // Terra++ historical time is the source of truth when available.
         WorldStateManager wsm = WorldStateManager.getInstance();
-        currentYear.set(wsm.getCurrentYear());
-        baseSpeed.set(wsm.getSimulationSpeed());
+        currentYear.set(TerraTimeBridge.getCurrentYear(wsm.getCurrentYear()));
+        baseSpeed.set(TerraTimeBridge.getTimeScale(wsm.getSimulationSpeed()));
         
         running.set(true);
         paused.set(false);
@@ -175,15 +177,25 @@ public class SimulationClockManager {
             broadcastSpeedChange("Override expired");
         }
         
-        // Increment tick counter
+        if (TerraTimeBridge.isAvailable()) {
+            int terraYear = TerraTimeBridge.getCurrentYear(currentYear.get());
+            if (terraYear != currentYear.get()) {
+                currentYear.set(terraYear);
+                WorldStateManager.getInstance().setCurrentYear(terraYear);
+                checkSlowdownExpiration();
+            }
+            int terraScale = TerraTimeBridge.getTimeScale(baseSpeed.get());
+            if (terraScale != baseSpeed.get()) {
+                baseSpeed.set(terraScale);
+                WorldStateManager.getInstance().setSimulationSpeed(terraScale);
+                calculateEffectiveSpeed();
+            }
+            return;
+        }
+
+        // Fallback mode only if Terra++ time is unavailable.
         ticksInCurrentYear.incrementAndGet();
-        
-        // Calculate ticks per year at current speed
-        // At 1x: 1 year per MC day = 24000 ticks/year
-        // At 10x: 10 years per MC day = 2400 ticks/year
-        int ticksPerYear = TICKS_PER_DAY / effectiveSpeed.get();
-        
-        // Check if year should advance
+        int ticksPerYear = TICKS_PER_DAY / Math.max(1, effectiveSpeed.get());
         if (ticksInCurrentYear.get() >= ticksPerYear) {
             advanceYear();
             ticksInCurrentYear.set(0);
@@ -199,7 +211,7 @@ public class SimulationClockManager {
         // Update world state
         WorldStateManager.getInstance().setCurrentYear(newYear);
         
-        // Fire year advance event (would be implemented as custom event)
+        // Custom Forge year-advance event integration is handled in a later event phase.
         LOGGER.debug("[Clock] Advanced to year {}", newYear);
         
         // Check for expired slowdowns
@@ -215,8 +227,11 @@ public class SimulationClockManager {
             return;
         }
         
-        baseSpeed.set(speed);
-        WorldStateManager.getInstance().setSimulationSpeed(speed);
+        int actualSpeed = TerraTimeBridge.isAvailable()
+            ? TerraTimeBridge.setTimeScale(speed, speed)
+            : speed;
+        baseSpeed.set(actualSpeed);
+        WorldStateManager.getInstance().setSimulationSpeed(actualSpeed);
         calculateEffectiveSpeed();
         broadcastSpeedChange("Admin set base speed");
     }
@@ -269,9 +284,8 @@ public class SimulationClockManager {
         
         speedVotes.put(player.getUUID(), votedSpeed);
         
-        // Check if majority reached
-        // This would need access to all VIP players
-        // For now, just store the vote
+        // Majority vote resolution is handled by the VIP/player authority layer.
+        // Foundation behavior stores the vote for later resolution.
     }
     
     /**
@@ -389,16 +403,29 @@ public class SimulationClockManager {
     // Getters
     
     public int getCurrentYear() {
-        return currentYear.get();
+        int year = TerraTimeBridge.getCurrentYear(currentYear.get());
+        if (year != currentYear.get()) {
+            currentYear.set(year);
+            WorldStateManager.getInstance().setCurrentYear(year);
+        }
+        return year;
     }
     
     public void setCurrentYear(int year) {
-        currentYear.set(year);
-        WorldStateManager.getInstance().setCurrentYear(year);
+        boolean jumped = SimulationEngine.isInitialized()
+            && TerraTimeBridge.jumpToYear(SimulationEngine.getInstance().getServer(), year);
+        int actualYear = jumped ? TerraTimeBridge.getCurrentYear(year) : year;
+        currentYear.set(actualYear);
+        WorldStateManager.getInstance().setCurrentYear(actualYear);
     }
     
     public int getBaseSpeed() {
-        return baseSpeed.get();
+        int speed = TerraTimeBridge.getTimeScale(baseSpeed.get());
+        if (speed != baseSpeed.get()) {
+            baseSpeed.set(speed);
+            WorldStateManager.getInstance().setSimulationSpeed(speed);
+        }
+        return speed;
     }
     
     public int getEffectiveSpeed() {

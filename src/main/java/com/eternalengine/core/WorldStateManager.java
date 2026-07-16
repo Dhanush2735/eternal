@@ -108,6 +108,10 @@ public class WorldStateManager {
         LOGGER.info("[WorldStateManager] Initialized");
     }
     
+    public static boolean isInitialized() {
+        return initialized;
+    }
+
     /**
      * Get the singleton instance
      */
@@ -135,14 +139,19 @@ public class WorldStateManager {
             return;
         }
         
-        // Load main state file
+        // Load main state file through PersistenceManager so FileLock, validation,
+        // backup recovery, and corruption handling are applied consistently.
         Path stateFile = worldDataPath.resolve("state.json");
         if (java.nio.file.Files.exists(stateFile)) {
             try {
-                String content = java.nio.file.Files.readString(stateFile);
-                JsonObject state = gson.fromJson(content, JsonObject.class);
-                loadFromJson(state);
-                LOGGER.info("[WorldStateManager] Loaded existing state");
+                JsonObject state = PersistenceManager.getInstance().loadJson(stateFile);
+                if (state != null) {
+                    loadFromJson(state);
+                    LOGGER.info("[WorldStateManager] Loaded existing state");
+                } else {
+                    LOGGER.warn("[WorldStateManager] State file unavailable/corrupt, using defaults");
+                    loadDefaults();
+                }
             } catch (Exception e) {
                 LOGGER.error("[WorldStateManager] Failed to load state, using defaults!", e);
                 loadDefaults();
@@ -173,8 +182,7 @@ public class WorldStateManager {
             saveVersion.set(state.get("saveVersion").getAsInt());
         }
         
-        // Load complex state would be done here
-        // Each subsystem loads its own state files
+        // Complex subsystem state is loaded by each subsystem from its own state files.
     }
     
     /**
@@ -254,6 +262,32 @@ public class WorldStateManager {
         dirty.set(true);
     }
     
+    // ============ Simulation flags ============
+
+    public boolean hasFlag(String key) {
+        return key != null && simulationFlags.containsKey(key);
+    }
+
+    public String getFlag(String key) {
+        return key == null ? null : simulationFlags.get(key);
+    }
+
+    public void setFlag(String key, String value) {
+        if (key == null || key.isBlank()) {
+            return;
+        }
+        simulationFlags.put(key, value == null ? "" : value);
+        markDirty();
+    }
+
+    public void removeFlag(String key) {
+        if (key == null) {
+            return;
+        }
+        simulationFlags.remove(key);
+        markDirty();
+    }
+
     // ============ Year/Speed accessors ============
     
     public int getCurrentYear() {
@@ -382,6 +416,28 @@ public class WorldStateManager {
         markDirty();
     }
     
+    // ============ Treasury ============
+
+    public long getTreasury(String civId) {
+        CivilizationState civ = civilizations.get(civId);
+        return civ == null ? 0L : civ.treasury;
+    }
+
+    public void setTreasury(String civId, long amount) {
+        if (civId == null || civId.isBlank()) {
+            return;
+        }
+        CivilizationState civ = civilizations.computeIfAbsent(civId, id -> {
+            CivilizationState created = new CivilizationState();
+            created.id = id;
+            created.name = id;
+            created.active = true;
+            return created;
+        });
+        civ.treasury = amount;
+        markDirty();
+    }
+
     // ============ Trade Routes ============
     
     @Nullable
@@ -397,6 +453,10 @@ public class WorldStateManager {
     public void removeTradeRoute(String routeId) {
         tradeRoutes.remove(routeId);
         markDirty();
+    }
+
+    public Map<String, TradeRouteState> getAllTradeRoutes() {
+        return new ConcurrentHashMap<>(tradeRoutes);
     }
     
     // ============ Timeline ============

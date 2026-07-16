@@ -89,6 +89,9 @@ public class SimulationTickScheduler {
         
         // Population - less frequent, heavier computation
         addSchedule("population", EternalEngineConfig.SERVER.populationUpdateInterval.get(), 17);
+
+        // Agriculture/famine uses the same cadence as population by default.
+        addSchedule("agriculture", EternalEngineConfig.SERVER.populationUpdateInterval.get(), 19);
         
         // Reputation decay
         addSchedule("reputation", EternalEngineConfig.SERVER.reputationDecayInterval.get(), 23);

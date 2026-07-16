@@ -1,0 +1,30 @@
+[
+  {
+    "id": "little_ice_age",
+    "name": "Little Ice Age",
+    "type": "COOLING",
+    "startYear": 1300,
+    "endYear": 1850,
+    "severity": 6,
+    "radiusKm": 0,
+    "centerLat": 50.0,
+    "centerLon": 0.0,
+    "tempChangeDegrees": -0.6,
+    "precipChangePercent": 0.0,
+    "yieldImpactPercent": -8.0
+  },
+  {
+    "id": "year_without_summer",
+    "name": "Year Without a Summer",
+    "type": "VOLCANIC",
+    "startYear": 1816,
+    "endYear": 1816,
+    "severity": 8,
+    "radiusKm": 0,
+    "centerLat": 0.0,
+    "centerLon": 0.0,
+    "tempChangeDegrees": -2.0,
+    "precipChangePercent": 10.0,
+    "yieldImpactPercent": -25.0
+  }
+]
