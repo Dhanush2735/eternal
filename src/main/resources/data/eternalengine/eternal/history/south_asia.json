@@ -1,0 +1,1804 @@
+{
+  "id": "south_asia",
+  "title": "South Asia after Indus (Maurya–modern cores)",
+  "comparedSources": [
+    "Maurya ~322–185 BCE Pataliputra; Ashoka edicts / Sanchi",
+    "Gupta ~319–543 CE",
+    "Delhi Sultanate Qutb complex early 13th c.; Mughal Agra Fort 1565–73; Taj Mahal 1632–53",
+    "Vijayanagara / Hampi; Chola Thanjavur",
+    "Golconda: Kakatiya mud fort 12th–13th c., Qutb Shahi capital 1518–1687 (17.383, 78.401). Hyderabad founded 1591 by Muhammad Quli Qutb Shah (Charminar).",
+    "Named South Asia places layer: Wikipedia coordinates (Nagpur: OSM). Occupancy years are textbook consensus (capitals, colonial foundations). Not a census of every town. Empty land still nobody.",
+    "Secunderabad: Ulwul renamed ~1803 after Sikandar Jah (Asaf Jah III); British cantonment 1806 (Subsidiary Alliance 1798). Twin city north of Hussain Sagar; not Hyderabad 1591."
+  ],
+  "rejected": [
+    "hist_rashtrakuta/mughal templates",
+    "Indus = Vedic",
+    "1947 as Mughal"
+  ],
+  "phases": [
+    {
+      "id": "maurya",
+      "start": -322,
+      "end": -185,
+      "name": "Maurya"
+    },
+    {
+      "id": "satavahana",
+      "start": -230,
+      "end": 220,
+      "name": "Satavahana"
+    },
+    {
+      "id": "gupta",
+      "start": 319,
+      "end": 543,
+      "name": "Gupta"
+    },
+    {
+      "id": "delhi_sultanate",
+      "start": 1206,
+      "end": 1526,
+      "name": "Delhi Sultanate"
+    },
+    {
+      "id": "vijayanagara",
+      "start": 1336,
+      "end": 1565,
+      "name": "Vijayanagara"
+    },
+    {
+      "id": "mughal",
+      "start": 1526,
+      "end": 1857,
+      "name": "Mughal"
+    },
+    {
+      "id": "maratha",
+      "start": 1674,
+      "end": 1818,
+      "name": "Maratha"
+    },
+    {
+      "id": "colonial_republic",
+      "start": 1858,
+      "end": 9999,
+      "name": "Colonial then Republic of India (and successor states)"
+    },
+    {
+      "id": "kakatiya",
+      "start": 1163,
+      "end": 1323,
+      "name": "Kakatiya"
+    },
+    {
+      "id": "qutb_shahi",
+      "start": 1518,
+      "end": 1687,
+      "name": "Qutb Shahi / Golconda"
+    },
+    {
+      "id": "nizam_hyderabad",
+      "start": 1724,
+      "end": 1948,
+      "name": "Asaf Jahi Hyderabad State"
+    },
+    {
+      "id": "bahmani",
+      "start": 1347,
+      "end": 1527,
+      "name": "Bahmani"
+    },
+    {
+      "id": "adil_shahi",
+      "start": 1490,
+      "end": 1686,
+      "name": "Adil Shahi Bijapur"
+    },
+    {
+      "id": "nizam_shahi",
+      "start": 1490,
+      "end": 1636,
+      "name": "Nizam Shahi Ahmadnagar"
+    },
+    {
+      "id": "chalukya_badami",
+      "start": 543,
+      "end": 757,
+      "name": "Early Chalukya (Badami)"
+    },
+    {
+      "id": "hoysala",
+      "start": 1026,
+      "end": 1343,
+      "name": "Hoysala"
+    },
+    {
+      "id": "british_india",
+      "start": 1757,
+      "end": 1947,
+      "name": "Company then Crown in India"
+    }
+  ],
+  "sites": [
+    {
+      "id": "pataliputra",
+      "lat": 25.611,
+      "lon": 85.141,
+      "occupiedStart": -500,
+      "occupiedEnd": 9999,
+      "civHint": "maurya",
+      "confidence": "high",
+      "note": "OccupiedEnd extended: the named place is still a city; civHint is the historically distinctive polity, not the present government."
+    },
+    {
+      "id": "sanchi",
+      "lat": 23.479,
+      "lon": 77.74,
+      "occupiedStart": -300,
+      "occupiedEnd": 1200,
+      "civHint": "maurya",
+      "confidence": "high"
+    },
+    {
+      "id": "taxila",
+      "lat": 33.746,
+      "lon": 72.83,
+      "occupiedStart": -600,
+      "occupiedEnd": 500,
+      "civHint": "maurya",
+      "confidence": "high"
+    },
+    {
+      "id": "amaravati",
+      "lat": 16.574,
+      "lon": 80.358,
+      "occupiedStart": -230,
+      "occupiedEnd": 300,
+      "civHint": "satavahana",
+      "confidence": "medium"
+    },
+    {
+      "id": "thanjavur",
+      "lat": 10.787,
+      "lon": 79.138,
+      "occupiedStart": 848,
+      "occupiedEnd": 9999,
+      "civHint": "chola",
+      "confidence": "high",
+      "note": "OccupiedEnd extended: the named place is still a city; civHint is the historically distinctive polity, not the present government."
+    },
+    {
+      "id": "ellora_rashtrakuta",
+      "lat": 20.027,
+      "lon": 75.179,
+      "occupiedStart": 753,
+      "occupiedEnd": 982,
+      "civHint": "rashtrakuta",
+      "confidence": "high"
+    },
+    {
+      "id": "qutb_delhi",
+      "lat": 28.524,
+      "lon": 77.185,
+      "occupiedStart": 1192,
+      "occupiedEnd": 1526,
+      "civHint": "delhi_sultanate",
+      "confidence": "high"
+    },
+    {
+      "id": "hampi",
+      "lat": 15.335,
+      "lon": 76.46,
+      "occupiedStart": 1336,
+      "occupiedEnd": 1565,
+      "civHint": "vijayanagara",
+      "confidence": "high"
+    },
+    {
+      "id": "agra_fort",
+      "lat": 27.18,
+      "lon": 78.021,
+      "occupiedStart": 1565,
+      "occupiedEnd": 9999,
+      "civHint": "mughal",
+      "confidence": "high",
+      "note": "OccupiedEnd extended: the named place is still a city; civHint is the historically distinctive polity, not the present government."
+    },
+    {
+      "id": "taj_mahal",
+      "lat": 27.175,
+      "lon": 78.042,
+      "occupiedStart": 1632,
+      "occupiedEnd": 1857,
+      "civHint": "mughal",
+      "confidence": "high"
+    },
+    {
+      "id": "raigad",
+      "lat": 18.234,
+      "lon": 73.445,
+      "occupiedStart": 1674,
+      "occupiedEnd": 1818,
+      "civHint": "maratha",
+      "confidence": "medium"
+    },
+    {
+      "id": "lahore_fort",
+      "lat": 31.588,
+      "lon": 74.315,
+      "occupiedStart": 1566,
+      "occupiedEnd": 9999,
+      "civHint": "mughal",
+      "confidence": "high",
+      "note": "OccupiedEnd extended: the named place is still a city; civHint is the historically distinctive polity, not the present government."
+    },
+    {
+      "id": "ujjain",
+      "lat": 23.179,
+      "lon": 75.785,
+      "occupiedStart": -600,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "maurya",
+      "confidence": "high",
+      "note": "OccupiedEnd extended: the named place is still a city; civHint is the historically distinctive polity, not the present government."
+    },
+    {
+      "id": "mathura",
+      "lat": 27.492,
+      "lon": 77.673,
+      "occupiedStart": -400,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "kushan",
+      "confidence": "high",
+      "note": "OccupiedEnd extended: the named place is still a city; civHint is the historically distinctive polity, not the present government."
+    },
+    {
+      "id": "varanasi",
+      "lat": 25.317,
+      "lon": 83.01,
+      "occupiedStart": -800,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "gupta",
+      "confidence": "medium"
+    },
+    {
+      "id": "nalanda",
+      "lat": 25.136,
+      "lon": 85.444,
+      "occupiedStart": 400,
+      "occupiedEnd": 1200,
+      "rank": "town",
+      "civHint": "pala",
+      "confidence": "high"
+    },
+    {
+      "id": "kanchipuram",
+      "lat": 12.834,
+      "lon": 79.704,
+      "occupiedStart": 300,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "chola",
+      "confidence": "medium",
+      "note": "OccupiedEnd extended: the named place is still a city; civHint is the historically distinctive polity, not the present government."
+    },
+    {
+      "id": "madurai",
+      "lat": 9.925,
+      "lon": 78.12,
+      "occupiedStart": -300,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "chola",
+      "confidence": "medium",
+      "note": "OccupiedEnd extended: the named place is still a city; civHint is the historically distinctive polity, not the present government."
+    },
+    {
+      "id": "warangal",
+      "lat": 17.968,
+      "lon": 79.594,
+      "occupiedStart": 1163,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "kakatiya",
+      "confidence": "medium",
+      "note": "Kakatiya not a foundation civ id; civHint approximate. OccupiedEnd extended: the named place is still a city; civHint is the historically distinctive polity, not the present government."
+    },
+    {
+      "id": "ajanta",
+      "lat": 20.552,
+      "lon": 75.703,
+      "occupiedStart": -200,
+      "occupiedEnd": 650,
+      "rank": "village",
+      "civHint": "satavahana",
+      "confidence": "medium"
+    },
+    {
+      "id": "golconda",
+      "lat": 17.383,
+      "lon": 78.401,
+      "occupiedStart": 1200,
+      "occupiedEnd": 1687,
+      "urbanStart": 1518,
+      "urbanEnd": 1687,
+      "civHint": "qutb_shahi",
+      "confidence": "high",
+      "note": "Kakatiya hill fort from ~12th/13th c.; Qutb Shahi capital 1518–1687. Then Mughal capture; not a Nizam capital."
+    },
+    {
+      "id": "hyderabad",
+      "lat": 17.3616,
+      "lon": 78.4747,
+      "occupiedStart": 1591,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "qutb_shahi",
+      "confidence": "high",
+      "note": "Founded 1591 (Charminar). Qutb Shahi, then Mughal 1687, Asaf Jahi Nizams 1724–1948, India 1948–. One point for the city; civHint is the founding dynasty."
+    },
+    {
+      "id": "qutb_shahi_tombs",
+      "lat": 17.395,
+      "lon": 78.395,
+      "occupiedStart": 1543,
+      "occupiedEnd": 1687,
+      "rank": "town",
+      "civHint": "qutb_shahi",
+      "confidence": "high",
+      "note": "Royal necropolis west of Golconda."
+    },
+    {
+      "id": "rajgir",
+      "lat": 25.03,
+      "lon": 85.42,
+      "occupiedStart": -600,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "magadha",
+      "confidence": "high",
+      "note": "Rajagriha, Magadha capital before Pataliputra. Town continues."
+    },
+    {
+      "id": "vaishali",
+      "lat": 26.014,
+      "lon": 85.109,
+      "occupiedStart": -600,
+      "occupiedEnd": 500,
+      "rank": "town",
+      "civHint": "vajji",
+      "confidence": "medium",
+      "note": "Licchavi/Vajji centre. Later village; not treated as a modern city point."
+    },
+    {
+      "id": "kaushambi",
+      "lat": 25.339,
+      "lon": 81.393,
+      "occupiedStart": -600,
+      "occupiedEnd": 400,
+      "rank": "city",
+      "civHint": "vatsa",
+      "confidence": "medium",
+      "note": "Vatsa capital. Archaeological mound near Allahabad."
+    },
+    {
+      "id": "sravasti",
+      "lat": 27.517,
+      "lon": 82.051,
+      "occupiedStart": -600,
+      "occupiedEnd": 400,
+      "rank": "town",
+      "civHint": "kosala",
+      "confidence": "medium"
+    },
+    {
+      "id": "bodh_gaya",
+      "lat": 24.695,
+      "lon": 84.993,
+      "occupiedStart": -500,
+      "occupiedEnd": 9999,
+      "rank": "town",
+      "civHint": "magadha",
+      "confidence": "high",
+      "note": "Pilgrimage town from the Buddha period; Mahabodhi temple on the same point."
+    },
+    {
+      "id": "sarnath",
+      "lat": 25.378,
+      "lon": 83.025,
+      "occupiedStart": -500,
+      "occupiedEnd": 9999,
+      "rank": "town",
+      "civHint": "gupta",
+      "confidence": "high"
+    },
+    {
+      "id": "kannauj",
+      "lat": 27.07,
+      "lon": 79.92,
+      "occupiedStart": -400,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "harsha",
+      "confidence": "high",
+      "note": "Kanyakubja. Maukhari / Harsha / Gurjara-Pratihara capital. Town continues."
+    },
+    {
+      "id": "vidisha",
+      "lat": 23.53,
+      "lon": 77.82,
+      "occupiedStart": -300,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "maurya",
+      "confidence": "medium"
+    },
+    {
+      "id": "paithan",
+      "lat": 19.48,
+      "lon": 75.38,
+      "occupiedStart": -230,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "satavahana",
+      "confidence": "high",
+      "note": "Pratishthana, Satavahana capital. Town continues."
+    },
+    {
+      "id": "bharuch",
+      "lat": 21.712,
+      "lon": 72.993,
+      "occupiedStart": -300,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "maurya",
+      "confidence": "high",
+      "note": "Bharukaccha / Barygaza, long-distance port."
+    },
+    {
+      "id": "sisupalgarh",
+      "lat": 20.227,
+      "lon": 85.853,
+      "occupiedStart": -500,
+      "occupiedEnd": 400,
+      "rank": "city",
+      "civHint": "kalinga",
+      "confidence": "high",
+      "note": "Fortified early historic city next to later Bhubaneswar. Abandoned as a city."
+    },
+    {
+      "id": "nagarjunakonda",
+      "lat": 16.522,
+      "lon": 79.243,
+      "occupiedStart": 200,
+      "occupiedEnd": 400,
+      "rank": "town",
+      "civHint": "ikshvaku",
+      "confidence": "high"
+    },
+    {
+      "id": "chandraketugarh",
+      "lat": 22.698,
+      "lon": 88.688,
+      "occupiedStart": -300,
+      "occupiedEnd": 400,
+      "rank": "town",
+      "civHint": "gupta",
+      "confidence": "medium"
+    },
+    {
+      "id": "mahasthangarh",
+      "lat": 24.961,
+      "lon": 89.343,
+      "occupiedStart": -300,
+      "occupiedEnd": 1200,
+      "rank": "city",
+      "civHint": "pala",
+      "confidence": "high",
+      "note": "Pundranagara, northern Bengal."
+    },
+    {
+      "id": "peshawar",
+      "lat": 34.014,
+      "lon": 71.568,
+      "occupiedStart": -100,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "kushan",
+      "confidence": "high",
+      "note": "Purushapura, Kushan capital. City continues (Pakistan)."
+    },
+    {
+      "id": "pushkalavati",
+      "lat": 34.168,
+      "lon": 71.736,
+      "occupiedStart": -500,
+      "occupiedEnd": 400,
+      "rank": "city",
+      "civHint": "kushan",
+      "confidence": "medium",
+      "note": "Charsadda mounds. Not modern Peshawar."
+    },
+    {
+      "id": "anuradhapura",
+      "lat": 8.335,
+      "lon": 80.411,
+      "occupiedStart": -377,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "anuradhapura",
+      "confidence": "high",
+      "note": "Sinhala capital ~-377–1017; modern town on the same oasis."
+    },
+    {
+      "id": "polonnaruwa",
+      "lat": 7.933,
+      "lon": 81.0,
+      "occupiedStart": 1070,
+      "occupiedEnd": 1300,
+      "rank": "city",
+      "civHint": "polonnaruwa",
+      "confidence": "high"
+    },
+    {
+      "id": "sigiriya",
+      "lat": 7.957,
+      "lon": 80.76,
+      "occupiedStart": 477,
+      "occupiedEnd": 495,
+      "rank": "town",
+      "civHint": "anuradhapura",
+      "confidence": "high",
+      "note": "Kashyapa short-lived rock capital."
+    },
+    {
+      "id": "badami",
+      "lat": 15.92,
+      "lon": 75.68,
+      "occupiedStart": 543,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "chalukya_badami",
+      "confidence": "high",
+      "note": "Vatapi, Early Chalukya capital 6th–8th c. Town continues."
+    },
+    {
+      "id": "aihole",
+      "lat": 16.019,
+      "lon": 75.882,
+      "occupiedStart": 500,
+      "occupiedEnd": 800,
+      "rank": "village",
+      "civHint": "chalukya_badami",
+      "confidence": "high"
+    },
+    {
+      "id": "pattadakal",
+      "lat": 15.951,
+      "lon": 75.815,
+      "occupiedStart": 650,
+      "occupiedEnd": 800,
+      "rank": "village",
+      "civHint": "chalukya_badami",
+      "confidence": "high"
+    },
+    {
+      "id": "malkhed",
+      "lat": 17.195,
+      "lon": 77.161,
+      "occupiedStart": 818,
+      "occupiedEnd": 982,
+      "rank": "city",
+      "civHint": "rashtrakuta",
+      "confidence": "high",
+      "note": "Manyakheta, Rashtrakuta capital under Amoghavarsha."
+    },
+    {
+      "id": "basavakalyan",
+      "lat": 17.873,
+      "lon": 76.95,
+      "occupiedStart": 973,
+      "occupiedEnd": 1189,
+      "rank": "city",
+      "civHint": "chalukya_western",
+      "confidence": "high",
+      "note": "Kalyani, Western Chalukya capital."
+    },
+    {
+      "id": "halebidu",
+      "lat": 13.216,
+      "lon": 75.991,
+      "occupiedStart": 1050,
+      "occupiedEnd": 1343,
+      "rank": "city",
+      "civHint": "hoysala",
+      "confidence": "high",
+      "note": "Dwarasamudra, Hoysala capital."
+    },
+    {
+      "id": "belur_hoysala",
+      "lat": 13.163,
+      "lon": 75.857,
+      "occupiedStart": 1117,
+      "occupiedEnd": 1343,
+      "rank": "town",
+      "civHint": "hoysala",
+      "confidence": "high"
+    },
+    {
+      "id": "mahabalipuram",
+      "lat": 12.62,
+      "lon": 80.194,
+      "occupiedStart": 630,
+      "occupiedEnd": 9999,
+      "rank": "town",
+      "civHint": "pallava",
+      "confidence": "high"
+    },
+    {
+      "id": "gangaikonda_cholapuram",
+      "lat": 11.206,
+      "lon": 79.448,
+      "occupiedStart": 1025,
+      "occupiedEnd": 1279,
+      "rank": "city",
+      "civHint": "chola",
+      "confidence": "high"
+    },
+    {
+      "id": "trichy",
+      "lat": 10.79,
+      "lon": 78.705,
+      "occupiedStart": -300,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "chola",
+      "confidence": "medium",
+      "note": "Uraiyur / Tiruchirappalli. Early Chola centre; city continues."
+    },
+    {
+      "id": "daulatabad",
+      "lat": 19.943,
+      "lon": 75.213,
+      "occupiedStart": 1187,
+      "occupiedEnd": 1700,
+      "rank": "city",
+      "civHint": "yadava",
+      "confidence": "high",
+      "note": "Devagiri. Yadava capital, briefly Tughluq capital 1327, later Bahmani/Nizam Shahi/Mughal fort-city."
+    },
+    {
+      "id": "kalaburagi",
+      "lat": 17.329,
+      "lon": 76.825,
+      "occupiedStart": 1347,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "bahmani",
+      "confidence": "high",
+      "note": "Gulbarga / Ahsanabad, first Bahmani capital 1347–1429. City continues."
+    },
+    {
+      "id": "bidar",
+      "lat": 17.912,
+      "lon": 77.52,
+      "occupiedStart": 1429,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "bahmani",
+      "confidence": "high",
+      "note": "Bahmani capital from 1429; later Barid Shahi. City continues."
+    },
+    {
+      "id": "bijapur",
+      "lat": 16.83,
+      "lon": 75.71,
+      "occupiedStart": 1490,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "adil_shahi",
+      "confidence": "high",
+      "note": "Adil Shahi capital 1490–1686 (Gol Gumbaz on the same city). City continues."
+    },
+    {
+      "id": "ahmadnagar",
+      "lat": 19.08,
+      "lon": 74.73,
+      "occupiedStart": 1494,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "nizam_shahi",
+      "confidence": "high",
+      "note": "Nizam Shahi capital (city laid out 1494). City continues."
+    },
+    {
+      "id": "junnar",
+      "lat": 19.207,
+      "lon": 73.874,
+      "occupiedStart": 1490,
+      "occupiedEnd": 1636,
+      "rank": "town",
+      "civHint": "nizam_shahi",
+      "confidence": "medium",
+      "note": "First Nizam Shahi seat before Ahmadnagar."
+    },
+    {
+      "id": "achalpur",
+      "lat": 21.257,
+      "lon": 77.509,
+      "occupiedStart": 1490,
+      "occupiedEnd": 1574,
+      "rank": "town",
+      "civHint": "imad_shahi",
+      "confidence": "medium",
+      "note": "Ellichpur, Imad Shahi / Berar capital until annexation by Ahmadnagar."
+    },
+    {
+      "id": "aurangabad",
+      "lat": 19.88,
+      "lon": 75.32,
+      "occupiedStart": 1610,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "nizam_shahi",
+      "confidence": "high",
+      "note": "Khirki / Fatehnagar, founded Malik Ambar 1610; later Aurangzeb Aurangabad."
+    },
+    {
+      "id": "penukonda",
+      "lat": 14.085,
+      "lon": 77.596,
+      "occupiedStart": 1565,
+      "occupiedEnd": 1646,
+      "rank": "town",
+      "civHint": "vijayanagara",
+      "confidence": "high",
+      "note": "Vijayanagara court after Talikota."
+    },
+    {
+      "id": "chandragiri",
+      "lat": 13.583,
+      "lon": 79.317,
+      "occupiedStart": 1565,
+      "occupiedEnd": 1646,
+      "rank": "town",
+      "civHint": "vijayanagara",
+      "confidence": "medium"
+    },
+    {
+      "id": "srirangapatna",
+      "lat": 12.414,
+      "lon": 76.704,
+      "occupiedStart": 1610,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "mysore",
+      "confidence": "high",
+      "note": "Wodeyar / Tipu capital until 1799. Island town continues."
+    },
+    {
+      "id": "mysore",
+      "lat": 12.309,
+      "lon": 76.653,
+      "occupiedStart": 1399,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "mysore",
+      "confidence": "medium",
+      "note": "Wodeyar seat. City continues."
+    },
+    {
+      "id": "bengaluru",
+      "lat": 12.979,
+      "lon": 77.592,
+      "occupiedStart": 1537,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "vijayanagara",
+      "confidence": "high",
+      "note": "Kempe Gowda mud fort 1537. City continues."
+    },
+    {
+      "id": "tughlaqabad",
+      "lat": 28.512,
+      "lon": 77.261,
+      "occupiedStart": 1321,
+      "occupiedEnd": 1400,
+      "rank": "city",
+      "civHint": "delhi_sultanate",
+      "confidence": "high",
+      "note": "Tughluq capital-fort. Soon abandoned as the main city."
+    },
+    {
+      "id": "shahjahanabad",
+      "lat": 28.656,
+      "lon": 77.241,
+      "occupiedStart": 1639,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "mughal",
+      "confidence": "high",
+      "note": "Red Fort / Old Delhi, founded Shah Jahan 1639. Still a city."
+    },
+    {
+      "id": "new_delhi",
+      "lat": 28.614,
+      "lon": 77.209,
+      "occupiedStart": 1911,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "india",
+      "confidence": "high",
+      "note": "British announced capital 1911; inaugurated 1931. Republic capital."
+    },
+    {
+      "id": "fatehpur_sikri",
+      "lat": 27.091,
+      "lon": 77.661,
+      "occupiedStart": 1571,
+      "occupiedEnd": 1586,
+      "rank": "city",
+      "civHint": "mughal",
+      "confidence": "high",
+      "note": "Akbar capital ~1571–1585. Not a modern metro."
+    },
+    {
+      "id": "agra",
+      "lat": 27.18,
+      "lon": 78.02,
+      "occupiedStart": 1504,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "mughal",
+      "confidence": "high",
+      "note": "Sikandar Lodi then Mughal capital. Same cluster as Agra Fort / Taj."
+    },
+    {
+      "id": "lahore",
+      "lat": 31.55,
+      "lon": 74.344,
+      "occupiedStart": 1000,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "mughal",
+      "confidence": "medium",
+      "note": "Long-occupied city; Mughal/Sikh/colonial. civHint is the best-known court, not every ruler."
+    },
+    {
+      "id": "multan",
+      "lat": 30.198,
+      "lon": 71.47,
+      "occupiedStart": -300,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "mughal",
+      "confidence": "medium"
+    },
+    {
+      "id": "ahmedabad",
+      "lat": 23.023,
+      "lon": 72.571,
+      "occupiedStart": 1411,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "gujarat_sultanate",
+      "confidence": "high",
+      "note": "Ahmad Shah I, 1411. City continues."
+    },
+    {
+      "id": "patan_gujarat",
+      "lat": 23.85,
+      "lon": 72.125,
+      "occupiedStart": 746,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "chaulukya",
+      "confidence": "high",
+      "note": "Anhilwara, Chaulukya/Solanki capital."
+    },
+    {
+      "id": "jaipur",
+      "lat": 26.915,
+      "lon": 75.82,
+      "occupiedStart": 1727,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "amber",
+      "confidence": "high",
+      "note": "Sawai Jai Singh II, 18 Nov 1727."
+    },
+    {
+      "id": "amber",
+      "lat": 26.986,
+      "lon": 75.851,
+      "occupiedStart": 1037,
+      "occupiedEnd": 1727,
+      "rank": "town",
+      "civHint": "amber",
+      "confidence": "medium",
+      "note": "Kachwaha capital before Jaipur. Fort-town."
+    },
+    {
+      "id": "chittorgarh",
+      "lat": 24.88,
+      "lon": 74.63,
+      "occupiedStart": 700,
+      "occupiedEnd": 1568,
+      "rank": "city",
+      "civHint": "mewar",
+      "confidence": "medium",
+      "note": "Mewar capital-fort until 1568 sack. Fort remains."
+    },
+    {
+      "id": "jodhpur",
+      "lat": 26.28,
+      "lon": 73.02,
+      "occupiedStart": 1459,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "marwar",
+      "confidence": "high"
+    },
+    {
+      "id": "jaisalmer",
+      "lat": 26.913,
+      "lon": 70.915,
+      "occupiedStart": 1156,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "bhati",
+      "confidence": "high"
+    },
+    {
+      "id": "udaipur",
+      "lat": 24.58,
+      "lon": 73.68,
+      "occupiedStart": 1559,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "mewar",
+      "confidence": "high"
+    },
+    {
+      "id": "gwalior",
+      "lat": 26.23,
+      "lon": 78.169,
+      "occupiedStart": 800,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "tomara",
+      "confidence": "medium",
+      "note": "Point at the fort; city at the foot continues."
+    },
+    {
+      "id": "khajuraho",
+      "lat": 24.85,
+      "lon": 79.925,
+      "occupiedStart": 950,
+      "occupiedEnd": 1150,
+      "rank": "town",
+      "civHint": "chandela",
+      "confidence": "high"
+    },
+    {
+      "id": "mandu",
+      "lat": 22.335,
+      "lon": 75.416,
+      "occupiedStart": 1401,
+      "occupiedEnd": 1562,
+      "rank": "city",
+      "civHint": "malwa_sultanate",
+      "confidence": "high"
+    },
+    {
+      "id": "champaner",
+      "lat": 22.486,
+      "lon": 73.537,
+      "occupiedStart": 1484,
+      "occupiedEnd": 1535,
+      "rank": "city",
+      "civHint": "gujarat_sultanate",
+      "confidence": "high"
+    },
+    {
+      "id": "orchha",
+      "lat": 25.35,
+      "lon": 78.64,
+      "occupiedStart": 1531,
+      "occupiedEnd": 1783,
+      "rank": "town",
+      "civHint": "bundela",
+      "confidence": "high"
+    },
+    {
+      "id": "amritsar",
+      "lat": 31.64,
+      "lon": 74.86,
+      "occupiedStart": 1577,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "sikh",
+      "confidence": "high",
+      "note": "Ramdaspur / Amritsar, founded Guru Ram Das."
+    },
+    {
+      "id": "lucknow",
+      "lat": 26.85,
+      "lon": 80.95,
+      "occupiedStart": 1775,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "awadh",
+      "confidence": "high",
+      "note": "Awadh capital from 1775 (Asaf-ud-Daula). Older settlement exists; urban court from this year."
+    },
+    {
+      "id": "jaunpur",
+      "lat": 25.73,
+      "lon": 82.68,
+      "occupiedStart": 1394,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "jaunpur_sultanate",
+      "confidence": "high"
+    },
+    {
+      "id": "ayodhya",
+      "lat": 26.799,
+      "lon": 82.204,
+      "occupiedStart": -600,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "kosala",
+      "confidence": "medium",
+      "note": "Long-occupied town on the Sarayu. Legendary palaces not dated."
+    },
+    {
+      "id": "prayagraj",
+      "lat": 25.436,
+      "lon": 81.846,
+      "occupiedStart": -300,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "gupta",
+      "confidence": "medium",
+      "note": "Prayaga / Allahabad. Confluence town; Mughal fort later."
+    },
+    {
+      "id": "thanesar",
+      "lat": 29.967,
+      "lon": 76.817,
+      "occupiedStart": 500,
+      "occupiedEnd": 9999,
+      "rank": "town",
+      "civHint": "harsha",
+      "confidence": "medium",
+      "note": "Sthanishvara, Pushyabhuti capital before Kannauj."
+    },
+    {
+      "id": "mumbai",
+      "lat": 19.076,
+      "lon": 72.878,
+      "occupiedStart": 1668,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "british_india",
+      "confidence": "high",
+      "note": "Bombay island town under the Company from 1668 (Portuguese from 1534). Koli villages earlier are not this point."
+    },
+    {
+      "id": "pune",
+      "lat": 18.521,
+      "lon": 73.855,
+      "occupiedStart": 1630,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "maratha",
+      "confidence": "medium",
+      "note": "Adil Shahi casba then Peshwa capital. City continues."
+    },
+    {
+      "id": "satara",
+      "lat": 17.688,
+      "lon": 74.006,
+      "occupiedStart": 1700,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "maratha",
+      "confidence": "medium",
+      "note": "Chhatrapati seat after Raigad."
+    },
+    {
+      "id": "kolhapur",
+      "lat": 16.692,
+      "lon": 74.233,
+      "occupiedStart": 800,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "maratha",
+      "confidence": "medium"
+    },
+    {
+      "id": "nashik",
+      "lat": 19.998,
+      "lon": 73.79,
+      "occupiedStart": -200,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "satavahana",
+      "confidence": "medium"
+    },
+    {
+      "id": "surat",
+      "lat": 21.205,
+      "lon": 72.84,
+      "occupiedStart": 1500,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "mughal",
+      "confidence": "medium",
+      "note": "Mughal-era ocean port. City continues."
+    },
+    {
+      "id": "diu",
+      "lat": 20.716,
+      "lon": 70.986,
+      "occupiedStart": 1535,
+      "occupiedEnd": 9999,
+      "rank": "town",
+      "civHint": "portuguese",
+      "confidence": "high"
+    },
+    {
+      "id": "old_goa",
+      "lat": 15.503,
+      "lon": 73.912,
+      "occupiedStart": 1510,
+      "occupiedEnd": 1843,
+      "rank": "city",
+      "civHint": "portuguese",
+      "confidence": "high",
+      "note": "Portuguese capital of Goa until the move to Panaji."
+    },
+    {
+      "id": "panaji",
+      "lat": 15.499,
+      "lon": 73.828,
+      "occupiedStart": 1843,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "portuguese",
+      "confidence": "high"
+    },
+    {
+      "id": "kozhikode",
+      "lat": 11.249,
+      "lon": 75.784,
+      "occupiedStart": 1100,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "zamorin",
+      "confidence": "medium",
+      "note": "Calicut, Zamorin port."
+    },
+    {
+      "id": "kochi",
+      "lat": 9.931,
+      "lon": 76.267,
+      "occupiedStart": 1400,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "portuguese",
+      "confidence": "medium",
+      "note": "Cochin. Portuguese 1503, then Dutch/British; city continues."
+    },
+    {
+      "id": "kollam",
+      "lat": 8.893,
+      "lon": 76.614,
+      "occupiedStart": 800,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "cheras",
+      "confidence": "medium"
+    },
+    {
+      "id": "thiruvananthapuram",
+      "lat": 8.524,
+      "lon": 76.937,
+      "occupiedStart": 1741,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "travancore",
+      "confidence": "medium",
+      "note": "Travancore capital (Padmanabhapuram earlier)."
+    },
+    {
+      "id": "kannur",
+      "lat": 11.875,
+      "lon": 75.37,
+      "occupiedStart": 1400,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "kolathiri",
+      "confidence": "medium"
+    },
+    {
+      "id": "pondicherry",
+      "lat": 11.917,
+      "lon": 79.817,
+      "occupiedStart": 1674,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "french_india",
+      "confidence": "high",
+      "note": "French Puducherry from 1674 (with interruptions)."
+    },
+    {
+      "id": "chennai",
+      "lat": 13.083,
+      "lon": 80.275,
+      "occupiedStart": 1639,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "british_india",
+      "confidence": "high",
+      "note": "Fort St. George / Madras, 1639."
+    },
+    {
+      "id": "kolkata",
+      "lat": 22.568,
+      "lon": 88.37,
+      "occupiedStart": 1690,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "british_india",
+      "confidence": "high",
+      "note": "Company settlement 1690; capital of British India until 1911."
+    },
+    {
+      "id": "dhaka",
+      "lat": 23.764,
+      "lon": 90.389,
+      "occupiedStart": 1610,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "mughal",
+      "confidence": "high",
+      "note": "Mughal provincial capital under Islam Khan c. 1610. City continues."
+    },
+    {
+      "id": "murshidabad",
+      "lat": 24.18,
+      "lon": 88.27,
+      "occupiedStart": 1704,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "bengal_nawab",
+      "confidence": "high"
+    },
+    {
+      "id": "gaur",
+      "lat": 24.867,
+      "lon": 88.133,
+      "occupiedStart": 1204,
+      "occupiedEnd": 1575,
+      "rank": "city",
+      "civHint": "bengal_sultanate",
+      "confidence": "high",
+      "note": "Lakhnauti / Gauda. Abandoned after the 16th c."
+    },
+    {
+      "id": "sonargaon",
+      "lat": 23.648,
+      "lon": 90.598,
+      "occupiedStart": 1300,
+      "occupiedEnd": 1610,
+      "rank": "town",
+      "civHint": "bengal_sultanate",
+      "confidence": "medium"
+    },
+    {
+      "id": "chittagong",
+      "lat": 22.335,
+      "lon": 91.833,
+      "occupiedStart": 1300,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "bengal_sultanate",
+      "confidence": "medium"
+    },
+    {
+      "id": "bagerhat",
+      "lat": 22.653,
+      "lon": 89.792,
+      "occupiedStart": 1450,
+      "occupiedEnd": 1600,
+      "rank": "town",
+      "civHint": "bengal_sultanate",
+      "confidence": "high",
+      "note": "Khalifatabad (Sixty Dome Mosque)."
+    },
+    {
+      "id": "puri",
+      "lat": 19.811,
+      "lon": 85.831,
+      "occupiedStart": 1100,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "eastern_ganga",
+      "confidence": "medium"
+    },
+    {
+      "id": "konark",
+      "lat": 19.891,
+      "lon": 86.1,
+      "occupiedStart": 1250,
+      "occupiedEnd": 1600,
+      "rank": "town",
+      "civHint": "eastern_ganga",
+      "confidence": "high"
+    },
+    {
+      "id": "bhubaneswar",
+      "lat": 20.27,
+      "lon": 85.84,
+      "occupiedStart": 1000,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "somavamshi",
+      "confidence": "medium",
+      "note": "Temple town (Lingaraja); Odisha capital 1948. Sisupalgarh is a separate earlier site."
+    },
+    {
+      "id": "cuttack",
+      "lat": 20.524,
+      "lon": 85.788,
+      "occupiedStart": 989,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "eastern_ganga",
+      "confidence": "medium",
+      "note": "Barabati / Cuttack, traditionally founded 989."
+    },
+    {
+      "id": "vijayawada",
+      "lat": 16.514,
+      "lon": 80.619,
+      "occupiedStart": -200,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "satavahana",
+      "confidence": "medium"
+    },
+    {
+      "id": "machilipatnam",
+      "lat": 16.17,
+      "lon": 81.13,
+      "occupiedStart": 1400,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "qutb_shahi",
+      "confidence": "medium",
+      "note": "Masulipatnam, Deccan/European port."
+    },
+    {
+      "id": "visakhapatnam",
+      "lat": 17.694,
+      "lon": 83.292,
+      "occupiedStart": 1682,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "british_india",
+      "confidence": "medium"
+    },
+    {
+      "id": "kurnool",
+      "lat": 15.83,
+      "lon": 78.05,
+      "occupiedStart": 1580,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "qutb_shahi",
+      "confidence": "medium"
+    },
+    {
+      "id": "vellore",
+      "lat": 12.917,
+      "lon": 79.133,
+      "occupiedStart": 1566,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "vijayanagara",
+      "confidence": "medium"
+    },
+    {
+      "id": "indore",
+      "lat": 22.719,
+      "lon": 75.855,
+      "occupiedStart": 1715,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "holkar",
+      "confidence": "high"
+    },
+    {
+      "id": "bhopal",
+      "lat": 23.259,
+      "lon": 77.413,
+      "occupiedStart": 1723,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "bhopal_state",
+      "confidence": "high"
+    },
+    {
+      "id": "nagpur",
+      "lat": 21.15,
+      "lon": 79.082,
+      "occupiedStart": 1743,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "maratha",
+      "confidence": "medium",
+      "note": "Bhonsle capital. Coords from OSM (Wikipedia page had no coordinates)."
+    },
+    {
+      "id": "guwahati",
+      "lat": 26.172,
+      "lon": 91.746,
+      "occupiedStart": -300,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "kamarupa",
+      "confidence": "medium",
+      "note": "Pragjyotishpura / Guwahati."
+    },
+    {
+      "id": "sivasagar",
+      "lat": 26.989,
+      "lon": 94.639,
+      "occupiedStart": 1699,
+      "occupiedEnd": 9999,
+      "rank": "town",
+      "civHint": "ahom",
+      "confidence": "high",
+      "note": "Ahom capital Rangpur / Sibsagar."
+    },
+    {
+      "id": "imphal",
+      "lat": 24.807,
+      "lon": 93.938,
+      "occupiedStart": 1709,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "manipur",
+      "confidence": "medium",
+      "note": "Kangla / Imphal. Exact founding of the present town is later than the kingdom."
+    },
+    {
+      "id": "srinagar",
+      "lat": 34.09,
+      "lon": 74.79,
+      "occupiedStart": -250,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "karkota",
+      "confidence": "medium",
+      "note": "Long-occupied Kashmir capital. civHint is one early dynasty, not all."
+    },
+    {
+      "id": "jammu",
+      "lat": 32.73,
+      "lon": 74.87,
+      "occupiedStart": 900,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "dogra",
+      "confidence": "medium"
+    },
+    {
+      "id": "leh",
+      "lat": 34.153,
+      "lon": 77.577,
+      "occupiedStart": 950,
+      "occupiedEnd": 9999,
+      "rank": "town",
+      "civHint": "ladakh",
+      "confidence": "medium"
+    },
+    {
+      "id": "kathmandu",
+      "lat": 27.71,
+      "lon": 85.32,
+      "occupiedStart": 300,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "nepal",
+      "confidence": "medium"
+    },
+    {
+      "id": "patan_nepal",
+      "lat": 27.676,
+      "lon": 85.317,
+      "occupiedStart": 300,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "nepal",
+      "confidence": "medium",
+      "note": "Lalitpur."
+    },
+    {
+      "id": "bhaktapur",
+      "lat": 27.672,
+      "lon": 85.428,
+      "occupiedStart": 800,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "nepal",
+      "confidence": "medium"
+    },
+    {
+      "id": "kandy",
+      "lat": 7.293,
+      "lon": 80.635,
+      "occupiedStart": 1469,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "kandy",
+      "confidence": "high",
+      "note": "Kandyan kingdom until 1815. City continues."
+    },
+    {
+      "id": "colombo",
+      "lat": 6.934,
+      "lon": 79.843,
+      "occupiedStart": 1505,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "portuguese",
+      "confidence": "medium"
+    },
+    {
+      "id": "galle",
+      "lat": 6.033,
+      "lon": 80.216,
+      "occupiedStart": 1505,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "portuguese",
+      "confidence": "high"
+    },
+    {
+      "id": "jaffna",
+      "lat": 9.665,
+      "lon": 80.017,
+      "occupiedStart": 1200,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "jaffna",
+      "confidence": "medium"
+    },
+    {
+      "id": "karachi",
+      "lat": 24.86,
+      "lon": 67.01,
+      "occupiedStart": 1839,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "british_india",
+      "confidence": "high",
+      "note": "British occupation of Karachi 1839. Kolachi village earlier is not treated as this city."
+    },
+    {
+      "id": "hyderabad_sindh",
+      "lat": 25.379,
+      "lon": 68.368,
+      "occupiedStart": 1768,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "talpur",
+      "confidence": "high",
+      "note": "Not the Deccan Hyderabad."
+    },
+    {
+      "id": "thatta",
+      "lat": 24.746,
+      "lon": 67.924,
+      "occupiedStart": 1300,
+      "occupiedEnd": 1800,
+      "rank": "city",
+      "civHint": "samma",
+      "confidence": "medium"
+    },
+    {
+      "id": "shimla",
+      "lat": 31.103,
+      "lon": 77.172,
+      "occupiedStart": 1819,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "british_india",
+      "confidence": "high",
+      "note": "Company hill station; summer capital of British India."
+    },
+    {
+      "id": "chandigarh",
+      "lat": 30.733,
+      "lon": 76.78,
+      "occupiedStart": 1953,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "india",
+      "confidence": "high",
+      "note": "Planned city; first occupation of this point is the 1950s capital."
+    },
+    {
+      "id": "coimbatore",
+      "lat": 11.001,
+      "lon": 76.963,
+      "occupiedStart": 800,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "chola",
+      "confidence": "medium"
+    },
+    {
+      "id": "junagadh",
+      "lat": 21.522,
+      "lon": 70.458,
+      "occupiedStart": -300,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "maurya",
+      "confidence": "medium",
+      "note": "Girnar / Junagadh. Ashokan rock and later fort-city."
+    },
+    {
+      "id": "secunderabad",
+      "lat": 17.4399,
+      "lon": 78.4983,
+      "occupiedStart": 1806,
+      "occupiedEnd": 9999,
+      "rank": "city",
+      "civHint": "british_india",
+      "confidence": "high",
+      "note": "Former village Ulwul. Named for Sikandar Jah; British cantonment founded 1806 north of Hussain Sagar. Twin of Hyderabad, not the 1591 Charminar city. Municipality 1945; merged into Hyderabad Corporation 1960. Still a major cantonment."
+    }
+  ],
+  "spawnRadiusKm": 30,
+  "traits": [
+    {
+      "id": "ashoka_edicts_stupa",
+      "kind": "architecture",
+      "from": -260,
+      "until": -185,
+      "sites": [
+        "sanchi",
+        "pataliputra"
+      ]
+    },
+    {
+      "id": "brihadeeswarar",
+      "kind": "architecture",
+      "from": 1003,
+      "until": 1279,
+      "sites": [
+        "thanjavur"
+      ]
+    },
+    {
+      "id": "indo_islamic_mosque_minaret",
+      "kind": "architecture",
+      "from": 1192,
+      "until": 1526,
+      "sites": [
+        "qutb_delhi"
+      ]
+    },
+    {
+      "id": "mughal_charbagh_tomb",
+      "kind": "architecture",
+      "from": 1632,
+      "until": 1653,
+      "sites": [
+        "taj_mahal"
+      ]
+    },
+    {
+      "id": "golconda_citadel",
+      "kind": "architecture",
+      "from": 1518,
+      "until": 1687,
+      "sites": [
+        "golconda"
+      ]
+    },
+    {
+      "id": "charminar",
+      "kind": "architecture",
+      "from": 1591,
+      "until": 9999,
+      "sites": [
+        "hyderabad"
+      ]
+    },
+    {
+      "id": "qutb_shahi_necropolis",
+      "kind": "architecture",
+      "from": 1543,
+      "until": 1687,
+      "sites": [
+        "qutb_shahi_tombs"
+      ]
+    },
+    {
+      "id": "red_fort_delhi",
+      "kind": "architecture",
+      "from": 1639,
+      "until": 9999,
+      "sites": [
+        "shahjahanabad"
+      ]
+    },
+    {
+      "id": "gol_gumbaz",
+      "kind": "architecture",
+      "from": 1626,
+      "until": 1656,
+      "sites": [
+        "bijapur"
+      ]
+    },
+    {
+      "id": "mahabodhi_temple",
+      "kind": "architecture",
+      "from": 300,
+      "until": 9999,
+      "sites": [
+        "bodh_gaya"
+      ]
+    },
+    {
+      "id": "shore_temple_mamallapuram",
+      "kind": "architecture",
+      "from": 700,
+      "until": 9999,
+      "sites": [
+        "mahabalipuram"
+      ]
+    },
+    {
+      "id": "brihadisvara_gangai",
+      "kind": "architecture",
+      "from": 1025,
+      "until": 1279,
+      "sites": [
+        "gangaikonda_cholapuram"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "battle_panipat_first",
+      "year": 1526,
+      "lat": 29.391,
+      "lon": 76.964,
+      "name": "First Battle of Panipat"
+    },
+    {
+      "id": "indian_independence",
+      "year": 1947,
+      "lat": 28.614,
+      "lon": 77.209,
+      "name": "Independence and Partition"
+    }
+  ],
+  "unknownOnPurpose": [
+    "Maurya/Gupta full borders — not in this pack; Haryana in -250 is not auto-Mauryan without a polygon",
+    "Not every Census town. No Muziris (location debated). No legendary palaces. No pre-−3000 except Indus pack. Other world regions still cores-only."
+  ]
+}

@@ -25,4 +25,11 @@ public final class EternalDataPaths {
     public static Path climate(MinecraftServer server) { return root(server).resolve("climate"); }
     public static Path templates(MinecraftServer server) { return root(server).resolve("templates"); }
     public static Path names(MinecraftServer server) { return root(server).resolve("names"); }
+    public static Path history(MinecraftServer server) { return root(server).resolve("history"); }
+
+    /** Derived-population packs. Sourced rows only; everything else is derived and labelled. */
+    public static Path population(MinecraftServer server) { return root(server).resolve("population"); }
+
+    /** Authored "what if" scenarios. Sparse by design — most pins will never have one. */
+    public static Path scenarios(MinecraftServer server) { return root(server).resolve("scenarios"); }
 }

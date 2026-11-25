@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "note": "Population derivation packs. Sourced rows only; everything else is derived and labelled by PopulationResolver. hyde_density.bin.gz beside this file is not a pack: HydeGrid reads it (HYDE 3.2.1 population model, T4 GRIDDED tier for villages, and the estimated-people presence layer).",
+  "packs": [
+    "population_south_asia.json"
+  ]
+}

@@ -48,6 +48,13 @@ public class PersistenceManager {
     // File locks
     private final ConcurrentHashMap<String, FileLock> activeLocks;
 
+    /**
+     * When the last backup of each file was made (step 14). Every save used to make a backup, so with the
+     * autosave every 5 minutes the 10 kept backups reached back only 50 minutes; backupIntervalMinutes
+     * was never read. Now a save makes a backup only when the newest one is that old.
+     */
+    private final ConcurrentHashMap<String, Long> lastBackupAt = new ConcurrentHashMap<>();
+
     // Backup timestamp format
     private static final DateTimeFormatter BACKUP_FORMAT =
         DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss");
@@ -104,7 +111,7 @@ public class PersistenceManager {
 
             // Backup existing data before overwrite. If backup fails, continue but log;
             // gameplay should not halt because backup rotation failed.
-            if (Files.exists(filePath)) {
+            if (Files.exists(filePath) && backupDue(filePath)) {
                 createBackup(filePath);
             }
 
@@ -218,6 +225,44 @@ public class PersistenceManager {
         );
     }
 
+    private static String backupKey(Path filePath) {
+        return filePath.toAbsolutePath().normalize().toString();
+    }
+
+    /** Whether the newest backup of this file is at least backupIntervalMinutes old (or there is none). */
+    private boolean backupDue(Path filePath) {
+        long intervalMs;
+        try {
+            intervalMs = EternalEngineConfig.COMMON.backupIntervalMinutes.get() * 60_000L;
+        } catch (IllegalStateException notLoaded) {
+            intervalMs = 30L * 60_000L;
+        }
+        long last = lastBackupAt.computeIfAbsent(backupKey(filePath), k -> newestBackupTime(filePath));
+        return System.currentTimeMillis() - last >= intervalMs;
+    }
+
+    /** Last-modified time of the newest backup of this file, 0 when there is none. */
+    private long newestBackupTime(Path filePath) {
+        Path backupDir = filePath.getParent() == null ? null : filePath.getParent().resolve("backups");
+        if (backupDir == null || !Files.isDirectory(backupDir)) {
+            return 0L;
+        }
+        String prefix = filePath.getFileName().toString().replace(".json", "") + "_";
+        try (Stream<Path> files = Files.list(backupDir)) {
+            return files.filter(p -> p.getFileName().toString().startsWith(prefix))
+                .mapToLong(p -> {
+                    try {
+                        return Files.getLastModifiedTime(p).toMillis();
+                    } catch (IOException e) {
+                        return 0L;
+                    }
+                })
+                .max().orElse(0L);
+        } catch (IOException e) {
+            return 0L;
+        }
+    }
+
     /**
      * Create a backup of a file
      */
@@ -238,6 +283,7 @@ public class PersistenceManager {
             Files.copy(filePath, backupPath, StandardCopyOption.REPLACE_EXISTING);
 
             LOGGER.info("[PersistenceManager] Created backup: {}", backupPath);
+            lastBackupAt.put(backupKey(filePath), System.currentTimeMillis());
 
             // Rotate old backups
             rotateBackups(backupDir, filePath.getFileName().toString().replace(".json", ""));

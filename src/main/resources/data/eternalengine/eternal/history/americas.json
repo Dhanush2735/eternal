@@ -1,0 +1,213 @@
+{
+  "id": "americas",
+  "title": "Olmec / Maya / Teotihuacan / Aztec / Inca",
+  "comparedSources": [
+    "Olmec San Lorenzo / La Venta",
+    "Maya Classic ~250–900 CE; Tikal",
+    "Teotihuacan peak ~100–550 CE",
+    "Tenochtitlan 1325–1521; Cusco Inca; Machu Picchu ~1420–1530"
+  ],
+  "rejected": [
+    "hist_maya templates spanning -2000 to 1697 as one empire"
+  ],
+  "phases": [
+    {
+      "id": "olmec",
+      "start": -1500,
+      "end": -400,
+      "name": "Olmec"
+    },
+    {
+      "id": "maya_classic",
+      "start": 250,
+      "end": 900,
+      "name": "Classic Maya"
+    },
+    {
+      "id": "teotihuacan",
+      "start": 100,
+      "end": 550,
+      "name": "Teotihuacan"
+    },
+    {
+      "id": "aztec",
+      "start": 1325,
+      "end": 1521,
+      "name": "Aztec / Mexica"
+    },
+    {
+      "id": "inca",
+      "start": 1438,
+      "end": 1533,
+      "name": "Inca imperial"
+    }
+  ],
+  "sites": [
+    {
+      "id": "la_venta",
+      "lat": 18.103,
+      "lon": -94.043,
+      "occupiedStart": -900,
+      "occupiedEnd": -400,
+      "civHint": "olmec",
+      "confidence": "high"
+    },
+    {
+      "id": "tikal",
+      "lat": 17.222,
+      "lon": -89.624,
+      "occupiedStart": -400,
+      "occupiedEnd": 900,
+      "civHint": "maya",
+      "confidence": "high"
+    },
+    {
+      "id": "teotihuacan",
+      "lat": 19.692,
+      "lon": -98.844,
+      "occupiedStart": 100,
+      "occupiedEnd": 550,
+      "civHint": "teotihuacan",
+      "confidence": "high"
+    },
+    {
+      "id": "tenochtitlan",
+      "lat": 19.433,
+      "lon": -99.133,
+      "occupiedStart": 1325,
+      "occupiedEnd": 1521,
+      "civHint": "aztec",
+      "confidence": "high"
+    },
+    {
+      "id": "cusco",
+      "lat": -13.532,
+      "lon": -71.967,
+      "occupiedStart": 1200,
+      "occupiedEnd": 1533,
+      "civHint": "inca",
+      "confidence": "high"
+    },
+    {
+      "id": "machu_picchu",
+      "lat": -13.163,
+      "lon": -72.546,
+      "occupiedStart": 1420,
+      "occupiedEnd": 1530,
+      "civHint": "inca",
+      "confidence": "high"
+    },
+    {
+      "id": "palenque",
+      "lat": 17.484,
+      "lon": -92.046,
+      "occupiedStart": 400,
+      "occupiedEnd": 800,
+      "rank": "city",
+      "civHint": "maya",
+      "confidence": "high"
+    },
+    {
+      "id": "copan",
+      "lat": 14.837,
+      "lon": -89.142,
+      "occupiedStart": 400,
+      "occupiedEnd": 820,
+      "rank": "city",
+      "civHint": "maya",
+      "confidence": "high"
+    },
+    {
+      "id": "chichen_itza",
+      "lat": 20.683,
+      "lon": -88.569,
+      "occupiedStart": 600,
+      "occupiedEnd": 1200,
+      "rank": "city",
+      "civHint": "maya",
+      "confidence": "high"
+    },
+    {
+      "id": "monte_alban",
+      "lat": 17.044,
+      "lon": -96.768,
+      "occupiedStart": -500,
+      "occupiedEnd": 750,
+      "rank": "city",
+      "civHint": "olmec",
+      "confidence": "medium"
+    },
+    {
+      "id": "caral",
+      "lat": -10.892,
+      "lon": -77.521,
+      "occupiedStart": -2600,
+      "occupiedEnd": -2000,
+      "rank": "town",
+      "civHint": "",
+      "confidence": "medium",
+      "note": "Caral-Supe/Norte Chico, not Inca. No civilization id is asserted; dates are a gameplay approximation.",
+      "r2SourceEvidence": {
+        "sources": [
+          "https://en.wikipedia.org/w/index.php?title=Caral&oldid=1379214244",
+          "https://whc.unesco.org/en/list/1269/",
+          "https://whc.unesco.org/document/152221"
+        ],
+        "review_note": "Caral is a Late Archaic Andean site and not Inca; the old Inca id was marked as a placeholder. No replacement civilization id is inferred. The existing 2600–2000 BCE reference interval is retained; sources disagree on earlier and later limits, so it should not be treated as precisely dated. The related 3000 BCE Supe Valley event is regional and does not assert a city at that date.",
+        "reviewed_as_of": "2026-10-28"
+      }
+    }
+  ],
+  "spawnRadiusKm": 30,
+  "traits": [
+    {
+      "id": "olmec_colossal_heads",
+      "kind": "architecture",
+      "from": -1200,
+      "until": -400,
+      "sites": [
+        "la_venta"
+      ]
+    },
+    {
+      "id": "maya_pyramid_plaza",
+      "kind": "architecture",
+      "from": 250,
+      "until": 900,
+      "sites": [
+        "tikal"
+      ]
+    },
+    {
+      "id": "avenue_of_the_dead",
+      "kind": "architecture",
+      "from": 100,
+      "until": 550,
+      "sites": [
+        "teotihuacan"
+      ]
+    },
+    {
+      "id": "inca_ashlar",
+      "kind": "architecture",
+      "from": 1438,
+      "until": 1533,
+      "sites": [
+        "cusco",
+        "machu_picchu"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "fall_tenochtitlan",
+      "year": 1521,
+      "lat": 19.433,
+      "lon": -99.133,
+      "name": "Fall of Tenochtitlan"
+    }
+  ],
+  "unknownOnPurpose": [
+    "Maya political names at every city"
+  ]
+}

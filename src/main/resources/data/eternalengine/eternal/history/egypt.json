@@ -1,0 +1,218 @@
+{
+  "id": "egypt",
+  "title": "Ancient Egypt",
+  "comparedSources": [
+    "British Museum Egypt timeline",
+    "Old Kingdom pyramid chronology (~2686–2181 BCE)",
+    "Hieroglyphs ~3200 BCE; papyrus ~3000 BCE"
+  ],
+  "rejected": [
+    "hist_egypt templates",
+    "one Thebes capital for all millennia"
+  ],
+  "phases": [
+    {
+      "id": "early_dynastic",
+      "start": -3100,
+      "end": -2686,
+      "name": "Early Dynastic"
+    },
+    {
+      "id": "old_kingdom",
+      "start": -2686,
+      "end": -2181,
+      "name": "Old Kingdom"
+    },
+    {
+      "id": "middle_kingdom",
+      "start": -2055,
+      "end": -1650,
+      "name": "Middle Kingdom"
+    },
+    {
+      "id": "new_kingdom",
+      "start": -1550,
+      "end": -1070,
+      "name": "New Kingdom"
+    },
+    {
+      "id": "late_ptolemaic",
+      "start": -664,
+      "end": -30,
+      "name": "Late Period to Ptolemaic"
+    }
+  ],
+  "sites": [
+    {
+      "id": "memphis",
+      "lat": 29.845,
+      "lon": 31.251,
+      "occupiedStart": -3100,
+      "occupiedEnd": 641,
+      "civHint": "egypt_ancient",
+      "confidence": "high"
+    },
+    {
+      "id": "giza",
+      "lat": 29.979,
+      "lon": 31.134,
+      "occupiedStart": -2600,
+      "occupiedEnd": -2400,
+      "civHint": "egypt_ancient",
+      "confidence": "high",
+      "note": "Pyramid construction window; plateau remains a site after."
+    },
+    {
+      "id": "thebes_luxor",
+      "lat": 25.719,
+      "lon": 32.657,
+      "occupiedStart": -2000,
+      "occupiedEnd": 300,
+      "civHint": "egypt_ancient",
+      "confidence": "high"
+    },
+    {
+      "id": "karnak",
+      "lat": 25.719,
+      "lon": 32.658,
+      "occupiedStart": -2000,
+      "occupiedEnd": 300,
+      "civHint": "egypt_ancient",
+      "confidence": "high"
+    },
+    {
+      "id": "amarna",
+      "lat": 27.645,
+      "lon": 30.904,
+      "occupiedStart": -1346,
+      "occupiedEnd": -1332,
+      "civHint": "egypt_ancient",
+      "confidence": "high"
+    },
+    {
+      "id": "alexandria",
+      "lat": 31.2,
+      "lon": 29.919,
+      "occupiedStart": -331,
+      "occupiedEnd": 641,
+      "civHint": "egypt_ancient",
+      "confidence": "high"
+    },
+    {
+      "id": "saqqara",
+      "lat": 29.871,
+      "lon": 31.216,
+      "occupiedStart": -2700,
+      "occupiedEnd": -2000,
+      "rank": "town",
+      "civHint": "egypt_ancient",
+      "confidence": "high",
+      "note": "Necropolis of Memphis; Old Kingdom tombs."
+    },
+    {
+      "id": "abydos",
+      "lat": 26.185,
+      "lon": 31.919,
+      "occupiedStart": -3000,
+      "occupiedEnd": -300,
+      "rank": "town",
+      "civHint": "egypt_ancient",
+      "confidence": "high"
+    },
+    {
+      "id": "edfu",
+      "lat": 24.978,
+      "lon": 32.873,
+      "occupiedStart": -3000,
+      "occupiedEnd": -100,
+      "rank": "town",
+      "civHint": "egypt_ancient",
+      "confidence": "medium"
+    },
+    {
+      "id": "elephantine",
+      "lat": 24.085,
+      "lon": 32.886,
+      "occupiedStart": -3000,
+      "occupiedEnd": 400,
+      "rank": "town",
+      "civHint": "egypt_ancient",
+      "confidence": "high"
+    },
+    {
+      "id": "deir_el_medina",
+      "lat": 25.728,
+      "lon": 32.601,
+      "occupiedStart": -1550,
+      "occupiedEnd": -1070,
+      "rank": "village",
+      "civHint": "egypt_ancient",
+      "confidence": "high",
+      "note": "New Kingdom workmen's village."
+    }
+  ],
+  "spawnRadiusKm": 30,
+  "traits": [
+    {
+      "id": "hieroglyphs",
+      "kind": "invention",
+      "from": -3200,
+      "until": 400,
+      "sites": [
+        "memphis",
+        "thebes_luxor"
+      ]
+    },
+    {
+      "id": "papyrus",
+      "kind": "invention",
+      "from": -3000,
+      "until": 700,
+      "sites": [
+        "memphis"
+      ]
+    },
+    {
+      "id": "pyramid",
+      "kind": "architecture",
+      "from": -2686,
+      "until": -2181,
+      "sites": [
+        "giza",
+        "memphis"
+      ]
+    },
+    {
+      "id": "mummification",
+      "kind": "introduction",
+      "from": -2600,
+      "until": 400,
+      "sites": [
+        "memphis",
+        "thebes_luxor"
+      ]
+    },
+    {
+      "id": "nile_irrigation",
+      "kind": "introduction",
+      "from": -3100,
+      "until": 641,
+      "sites": [
+        "memphis",
+        "thebes_luxor"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "pyramids_giza",
+      "year": -2560,
+      "lat": 29.979,
+      "lon": 31.134,
+      "name": "Great Pyramid of Giza (Khufu, approx.)"
+    }
+  ],
+  "unknownOnPurpose": [
+    "exact labour methods for Giza"
+  ]
+}

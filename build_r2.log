@@ -1,0 +1,65 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.8/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :
+Java: 17.0.21, JVM: 17.0.21+9 (Eclipse Adoptium), Arch: amd64
+Using local Terra++ jar: terraplusplus-2.0.0-alpha.jar
+
+> Task :compileJava
+[14:43:06] [main/INFO]: Writing debug log file accesstransform.log
+[14:43:06] [main/INFO]: Access Transformer processor running version 8.2.14
+[14:43:06] [main/INFO]: Command line arguments [--inJar, /home/user/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.0/forge-1.20.1-47.2.0-injected.jar, --outJar, /home/user/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.0_mapped_official_1.20.1/forge-1.20.1-47.2.0_mapped_official_1.20.1.jar, --logFile, accesstransform.log, --atFile, /home/user/B/eternal/build/_atJar_4/parent_at.cfg]
+[14:43:06] [main/INFO]: Reading from /home/user/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.0/forge-1.20.1-47.2.0-injected.jar
+[14:43:06] [main/INFO]: Writing to /home/user/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.0_mapped_official_1.20.1/forge-1.20.1-47.2.0_mapped_official_1.20.1.jar
+[14:43:06] [main/INFO]: Transformer file /home/user/B/eternal/build/_atJar_4/parent_at.cfg
+[14:43:06] [main/WARN]: Found existing output jar /home/user/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.0_mapped_official_1.20.1/forge-1.20.1-47.2.0_mapped_official_1.20.1.jar, overwriting
+[14:43:09] [main/INFO]: JAR transformation complete /home/user/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.0_mapped_official_1.20.1/forge-1.20.1-47.2.0_mapped_official_1.20.1.jar
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :processResources
+> Task :classes
+> Task :jar
+> Task :downloadMcpConfig
+> Task :extractSrg
+> Task :createMcpToSrg
+The message received from the daemon indicates that the daemon has disappeared.
+Build request sent: Build{id=a339a47b-37d1-40ed-9902-85cea7ba794a, currentDir=/home/user/B/eternal}
+Attempting to read last messages from the daemon log...
+Daemon pid: 2327
+  log file: /home/user/.gradle/daemon/8.8/daemon-2327.out.log
+----- Last  20 lines from daemon log file - daemon-2327.out.log -----
+2026-11-10T14:42:51.700+0000 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 19: Received IO message from client: org.gradle.launcher.daemon.protocol.CloseInput@2f385986
+2026-11-10T14:42:51.700+0000 [LIFECYCLE] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon will be stopped at the end of the build 
+2026-11-10T14:42:51.700+0000 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Stop as soon as idle requested. The daemon is busy: true
+2026-11-10T14:42:51.701+0000 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+2026-11-10T14:42:51.701+0000 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=ba8e7ba4-d0a2-417a-bfba-16f60da329fd,javaHome=/home/user/.jdk17,javaVersion=17,daemonRegistryDir=/home/user/.gradle/daemon,pid=2327,idleTimeout=120000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-XX:MaxMetaspaceSize=500m,-XX:+UseSerialGC,--add-opens=java.base/java.util=ALL-UNNAMED,--add-opens=java.base/java.lang=ALL-UNNAMED,--add-opens=java.base/java.lang.invoke=ALL-UNNAMED,--add-opens=java.prefs/java.util.prefs=ALL-UNNAMED,--add-opens=java.base/java.nio.charset=ALL-UNNAMED,--add-opens=java.base/java.net=ALL-UNNAMED,--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED,-Xmx1200m,-Dfile.encoding=US-ASCII,-Duser.country=US,-Duser.language=en,-Duser.variant]
+2026-11-10T14:42:51.702+0000 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon stop has been requested. Sleeping until state changes.
+2026-11-10T14:42:51.706+0000 [DEBUG] [org.gradle.launcher.daemon.server.clientinput.ClientInputForwarder] Closing this process' stdin at end of input.
+This process will no longer process any forwarded input.
+Java: 17.0.21, JVM: 17.0.21+9 (Eclipse Adoptium), Arch: amd64
+Using local Terra++ jar: terraplusplus-2.0.0-alpha.jar
+[14:43:06] [main/INFO]: Writing debug log file accesstransform.log
+[14:43:06] [main/INFO]: Access Transformer processor running version 8.2.14
+[14:43:06] [main/INFO]: Command line arguments [--inJar, /home/user/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.0/forge-1.20.1-47.2.0-injected.jar, --outJar, /home/user/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.0_mapped_official_1.20.1/forge-1.20.1-47.2.0_mapped_official_1.20.1.jar, --logFile, accesstransform.log, --atFile, /home/user/B/eternal/build/_atJar_4/parent_at.cfg]
+[14:43:06] [main/INFO]: Reading from /home/user/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.0/forge-1.20.1-47.2.0-injected.jar
+[14:43:06] [main/INFO]: Writing to /home/user/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.0_mapped_official_1.20.1/forge-1.20.1-47.2.0_mapped_official_1.20.1.jar
+[14:43:06] [main/INFO]: Transformer file /home/user/B/eternal/build/_atJar_4/parent_at.cfg
+[14:43:06] [main/WARN]: Found existing output jar /home/user/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.0_mapped_official_1.20.1/forge-1.20.1-47.2.0_mapped_official_1.20.1.jar, overwriting
+[14:43:09] [main/INFO]: JAR transformation complete /home/user/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.0_mapped_official_1.20.1/forge-1.20.1-47.2.0_mapped_official_1.20.1.jar
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+----- End of the daemon log -----
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed)
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+> Task :reobfJar

@@ -57,6 +57,24 @@ public final class TerraBridge {
     private volatile Object terraGenerator;
     private volatile Object densityFunctions;
     private volatile Object worldCover;
+    /** The density functions' classify method, found once per class (turn 89). */
+    private volatile ClassifyHandle classifyHandle;
+    private static volatile Method apiSurfaceAtMethod;
+    private static volatile boolean apiSurfaceAtLooked;
+
+    private record ClassifyHandle(Class<?> owner, Method method) {
+    }
+
+    /** Step 21: the density functions' toGeo and fromGeo, found once per class (they were looked up on every call). */
+    private record GeoHandles(Class<?> owner, Method toGeo, Method fromGeo) {
+    }
+    private volatile GeoHandles geoHandles;
+    private static volatile Method apiRawToGeoMethod;
+    private static volatile boolean apiRawToGeoLooked;
+    private static volatile Method apiFromGeoMethod;
+    private static volatile boolean apiFromGeoLooked;
+    /** Step 21: how the last fromGeo was answered: "world", "api (checked)" or "none". For the checks. */
+    private volatile String fromGeoSource = "none";
     private volatile int detectedZoom = DEFAULT_ZOOM;
 
     private TerraBridge() {
@@ -119,6 +137,17 @@ public final class TerraBridge {
 
     public static boolean isAvailable() {
         return initialized && terraAvailable;
+    }
+
+    /** True only when this bridge is bound to the generator of the specified live level. */
+    public boolean isBoundTo(@Nullable ServerLevel level) {
+        if (level == null || !isAvailable()) return false;
+        try {
+            Object generator = resolveGenerator();
+            return generator != null && generator == level.getChunkSource().getGenerator();
+        } catch (Throwable ignored) {
+            return false;
+        }
     }
 
     private boolean checkTerraClasses() {
@@ -270,17 +299,24 @@ public final class TerraBridge {
      */
     @Nullable
     public double[] toGeo(int blockX, int blockZ) {
-        double[] apiResult = apiRawToGeoLonLat(blockX, blockZ);
-        if (apiResult != null) {
-            return apiResult;
+        // Step 21: the world's own projection first: the density functions are what Terra++'s generator builds every
+        // block with (the BTE projection, in this world's universe). The public API answers only when they cannot.
+        double[] world = dfToGeo(blockX, blockZ);
+        if (world != null) {
+            return world;
         }
+        return apiRawToGeoLonLat(blockX, blockZ);
+    }
+
+    @Nullable
+    private double[] dfToGeo(int blockX, int blockZ) {
         try {
             Object df = resolveDensityFunctions();
-            if (df == null) {
+            GeoHandles h = df == null ? null : geoHandles(df);
+            if (h == null || h.toGeo() == null) {
                 return null;
             }
-            Method method = df.getClass().getMethod("toGeo", int.class, int.class);
-            double[] result = (double[]) method.invoke(df, blockX, blockZ);
+            double[] result = (double[]) h.toGeo().invoke(df, blockX, blockZ);
             if (!isValidLonLatArray(result)) {
                 return null;
             }
@@ -289,6 +325,71 @@ public final class TerraBridge {
             warnLimited("toGeo failed for " + blockX + "," + blockZ + ": " + t.getMessage());
             return null;
         }
+    }
+
+    @Nullable
+    private double[] dfFromGeo(double latitude, double longitude) {
+        try {
+            Object df = resolveDensityFunctions();
+            GeoHandles h = df == null ? null : geoHandles(df);
+            if (h == null || h.fromGeo() == null) {
+                return null;
+            }
+            double[] result = (double[]) h.fromGeo().invoke(df, latitude, longitude);
+            if (result == null || result.length < 2 || !Double.isFinite(result[0]) || !Double.isFinite(result[1])) {
+                return null;
+            }
+            return new double[] { result[0], result[1] };
+        } catch (Throwable t) {
+            warnLimited("fromGeo failed for " + latitude + "," + longitude + ": " + t.getMessage());
+            return null;
+        }
+    }
+
+    /** The density functions' toGeo(int, int) and fromGeo(double lat, double lon), looked up once per class. */
+    @Nullable
+    private GeoHandles geoHandles(Object df) {
+        GeoHandles h = this.geoHandles;
+        if (h != null && h.owner() == df.getClass()) {
+            return h;
+        }
+        Method to = null;
+        Method from = null;
+        try {
+            to = df.getClass().getMethod("toGeo", int.class, int.class);
+        } catch (Throwable ignored) {
+            // this Terra++ build has no toGeo on its density functions: the public API answers instead
+        }
+        try {
+            from = df.getClass().getMethod("fromGeo", double.class, double.class);
+        } catch (Throwable ignored) {
+            // no fromGeo either: the public API, checked by a round trip
+        }
+        h = new GeoHandles(df.getClass(), to, from);
+        this.geoHandles = h;
+        return h;
+    }
+
+    /**
+     * Step 21: whether a block reads back as the place it was asked for, within about 50 metres (the round trip of the
+     * world's own projection is exact to a block).
+     */
+    public boolean roundTrips(double[] xz, double latitude, double longitude) {
+        if (xz == null || xz.length < 2) {
+            return false;
+        }
+        double[] back = toGeo((int) Math.floor(xz[0]), (int) Math.floor(xz[1]));
+        if (back == null) {
+            return false;
+        }
+        double dLat = back[1] - latitude;
+        double dLon = ((back[0] - longitude + 540.0d) % 360.0d) - 180.0d;
+        return Math.abs(dLat) < 5.0e-4d && Math.abs(dLon) * Math.cos(Math.toRadians(latitude)) < 5.0e-4d;
+    }
+
+    /** Step 21: how the last {@link #fromGeo} was answered ("world", "api (checked)" or "none"). */
+    public String fromGeoSource() {
+        return fromGeoSource;
     }
 
     @Nullable
@@ -312,25 +413,27 @@ public final class TerraBridge {
         if (!isValidLatLon(latitude, longitude)) {
             return null;
         }
-        double[] apiResult = apiFromGeo(latitude, longitude);
-        if (apiResult != null) {
-            return apiResult;
+        // Step 21: the world's own projection first. Until now the public API answered first, and its projection is a
+        // "simplified" one that is not the world's: King Kothi in Hyderabad came out about 5,900 km away from where
+        // Terra++ builds it, London 5,429 km, and Charminar off the map (turn 93, worldfill/probes/bte). Everything that
+        // turns a map position into a block went wrong with it: a town's centre for its people, the tracker compass, the
+        // map's waypoints, a VIP's arrival, a capital.
+        double[] world = dfFromGeo(latitude, longitude);
+        if (world != null) {
+            fromGeoSource = "world";
+            return world;
         }
-        try {
-            Object df = resolveDensityFunctions();
-            if (df == null) {
-                return null;
-            }
-            Method method = df.getClass().getMethod("fromGeo", double.class, double.class);
-            double[] result = (double[]) method.invoke(df, latitude, longitude);
-            if (result == null || result.length < 2 || Double.isNaN(result[0]) || Double.isNaN(result[1])) {
-                return null;
-            }
-            return new double[] { result[0], result[1] };
-        } catch (Throwable t) {
-            warnLimited("fromGeo failed for " + latitude + "," + longitude + ": " + t.getMessage());
-            return null;
+        double[] api = apiFromGeo(latitude, longitude);
+        if (api != null && roundTrips(api, latitude, longitude)) {
+            fromGeoSource = "api (checked)";
+            return api;
         }
+        if (api != null) {
+            warnLimited("fromGeo: Terra++'s public fromGeo does not match the world at " + latitude + "," + longitude
+                    + " (block " + Math.round(api[0]) + "," + Math.round(api[1]) + " reads back elsewhere); no block given");
+        }
+        fromGeoSource = "none";
+        return null;
     }
 
     public double getElevation(double latitude, double longitude) {
@@ -373,9 +476,15 @@ public final class TerraBridge {
         // Terra++ terrain column is the source of truth for terrain surface.
         // Vanilla WORLD_SURFACE includes trees/leaves/buildings and caused Eternal
         // building plans to start on top of tree canopies instead of terrain.
-        TerrainSnapshot snapshot = probe(blockX, blockZ);
-        if (snapshot.valid()) {
-            return clampY(snapshot.surfaceY());
+        //
+        // Turn 89: only the column is read here, not probe(). probe() also asks the
+        // land-cover map (getWorldCoverClass), which waits up to half a second per call
+        // while its tiles download. The height never used that answer, but every ground
+        // look-up paid for it: the people spawner's first cycle after joining froze the
+        // user's game for 7.5 seconds (about 15 look-ups of half a second each).
+        Object column = classifyTerrainColumn(blockX, blockZ);
+        if (column != null) {
+            return clampY(readIntField(column, "surfaceY", FALLBACK_SEA_LEVEL));
         }
 
         if (level != null) {
@@ -403,8 +512,12 @@ public final class TerraBridge {
             if (df == null) {
                 return null;
             }
-            Method method = df.getClass().getMethod("classify", int.class, int.class);
-            return method.invoke(df, blockX, blockZ);
+            ClassifyHandle handle = this.classifyHandle;
+            if (handle == null || handle.owner() != df.getClass()) {
+                handle = new ClassifyHandle(df.getClass(), df.getClass().getMethod("classify", int.class, int.class));
+                this.classifyHandle = handle;
+            }
+            return handle.method().invoke(df, blockX, blockZ);
         } catch (Throwable t) {
             warnLimited("classifyTerrainColumn failed for " + blockX + "," + blockZ + ": " + t.getMessage());
             return null;
@@ -512,9 +625,21 @@ public final class TerraBridge {
 
     @Nullable
     private double[] apiRawToGeoLonLat(int blockX, int blockZ) {
+        if (!apiRawToGeoLooked) {
+            Method found = null;
+            try {
+                found = Class.forName(TERRA_PUBLIC_API_CLASS).getMethod("rawToGeoLonLat", int.class, int.class);
+            } catch (Throwable ignored) {
+                // this Terra++ build has no rawToGeoLonLat
+            }
+            apiRawToGeoMethod = found;
+            apiRawToGeoLooked = true;
+        }
+        Method method = apiRawToGeoMethod;
+        if (method == null) {
+            return null;
+        }
         try {
-            Class<?> api = Class.forName(TERRA_PUBLIC_API_CLASS);
-            Method method = api.getMethod("rawToGeoLonLat", int.class, int.class);
             Object value = method.invoke(null, blockX, blockZ);
             if (!(value instanceof double[] raw) || !isValidLonLatArray(raw)) {
                 return null;
@@ -527,9 +652,21 @@ public final class TerraBridge {
 
     @Nullable
     private double[] apiFromGeo(double latitude, double longitude) {
+        if (!apiFromGeoLooked) {
+            Method found = null;
+            try {
+                found = Class.forName(TERRA_PUBLIC_API_CLASS).getMethod("fromGeo", double.class, double.class);
+            } catch (Throwable ignored) {
+                // no public fromGeo in this build
+            }
+            apiFromGeoMethod = found;
+            apiFromGeoLooked = true;
+        }
+        Method method = apiFromGeoMethod;
+        if (method == null) {
+            return null;
+        }
         try {
-            Class<?> api = Class.forName(TERRA_PUBLIC_API_CLASS);
-            Method method = api.getMethod("fromGeo", double.class, double.class);
             Object value = method.invoke(null, latitude, longitude);
             if (!(value instanceof double[] block) || block.length < 2
                 || Double.isNaN(block[0]) || Double.isNaN(block[1])) {
@@ -543,9 +680,11 @@ public final class TerraBridge {
 
     @Nullable
     private Integer apiSurfaceY(int blockX, int blockZ) {
+        Method surfaceAt = apiSurfaceAt();
+        if (surfaceAt == null) {
+            return null;
+        }
         try {
-            Class<?> api = Class.forName(TERRA_PUBLIC_API_CLASS);
-            Method surfaceAt = api.getMethod("surfaceAt", int.class, int.class);
             Object sample = surfaceAt.invoke(null, blockX, blockZ);
             if (sample == null) {
                 return null;
@@ -561,6 +700,26 @@ public final class TerraBridge {
         } catch (Throwable ignored) {
             return null;
         }
+    }
+
+    /**
+     * The public API's {@code surfaceAt}, looked up once (turn 89). Before, every ground look-up
+     * searched for the class and the method again, and threw and caught an exception each time
+     * on a Terra++ build without it.
+     */
+    @Nullable
+    private static Method apiSurfaceAt() {
+        if (!apiSurfaceAtLooked) {
+            Method found = null;
+            try {
+                found = Class.forName(TERRA_PUBLIC_API_CLASS).getMethod("surfaceAt", int.class, int.class);
+            } catch (Throwable ignored) {
+                // this Terra++ build has no surfaceAt: the terrain column answers instead
+            }
+            apiSurfaceAtMethod = found;
+            apiSurfaceAtLooked = true;
+        }
+        return apiSurfaceAtMethod;
     }
 
     public int getSeaLevel() {

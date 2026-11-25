@@ -1,0 +1,1284 @@
+{
+  "_comment": "The skin pool, per culture. Written by verification/population/alternatives/make_skin_pack.py from skin_pools.py POOLS - the dictionary that painted skins_pool_2d.png. Colours are hex; era holds the twelve turning points (classical, imperial, early, colonial, modern and the five shape curves, then the arm-length ends). A world pack at <world>/eternalengine/skins/skin_pool.json overrides this file.",
+  "_colours": "plausible, not sourced - the user's call, and this file is the place to change them",
+  "deccan": {
+    "tones": [
+      "c08a5e",
+      "a9714b",
+      "8d5a39",
+      "b57f55",
+      "6f4526"
+    ],
+    "hairs": [
+      "1a1410",
+      "2b1d14",
+      "3a2a1c",
+      "141010"
+    ],
+    "cloths": [
+      "b3472f",
+      "2f6ea8",
+      "e0d3a8",
+      "6b7f4a",
+      "8e3b57",
+      "d9b25a",
+      "4a4436",
+      "c4762b",
+      "3d5f7a",
+      "a8452f",
+      "5b7a5a",
+      "7a2f3f",
+      "e8c37a",
+      "87a3b8",
+      "2f4a3a",
+      "c9a2a0"
+    ],
+    "trim": "d9b25a",
+    "hairStylesMale": [
+      "short",
+      "short_beard",
+      "turban_wrap",
+      "long"
+    ],
+    "hairStylesFemale": [
+      "plait_over",
+      "bun",
+      "loose",
+      "wrapped",
+      "long"
+    ],
+    "garments": {
+      "farmer": [
+        "crew_tee"
+      ],
+      "artisan": [
+        "crew_tee",
+        "graphic_tee"
+      ],
+      "merchant": [
+        "button_down",
+        "polo"
+      ],
+      "scholar": [
+        "mock_turtleneck",
+        "button_down"
+      ],
+      "healer": [
+        "v_neck_tee"
+      ],
+      "citizen": [
+        "crew_tee",
+        "tank"
+      ],
+      "advisor": [
+        "button_down"
+      ],
+      "scribe": [
+        "button_down"
+      ],
+      "villager": [
+        "crew_tee",
+        "tank"
+      ]
+    },
+    "uniforms": {
+      "soldier": {
+        "garments": [
+          "uniform_khaki"
+        ],
+        "note": "the regiment's khaki"
+      },
+      "guard": {
+        "garments": [
+          "uniform_khaki"
+        ],
+        "note": "the same cloth as the soldier"
+      },
+      "priest": {
+        "garments": [
+          "vestment"
+        ],
+        "note": "the temple's vestment"
+      }
+    },
+    "lower": "dhoti",
+    "femaleLower": "sari",
+    "femaleJewels": "bindi_nose_bangle",
+    "cultural": [
+      "kameez",
+      "lungi",
+      "angavastram",
+      "sari"
+    ],
+    "era": {
+      "classical": 300,
+      "imperial": 1200,
+      "early": 1600,
+      "colonial": 1850,
+      "modern": 1945,
+      "robe": 1.0,
+      "wrap": 0.85,
+      "drape": 0.55,
+      "keep_hat": 0.3,
+      "revival": 0.1,
+      "arm_end_m": 1,
+      "arm_end_f": 2
+    }
+  },
+  "indic": {
+    "tones": [
+      "c08a5e",
+      "a9714b",
+      "8d5a39",
+      "bb8760",
+      "6f4526"
+    ],
+    "hairs": [
+      "1a1410",
+      "2b1d14",
+      "3a2a1c"
+    ],
+    "cloths": [
+      "c8452f",
+      "e8a13a",
+      "2f6ea8",
+      "e0d3a8",
+      "6b7f4a",
+      "7d3f6b",
+      "d96f2b",
+      "3f6b6a",
+      "b02f4a",
+      "f0d9a0",
+      "4a5b8a",
+      "8a6b2f",
+      "c9b08a",
+      "5f7a3f",
+      "9a3f5f",
+      "c86a2a",
+      "3a6b8a",
+      "e8d8a8",
+      "7a4a6a"
+    ],
+    "trim": "d9b25a",
+    "hairStylesMale": [
+      "short",
+      "short_beard",
+      "turban_wrap",
+      "long"
+    ],
+    "hairStylesFemale": [
+      "plait_over",
+      "bun",
+      "loose",
+      "wrapped",
+      "long"
+    ],
+    "garments": {
+      "farmer": [
+        "crew_tee"
+      ],
+      "artisan": [
+        "graphic_tee",
+        "crew_tee"
+      ],
+      "merchant": [
+        "button_down"
+      ],
+      "scholar": [
+        "button_down"
+      ],
+      "healer": [
+        "v_neck_tee"
+      ],
+      "citizen": [
+        "crew_tee"
+      ],
+      "advisor": [
+        "button_down"
+      ],
+      "scribe": [
+        "button_down"
+      ],
+      "villager": [
+        "crew_tee"
+      ]
+    },
+    "uniforms": {
+      "soldier": {
+        "garments": [
+          "uniform_khaki"
+        ],
+        "note": "the regiment's khaki"
+      },
+      "guard": {
+        "garments": [
+          "uniform_khaki"
+        ],
+        "note": "the same cloth as the soldier"
+      },
+      "priest": {
+        "garments": [
+          "vestment"
+        ],
+        "note": "the temple's vestment"
+      }
+    },
+    "lower": "dhoti",
+    "femaleLower": "sari",
+    "femaleJewels": "bindi_nose_bangle",
+    "cultural": [],
+    "era": {
+      "classical": 200,
+      "imperial": 1100,
+      "early": 1600,
+      "colonial": 1850,
+      "modern": 1950,
+      "robe": 1.0,
+      "wrap": 0.95,
+      "drape": 0.9,
+      "keep_hat": 0.1,
+      "revival": 0.15,
+      "arm_end_m": 1,
+      "arm_end_f": 2
+    }
+  },
+  "maurya": {
+    "tones": [
+      "b57f55",
+      "a9714b",
+      "8d5a39"
+    ],
+    "hairs": [
+      "1a1410",
+      "2b1d14"
+    ],
+    "cloths": [
+      "d9b25a",
+      "b3472f",
+      "4a4436",
+      "e0d3a8",
+      "8a5a2f",
+      "3f5b7a",
+      "7a3f3f",
+      "c9a06a",
+      "5f6b4a",
+      "a8783f",
+      "b03a2e",
+      "2f5f8a",
+      "e8c34a",
+      "9a4a3a",
+      "7f8f5a",
+      "4a4a52",
+      "efe6d0",
+      "8a6a3a",
+      "c2622e",
+      "5a3f6b"
+    ],
+    "trim": "c9a227",
+    "hairStylesMale": [
+      "short",
+      "short_beard",
+      "turban_wrap",
+      "long"
+    ],
+    "hairStylesFemale": [
+      "braid",
+      "bun",
+      "loose",
+      "wrapped",
+      "long"
+    ],
+    "garments": {
+      "farmer": [
+        "crew_tee"
+      ],
+      "artisan": [
+        "crew_tee"
+      ],
+      "merchant": [
+        "button_down"
+      ],
+      "scholar": [
+        "button_down"
+      ],
+      "healer": [
+        "v_neck_tee"
+      ],
+      "citizen": [
+        "crew_tee"
+      ],
+      "advisor": [
+        "button_down"
+      ],
+      "scribe": [
+        "button_down"
+      ],
+      "villager": [
+        "crew_tee"
+      ]
+    },
+    "uniforms": {
+      "soldier": {
+        "garments": [
+          "uniform_khaki"
+        ],
+        "note": "the regiment's khaki"
+      },
+      "guard": {
+        "garments": [
+          "uniform_khaki"
+        ],
+        "note": "the same cloth as the soldier"
+      },
+      "priest": {
+        "garments": [
+          "vestment"
+        ],
+        "note": "the temple's vestment"
+      }
+    },
+    "lower": "dhoti",
+    "femaleLower": "sari",
+    "femaleJewels": "bindi_nose_bangle",
+    "cultural": [],
+    "era": {
+      "classical": 100,
+      "imperial": 800,
+      "early": 1400,
+      "colonial": 1800,
+      "modern": 1950,
+      "robe": 0.9,
+      "wrap": 1.0,
+      "drape": 0.6,
+      "keep_hat": 0.15,
+      "revival": 0.1,
+      "arm_end_m": 1,
+      "arm_end_f": 2
+    }
+  },
+  "persianate": {
+    "tones": [
+      "c08a5e",
+      "a9714b",
+      "d09a70",
+      "8d5a39"
+    ],
+    "hairs": [
+      "141010",
+      "2b1d14",
+      "3a2a1c"
+    ],
+    "cloths": [
+      "2f4f7a",
+      "7a2f3f",
+      "e0d3a8",
+      "3f6b5a",
+      "4a4436",
+      "d9b25a",
+      "8a3f6a",
+      "1f3f5f",
+      "b8763f",
+      "6a8a7a",
+      "c9a2b0",
+      "3f4a6a",
+      "a83f3f",
+      "e8d9c0",
+      "2e7a7a",
+      "8a2f4a",
+      "d8b04a",
+      "6b8a5a",
+      "e8dcc0",
+      "4a4a7a"
+    ],
+    "trim": "d9b25a",
+    "hairStylesMale": [
+      "short_beard",
+      "turban_wrap",
+      "short",
+      "long"
+    ],
+    "hairStylesFemale": [
+      "wrapped",
+      "bun",
+      "loose",
+      "braid",
+      "long"
+    ],
+    "garments": {
+      "farmer": [
+        "crew_tee"
+      ],
+      "artisan": [
+        "crew_tee"
+      ],
+      "merchant": [
+        "button_down",
+        "polo"
+      ],
+      "scholar": [
+        "mock_turtleneck",
+        "button_down"
+      ],
+      "healer": [
+        "v_neck_tee"
+      ],
+      "citizen": [
+        "crew_tee"
+      ],
+      "advisor": [
+        "button_down"
+      ],
+      "scribe": [
+        "button_down"
+      ],
+      "villager": [
+        "crew_tee"
+      ]
+    },
+    "uniforms": {
+      "soldier": {
+        "garments": [
+          "uniform_khaki"
+        ],
+        "note": "the regiment's khaki"
+      },
+      "guard": {
+        "garments": [
+          "uniform_khaki"
+        ],
+        "note": "the same cloth as the soldier"
+      },
+      "priest": {
+        "garments": [
+          "vestment"
+        ],
+        "note": "the mosque's vestment - a plain robe"
+      }
+    },
+    "lower": "paijama",
+    "femaleLower": "skirt",
+    "femaleJewels": "earring_veil",
+    "cultural": [],
+    "era": {
+      "classical": 500,
+      "imperial": 1000,
+      "early": 1600,
+      "colonial": 1850,
+      "modern": 1935,
+      "robe": 1.2,
+      "wrap": 0.7,
+      "drape": 0.6,
+      "keep_hat": 0.55,
+      "revival": 0.85,
+      "arm_end_m": 1,
+      "arm_end_f": 3
+    }
+  },
+  "mesopotamian": {
+    "tones": [
+      "c08a5e",
+      "a9714b",
+      "8d5a39"
+    ],
+    "hairs": [
+      "141010",
+      "2b1d14"
+    ],
+    "cloths": [
+      "c8a06a",
+      "8e5a3b",
+      "4a5b6b",
+      "7d3f3f",
+      "b08a5a",
+      "3f4f5f",
+      "9a6b4a",
+      "5f7a6a",
+      "d9c08a",
+      "6b4a3f",
+      "2f2a26",
+      "e8e0cc",
+      "3a5f8a",
+      "c08a2e",
+      "4a7a6a",
+      "6b7a4a",
+      "9a4a2e",
+      "d9a83a",
+      "7a2f4a",
+      "5a6a7a"
+    ],
+    "trim": "c9a227",
+    "hairStylesMale": [
+      "curly",
+      "short_beard",
+      "long",
+      "short"
+    ],
+    "hairStylesFemale": [
+      "braid",
+      "bun",
+      "loose",
+      "wrapped",
+      "long"
+    ],
+    "garments": {
+      "farmer": [
+        "crew_tee"
+      ],
+      "artisan": [
+        "crew_tee"
+      ],
+      "merchant": [
+        "button_down"
+      ],
+      "scholar": [
+        "button_down"
+      ],
+      "healer": [
+        "v_neck_tee"
+      ],
+      "citizen": [
+        "crew_tee"
+      ],
+      "advisor": [
+        "button_down"
+      ],
+      "scribe": [
+        "button_down"
+      ],
+      "villager": [
+        "crew_tee"
+      ]
+    },
+    "uniforms": {
+      "soldier": {
+        "garments": [
+          "uniform_khaki"
+        ],
+        "note": "the regiment's khaki"
+      },
+      "guard": {
+        "garments": [
+          "uniform_khaki"
+        ],
+        "note": "the same cloth as the soldier"
+      },
+      "priest": {
+        "garments": [
+          "vestment"
+        ],
+        "note": "the temple's vestment"
+      }
+    },
+    "lower": "skirt",
+    "femaleLower": "skirt",
+    "femaleJewels": "earring",
+    "cultural": [],
+    "era": {
+      "classical": 500,
+      "imperial": 1000,
+      "early": 1500,
+      "colonial": 1850,
+      "modern": 1940,
+      "robe": 1.1,
+      "wrap": 0.8,
+      "drape": 0.5,
+      "keep_hat": 0.35,
+      "revival": 0.2,
+      "arm_end_m": 1,
+      "arm_end_f": 3
+    }
+  },
+  "mediterranean": {
+    "tones": [
+      "e0b08a",
+      "c99a72",
+      "a9714b",
+      "d9a97f"
+    ],
+    "hairs": [
+      "2b1d14",
+      "4a3524",
+      "1a1410",
+      "6b4a2c"
+    ],
+    "cloths": [
+      "e8e2d2",
+      "2f4f7a",
+      "8e3b3b",
+      "d9b25a",
+      "4a6b5a",
+      "a85a3f",
+      "3f5f8a",
+      "6b8a7a",
+      "c9b89a",
+      "8a2f4a",
+      "5a4a3a",
+      "b0c0c8",
+      "5a2f5a",
+      "3a6b5a",
+      "c8a03a",
+      "8a4a2f"
+    ],
+    "trim": "c9a227",
+    "hairStylesMale": [
+      "short",
+      "short_beard",
+      "curly",
+      "long"
+    ],
+    "hairStylesFemale": [
+      "bun",
+      "braid",
+      "loose",
+      "wrapped",
+      "long"
+    ],
+    "garments": {
+      "farmer": [
+        "crew_tee",
+        "shorts"
+      ],
+      "artisan": [
+        "crew_tee",
+        "graphic_tee"
+      ],
+      "merchant": [
+        "button_down",
+        "blazer"
+      ],
+      "scholar": [
+        "button_down",
+        "cardigan"
+      ],
+      "healer": [
+        "v_neck_tee"
+      ],
+      "citizen": [
+        "crew_tee",
+        "polo"
+      ],
+      "advisor": [
+        "blazer",
+        "button_down"
+      ],
+      "scribe": [
+        "button_down"
+      ],
+      "villager": [
+        "crew_tee",
+        "tank"
+      ]
+    },
+    "uniforms": {
+      "soldier": {
+        "garments": [
+          "uniform_green"
+        ],
+        "note": "the field uniform"
+      },
+      "guard": {
+        "garments": [
+          "uniform_green"
+        ],
+        "note": "the same field uniform"
+      },
+      "priest": {
+        "garments": [
+          "vestment"
+        ],
+        "note": "the church's vestment"
+      }
+    },
+    "lower": "trousers",
+    "femaleLower": "skirt",
+    "femaleJewels": "earring",
+    "cultural": [],
+    "era": {
+      "classical": 0,
+      "imperial": 700,
+      "early": 1450,
+      "colonial": 1750,
+      "modern": 1945,
+      "robe": 1.0,
+      "wrap": 0.5,
+      "drape": 0.2,
+      "keep_hat": 0.05,
+      "revival": 0.0,
+      "arm_end_m": 2,
+      "arm_end_f": 2
+    }
+  },
+  "rome": {
+    "tones": [
+      "d9a97f",
+      "c99a72",
+      "a9714b"
+    ],
+    "hairs": [
+      "2b1d14",
+      "4a3524",
+      "1a1410"
+    ],
+    "cloths": [
+      "e8e2d2",
+      "8e3b3b",
+      "3f4f7a",
+      "c8a06a",
+      "a85a2f",
+      "5f6b4a",
+      "7a3f5f",
+      "d9c8a8",
+      "4a5a6a",
+      "8a7a5f",
+      "5f2f5a",
+      "4a6a8a",
+      "b0452f",
+      "e8c86a",
+      "6b4a2f",
+      "7a8a5a",
+      "5a5a62",
+      "8a2f3a",
+      "f0ece0",
+      "c08a4a"
+    ],
+    "trim": "c9a227",
+    "hairStylesMale": [
+      "short",
+      "curly",
+      "short_beard",
+      "long"
+    ],
+    "hairStylesFemale": [
+      "bun",
+      "braid",
+      "loose",
+      "wrapped",
+      "long"
+    ],
+    "garments": {
+      "farmer": [
+        "crew_tee"
+      ],
+      "artisan": [
+        "crew_tee"
+      ],
+      "merchant": [
+        "button_down"
+      ],
+      "scholar": [
+        "button_down"
+      ],
+      "healer": [
+        "v_neck_tee"
+      ],
+      "citizen": [
+        "crew_tee"
+      ],
+      "advisor": [
+        "blazer"
+      ],
+      "scribe": [
+        "button_down"
+      ],
+      "villager": [
+        "crew_tee"
+      ]
+    },
+    "uniforms": {
+      "soldier": {
+        "garments": [
+          "uniform_green"
+        ],
+        "note": "the field uniform"
+      },
+      "guard": {
+        "garments": [
+          "uniform_green"
+        ],
+        "note": "the same field uniform"
+      },
+      "priest": {
+        "garments": [
+          "vestment"
+        ],
+        "note": "the temple's vestment"
+      }
+    },
+    "lower": "tunic",
+    "femaleLower": "skirt",
+    "femaleJewels": "earring",
+    "cultural": [],
+    "era": {
+      "classical": 0,
+      "imperial": 700,
+      "early": 1450,
+      "colonial": 1750,
+      "modern": 1945,
+      "robe": 1.0,
+      "wrap": 0.5,
+      "drape": 0.15,
+      "keep_hat": 0.05,
+      "revival": 0.0,
+      "arm_end_m": 2,
+      "arm_end_f": 2
+    }
+  },
+  "north_african": {
+    "tones": [
+      "b57f55",
+      "a9714b",
+      "8d5a39",
+      "c08a5e"
+    ],
+    "hairs": [
+      "141010",
+      "2b1d14",
+      "3a2a1c"
+    ],
+    "cloths": [
+      "e0d3a8",
+      "2f6ea8",
+      "8e5a3b",
+      "3f6b5a",
+      "7a2f3f",
+      "c8873f",
+      "4a4a6a",
+      "a83f5f",
+      "6b8a9a",
+      "d9c08a",
+      "5a3f2f",
+      "8a6ba8",
+      "2f5a7a",
+      "c88a3a",
+      "7a3a4a",
+      "efe4c8"
+    ],
+    "trim": "d9b25a",
+    "hairStylesMale": [
+      "short_beard",
+      "wrapped_head",
+      "short",
+      "long"
+    ],
+    "hairStylesFemale": [
+      "wrapped",
+      "braid",
+      "bun",
+      "loose",
+      "long"
+    ],
+    "garments": {
+      "farmer": [
+        "crew_tee"
+      ],
+      "artisan": [
+        "crew_tee"
+      ],
+      "merchant": [
+        "button_down"
+      ],
+      "scholar": [
+        "button_down"
+      ],
+      "healer": [
+        "v_neck_tee"
+      ],
+      "citizen": [
+        "crew_tee"
+      ],
+      "advisor": [
+        "button_down"
+      ],
+      "scribe": [
+        "button_down"
+      ],
+      "villager": [
+        "crew_tee"
+      ]
+    },
+    "uniforms": {
+      "soldier": {
+        "garments": [
+          "uniform_khaki"
+        ],
+        "note": "the regiment's khaki"
+      },
+      "guard": {
+        "garments": [
+          "uniform_khaki"
+        ],
+        "note": "the same cloth as the soldier"
+      },
+      "priest": {
+        "garments": [
+          "vestment"
+        ],
+        "note": "the mosque's plain robe"
+      }
+    },
+    "lower": "wrap",
+    "femaleLower": "wrap",
+    "femaleJewels": "earring_veil",
+    "cultural": [],
+    "era": {
+      "classical": 0,
+      "imperial": 1000,
+      "early": 1500,
+      "colonial": 1880,
+      "modern": 1950,
+      "robe": 1.2,
+      "wrap": 0.75,
+      "drape": 0.65,
+      "keep_hat": 0.5,
+      "revival": 0.8,
+      "arm_end_m": 1,
+      "arm_end_f": 3
+    }
+  },
+  "african": {
+    "tones": [
+      "6f4526",
+      "8d5a39",
+      "4a2c18",
+      "a9714b"
+    ],
+    "hairs": [
+      "141010",
+      "1a1410"
+    ],
+    "cloths": [
+      "d9a13a",
+      "8e3b57",
+      "3f6b5a",
+      "c8452f",
+      "2f4f7a",
+      "e8b84a",
+      "7a2f2f",
+      "3f7a5f",
+      "a85a2f",
+      "5f3f6a",
+      "c9d9a0",
+      "8a4a2f",
+      "2f6b8a",
+      "3a6b3a",
+      "c85a2a",
+      "e8c85a",
+      "4a3a6a"
+    ],
+    "trim": "d9b25a",
+    "hairStylesMale": [
+      "curly",
+      "short",
+      "short_beard",
+      "long"
+    ],
+    "hairStylesFemale": [
+      "braid",
+      "loose",
+      "wrapped",
+      "bun",
+      "long"
+    ],
+    "garments": {
+      "farmer": [
+        "crew_tee",
+        "tank"
+      ],
+      "artisan": [
+        "crew_tee",
+        "graphic_tee"
+      ],
+      "merchant": [
+        "polo",
+        "button_down"
+      ],
+      "scholar": [
+        "button_down"
+      ],
+      "healer": [
+        "v_neck_tee"
+      ],
+      "citizen": [
+        "crew_tee",
+        "tank"
+      ],
+      "advisor": [
+        "button_down"
+      ],
+      "scribe": [
+        "button_down"
+      ],
+      "villager": [
+        "crew_tee",
+        "tank"
+      ]
+    },
+    "uniforms": {
+      "soldier": {
+        "garments": [
+          "uniform_green"
+        ],
+        "note": "the field uniform"
+      },
+      "guard": {
+        "garments": [
+          "uniform_green"
+        ],
+        "note": "the same field uniform"
+      },
+      "priest": {
+        "garments": [
+          "vestment"
+        ],
+        "note": "the church's vestment"
+      }
+    },
+    "lower": "wrapper",
+    "femaleLower": "wrapper",
+    "femaleJewels": "earring_bangle",
+    "cultural": [],
+    "era": {
+      "classical": 0,
+      "imperial": 900,
+      "early": 1500,
+      "colonial": 1900,
+      "modern": 1960,
+      "robe": 0.9,
+      "wrap": 0.9,
+      "drape": 0.45,
+      "keep_hat": 0.45,
+      "revival": 0.6,
+      "arm_end_m": 2,
+      "arm_end_f": 2
+    }
+  },
+  "east_asian": {
+    "tones": [
+      "e8c9a0",
+      "d9b98a",
+      "c8a06a"
+    ],
+    "hairs": [
+      "141010",
+      "1a1410",
+      "2b1d14"
+    ],
+    "cloths": [
+      "2f4f7a",
+      "8e3b3b",
+      "e8e2d2",
+      "3f6b5a",
+      "4a4436",
+      "c8a06a",
+      "5f7a8a",
+      "a85a4a",
+      "d9d0b8",
+      "2f6b5f",
+      "7a4a6a",
+      "8a8a6a",
+      "8a2f3a",
+      "2f5a6b",
+      "d8c8a0",
+      "5a7a4a"
+    ],
+    "trim": "c9a227",
+    "hairStylesMale": [
+      "bun",
+      "short",
+      "long",
+      "short_beard"
+    ],
+    "hairStylesFemale": [
+      "bun",
+      "loose",
+      "braid",
+      "plait_over",
+      "long"
+    ],
+    "garments": {
+      "farmer": [
+        "crew_tee",
+        "shorts"
+      ],
+      "artisan": [
+        "crew_tee"
+      ],
+      "merchant": [
+        "button_down",
+        "polo"
+      ],
+      "scholar": [
+        "button_down"
+      ],
+      "healer": [
+        "v_neck_tee"
+      ],
+      "citizen": [
+        "crew_tee"
+      ],
+      "advisor": [
+        "blazer"
+      ],
+      "scribe": [
+        "button_down"
+      ],
+      "villager": [
+        "crew_tee"
+      ]
+    },
+    "uniforms": {
+      "soldier": {
+        "garments": [
+          "uniform_green"
+        ],
+        "note": "the field uniform"
+      },
+      "guard": {
+        "garments": [
+          "uniform_green"
+        ],
+        "note": "the same field uniform"
+      },
+      "priest": {
+        "garments": [
+          "vestment"
+        ],
+        "note": "the temple's vestment"
+      }
+    },
+    "lower": "robe",
+    "femaleLower": "robe",
+    "femaleJewels": "earring",
+    "cultural": [],
+    "era": {
+      "classical": 0,
+      "imperial": 900,
+      "early": 1450,
+      "colonial": 1900,
+      "modern": 1912,
+      "robe": 1.3,
+      "wrap": 0.4,
+      "drape": 0.1,
+      "keep_hat": 0.1,
+      "revival": 0.15,
+      "arm_end_m": 2,
+      "arm_end_f": 2
+    }
+  },
+  "americas": {
+    "tones": [
+      "a9714b",
+      "8d5a39",
+      "c08a5e",
+      "6f4526"
+    ],
+    "hairs": [
+      "141010",
+      "1a1410",
+      "2b1d14"
+    ],
+    "cloths": [
+      "c8a06a",
+      "8e5a3b",
+      "7d3f3f",
+      "3f6b5a",
+      "d9a13a",
+      "a83f4a",
+      "2f5f8a",
+      "e0c89a",
+      "6b4a6a",
+      "8a7a3f",
+      "c85a2f",
+      "4a3f2f",
+      "8a2f2f",
+      "3a5a8a",
+      "d8a83a",
+      "4a6a4a"
+    ],
+    "trim": "c9a227",
+    "hairStylesMale": [
+      "long",
+      "short",
+      "braid",
+      "short_beard"
+    ],
+    "hairStylesFemale": [
+      "braid",
+      "loose",
+      "wrapped",
+      "bun",
+      "long"
+    ],
+    "garments": {
+      "farmer": [
+        "crew_tee",
+        "tank"
+      ],
+      "artisan": [
+        "crew_tee",
+        "graphic_tee"
+      ],
+      "merchant": [
+        "button_down"
+      ],
+      "scholar": [
+        "button_down"
+      ],
+      "healer": [
+        "v_neck_tee"
+      ],
+      "citizen": [
+        "crew_tee",
+        "tank"
+      ],
+      "advisor": [
+        "button_down"
+      ],
+      "scribe": [
+        "button_down"
+      ],
+      "villager": [
+        "crew_tee",
+        "tank"
+      ]
+    },
+    "uniforms": {
+      "soldier": {
+        "garments": [
+          "uniform_khaki"
+        ],
+        "note": "the regiment's khaki"
+      },
+      "guard": {
+        "garments": [
+          "uniform_khaki"
+        ],
+        "note": "the same cloth as the soldier"
+      },
+      "priest": {
+        "garments": [
+          "vestment"
+        ],
+        "note": "the church's vestment"
+      }
+    },
+    "lower": "wrapper",
+    "femaleLower": "wrapper",
+    "femaleJewels": "earring",
+    "cultural": [],
+    "era": {
+      "classical": 0,
+      "imperial": 900,
+      "early": 1450,
+      "colonial": 1520,
+      "modern": 1950,
+      "robe": 0.8,
+      "wrap": 0.7,
+      "drape": 0.25,
+      "keep_hat": 0.2,
+      "revival": 0.4,
+      "arm_end_m": 2,
+      "arm_end_f": 2
+    }
+  }
+}

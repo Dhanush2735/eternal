@@ -87,19 +87,19 @@ public final class HistoricalEvent {
         return new HistoricalEvent(
             str(json, "id", "unknown_event"),
             str(json, "name", "Unnamed Event"),
-            str(json, "type", "GENERAL"),
+            strOr(json, "type", "kind", "GENERAL"),
             str(json, "severity", "NORMAL"),
-            integer(json, "year", 0),
+            integerOr(json, "year", "start", 0),
             integer(json, "month", 1),
             integer(json, "day", 1),
-            dbl(json, "latitude", 0.0d),
-            dbl(json, "longitude", 0.0d),
+            dblOr(json, "latitude", "lat", 0.0d),
+            dblOr(json, "longitude", "lon", 0.0d),
             str(json, "regionId", "global"),
             conditions,
             stringList(json, "preconditionIds"),
             stringList(json, "alliedFactionIds"),
             stringList(json, "opposedFactionIds"),
-            integer(json, "durationYears", 0),
+            durationYearsOf(json),
             lng(json, "casualtiesMilitary", 0L),
             lng(json, "casualtiesCivilian", 0L),
             dbl(json, "economicImpactPercent", 0.0d),
@@ -141,6 +141,58 @@ public final class HistoricalEvent {
     private static String safe(String value, String fallback) { return value == null || value.isBlank() ? fallback : value; }
     private static String str(JsonObject json, String key, String fallback) { return json.has(key) && !json.get(key).isJsonNull() ? json.get(key).getAsString() : fallback; }
     private static int integer(JsonObject json, String key, int fallback) { return json.has(key) ? json.get(key).getAsInt() : fallback; }
+
+    // ------------------------------------------------------------------
+    // Tolerant readers.
+    //
+    // The event packs under data/.../history/ do NOT use the key names this class originally
+    // expected. Measured across all 15,017 records:
+    //     "lat"  x15017, "latitude"   x0
+    //     "lon"  x15017, "longitude"  x0
+    //     "start" x14944, "year"      x73
+    // Reading only the long names silently produced latitude 0.0, longitude 0.0 for every event
+    // ever loaded, and year 0 for all but 73 of them. Nothing threw; the events simply all sat at
+    // the Gulf of Guinea in year zero.
+    //
+    // These helpers accept either spelling. They are additive: any file using the long names keeps
+    // working exactly as before.
+    // ------------------------------------------------------------------
+
+    /** First present key wins. Used where two spellings of the same field both occur in the data. */
+    private static String strOr(JsonObject json, String primary, String fallbackKey, String fallback) {
+        if (json.has(primary) && !json.get(primary).isJsonNull()) return json.get(primary).getAsString();
+        if (json.has(fallbackKey) && !json.get(fallbackKey).isJsonNull()) return json.get(fallbackKey).getAsString();
+        return fallback;
+    }
+
+    private static int integerOr(JsonObject json, String primary, String fallbackKey, int fallback) {
+        if (json.has(primary)) return json.get(primary).getAsInt();
+        if (json.has(fallbackKey)) return json.get(fallbackKey).getAsInt();
+        return fallback;
+    }
+
+    private static double dblOr(JsonObject json, String primary, String fallbackKey, double fallback) {
+        if (json.has(primary)) return json.get(primary).getAsDouble();
+        if (json.has(fallbackKey)) return json.get(fallbackKey).getAsDouble();
+        return fallback;
+    }
+
+    /**
+     * Duration in years. Explicit {@code durationYears} wins; otherwise it is derived from the
+     * {@code end} the packs actually carry. A single-year event ends one year after it starts, which
+     * is what {@code HistoryGazetteer.Event.activeIn} already assumes -- it is exclusive on
+     * {@code end}. Keeping the two consistent is what lets an in-world intervention be allowed
+     * exactly while the event is live, and refused afterwards.
+     */
+    private static int durationYearsOf(JsonObject json) {
+        if (json.has("durationYears")) return Math.max(0, json.get("durationYears").getAsInt());
+        if (json.has("end")) {
+            int start = json.has("start") ? json.get("start").getAsInt()
+                      : (json.has("year") ? json.get("year").getAsInt() : 0);
+            return Math.max(0, json.get("end").getAsInt() - start);
+        }
+        return 0;
+    }
     private static long lng(JsonObject json, String key, long fallback) { return json.has(key) ? json.get(key).getAsLong() : fallback; }
     private static double dbl(JsonObject json, String key, double fallback) { return json.has(key) ? json.get(key).getAsDouble() : fallback; }
     private static List<String> stringList(JsonObject json, String key) {

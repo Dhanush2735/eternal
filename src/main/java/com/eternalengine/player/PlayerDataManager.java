@@ -37,6 +37,8 @@ public final class PlayerDataManager {
         EternalEnginePacketHandler.sendToPlayer(new SimulationStatePacket(year, effectiveSpeed, baseSpeed,
             branch, false, slowdown, slowdown ? "active" : "", List.of()), player);
         data.recordAction("LOGIN", year, "Player logged in");
+        // Step 20: the history book, once per player.
+        com.eternalengine.knowledge.BookService.welcome(player);
     }
 
     @SubscribeEvent

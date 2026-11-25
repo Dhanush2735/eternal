@@ -1,5 +1,7 @@
 package com.eternalengine.buildings;
 
+import com.eternalengine.civilization.SettlementRank;
+import com.eternalengine.towns.BuildingCulture;
 import com.eternalengine.terrabridge.TerraCoordinateHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -29,6 +31,36 @@ public final class EraBuildingPlanner {
         };
         return new BuildingStyle(normalized.toLowerCase(java.util.Locale.ROOT) + "_" + (buildingType == null ? "generic" : buildingType),
             buildingType, size, size, floors, 4, MaterialSet.forEra(normalized));
+    }
+
+    /**
+     * Step 33 (B9, E16): the style of a house in a place and a year, from the building culture
+     * register. The building's heights and materials come from the row that covers the point --
+     * a mud-brick compound of one storey in Timbuktu in 1350, a panel block of eight in Moscow in
+     * 1980 -- rather than from a coarse era, and the era form below is left exactly as it was.
+     */
+    public BuildingStyle selectStyle(double lat, double lon, int year, SettlementRank rank, String buildingType) {
+        String type = buildingType == null ? "generic" : buildingType.toLowerCase(java.util.Locale.ROOT);
+        int size = switch (type) {
+            case "house" -> 7;
+            case "market" -> 11;
+            case "temple" -> 13;
+            default -> 9;
+        };
+        String id = "place_" + type;
+        int floors = 1;
+        MaterialSet mats = MaterialSet.forPlace(lat, lon, year, rank);
+        java.util.Optional<BuildingCulture.Reading> r =
+                BuildingCulture.get().at(lat, lon, year, rank == null ? SettlementRank.TOWN : rank);
+        if (r.isPresent()) {
+            BuildingCulture.Reading v = r.get();
+            id = v.id() + "_" + type;
+            floors = Math.max(1, Math.min(6, v.storeys()));
+            if ("house".equals(type) && v.storeys() <= 1) {
+                floors = 1;
+            }
+        }
+        return new BuildingStyle(id, buildingType, size, size, floors, 4, mats);
     }
 
     public PlannedBuilding planAtSurface(ServerLevel level, BlockPos requestedOrigin, BuildingStyle style, String planId) {

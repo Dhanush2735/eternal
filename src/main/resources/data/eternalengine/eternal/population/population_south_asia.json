@@ -1,0 +1,286 @@
+{
+  "id": "population_south_asia",
+  "title": "Sourced population series, South Asia cores",
+  "note": "SOURCED ROWS ONLY. Every row below is an attributed census or gazetteer figure. Everything the resolver returns that is NOT in this file is derived, and is labelled with how.",
+  "boundaryCaveat": "City figures change meaning across decades as municipal boundaries grow: Hyderabad 1941 is the city, 2001/2011 are urban agglomeration; Secunderabad 1941 is the 1941 census block, 2001/2011 are the Cantonment Board. The resolver labels values that span such a change 'interpolated', never 'sourced'.",
+  "defaults": {
+    "note": "Era x rank fallback bands. CALIBRATION CONSTANTS, not records. They exist so an occupied place never reports zero. Labelled 'floor'.",
+    "bands": [
+      {
+        "fromYear": -3000,
+        "toYear": -1000,
+        "village": [
+          40,
+          150
+        ],
+        "town": [
+          500,
+          2000
+        ],
+        "city": [
+          5000,
+          30000
+        ]
+      },
+      {
+        "fromYear": -1000,
+        "toYear": 0,
+        "village": [
+          50,
+          200
+        ],
+        "town": [
+          800,
+          3000
+        ],
+        "city": [
+          8000,
+          60000
+        ]
+      },
+      {
+        "fromYear": 0,
+        "toYear": 1000,
+        "village": [
+          60,
+          250
+        ],
+        "town": [
+          1000,
+          4000
+        ],
+        "city": [
+          10000,
+          100000
+        ]
+      },
+      {
+        "fromYear": 1000,
+        "toYear": 1500,
+        "village": [
+          80,
+          300
+        ],
+        "town": [
+          1500,
+          6000
+        ],
+        "city": [
+          15000,
+          150000
+        ]
+      },
+      {
+        "fromYear": 1500,
+        "toYear": 1800,
+        "village": [
+          100,
+          400
+        ],
+        "town": [
+          2000,
+          10000
+        ],
+        "city": [
+          20000,
+          400000
+        ]
+      },
+      {
+        "fromYear": 1800,
+        "toYear": 1900,
+        "village": [
+          150,
+          700
+        ],
+        "town": [
+          3000,
+          20000
+        ],
+        "city": [
+          40000,
+          800000
+        ]
+      },
+      {
+        "fromYear": 1900,
+        "toYear": 9999,
+        "village": [
+          200,
+          1500
+        ],
+        "town": [
+          5000,
+          40000
+        ],
+        "city": [
+          80000,
+          5000000
+        ]
+      }
+    ]
+  },
+  "calibration": {
+    "note": "Declared model constants, in relative units where a village = 1. A city is modelled at 2,500x a village, so a 1,000,000 anchor implies roughly 400-person villages -- which is what the 1941 Telangana/Census district averages actually show. Tuned against the Appendix A benchmark (Akanpalle 1948). Not data; changing them changes every modelled value.",
+    "rankUnits": {
+      "village": 1.0,
+      "town": 26.0,
+      "city": 2500.0
+    },
+    "gravityDecayKm": 250.0,
+    "maxInterpolationGapYears": 60,
+    "gravityRadiusKm": 250.0
+  },
+  "regions": [
+    {
+      "id": "hyderabad",
+      "name": "Hyderabad city",
+      "kind": "settlement",
+      "rank": "city",
+      "lat": 17.3616,
+      "lon": 78.4747,
+      "radiusKm": 8,
+      "series": [
+        {
+          "year": 1901,
+          "population": 448466,
+          "source": "Census of India 1901, Hyderabad city"
+        },
+        {
+          "year": 1931,
+          "population": 466894,
+          "source": "Census of India 1931, Hyderabad city"
+        },
+        {
+          "year": 1941,
+          "population": 739159,
+          "source": "Census of India 1941 Vol XXI, H.E.H. The Nizam's Dominions -- Hyderabad city (50.17% Hindu, 46.66% Muslim)"
+        },
+        {
+          "year": 1951,
+          "population": 1106880,
+          "source": "Census of India 1951, Hyderabad city"
+        },
+        {
+          "year": 2001,
+          "population": 5742036,
+          "source": "Census of India 2001, Hyderabad urban agglomeration"
+        },
+        {
+          "year": 2011,
+          "population": 7677018,
+          "source": "Census of India 2011, Hyderabad urban agglomeration"
+        }
+      ]
+    },
+    {
+      "id": "secunderabad",
+      "name": "Secunderabad",
+      "kind": "settlement",
+      "rank": "city",
+      "lat": 17.4399,
+      "lon": 78.4983,
+      "radiusKm": 6,
+      "series": [
+        {
+          "year": 1941,
+          "population": 135370,
+          "source": "Census of India 1941, Hyderabad district Secunderabad block: 102,147 Hindu + 21,552 Muslim + 11,671 other"
+        },
+        {
+          "year": 2001,
+          "population": 206102,
+          "source": "Census of India 2001, Secunderabad Cantonment Board civil population"
+        },
+        {
+          "year": 2011,
+          "population": 217910,
+          "source": "Census of India 2011, Secunderabad Cantonment Board (22.81 km2, 50,333 households)"
+        }
+      ]
+    },
+    {
+      "id": "akanpalle",
+      "name": "Akanpalle (Akhanpally)",
+      "kind": "settlement",
+      "rank": "village",
+      "lat": 17.08759,
+      "lon": 78.38949,
+      "radiusKm": 3,
+      "series": [
+        {
+          "year": 2011,
+          "population": 1047,
+          "source": "Census of India 2011 village code 574779: 546 M / 501 F, 256 households, 33% SC, 30% ST"
+        }
+      ]
+    },
+    {
+      "id": "maheswaram_mandal",
+      "name": "Maheswaram mandal",
+      "kind": "aggregate",
+      "rank": "town",
+      "lat": 17.2394,
+      "lon": 78.4331,
+      "radiusKm": 20,
+      "series": [
+        {
+          "year": 2011,
+          "population": 65125,
+          "source": "Census of India 2011, Maheswaram mandal, Ranga Reddy (33 villages, 14,684 households)"
+        }
+      ],
+      "settlementCount": 33
+    },
+    {
+      "id": "atraf_i_balda",
+      "name": "Atraf-i-Balda district (sarf-i-khas)",
+      "kind": "aggregate",
+      "rank": "town",
+      "lat": 17.385,
+      "lon": 78.487,
+      "radiusKm": 90,
+      "series": [
+        {
+          "year": 1881,
+          "population": 355787,
+          "source": "Imperial Gazetteer of India 1909, Atraf-i-Balda (847 villages incl. jagirs)"
+        },
+        {
+          "year": 1891,
+          "population": 389784,
+          "source": "Imperial Gazetteer of India 1909, Atraf-i-Balda"
+        },
+        {
+          "year": 1901,
+          "population": 420702,
+          "source": "Imperial Gazetteer of India 1909, Atraf-i-Balda -- 847 villages"
+        },
+        {
+          "year": 1941,
+          "population": 612493,
+          "source": "Census of India 1941 (Hyderabad State), Atraf-i-Balada district (83.66% Hindu, 12.90% Muslim)"
+        }
+      ],
+      "settlementCount": 847
+    },
+    {
+      "id": "hyderabad_state",
+      "name": "Hyderabad State (Asaf Jahi)",
+      "kind": "polity",
+      "rank": "city",
+      "lat": 17.385,
+      "lon": 78.487,
+      "radiusKm": 250,
+      "startYear": 1724,
+      "endYear": 1948,
+      "series": [
+        {
+          "year": 1941,
+          "population": 16338534,
+          "source": "Census of India 1941 Vol XXI, H.E.H. The Nizam's Dominions (Hyderabad State)"
+        }
+      ]
+    }
+  ]
+}

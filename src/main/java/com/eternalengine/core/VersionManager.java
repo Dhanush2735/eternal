@@ -25,7 +25,9 @@ public class VersionManager {
     private static boolean initialized = false;
     
     // Current data version
-    public static final int CURRENT_VERSION = 1;
+    // 2 (step 14): state.json also holds the running world (wars, outbreaks, trade routes, world flags,
+    // the clock's position inside the year, an operator's pause). Older saves simply lack those keys.
+    public static final int CURRENT_VERSION = 2;
     
     // Migration registry
     private final List<Migration> migrations;
@@ -50,6 +52,11 @@ public class VersionManager {
         LOGGER.info("[VersionManager] Initialized, current data version: {}", CURRENT_VERSION);
     }
     
+    /** Whether {@link #initialize()} ran (callers that may run before it check this). */
+    public static boolean isReady() {
+        return initialized;
+    }
+
     /**
      * Get the singleton instance
      */
@@ -76,6 +83,15 @@ public class VersionManager {
             }
         });
         
+        // Version 1 to 2: nothing to convert. The new keys are optional when read; an old save loads with
+        // no wars, outbreaks, routes or flags, which is exactly what it had.
+        migrations.add(new Migration(1, 2, "Running world state in state.json (step 14)") {
+            @Override
+            public JsonObject migrate(JsonObject data) {
+                return data;
+            }
+        });
+
         // Register migrations here as data versions advance:
         // migrations.add(new Migration(1, 2, "Add new feature data") { ... });
     }

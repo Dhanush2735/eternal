@@ -1,0 +1,324 @@
+{
+ "format": 1,
+ "about": "Step 19b: what merchants buy. See worldfill/build_goods_table.py for the rules. Prices come from the trade engine; notes are for developers only.",
+ "goods": [
+  {
+   "id": "WHEAT",
+   "name": "wheat",
+   "one": "sheaf of wheat",
+   "many": "sheaves of wheat",
+   "items": [
+    "minecraft:wheat"
+   ],
+   "unitItems": 4,
+   "want": 64,
+   "not": [
+    {
+     "before": 1520,
+     "box": [
+      -56,
+      -170,
+      72,
+      -30
+     ],
+     "note": "Wheat came to the Americas with the Spanish (Mexico in the 1520s)."
+    },
+    {
+     "before": 1788,
+     "box": [
+      -48,
+      110,
+      -9,
+      180
+     ],
+     "note": "Wheat and bread came to Australia with the First Fleet (1788)."
+    }
+   ]
+  },
+  {
+   "id": "BREAD",
+   "name": "bread",
+   "one": "loaf of bread",
+   "many": "loaves of bread",
+   "items": [
+    "minecraft:bread"
+   ],
+   "unitItems": 1.5,
+   "want": 32,
+   "not": [
+    {
+     "before": 1520,
+     "box": [
+      -56,
+      -170,
+      72,
+      -30
+     ],
+     "note": "Wheat came to the Americas with the Spanish (Mexico in the 1520s)."
+    },
+    {
+     "before": 1788,
+     "box": [
+      -48,
+      110,
+      -9,
+      180
+     ],
+     "note": "Wheat and bread came to Australia with the First Fleet (1788)."
+    }
+   ],
+   "note": "A loaf (3 sheaves) is worth a third more than its wheat: the baker's work and fuel."
+  },
+  {
+   "id": "TIMBER",
+   "name": "logs",
+   "one": "log",
+   "many": "logs",
+   "items": [
+    "#minecraft:logs_that_burn"
+   ],
+   "unitItems": 4,
+   "want": 64,
+   "not": []
+  },
+  {
+   "id": "STONE",
+   "name": "stone",
+   "one": "block of stone",
+   "many": "blocks of stone",
+   "items": [
+    "minecraft:stone",
+    "minecraft:cobblestone"
+   ],
+   "unitItems": 16,
+   "want": 128,
+   "not": []
+  },
+  {
+   "id": "COAL",
+   "name": "coal",
+   "one": "lump of coal",
+   "many": "lumps of coal",
+   "items": [
+    "minecraft:coal",
+    "minecraft:charcoal"
+   ],
+   "unitItems": 4,
+   "want": 32,
+   "not": [
+    {
+     "before": 1788,
+     "box": [
+      -48,
+      110,
+      -9,
+      180
+     ],
+     "note": "No metal, wool or gems in trade before 1788."
+    }
+   ],
+   "note": "Charcoal counts as coal: it was the fuel of smiths everywhere long before coal was mined."
+  },
+  {
+   "id": "IRON_INGOT",
+   "name": "iron",
+   "one": "bar of iron",
+   "many": "bars of iron",
+   "items": [
+    "minecraft:iron_ingot"
+   ],
+   "unitItems": 1,
+   "want": 16,
+   "not": [
+    {
+     "before": -1200,
+     "note": "The Iron Age: the Near East and South Asia about 1200 BCE."
+    },
+    {
+     "before": -700,
+     "box": [
+      18,
+      97.5,
+      45,
+      123.5
+     ],
+     "note": "Iron in China from about 700-600 BCE."
+    },
+    {
+     "before": -400,
+     "box": [
+      33,
+      124,
+      43.5,
+      131
+     ],
+     "note": "Iron in Korea from about 400 BCE."
+    },
+    {
+     "before": -300,
+     "box": [
+      30,
+      129,
+      45.6,
+      146
+     ],
+     "note": "Iron in Japan from about 300 BCE (Yayoi)."
+    },
+    {
+     "before": 300,
+     "box": [
+      -35,
+      10,
+      -15,
+      41
+     ],
+     "note": "Iron reached southern Africa about 300 CE."
+    },
+    {
+     "before": 1500,
+     "box": [
+      -56,
+      -170,
+      72,
+      -30
+     ],
+     "note": "No iron working in the Americas before the Spanish."
+    },
+    {
+     "before": 1788,
+     "box": [
+      -48,
+      110,
+      -9,
+      180
+     ]
+    }
+   ]
+  },
+  {
+   "id": "COPPER_INGOT",
+   "name": "copper",
+   "one": "bar of copper",
+   "many": "bars of copper",
+   "items": [
+    "minecraft:copper_ingot"
+   ],
+   "unitItems": 1,
+   "want": 16,
+   "not": [
+    {
+     "before": 1788,
+     "box": [
+      -48,
+      110,
+      -9,
+      180
+     ],
+     "note": "No metal, wool or gems in trade before 1788."
+    }
+   ]
+  },
+  {
+   "id": "WOOL",
+   "name": "wool",
+   "one": "bundle of wool",
+   "many": "bundles of wool",
+   "items": [
+    "#minecraft:wool"
+   ],
+   "unitItems": 2,
+   "want": 32,
+   "not": [
+    {
+     "before": 1788,
+     "box": [
+      -48,
+      110,
+      -9,
+      180
+     ],
+     "note": "No metal, wool or gems in trade before 1788."
+    }
+   ]
+  },
+  {
+   "id": "GOLD_INGOT",
+   "name": "gold",
+   "one": "bar of gold",
+   "many": "bars of gold",
+   "items": [
+    "minecraft:gold_ingot"
+   ],
+   "unitItems": 1,
+   "want": 4,
+   "not": [
+    {
+     "before": 1788,
+     "box": [
+      -48,
+      110,
+      -9,
+      180
+     ],
+     "note": "No metal, wool or gems in trade before 1788."
+    }
+   ]
+  },
+  {
+   "id": "EMERALD",
+   "name": "emeralds",
+   "one": "emerald",
+   "many": "emeralds",
+   "items": [
+    "minecraft:emerald"
+   ],
+   "unitItems": 1,
+   "want": 4,
+   "not": [
+    {
+     "before": 1788,
+     "box": [
+      -48,
+      110,
+      -9,
+      180
+     ],
+     "note": "No metal, wool or gems in trade before 1788."
+    }
+   ]
+  },
+  {
+   "id": "WINE",
+   "name": "wine",
+   "one": "jar of wine",
+   "many": "jars of wine",
+   "items": [],
+   "unitItems": 1,
+   "want": 8,
+   "not": [],
+   "note": "No item yet: comes with the product atlas."
+  },
+  {
+   "id": "SILK",
+   "name": "silk",
+   "one": "bolt of silk",
+   "many": "bolts of silk",
+   "items": [],
+   "unitItems": 1,
+   "want": 8,
+   "not": [],
+   "note": "No item yet: comes with the product atlas."
+  },
+  {
+   "id": "SPICES",
+   "name": "spices",
+   "one": "bag of spices",
+   "many": "bags of spices",
+   "items": [],
+   "unitItems": 1,
+   "want": 8,
+   "not": [],
+   "note": "No item yet: comes with the product atlas."
+  }
+ ]
+}

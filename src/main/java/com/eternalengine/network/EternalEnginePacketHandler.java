@@ -15,7 +15,10 @@ import org.slf4j.Logger;
 public class EternalEnginePacketHandler {
 
     private static final Logger LOGGER = EternalEngineMod.getLogger();
-    private static final String PROTOCOL_VERSION = "1";
+    // Step 18: "2" (the talk packets). Step 18c: "3" (the date line). Step 18f: "4" (the date line removed again, at the
+    // user's wish; the messages after it moved up one). A client must have the same mod version as the server.
+    // Step 21: protocol 7 (the talk view carries "ended": "… has left."). A game and a server must have the same build.
+    private static final String PROTOCOL_VERSION = "8";
 
     private static SimpleChannel CHANNEL;
     private static int packetId = 0;
@@ -38,11 +41,25 @@ public class EternalEnginePacketHandler {
         registerPacket(BuildingInfoPacket.class, NetworkDirection.PLAY_TO_CLIENT);
         registerPacket(MapOverlayPacket.class, NetworkDirection.PLAY_TO_CLIENT);
         registerPacket(VipStatusPacket.class, NetworkDirection.PLAY_TO_CLIENT);
+        registerPacket(CrowdManifestPacket.class, NetworkDirection.PLAY_TO_CLIENT);
+        registerPacket(TalkViewPacket.class, NetworkDirection.PLAY_TO_CLIENT);
+        registerPacket(EraPanelPacket.class, NetworkDirection.PLAY_TO_CLIENT); // the sheet's trade screen and the person register
+        // Step 19c-19e: the trade screen, the newspaper and the map (new packets: protocol 5).
+        registerPacket(TradeViewPacket.class, NetworkDirection.PLAY_TO_CLIENT);
+        registerPacket(PaperViewPacket.class, NetworkDirection.PLAY_TO_CLIENT);
+        registerPacket(MapViewPacket.class, NetworkDirection.PLAY_TO_CLIENT);
+        registerPacket(BookViewPacket.class, NetworkDirection.PLAY_TO_CLIENT); // step 20
+        // Turn 223: the runtime suite's own camera (one shot request per frame it wants).
+        registerPacket(TestPhotoPacket.class, NetworkDirection.PLAY_TO_CLIENT);
+        // Turn 226: the runtime suite's own legs (the pilot walks the player through each stop).
+        registerPacket(TestWalkPacket.class, NetworkDirection.PLAY_TO_CLIENT);
 
         // Client -> Server
         registerPacket(VipCommandPacket.class, NetworkDirection.PLAY_TO_SERVER);
         registerPacket(SpeedVotePacket.class, NetworkDirection.PLAY_TO_SERVER);
         registerPacket(RequestDataPacket.class, NetworkDirection.PLAY_TO_SERVER);
+        registerPacket(TalkActionPacket.class, NetworkDirection.PLAY_TO_SERVER);
+        registerPacket(BookActionPacket.class, NetworkDirection.PLAY_TO_SERVER); // step 20
 
         LOGGER.info("[EE Network] Registered {} packets", packetId);
     }

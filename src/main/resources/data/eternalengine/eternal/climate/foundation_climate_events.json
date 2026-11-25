@@ -1,30 +1,39 @@
-[
-  {
-    "id": "little_ice_age",
-    "name": "Little Ice Age",
-    "type": "COOLING",
-    "startYear": 1300,
-    "endYear": 1850,
-    "severity": 6,
-    "radiusKm": 0,
-    "centerLat": 50.0,
-    "centerLon": 0.0,
-    "tempChangeDegrees": -0.6,
-    "precipChangePercent": 0.0,
-    "yieldImpactPercent": -8.0
-  },
-  {
-    "id": "year_without_summer",
-    "name": "Year Without a Summer",
-    "type": "VOLCANIC",
-    "startYear": 1816,
-    "endYear": 1816,
-    "severity": 8,
-    "radiusKm": 0,
-    "centerLat": 0.0,
-    "centerLon": 0.0,
-    "tempChangeDegrees": -2.0,
-    "precipChangePercent": 10.0,
-    "yieldImpactPercent": -25.0
-  }
-]
+{
+  "note": "Step 35 (B4). This file is no longer the mod's climate: it keeps two events only so that a world folder made before step 35 still holds something, and so the shape a modder would extend is still written down. The mod's climate is now history/climate_periods.json.gz — 83 dated periods, each with a centre and a radius, read by com.eternalengine.climate.ClimatePeriods. A 2019 synthesis of more than ninety proxy records found the Roman Warm Period, the Medieval Warm Period and the Little Ice Age to be regional phenomena rather than globally coherent episodes, so a period must not be applied to the whole world on the strength of a radius of 0. The two rows below are the two that used to be hard-coded into ClimateEngine.registerDefaults(); they are registered only when the period table cannot be read. Tambora's years are corrected to 1815-1818 and its anomaly to -0.7 K, which is the Northern Hemisphere peak in the reconstruction.",
+  "table": "history/climate_periods.json.gz",
+  "reader": "com.eternalengine.climate.ClimatePeriods",
+  "events": [
+    {
+      "id": "little_ice_age",
+      "name": "Little Ice Age",
+      "type": "COOLING",
+      "startYear": 1300,
+      "endYear": 1850,
+      "severity": 6,
+      "radiusKm": 4000,
+      "centerLat": 55.0,
+      "centerLon": -10.0,
+      "tempChangeDegrees": -0.6,
+      "precipChangePercent": 0.0,
+      "yieldImpactPercent": -8.0,
+      "certainty": "recorded",
+      "note": "North Atlantic and Europe only. The Andes and East Asia had their own cold centuries, at different dates."
+    },
+    {
+      "id": "year_without_summer",
+      "name": "Tambora, 1815: the Year Without a Summer",
+      "type": "VOLCANIC",
+      "startYear": 1815,
+      "endYear": 1818,
+      "severity": 8,
+      "radiusKm": 0,
+      "centerLat": 0.0,
+      "centerLon": 0.0,
+      "tempChangeDegrees": -0.7,
+      "precipChangePercent": 10.0,
+      "yieldImpactPercent": -25.0,
+      "certainty": "recorded",
+      "note": "A volcanic winter is the one kind of period that really is hemispheric within a year or two, which is why this row keeps radius 0."
+    }
+  ]
+}

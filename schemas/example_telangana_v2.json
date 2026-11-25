@@ -1,0 +1,78 @@
+{
+  "schema": "eternal/2",
+  "id": "population_telangana",
+  "title": "Telangana census series",
+  "kind": "population",
+  "sources": {
+    "census1941_sec": {
+      "citation": "Census of India 1941, Hyderabad district Secunderabad block: 102,147 Hindu + 21,552 Muslim + 11,671 other"
+    },
+    "census2001_sec": {
+      "citation": "Census of India 2001, Secunderabad Cantonment Board civil population"
+    },
+    "census2011_sec": {
+      "citation": "Census of India 2011, Secunderabad Cantonment Board: 22.81 km2, 50,333 households"
+    },
+    "osm_telangana": {
+      "citation": "OpenStreetMap named places, Telangana extract",
+      "url": "https://www.openstreetmap.org",
+      "retrieved": "2026-10-06"
+    }
+  },
+  "generator": {
+    "tool": "tools/build_population_pack.py",
+    "version": "2.0.0",
+    "created": "2026-10-06",
+    "inputs": [
+      { "name": "osm/telangana-places.osm.pbf", "sha256": "0000000000000000000000000000000000000000000000000000000000000000" }
+    ]
+  },
+  "records": [
+    {
+      "kind": "population",
+      "id": "secunderabad",
+      "name": "Secunderabad",
+      "recordKind": "settlement",
+      "rank": "city",
+      "lat": 17.4399,
+      "lon": 78.4983,
+      "extent": { "shape": "disc", "radiusKm": 6.0 },
+      "series": [
+        { "year": 1941, "people": 135370, "source": "census1941_sec", "footprint": "1941 census block" },
+        { "year": 2001, "people": 206102, "source": "census2001_sec", "footprint": "cantonment board civil population" },
+        { "year": 2011, "people": 217910, "source": "census2011_sec", "footprint": "cantonment board, 22.81 km2" }
+      ],
+      "derivation": {
+        "between": "log",
+        "maxGapYears": 60,
+        "beyond": "hold-nearest",
+        "clampToRecordMax": true
+      },
+      "provenance": { "source": "census2011_sec", "confidence": "measured" }
+    },
+    {
+      "kind": "place",
+      "id": "bolarum_17469_78528",
+      "uid": "population_telangana:bolarum_17469_78528",
+      "name": "Bolarum",
+      "lat": 17.4689,
+      "lon": 78.5281,
+      "precisionM": 100,
+      "rank": "town",
+      "partOf": ["secunderabad"],
+      "occupied": { "from": null, "until": null, "present": true },
+      "polity": "india",
+      "population": {
+        "region": "secunderabad",
+        "role": "inside",
+        "distanceKm": 4.2,
+        "note": "The cantonment's own series covers it. Its share of the 217,910 is not stored here; the division is the engine's job, not the file's."
+      },
+      "provenance": {
+        "source": "osm_telangana",
+        "confidence": "estimated",
+        "note": "Position and name from OSM; no census record exists for Bolarum separately."
+      }
+    }
+  ]
+}

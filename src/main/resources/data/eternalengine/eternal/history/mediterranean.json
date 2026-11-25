@@ -1,0 +1,219 @@
+{
+  "id": "mediterranean",
+  "title": "Minoan / Greece / Carthage / Rome",
+  "comparedSources": [
+    "Knossos palatial periods",
+    "Archaic–Classical Athens; Roman Republic/Empire conventional dates",
+    "Carthage founded traditionally 814 BCE; destroyed 146 BCE"
+  ],
+  "rejected": [
+    "hist_rome 17-event template"
+  ],
+  "phases": [
+    {
+      "id": "minoan_palatial",
+      "start": -2000,
+      "end": -1450,
+      "name": "Minoan palatial"
+    },
+    {
+      "id": "archaic_classical",
+      "start": -800,
+      "end": -323,
+      "name": "Archaic–Classical Greece"
+    },
+    {
+      "id": "hellenistic",
+      "start": -323,
+      "end": -30,
+      "name": "Hellenistic"
+    },
+    {
+      "id": "roman_republic",
+      "start": -509,
+      "end": -27,
+      "name": "Roman Republic"
+    },
+    {
+      "id": "roman_empire",
+      "start": -27,
+      "end": 476,
+      "name": "Roman Empire (West to 476)"
+    }
+  ],
+  "sites": [
+    {
+      "id": "knossos",
+      "lat": 35.298,
+      "lon": 25.163,
+      "occupiedStart": -2000,
+      "occupiedEnd": -1100,
+      "civHint": "minoan",
+      "confidence": "high"
+    },
+    {
+      "id": "athens",
+      "lat": 37.972,
+      "lon": 23.727,
+      "occupiedStart": -900,
+      "occupiedEnd": 1453,
+      "civHint": "athens",
+      "confidence": "high"
+    },
+    {
+      "id": "sparta",
+      "lat": 37.076,
+      "lon": 22.43,
+      "occupiedStart": -900,
+      "occupiedEnd": -192,
+      "civHint": "sparta",
+      "confidence": "high"
+    },
+    {
+      "id": "rome",
+      "lat": 41.89,
+      "lon": 12.492,
+      "occupiedStart": -753,
+      "occupiedEnd": 1453,
+      "civHint": "rome",
+      "confidence": "high"
+    },
+    {
+      "id": "carthage",
+      "lat": 36.853,
+      "lon": 10.323,
+      "occupiedStart": -814,
+      "occupiedEnd": -146,
+      "civHint": "carthage",
+      "confidence": "high"
+    },
+    {
+      "id": "constantinople",
+      "lat": 41.008,
+      "lon": 28.978,
+      "occupiedStart": 330,
+      "occupiedEnd": 1453,
+      "civHint": "byzantium",
+      "confidence": "high"
+    },
+    {
+      "id": "pompeii",
+      "lat": 40.751,
+      "lon": 14.487,
+      "occupiedStart": -600,
+      "occupiedEnd": 79,
+      "rank": "town",
+      "civHint": "rome",
+      "confidence": "high"
+    },
+    {
+      "id": "ostia",
+      "lat": 41.755,
+      "lon": 12.294,
+      "occupiedStart": -400,
+      "occupiedEnd": 400,
+      "rank": "town",
+      "civHint": "rome",
+      "confidence": "high"
+    },
+    {
+      "id": "corinth",
+      "lat": 37.906,
+      "lon": 22.879,
+      "occupiedStart": -800,
+      "occupiedEnd": 400,
+      "rank": "city",
+      "civHint": "athens",
+      "confidence": "high"
+    },
+    {
+      "id": "delphi",
+      "lat": 38.482,
+      "lon": 22.501,
+      "occupiedStart": -800,
+      "occupiedEnd": 400,
+      "rank": "town",
+      "civHint": "athens",
+      "confidence": "high"
+    },
+    {
+      "id": "syracuse",
+      "lat": 37.076,
+      "lon": 15.287,
+      "occupiedStart": -734,
+      "occupiedEnd": 400,
+      "rank": "city",
+      "civHint": "athens",
+      "confidence": "high"
+    },
+    {
+      "id": "alexandria_troas",
+      "lat": 39.752,
+      "lon": 26.158,
+      "occupiedStart": -300,
+      "occupiedEnd": 400,
+      "rank": "town",
+      "civHint": "rome",
+      "confidence": "medium"
+    }
+  ],
+  "spawnRadiusKm": 30,
+  "traits": [
+    {
+      "id": "minoan_palace",
+      "kind": "architecture",
+      "from": -1900,
+      "until": -1450,
+      "sites": [
+        "knossos"
+      ]
+    },
+    {
+      "id": "greek_polis",
+      "kind": "introduction",
+      "from": -800,
+      "until": -323,
+      "sites": [
+        "athens",
+        "sparta"
+      ]
+    },
+    {
+      "id": "roman_concrete_forum",
+      "kind": "architecture",
+      "from": -200,
+      "until": 400,
+      "sites": [
+        "rome"
+      ]
+    },
+    {
+      "id": "alphabet_greek",
+      "kind": "invention",
+      "from": -800,
+      "until": -300,
+      "sites": [
+        "athens"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "founding_rome",
+      "year": -753,
+      "lat": 41.89,
+      "lon": 12.492,
+      "name": "Traditional founding of Rome (legendary date)"
+    },
+    {
+      "id": "battle_actium",
+      "year": -31,
+      "lat": 38.939,
+      "lon": 20.765,
+      "name": "Actium"
+    }
+  ],
+  "unknownOnPurpose": [
+    "historicity of Romulus"
+  ]
+}

@@ -1,0 +1,13 @@
+-encoding
+UTF-8
+-d
+/tmp/synchk
+-sourcepath
+.
+com/eternalengine/knowledge/TalkService.java
+com/eternalengine/civilization/ReputationStanding.java
+com/eternalengine/knowledge/TalkView.java
+com/eternalengine/money/TradeMenu.java
+com/eternalengine/client/gui/TalkBoxLayout.java
+com/eternalengine/client/gui/TalkBoxScreen.java
+com/eternalengine/client/gui/StandingDebugScreen.java

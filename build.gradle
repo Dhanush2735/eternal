@@ -30,6 +30,9 @@ minecraft {
     runs {
         configureEach {
             workingDirectory project.file('run')
+            // Turn 235: the dev server OOMs on the 55 MB of history data without a real heap
+            // (the sandbox has 1.9 GB RAM plus 3 GB swap, so 1600 MB is safe here).
+            jvmArgs '-Xmx1600m', '-Xss4m'
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
             property 'forge.enabledGameTestNamespaces', mod_id
@@ -196,6 +199,10 @@ tasks.named('processResources', ProcessResources).configure {
 
     inputs.properties replaceProperties
 
+    // Step 26 (A4, K4): data masters that the game reads as tiles stay in the source tree for the worldfill scripts
+    // and are left out of the mod; the game ships the tile file built from each (worldfill/build_tiles.py).
+    exclude 'data/eternalengine/eternal/history/famous_people.json.gz'
+
     filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
         expand replaceProperties + [project: project]
     }
@@ -209,10 +216,16 @@ tasks.named('jar', Jar).configure {
             'Specification-Version'   : '1',
             'Implementation-Title'    : project.name,
             'Implementation-Version'  : project.jar.archiveVersion,
-            'Implementation-Vendor'   : mod_authors,
-            'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+            'Implementation-Vendor'   : mod_authors
+            // No 'Implementation-Timestamp' (marking board 15): the build time made every rebuild a
+            // different file, so nobody could check that the jar a player installed is the jar that
+            // was built and tested. Two builds of the same source now have the same SHA-256.
         ])
     }
+    // The same rule for the archive itself: no entry timestamps, entries in a fixed order.
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
+    finalizedBy('reobfJar')
 }
 
 publishing {

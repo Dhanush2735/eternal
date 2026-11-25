@@ -1,0 +1,20 @@
+{
+  "schema": "hyderabad-osm-snapshot-v1",
+  "file": "charminar_osm_2026-11-03.xml.gz",
+  "captured_utc": "2026-11-03T17:55:10Z",
+  "captured_time_note": "Approximate: acquisition occurred before 17:55:10 UTC.",
+  "source": "https://api.openstreetmap.org/api/0.6/map?bbox=78.4742,17.3613,78.4752,17.3621",
+  "bbox_wgs84": {
+    "west": 78.4742,
+    "south": 17.3613,
+    "east": 78.4752,
+    "north": 17.3621
+  },
+  "raw_sha256": "6ddf9767a897f2209f24d6add2428b084b89682fc542199c3f3c19754824d38b",
+  "gzip_sha256": "546427cdb4478ae04b144b48e051cca023872e46ed4ded0496da4e8486a8ce90",
+  "attribution": "© OpenStreetMap contributors",
+  "license": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "copyright": "https://www.openstreetmap.org/copyright",
+  "scope": "Small present-day Charminar sample only, not the GHMC boundary or all of Hyderabad. OSM map API can include ways extending outside the box. Relations may be incomplete. No temporal inference from modern geometry.",
+  "extraction": "API 0.6 map snapshot; original XML retained byte-for-byte inside gzip."
+}

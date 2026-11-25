@@ -1,70 +1,2508 @@
 [
   {
-    "id": "black_death",
-    "name": "The Black Death reaches Europe",
+    "id": "pyramids_giza",
+    "name": "Completion of the Great Pyramid of Giza",
+    "type": "CONSTRUCTION",
+    "severity": "MAJOR",
+    "year": -2560,
+    "month": 6,
+    "day": 1,
+    "latitude": 29.9792,
+    "longitude": 31.1342,
+    "regionId": "egypt",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "egypt_ancient"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:pyramids_giza"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:pyramids_giza"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "code_hammurabi",
+    "name": "Promulgation of the Code of Hammurabi",
+    "type": "POLITICAL",
+    "severity": "MAJOR",
+    "year": -1754,
+    "month": 3,
+    "day": 1,
+    "latitude": 32.5422,
+    "longitude": 44.4211,
+    "regionId": "mesopotamia",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "babylon"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:code_hammurabi"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:code_hammurabi"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_kadesh",
+    "name": "Battle of Kadesh (Ramesses II vs Muwatalli II)",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": -1274,
+    "month": 5,
+    "day": 12,
+    "latitude": 34.55,
+    "longitude": 36.5167,
+    "regionId": "levant",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "egypt_ancient"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_kadesh"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_kadesh"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "founding_rome",
+    "name": "Legendary Founding of Rome by Romulus",
+    "type": "POLITICAL",
+    "severity": "MAJOR",
+    "year": -753,
+    "month": 4,
+    "day": 21,
+    "latitude": 41.9028,
+    "longitude": 12.4964,
+    "regionId": "italy",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "rome"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:founding_rome"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:founding_rome"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_marathon",
+    "name": "Battle of Marathon (Greeks defeat Persians)",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": -490,
+    "month": 9,
+    "day": 12,
+    "latitude": 38.1189,
+    "longitude": 23.9622,
+    "regionId": "greece",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "athens"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_marathon"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_marathon"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_thermopylae",
+    "name": "Battle of Thermopylae (300 Spartans)",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": -480,
+    "month": 8,
+    "day": 20,
+    "latitude": 38.7967,
+    "longitude": 22.5367,
+    "regionId": "greece",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "sparta"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_thermopylae"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_thermopylae"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "alexander_crosses_hellespont",
+    "name": "Alexander the Great Invades Asia",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": -334,
+    "month": 5,
+    "day": 1,
+    "latitude": 40.2,
+    "longitude": 26.4,
+    "regionId": "anatolia",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "macedon"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:alexander_crosses_hellespont"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:alexander_crosses_hellespont"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "unification_china_qin",
+    "name": "Qin Unification of China under Qin Shi Huang",
+    "type": "POLITICAL",
+    "severity": "CATASTROPHIC",
+    "year": -221,
+    "month": 1,
+    "day": 1,
+    "latitude": 34.3416,
+    "longitude": 108.9398,
+    "regionId": "china",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "china_qin"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:unification_china_qin"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:unification_china_qin"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_cannae",
+    "name": "Battle of Cannae (Hannibal encircles Romans)",
+    "type": "WAR",
+    "severity": "CATASTROPHIC",
+    "year": -216,
+    "month": 8,
+    "day": 2,
+    "latitude": 41.3,
+    "longitude": 16.15,
+    "regionId": "italy",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "carthage"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_cannae"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_cannae"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_zama",
+    "name": "Battle of Zama (Scipio defeats Hannibal)",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": -202,
+    "month": 10,
+    "day": 19,
+    "latitude": 36.3,
+    "longitude": 9.45,
+    "regionId": "north_africa",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "rome"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_zama"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_zama"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "caesar_crosses_rubicon",
+    "name": "Julius Caesar Crosses the Rubicon (Alea iacta est)",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": -49,
+    "month": 1,
+    "day": 10,
+    "latitude": 44.0783,
+    "longitude": 12.3958,
+    "regionId": "italy",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "rome"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:caesar_crosses_rubicon"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:caesar_crosses_rubicon"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "assassination_caesar",
+    "name": "Assassination of Julius Caesar (Ides of March)",
+    "type": "POLITICAL",
+    "severity": "CATASTROPHIC",
+    "year": -44,
+    "month": 3,
+    "day": 15,
+    "latitude": 41.8955,
+    "longitude": 12.477,
+    "regionId": "italy",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "rome"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:assassination_caesar"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:assassination_caesar"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_actium",
+    "name": "Naval Battle of Actium (Octavian defeats Antony and Cleopatra)",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": -31,
+    "month": 9,
+    "day": 2,
+    "latitude": 38.95,
+    "longitude": 20.75,
+    "regionId": "greece",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "rome"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_actium"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_actium"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "vesuvius_eruption",
+    "name": "Eruption of Mount Vesuvius (Destruction of Pompeii)",
+    "type": "DISASTER",
+    "severity": "CATASTROPHIC",
+    "year": 79,
+    "month": 8,
+    "day": 24,
+    "latitude": 40.8224,
+    "longitude": 14.4289,
+    "regionId": "italy",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "rome"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:vesuvius_eruption"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:vesuvius_eruption"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "antonine_plague",
+    "name": "Antonine Plague devastates Roman Empire",
+    "type": "DISEASE",
+    "severity": "CATASTROPHIC",
+    "year": 165,
+    "month": 4,
+    "day": 1,
+    "latitude": 41.9028,
+    "longitude": 12.4964,
+    "regionId": "italy",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "rome"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:antonine_plague"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:antonine_plague"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_red_cliffs",
+    "name": "Battle of Red Cliffs (Chibi, Three Kingdoms)",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": 208,
+    "month": 11,
+    "day": 1,
+    "latitude": 29.87,
+    "longitude": 113.88,
+    "regionId": "china",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "china_han"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_red_cliffs"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_red_cliffs"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "council_nicaea",
+    "name": "First Council of Nicaea convened by Constantine",
+    "type": "RELIGIOUS",
+    "severity": "MAJOR",
+    "year": 325,
+    "month": 5,
+    "day": 20,
+    "latitude": 40.4286,
+    "longitude": 29.7214,
+    "regionId": "anatolia",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "byzantium"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:council_nicaea"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:council_nicaea"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "sack_rome_alaric",
+    "name": "Sack of Rome by Alaric and the Visigoths",
+    "type": "WAR",
+    "severity": "CATASTROPHIC",
+    "year": 410,
+    "month": 8,
+    "day": 24,
+    "latitude": 41.9028,
+    "longitude": 12.4964,
+    "regionId": "italy",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "rome"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:sack_rome_alaric"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:sack_rome_alaric"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_catalaunian_plains",
+    "name": "Battle of the Catalaunian Plains (Attila the Hun stopped)",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": 451,
+    "month": 6,
+    "day": 20,
+    "latitude": 49.0,
+    "longitude": 4.36,
+    "regionId": "gaul",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "rome"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_catalaunian_plains"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_catalaunian_plains"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "fall_western_rome",
+    "name": "Deposition of Romulus Augustulus (Fall of Western Rome)",
+    "type": "POLITICAL",
+    "severity": "CATASTROPHIC",
+    "year": 476,
+    "month": 9,
+    "day": 4,
+    "latitude": 44.4167,
+    "longitude": 12.2,
+    "regionId": "italy",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "rome"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:fall_western_rome"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:fall_western_rome"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "plague_justinian",
+    "name": "Plague of Justinian sweeps the Mediterranean",
+    "type": "DISEASE",
+    "severity": "CATASTROPHIC",
+    "year": 541,
+    "month": 7,
+    "day": 1,
+    "latitude": 41.0082,
+    "longitude": 28.9784,
+    "regionId": "byzantium",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "byzantium"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:plague_justinian"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:plague_justinian"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_qadisiyyah",
+    "name": "Battle of al-Qadisiyyah (Conquest of Sasanian Persia)",
+    "type": "WAR",
+    "severity": "CATASTROPHIC",
+    "year": 636,
+    "month": 11,
+    "day": 16,
+    "latitude": 31.5833,
+    "longitude": 44.3333,
+    "regionId": "mesopotamia",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "caliphate_umayyad"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_qadisiyyah"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_qadisiyyah"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_yarmouk",
+    "name": "Battle of Yarmouk (Muslim conquest of Syria)",
+    "type": "WAR",
+    "severity": "CATASTROPHIC",
+    "year": 636,
+    "month": 8,
+    "day": 20,
+    "latitude": 32.8167,
+    "longitude": 35.95,
+    "regionId": "levant",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "caliphate_umayyad"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_yarmouk"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_yarmouk"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_tours",
+    "name": "Battle of Tours / Poitiers (Charles Martel halts Umayyad advance)",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": 732,
+    "month": 10,
+    "day": 10,
+    "latitude": 46.5802,
+    "longitude": 0.3404,
+    "regionId": "france",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "france"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_tours"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_tours"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "viking_lindisfarne",
+    "name": "Viking Raid on Lindisfarne Priory",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": 793,
+    "month": 6,
+    "day": 8,
+    "latitude": 55.679,
+    "longitude": -1.799,
+    "regionId": "britain",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "england"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:viking_lindisfarne"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:viking_lindisfarne"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "coronation_charlemagne",
+    "name": "Coronation of Charlemagne as Holy Roman Emperor",
+    "type": "POLITICAL",
+    "severity": "MAJOR",
+    "year": 800,
+    "month": 12,
+    "day": 25,
+    "latitude": 41.9022,
+    "longitude": 12.4539,
+    "regionId": "rome",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "france"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:coronation_charlemagne"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:coronation_charlemagne"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_hastings",
+    "name": "Battle of Hastings (Norman Conquest of England)",
+    "type": "WAR",
+    "severity": "CATASTROPHIC",
+    "year": 1066,
+    "month": 10,
+    "day": 14,
+    "latitude": 50.9144,
+    "longitude": 0.4878,
+    "regionId": "britain",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "england"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_hastings"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_hastings"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_manzikert",
+    "name": "Battle of Manzikert (Seljuks shatter Byzantine army)",
+    "type": "WAR",
+    "severity": "CATASTROPHIC",
+    "year": 1071,
+    "month": 8,
+    "day": 26,
+    "latitude": 39.145,
+    "longitude": 42.544,
+    "regionId": "anatolia",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "byzantium"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_manzikert"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_manzikert"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "siege_jerusalem_first_crusade",
+    "name": "Siege and Fall of Jerusalem (First Crusade)",
+    "type": "WAR",
+    "severity": "CATASTROPHIC",
+    "year": 1099,
+    "month": 7,
+    "day": 15,
+    "latitude": 31.7683,
+    "longitude": 35.2137,
+    "regionId": "levant",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "ayyubid"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:siege_jerusalem_first_crusade"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:siege_jerusalem_first_crusade"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "magna_carta",
+    "name": "Sealing of Magna Carta at Runnymede",
+    "type": "POLITICAL",
+    "severity": "MAJOR",
+    "year": 1215,
+    "month": 6,
+    "day": 15,
+    "latitude": 51.4444,
+    "longitude": -0.5658,
+    "regionId": "britain",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "england"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:magna_carta"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:magna_carta"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "sack_baghdad_mongols",
+    "name": "Mongol Siege and Destruction of Baghdad (Fall of Abbasids)",
+    "type": "WAR",
+    "severity": "CATASTROPHIC",
+    "year": 1258,
+    "month": 2,
+    "day": 10,
+    "latitude": 33.3152,
+    "longitude": 44.3661,
+    "regionId": "mesopotamia",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "caliphate_abbasid"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:sack_baghdad_mongols"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:sack_baghdad_mongols"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_ain_jalut",
+    "name": "Battle of Ain Jalut (Mamluks defeat Mongols in Galilee)",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": 1260,
+    "month": 9,
+    "day": 3,
+    "latitude": 32.5539,
+    "longitude": 35.3942,
+    "regionId": "levant",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "mamluk"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_ain_jalut"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_ain_jalut"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_crecy",
+    "name": "Battle of Crecy (English longbow victory)",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": 1346,
+    "month": 8,
+    "day": 26,
+    "latitude": 50.2525,
+    "longitude": 1.8847,
+    "regionId": "france",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "france"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_crecy"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_crecy"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "black_death_europe",
+    "name": "Black Death pandemic arrives in Europe",
     "type": "DISEASE",
     "severity": "CATASTROPHIC",
     "year": 1347,
     "month": 10,
     "day": 1,
-    "latitude": 44.4056,
-    "longitude": 33.9938,
-    "regionId": "crimea_black_sea",
-    "conditions": [
-      {
-        "conditionId": "flag:black_death_prevented",
-        "required": true,
-        "operator": "NOT_EXISTS",
-        "threshold": 0
-      }
+    "latitude": 38.1938,
+    "longitude": 15.554,
+    "regionId": "sicily",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "venice"
     ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:black_death_europe"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:black_death_europe"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_agincourt",
+    "name": "Battle of Agincourt (Henry V longbow triumph)",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": 1415,
+    "month": 10,
+    "day": 25,
+    "latitude": 50.4633,
+    "longitude": 2.1408,
+    "regionId": "france",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "england"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_agincourt"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_agincourt"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "fall_constantinople",
+    "name": "Fall of Constantinople to Mehmed II (End of Byzantium)",
+    "type": "WAR",
+    "severity": "CATASTROPHIC",
+    "year": 1453,
+    "month": 5,
+    "day": 29,
+    "latitude": 41.0082,
+    "longitude": 28.9784,
+    "regionId": "byzantium",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "byzantium"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:fall_constantinople"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:fall_constantinople"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "gutenberg_press",
+    "name": "Johannes Gutenberg completes 42-Line Movable Type Bible",
+    "type": "SCIENTIFIC",
+    "severity": "MAJOR",
+    "year": 1455,
+    "month": 2,
+    "day": 23,
+    "latitude": 49.9929,
+    "longitude": 8.2473,
+    "regionId": "germany",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "hre"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:gutenberg_press"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:gutenberg_press"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "columbus_first_voyage",
+    "name": "Christopher Columbus reaches the Bahamas",
+    "type": "ECONOMIC",
+    "severity": "MAJOR",
+    "year": 1492,
+    "month": 10,
+    "day": 12,
+    "latitude": 24.05,
+    "longitude": -74.5333,
+    "regionId": "caribbean",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "spain"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:columbus_first_voyage"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:columbus_first_voyage"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "fall_granada_1492",
+    "name": "Fall of Granada (Completion of Spanish Reconquista)",
+    "type": "POLITICAL",
+    "severity": "MAJOR",
+    "year": 1492,
+    "month": 1,
+    "day": 2,
+    "latitude": 37.1773,
+    "longitude": -3.5986,
+    "regionId": "spain",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "spain"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:fall_granada_1492"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:fall_granada_1492"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "vasco_da_gama_india",
+    "name": "Vasco da Gama reaches Calicut, India",
+    "type": "ECONOMIC",
+    "severity": "MAJOR",
+    "year": 1498,
+    "month": 5,
+    "day": 20,
+    "latitude": 11.2588,
+    "longitude": 75.7804,
+    "regionId": "india",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "portugal"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:vasco_da_gama_india"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:vasco_da_gama_india"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "luther_95_theses",
+    "name": "Martin Luther posts 95 Theses in Wittenberg",
+    "type": "RELIGIOUS",
+    "severity": "MAJOR",
+    "year": 1517,
+    "month": 10,
+    "day": 31,
+    "latitude": 51.8667,
+    "longitude": 12.6433,
+    "regionId": "germany",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "hre"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:luther_95_theses"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:luther_95_theses"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "fall_tenochtitlan",
+    "name": "Fall of Tenochtitlan to Hernan Cortes",
+    "type": "WAR",
+    "severity": "CATASTROPHIC",
+    "year": 1521,
+    "month": 8,
+    "day": 13,
+    "latitude": 19.4326,
+    "longitude": -99.1332,
+    "regionId": "mexico",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "aztec"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:fall_tenochtitlan"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:fall_tenochtitlan"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_mohacs",
+    "name": "Battle of Mohacs (Ottomans conquer Kingdom of Hungary)",
+    "type": "WAR",
+    "severity": "CATASTROPHIC",
+    "year": 1526,
+    "month": 8,
+    "day": 29,
+    "latitude": 45.9939,
+    "longitude": 18.6831,
+    "regionId": "hungary",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "hungary"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_mohacs"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_mohacs"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_panipat_first",
+    "name": "First Battle of Panipat (Babur establishes Mughal Empire)",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": 1526,
+    "month": 4,
+    "day": 21,
+    "latitude": 29.3909,
+    "longitude": 76.9635,
+    "regionId": "india",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "mughal"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_panipat_first"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_panipat_first"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "conquest_cuzco_pizarro",
+    "name": "Francisco Pizarro enters Inca Capital of Cuzco",
+    "type": "WAR",
+    "severity": "CATASTROPHIC",
+    "year": 1533,
+    "month": 11,
+    "day": 15,
+    "latitude": -13.532,
+    "longitude": -71.9675,
+    "regionId": "peru",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "inca"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:conquest_cuzco_pizarro"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:conquest_cuzco_pizarro"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_lepanto",
+    "name": "Naval Battle of Lepanto (Holy League halts Ottoman Navy)",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": 1571,
+    "month": 10,
+    "day": 7,
+    "latitude": 38.3917,
+    "longitude": 21.8333,
+    "regionId": "greece",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "venice"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_lepanto"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_lepanto"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "spanish_armada",
+    "name": "Defeat of the Spanish Armada in English Channel",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": 1588,
+    "month": 8,
+    "day": 8,
+    "latitude": 50.1,
+    "longitude": 0.5,
+    "regionId": "channel",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "england"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:spanish_armada"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:spanish_armada"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "defenestration_prague",
+    "name": "Second Defenestration of Prague (Outbreak of Thirty Years' War)",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": 1618,
+    "month": 5,
+    "day": 23,
+    "latitude": 50.0909,
+    "longitude": 14.4005,
+    "regionId": "bohemia",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "bohemia"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:defenestration_prague"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:defenestration_prague"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "peace_westphalia",
+    "name": "Peace of Westphalia ends the Thirty Years' War",
+    "type": "POLITICAL",
+    "severity": "MAJOR",
+    "year": 1648,
+    "month": 10,
+    "day": 24,
+    "latitude": 51.9607,
+    "longitude": 7.6261,
+    "regionId": "germany",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "hre"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:peace_westphalia"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:peace_westphalia"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "great_fire_london",
+    "name": "Great Fire of London destroys 13,000 homes",
+    "type": "DISASTER",
+    "severity": "CATASTROPHIC",
+    "year": 1666,
+    "month": 9,
+    "day": 2,
+    "latitude": 51.5133,
+    "longitude": -0.0889,
+    "regionId": "britain",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "england"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:great_fire_london"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:great_fire_london"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_vienna_1683",
+    "name": "Battle of Vienna (Polish Winged Hussars relieve siege)",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": 1683,
+    "month": 9,
+    "day": 12,
+    "latitude": 48.2082,
+    "longitude": 16.3738,
+    "regionId": "austria",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "austria"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_vienna_1683"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_vienna_1683"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "newton_principia",
+    "name": "Isaac Newton publishes Philosophiæ Naturalis Principia Mathematica",
+    "type": "SCIENTIFIC",
+    "severity": "MAJOR",
+    "year": 1687,
+    "month": 7,
+    "day": 5,
+    "latitude": 52.2053,
+    "longitude": 0.1218,
+    "regionId": "britain",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "england"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:newton_principia"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:newton_principia"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_poltava",
+    "name": "Battle of Poltava (Peter the Great defeats Charles XII of Sweden)",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": 1709,
+    "month": 7,
+    "day": 8,
+    "latitude": 49.5883,
+    "longitude": 34.5514,
+    "regionId": "ukraine",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "russia"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_poltava"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_poltava"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "us_declaration_independence",
+    "name": "United States Declaration of Independence",
+    "type": "POLITICAL",
+    "severity": "MAJOR",
+    "year": 1776,
+    "month": 7,
+    "day": 4,
+    "latitude": 39.9489,
+    "longitude": -75.15,
+    "regionId": "north_america",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "england"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:us_declaration_independence"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:us_declaration_independence"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "storming_bastille",
+    "name": "Storming of the Bastille (Outbreak of French Revolution)",
+    "type": "POLITICAL",
+    "severity": "CATASTROPHIC",
+    "year": 1789,
+    "month": 7,
+    "day": 14,
+    "latitude": 48.8532,
+    "longitude": 2.3698,
+    "regionId": "france",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "france"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:storming_bastille"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:storming_bastille"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_austerlitz",
+    "name": "Battle of Austerlitz (Napoleon's masterpiece of tactical maneuver)",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": 1805,
+    "month": 12,
+    "day": 2,
+    "latitude": 49.1294,
+    "longitude": 16.7619,
+    "regionId": "moravia",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "france"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_austerlitz"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_austerlitz"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_trafalgar",
+    "name": "Battle of Trafalgar (Nelson shatters Franco-Spanish fleet)",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": 1805,
+    "month": 10,
+    "day": 21,
+    "latitude": 36.1833,
+    "longitude": -6.0333,
+    "regionId": "spain",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "england"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_trafalgar"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_trafalgar"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_waterloo",
+    "name": "Battle of Waterloo (Defeat and Exile of Napoleon)",
+    "type": "WAR",
+    "severity": "CATASTROPHIC",
+    "year": 1815,
+    "month": 6,
+    "day": 18,
+    "latitude": 50.6796,
+    "longitude": 4.4125,
+    "regionId": "belgium",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "france"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_waterloo"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_waterloo"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "stephenson_rocket",
+    "name": "Rainhill Trials and Stephenson's Rocket inaugurate Railway Age",
+    "type": "SCIENTIFIC",
+    "severity": "MAJOR",
+    "year": 1829,
+    "month": 10,
+    "day": 6,
+    "latitude": 53.4167,
+    "longitude": -2.7667,
+    "regionId": "britain",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "england"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:stephenson_rocket"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:stephenson_rocket"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "meiji_restoration",
+    "name": "Meiji Restoration and Industrialization of Japan",
+    "type": "POLITICAL",
+    "severity": "MAJOR",
+    "year": 1868,
+    "month": 1,
+    "day": 3,
+    "latitude": 35.0116,
+    "longitude": 135.7681,
+    "regionId": "japan",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "japan_tokugawa"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:meiji_restoration"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:meiji_restoration"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "suez_canal_opening",
+    "name": "Inauguration and Opening of the Suez Canal",
+    "type": "ECONOMIC",
+    "severity": "MAJOR",
+    "year": 1869,
+    "month": 11,
+    "day": 17,
+    "latitude": 30.5852,
+    "longitude": 32.2654,
+    "regionId": "egypt",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "ottoman"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:suez_canal_opening"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:suez_canal_opening"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "proclamation_german_empire",
+    "name": "Proclamation of the German Empire at Versailles",
+    "type": "POLITICAL",
+    "severity": "MAJOR",
+    "year": 1871,
+    "month": 1,
+    "day": 18,
+    "latitude": 48.8049,
+    "longitude": 2.1204,
+    "regionId": "france",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "prussia"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:proclamation_german_empire"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:proclamation_german_empire"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "krakatoa_eruption",
+    "name": "Cataclysmic Eruption of Krakatoa (Tsunamis across Sunda Strait)",
+    "type": "DISASTER",
+    "severity": "CATASTROPHIC",
+    "year": 1883,
+    "month": 8,
+    "day": 27,
+    "latitude": -6.102,
+    "longitude": 105.423,
+    "regionId": "indonesia",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "majapahit"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:krakatoa_eruption"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:krakatoa_eruption"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "wright_first_flight",
+    "name": "Wright Brothers achieve first powered controlled airplane flight",
+    "type": "SCIENTIFIC",
+    "severity": "MAJOR",
+    "year": 1903,
+    "month": 12,
+    "day": 17,
+    "latitude": 36.0142,
+    "longitude": -75.6692,
+    "regionId": "north_america",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "england"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:wright_first_flight"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:wright_first_flight"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_tsushima",
+    "name": "Battle of Tsushima (Imperial Japanese Navy annihilates Russian Baltic Fleet)",
+    "type": "WAR",
+    "severity": "MAJOR",
+    "year": 1905,
+    "month": 5,
+    "day": 27,
+    "latitude": 34.2,
+    "longitude": 130.1667,
+    "regionId": "japan",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "japan_tokugawa"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_tsushima"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_tsushima"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "san_francisco_earthquake",
+    "name": "San Francisco Earthquake and Great Conflagration",
+    "type": "DISASTER",
+    "severity": "CATASTROPHIC",
+    "year": 1906,
+    "month": 4,
+    "day": 18,
+    "latitude": 37.7749,
+    "longitude": -122.4194,
+    "regionId": "california",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "england"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:san_francisco_earthquake"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:san_francisco_earthquake"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "sinking_titanic",
+    "name": "RMS Titanic founders in the North Atlantic",
+    "type": "DISASTER",
+    "severity": "MAJOR",
+    "year": 1912,
+    "month": 4,
+    "day": 15,
+    "latitude": 41.7325,
+    "longitude": -49.9469,
+    "regionId": "atlantic",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "england"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:sinking_titanic"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:sinking_titanic"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "assassination_franz_ferdinand",
+    "name": "Assassination of Archduke Franz Ferdinand in Sarajevo",
+    "type": "POLITICAL",
+    "severity": "CATASTROPHIC",
+    "year": 1914,
+    "month": 6,
+    "day": 28,
+    "latitude": 43.8563,
+    "longitude": 18.4131,
+    "regionId": "balkans",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "austria"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:assassination_franz_ferdinand"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:assassination_franz_ferdinand"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "russian_october_revolution",
+    "name": "Bolshevik October Revolution in Petrograd",
+    "type": "POLITICAL",
+    "severity": "CATASTROPHIC",
+    "year": 1917,
+    "month": 11,
+    "day": 7,
+    "latitude": 59.9343,
+    "longitude": 30.3351,
+    "regionId": "russia",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "russia"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:russian_october_revolution"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:russian_october_revolution"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "spanish_flu_pandemic",
+    "name": "Spanish Influenza Pandemic sweeps globe",
+    "type": "DISEASE",
+    "severity": "CATASTROPHIC",
+    "year": 1918,
+    "month": 3,
+    "day": 4,
+    "latitude": 39.0,
+    "longitude": -96.0,
+    "regionId": "global",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "england"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:spanish_flu_pandemic"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:spanish_flu_pandemic"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "discovery_penicillin",
+    "name": "Alexander Fleming discovers Penicillin antibiotic",
+    "type": "SCIENTIFIC",
+    "severity": "MAJOR",
+    "year": 1928,
+    "month": 9,
+    "day": 28,
+    "latitude": 51.517,
+    "longitude": -0.174,
+    "regionId": "britain",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "england"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:discovery_penicillin"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:discovery_penicillin"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "wall_street_crash",
+    "name": "Black Tuesday Wall Street Stock Market Crash",
+    "type": "ECONOMIC",
+    "severity": "CATASTROPHIC",
+    "year": 1929,
+    "month": 10,
+    "day": 29,
+    "latitude": 40.7069,
+    "longitude": -74.009,
+    "regionId": "north_america",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "england"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 0,
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 5.0,
+    "outcomesIfHappens": [
+      "event_outcome:wall_street_crash"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:wall_street_crash"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "outbreak_wwii",
+    "name": "Invasion of Poland initiates World War II in Europe",
+    "type": "WAR",
+    "severity": "CATASTROPHIC",
+    "year": 1939,
+    "month": 9,
+    "day": 1,
+    "latitude": 54.352,
+    "longitude": 18.6466,
+    "regionId": "poland",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "poland"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:outbreak_wwii"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:outbreak_wwii"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "battle_stalingrad",
+    "name": "Battle of Stalingrad marks turning point of World War II",
+    "type": "WAR",
+    "severity": "CATASTROPHIC",
+    "year": 1942,
+    "month": 8,
+    "day": 23,
+    "latitude": 48.708,
+    "longitude": 44.5133,
+    "regionId": "russia",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "russia"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:battle_stalingrad"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:battle_stalingrad"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "d_day_normandy",
+    "name": "Operation Overlord Allied Landings in Normandy",
+    "type": "WAR",
+    "severity": "CATASTROPHIC",
+    "year": 1944,
+    "month": 6,
+    "day": 6,
+    "latitude": 49.3364,
+    "longitude": -0.706,
+    "regionId": "france",
+    "conditions": [],
+    "preconditionIds": [],
+    "alliedFactionIds": [
+      "france"
+    ],
+    "opposedFactionIds": [],
+    "durationYears": 1,
+    "casualtiesMilitary": 5000,
+    "casualtiesCivilian": 20000,
+    "economicImpactPercent": -15.0,
+    "outcomesIfHappens": [
+      "event_outcome:d_day_normandy"
+    ],
+    "nextChainEventIds": [],
+    "preventionConsequences": [
+      "prevented:d_day_normandy"
+    ],
+    "autoSlowdownMaxSpeed": 5,
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
+  },
+  {
+    "id": "indian_independence",
+    "name": "Declaration of Indian Independence and Partition",
+    "type": "POLITICAL",
+    "severity": "CATASTROPHIC",
+    "year": 1947,
+    "month": 8,
+    "day": 15,
+    "latitude": 28.6139,
+    "longitude": 77.209,
+    "regionId": "india",
+    "conditions": [],
     "preconditionIds": [],
     "alliedFactionIds": [],
     "opposedFactionIds": [],
-    "durationYears": 5,
-    "casualtiesMilitary": 0,
-    "casualtiesCivilian": 50000000,
-    "economicImpactPercent": -35.0,
-    "outcomesIfHappens": ["disease:black_death", "population_decline:europe", "labor_shortage:europe"],
-    "nextChainEventIds": [],
-    "preventionConsequences": ["trade_disruption_reduced", "population_decline_avoided"],
-    "autoSlowdownMaxSpeed": 5,
-    "autoSlowdownMinMinutes": 60,
-    "vipSlotsActivated": [],
-    "alternativeBranchesFile": "alt_branches/black_death_prevented.json"
-  },
-  {
-    "id": "caesar_assassination",
-    "name": "Assassination of Julius Caesar",
-    "type": "ASSASSINATION",
-    "severity": "MAJOR",
-    "year": -44,
-    "month": 3,
-    "day": 15,
-    "latitude": 41.8955,
-    "longitude": 12.4823,
-    "regionId": "rome",
-    "conditions": [
-      {
-        "conditionId": "civ:rome",
-        "required": false,
-        "operator": "EXISTS",
-        "threshold": 0
-      }
-    ],
-    "preconditionIds": [],
-    "alliedFactionIds": ["rome"],
-    "opposedFactionIds": ["senate_conspirators"],
     "durationYears": 1,
     "casualtiesMilitary": 0,
-    "casualtiesCivilian": 1,
-    "economicImpactPercent": -5.0,
-    "outcomesIfHappens": ["roman_civil_war_pressure", "vip_death:caesar"],
+    "casualtiesCivilian": 0,
+    "economicImpactPercent": 0.0,
+    "outcomesIfHappens": [
+      "event_outcome:indian_independence"
+    ],
     "nextChainEventIds": [],
-    "preventionConsequences": ["roman_republic_branch", "caesar_survives"],
+    "preventionConsequences": [
+      "prevented:indian_independence"
+    ],
     "autoSlowdownMaxSpeed": 5,
-    "autoSlowdownMinMinutes": 20,
-    "vipSlotsActivated": ["caesar"],
-    "alternativeBranchesFile": "alt_branches/caesar_survives.json"
+    "autoSlowdownMinMinutes": 30,
+    "vipSlotsActivated": [],
+    "alternativeBranchesFile": ""
   }
 ]

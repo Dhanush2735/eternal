@@ -1,0 +1,16 @@
+{
+  "schema": "javac-args-archive-v1",
+  "archive": "legacy_javac_args.tar.xz",
+  "archive_sha256": "84d237500448589aa4708c63603ab5ea4d5ac6140ff1d995051ce2b42858d988",
+  "files": [
+    {
+      "name": "javac.20260714_041555.args",
+      "size": 18153,
+      "sha256": "369ece5f4f1d0db97406d8aaafa1fc017c3ab81e26694da549ee858f8b1a6c92",
+      "mode": 420,
+      "mtime_ns": 1793214159995726808
+    }
+  ],
+  "restore_command": "python r2_wikipedia/archive_javac_args.py restore",
+  "note": "Only historical compiler argument files are archived; current source files and game assets are unchanged."
+}

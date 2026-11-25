@@ -109,7 +109,17 @@ public final class WebConsoleService {
     }
 
     public int port() {
-        return boundPort > 0 ? boundPort : EternalEngineConfig.SERVER.webConsolePort.get();
+        if (boundPort > 0) {
+            return boundPort;
+        }
+        try {
+            return EternalEngineConfig.SERVER.webConsolePort.get();
+        } catch (RuntimeException e) {
+            // The config is not loaded yet (Forge refuses to read a value before then, and says in
+            // development that it will refuse in production too). /ee web status threw out of here on
+            // 2026-10-23 instead of answering; the spec's own default is the honest answer.
+            return 8765;
+        }
     }
 
     public String accessUrl() {

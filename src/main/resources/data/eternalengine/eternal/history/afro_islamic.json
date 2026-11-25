@@ -1,0 +1,199 @@
+{
+  "id": "afro_islamic",
+  "title": "Nile south, West Africa, caliphates, Ottoman",
+  "comparedSources": [
+    "Kush / Meroe; Aksum",
+    "Ghana / Mali / Songhai conventional dates; Timbuktu",
+    "Umayyad Damascus; Abbasid Baghdad 750–1258; Ottoman Constantinople 1453–1922"
+  ],
+  "rejected": [
+    "hist_caliphate templates"
+  ],
+  "phases": [
+    {
+      "id": "kush",
+      "start": -1070,
+      "end": 350,
+      "name": "Kush"
+    },
+    {
+      "id": "aksum",
+      "start": 100,
+      "end": 940,
+      "name": "Aksum"
+    },
+    {
+      "id": "mali",
+      "start": 1235,
+      "end": 1670,
+      "name": "Mali"
+    },
+    {
+      "id": "abbasid",
+      "start": 750,
+      "end": 1258,
+      "name": "Abbasid"
+    },
+    {
+      "id": "ottoman",
+      "start": 1299,
+      "end": 1922,
+      "name": "Ottoman"
+    }
+  ],
+  "sites": [
+    {
+      "id": "meroe",
+      "lat": 16.939,
+      "lon": 33.749,
+      "occupiedStart": -750,
+      "occupiedEnd": 350,
+      "civHint": "kush",
+      "confidence": "high"
+    },
+    {
+      "id": "aksum",
+      "lat": 14.128,
+      "lon": 38.722,
+      "occupiedStart": 100,
+      "occupiedEnd": 940,
+      "civHint": "axum",
+      "confidence": "high"
+    },
+    {
+      "id": "timbuktu",
+      "lat": 16.773,
+      "lon": -3.007,
+      "occupiedStart": 1100,
+      "occupiedEnd": 1591,
+      "civHint": "mali_empire",
+      "confidence": "high"
+    },
+    {
+      "id": "damascus",
+      "lat": 33.514,
+      "lon": 36.277,
+      "occupiedStart": 661,
+      "occupiedEnd": 750,
+      "civHint": "caliphate_umayyad",
+      "confidence": "high"
+    },
+    {
+      "id": "baghdad",
+      "lat": 33.315,
+      "lon": 44.366,
+      "occupiedStart": 762,
+      "occupiedEnd": 1258,
+      "civHint": "caliphate_abbasid",
+      "confidence": "high"
+    },
+    {
+      "id": "istanbul",
+      "lat": 41.008,
+      "lon": 28.978,
+      "occupiedStart": 1453,
+      "occupiedEnd": 1922,
+      "civHint": "ottoman",
+      "confidence": "high"
+    },
+    {
+      "id": "jenne_jeno",
+      "lat": 13.89,
+      "lon": -4.54,
+      "occupiedStart": -250,
+      "occupiedEnd": 1400,
+      "rank": "town",
+      "civHint": "mali_empire",
+      "confidence": "high"
+    },
+    {
+      "id": "gao",
+      "lat": 16.266,
+      "lon": -0.045,
+      "occupiedStart": 900,
+      "occupiedEnd": 1591,
+      "rank": "city",
+      "civHint": "songhai_empire",
+      "confidence": "high"
+    },
+    {
+      "id": "great_zimbabwe",
+      "lat": -20.273,
+      "lon": 30.933,
+      "occupiedStart": 1100,
+      "occupiedEnd": 1450,
+      "rank": "city",
+      "civHint": "zimbabwe",
+      "confidence": "high"
+    },
+    {
+      "id": "kilwa_kisiwani",
+      "lat": -8.96,
+      "lon": 39.515,
+      "occupiedStart": 957,
+      "occupiedEnd": 1513,
+      "rank": "town",
+      "civHint": "swahili_kilwa",
+      "confidence": "high"
+    },
+    {
+      "id": "cairo_fustat",
+      "lat": 30.006,
+      "lon": 31.238,
+      "occupiedStart": 641,
+      "occupiedEnd": 1517,
+      "rank": "city",
+      "civHint": "fatimid",
+      "confidence": "high"
+    }
+  ],
+  "spawnRadiusKm": 30,
+  "traits": [
+    {
+      "id": "meroe_pyramids",
+      "kind": "architecture",
+      "from": -300,
+      "until": 350,
+      "sites": [
+        "meroe"
+      ]
+    },
+    {
+      "id": "timbuktu_madrasa",
+      "kind": "architecture",
+      "from": 1325,
+      "until": 1591,
+      "sites": [
+        "timbuktu"
+      ]
+    },
+    {
+      "id": "round_city_baghdad",
+      "kind": "architecture",
+      "from": 762,
+      "until": 1258,
+      "sites": [
+        "baghdad"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "fall_constantinople",
+      "year": 1453,
+      "lat": 41.008,
+      "lon": 28.978,
+      "name": "Fall of Constantinople"
+    },
+    {
+      "id": "sack_baghdad_mongols",
+      "year": 1258,
+      "lat": 33.315,
+      "lon": 44.366,
+      "name": "Mongol sack of Baghdad"
+    }
+  ],
+  "unknownOnPurpose": [
+    "precise Ghana Empire capital location"
+  ]
+}

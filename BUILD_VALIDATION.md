@@ -36,3 +36,12 @@ The Arena sandbox can install Java 17 temporarily, but full ForgeGradle/MCP rema
 1. Run `./gradlew clean compileJava --no-daemon --max-workers=1` locally with Java 17.
 2. Paste the first compile error block into the agent.
 3. Fix compile errors in small groups, then rerun.
+
+### Archived generated reference reports (2026-11-03)
+For workspace space, the earlier `AUTO_COMMAND_TEST_REPORT.json` and `field_dossier.json` are stored as `.json.xz`, with their exact byte hashes and guarded read/restore utility in `archived_generated_reports.py`. Their Markdown companions remain in place. A restore refuses to overwrite a newly generated original and requires space under the 125 MB guard. `test_all_ee_commands.py` still writes its original JSON path; its report was structural, not a live Minecraft test.
+
+Storage note: the historical generated Windows folder listing `structure.txt` is stored losslessly as `structure.txt.xz`. Verify using `python3 eternal/archived_generated_reports.py structure.txt`, or add `--restore` when space permits; the helper refuses overwrite. It is not a build or gameplay dependency.
+
+Additional generated historical references `FIELD_DOSSIER.md` and `field_spec.json` are losslessly archived as `.xz` and verified/restored with `archived_generated_reports.py`; original paths remain the generator output paths. The archived files are historical references, not active game data.
+
+Storage note (2026-11-03): the historical generated `LIVE_COMMAND_AUDIT_REPORT.json` is preserved as `LIVE_COMMAND_AUDIT_REPORT.json.xz`, verified/restorable with `archived_generated_reports.py` subject to its guard. Its generator still writes the original path.

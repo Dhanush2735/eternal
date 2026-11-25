@@ -1,0 +1,231 @@
+{
+  "id": "mesopotamia",
+  "title": "Sumer / Akkad / Babylon / Assyria",
+  "comparedSources": [
+    "Standard Mesopotamian chronology (Uruk, ED, Akkad, Ur III, Old Babylonian, Neo-Assyrian)",
+    "Ur / Uruk / Eridu coordinates from site publications / Wikipedia"
+  ],
+  "rejected": [
+    "hist_* Golden Dynasty templates",
+    "one capital for all Sumer"
+  ],
+  "phases": [
+    {
+      "id": "uruk",
+      "start": -4000,
+      "end": -3100,
+      "name": "Uruk period"
+    },
+    {
+      "id": "early_dynastic",
+      "start": -2900,
+      "end": -2334,
+      "name": "Early Dynastic city-states"
+    },
+    {
+      "id": "akkad",
+      "start": -2334,
+      "end": -2154,
+      "name": "Akkadian Empire"
+    },
+    {
+      "id": "ur_iii",
+      "start": -2112,
+      "end": -2004,
+      "name": "Ur III"
+    },
+    {
+      "id": "old_babylonian",
+      "start": -1894,
+      "end": -1595,
+      "name": "Old Babylonian"
+    },
+    {
+      "id": "neo_assyrian",
+      "start": -911,
+      "end": -609,
+      "name": "Neo-Assyrian"
+    },
+    {
+      "id": "neo_babylonian",
+      "start": -626,
+      "end": -539,
+      "name": "Neo-Babylonian"
+    }
+  ],
+  "sites": [
+    {
+      "id": "eridu",
+      "lat": 30.816,
+      "lon": 45.996,
+      "occupiedStart": -5000,
+      "occupiedEnd": -600,
+      "civHint": "sumer",
+      "confidence": "high"
+    },
+    {
+      "id": "uruk",
+      "lat": 31.322,
+      "lon": 45.636,
+      "occupiedStart": -4000,
+      "occupiedEnd": -100,
+      "civHint": "sumer",
+      "confidence": "high"
+    },
+    {
+      "id": "ur",
+      "lat": 30.963,
+      "lon": 46.103,
+      "occupiedStart": -3800,
+      "occupiedEnd": -500,
+      "civHint": "sumer",
+      "confidence": "high"
+    },
+    {
+      "id": "nippur",
+      "lat": 32.127,
+      "lon": 45.23,
+      "occupiedStart": -5000,
+      "occupiedEnd": -800,
+      "civHint": "sumer",
+      "confidence": "high"
+    },
+    {
+      "id": "babylon",
+      "lat": 32.542,
+      "lon": 44.421,
+      "occupiedStart": -1894,
+      "occupiedEnd": -100,
+      "civHint": "babylon",
+      "confidence": "high"
+    },
+    {
+      "id": "nineveh",
+      "lat": 36.359,
+      "lon": 43.154,
+      "occupiedStart": -1800,
+      "occupiedEnd": -612,
+      "civHint": "assyria",
+      "confidence": "high"
+    },
+    {
+      "id": "ashur",
+      "lat": 35.456,
+      "lon": 43.26,
+      "occupiedStart": -2500,
+      "occupiedEnd": -614,
+      "civHint": "assyria",
+      "confidence": "high"
+    },
+    {
+      "id": "lagash",
+      "lat": 31.411,
+      "lon": 46.407,
+      "occupiedStart": -2500,
+      "occupiedEnd": -1750,
+      "rank": "city",
+      "civHint": "sumer",
+      "confidence": "high"
+    },
+    {
+      "id": "larsa",
+      "lat": 31.286,
+      "lon": 45.853,
+      "occupiedStart": -2700,
+      "occupiedEnd": -1760,
+      "rank": "city",
+      "civHint": "sumer",
+      "confidence": "high"
+    },
+    {
+      "id": "kish",
+      "lat": 32.548,
+      "lon": 44.605,
+      "occupiedStart": -3000,
+      "occupiedEnd": -500,
+      "urbanStart": -2800,
+      "urbanEnd": -500,
+      "civHint": "sumer",
+      "confidence": "high"
+    },
+    {
+      "id": "mari",
+      "lat": 34.551,
+      "lon": 40.89,
+      "occupiedStart": -2900,
+      "occupiedEnd": -1759,
+      "rank": "city",
+      "civHint": "sumer",
+      "confidence": "high"
+    },
+    {
+      "id": "nimrud",
+      "lat": 36.099,
+      "lon": 43.327,
+      "occupiedStart": -1250,
+      "occupiedEnd": -612,
+      "rank": "city",
+      "civHint": "assyria",
+      "confidence": "high"
+    }
+  ],
+  "spawnRadiusKm": 30,
+  "traits": [
+    {
+      "id": "cuneiform",
+      "kind": "invention",
+      "from": -3200,
+      "until": -100,
+      "sites": [
+        "uruk",
+        "ur",
+        "nippur"
+      ]
+    },
+    {
+      "id": "ziggurat",
+      "kind": "architecture",
+      "from": -2100,
+      "until": -500,
+      "sites": [
+        "ur",
+        "uruk",
+        "babylon"
+      ]
+    },
+    {
+      "id": "city_state",
+      "kind": "introduction",
+      "from": -3500,
+      "until": -2000,
+      "sites": [
+        "uruk",
+        "ur",
+        "eridu"
+      ]
+    },
+    {
+      "id": "code_of_laws",
+      "kind": "invention",
+      "from": -2100,
+      "until": -1750,
+      "sites": [
+        "ur",
+        "babylon"
+      ],
+      "note": "Ur-Nammu then Hammurabi; Hammurabi ~1754 BCE is in the kept named-event list."
+    }
+  ],
+  "events": [
+    {
+      "id": "code_hammurabi",
+      "year": -1754,
+      "lat": 32.542,
+      "lon": 44.421,
+      "name": "Code of Hammurabi"
+    }
+  ],
+  "unknownOnPurpose": [
+    "exact Akkad city location"
+  ]
+}

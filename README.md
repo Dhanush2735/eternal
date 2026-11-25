@@ -167,3 +167,5 @@ The compiled mod will be in `build/libs/`.
 - Total tick budget: 10ms maximum
 - Entity virtualization beyond 128 blocks
 ```
+
+Generated command test report `AUTO_COMMAND_TEST_REPORT.md` is archived as `AUTO_COMMAND_TEST_REPORT.md.xz`. Verify it using `python eternal/archived_generated_reports.py AUTO_COMMAND_TEST_REPORT.md`; add `--restore` to restore if space permits. The test generator writes the original path.

@@ -2,6 +2,7 @@ package com.eternalengine.history;
 
 import com.eternalengine.EternalEngineMod;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import org.slf4j.Logger;
 
@@ -127,7 +128,19 @@ public final class HistoricalEventDatabase {
                     }
                 }
             } else if (root.isJsonObject()) {
-                addEvent(HistoricalEvent.fromJson(root.getAsJsonObject()));
+                JsonObject obj = root.getAsJsonObject();
+                // A pack is {"id": ..., "events": [ ... ]}. Treating the whole object as ONE event
+                // produced a junk record named after the pack, at year 0 / latitude 0 / longitude 0,
+                // and silently discarded every event inside it. Prefer the array when there is one.
+                if (obj.has("events") && obj.get("events").isJsonArray()) {
+                    for (JsonElement element : obj.getAsJsonArray("events")) {
+                        if (element.isJsonObject()) {
+                            addEvent(HistoricalEvent.fromJson(element.getAsJsonObject()));
+                        }
+                    }
+                } else {
+                    addEvent(HistoricalEvent.fromJson(obj));
+                }
             }
         } catch (Exception e) {
             LOGGER.error("[HistoricalEventDatabase] Failed to load {}: {}", path, e.getMessage());

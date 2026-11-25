@@ -6,6 +6,7 @@ import com.eternalengine.commands.EternalEngineCommands;
 import com.eternalengine.compatibility.ModCompatibilityChecker;
 import com.eternalengine.config.EternalEngineConfig;
 import com.eternalengine.core.*;
+import com.eternalengine.entity.EternalEngineEntities;
 import com.eternalengine.network.EternalEnginePacketHandler;
 import com.eternalengine.terrabridge.TerraBridge;
 
@@ -25,6 +26,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import org.slf4j.Logger;
 import com.mojang.logging.LogUtils;
+import com.eternalengine.commands.FirstStepsCommands;
+import com.eternalengine.commands.framework.CommandModuleRegistry;
 
 /**
  * Eternal Engine - Historical Earth Simulation for Minecraft
@@ -78,6 +81,14 @@ public class EternalEngineMod {
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, EternalEngineConfig.CLIENT_SPEC, "eternalengine-client.toml");
         
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        
+        // Register entities
+        EternalEngineEntities.ENTITIES.register(modEventBus);
+        com.eternalengine.chrononexus.item.ChronoItems.ITEMS.register(modEventBus);
+        // Step 19d/19e: the newspaper, the handwritten newsletter and the map.
+        com.eternalengine.news.NewsItems.ITEMS.register(modEventBus);
+        com.eternalengine.money.MoneyItems.ITEMS.register(modEventBus); // step 23b: money you can hold
+        com.eternalengine.money.TradeMenus.MENUS.register(modEventBus); // step 24: Minecraft's trade screen
         
         // Register mod lifecycle events
         modEventBus.addListener(this::commonSetup);
@@ -239,10 +250,8 @@ public class EternalEngineMod {
             // The common setup phase can only verify classes; the real generator is world-bound.
             TerraBridge.initialize(event.getServer());
 
-            // Load world-specific state
-            WorldStateManager.getInstance().loadWorldState(event.getServer());
-            
-            // Start simulation
+            // Start simulation. start() loads this world's state itself; loading it here as well (as
+            // before step 14) read state.json twice and ran an old save's migration twice.
             SimulationEngine.getInstance().start(event.getServer());
             
             LOGGER.info("[EE] Server startup complete - simulation running");
@@ -260,11 +269,14 @@ public class EternalEngineMod {
         LOGGER.info("[EE] Server stopping - saving state...");
         
         try {
-            // Stop simulation
+            // Stop simulation (when it was running, stop() saves the state itself)
+            boolean wasRunning = SimulationEngine.getInstance().isRunning();
             SimulationEngine.getInstance().stop();
-            
-            // Save state
-            WorldStateManager.getInstance().saveWorldState();
+
+            // Save state, unless stop() just did: until step 16 it was saved twice at every shutdown
+            if (!wasRunning) {
+                WorldStateManager.getInstance().saveWorldState();
+            }
             
             // Shutdown async tasks
             AsyncTaskManager.getInstance().shutdown();
@@ -282,6 +294,11 @@ public class EternalEngineMod {
     @SubscribeEvent
     public void onRegisterCommands(RegisterCommandsEvent event) {
         EternalEngineCommands.register(event.getDispatcher());
+        // J5: the modular command tree, starting with the new player's route (/ee firststeps).
+        CommandModuleRegistry modules = new CommandModuleRegistry();
+        modules.add(new FirstStepsCommands());
+        modules.add(new com.eternalengine.commands.RoleCommands()); // step R1: the role day, on demand
+        modules.registerAll(event.getDispatcher(), "ee");
         LOGGER.info("[EE] Commands registered");
     }
     

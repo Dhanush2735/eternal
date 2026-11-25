@@ -1,0 +1,204 @@
+{
+  "id": "china",
+  "title": "China (Shang–Qing cores)",
+  "comparedSources": [
+    "Late Shang / Yinxu ~1250–1046 BCE (oracle bones)",
+    "Qin unification 221 BCE; Han capitals Chang'an/Luoyang",
+    "Great Wall: Warring States / Qin join; famous masonry is Ming"
+  ],
+  "rejected": [
+    "hist_china_* templates",
+    "Great Wall as a single -221 invention"
+  ],
+  "phases": [
+    {
+      "id": "shang",
+      "start": -1600,
+      "end": -1046,
+      "name": "Shang"
+    },
+    {
+      "id": "zhou",
+      "start": -1046,
+      "end": -256,
+      "name": "Zhou"
+    },
+    {
+      "id": "qin",
+      "start": -221,
+      "end": -206,
+      "name": "Qin"
+    },
+    {
+      "id": "han",
+      "start": -202,
+      "end": 220,
+      "name": "Han"
+    },
+    {
+      "id": "tang",
+      "start": 618,
+      "end": 907,
+      "name": "Tang"
+    },
+    {
+      "id": "song",
+      "start": 960,
+      "end": 1279,
+      "name": "Song"
+    },
+    {
+      "id": "ming",
+      "start": 1368,
+      "end": 1644,
+      "name": "Ming"
+    },
+    {
+      "id": "qing",
+      "start": 1644,
+      "end": 1912,
+      "name": "Qing"
+    }
+  ],
+  "sites": [
+    {
+      "id": "yinxu_anyang",
+      "lat": 36.122,
+      "lon": 114.317,
+      "occupiedStart": -1300,
+      "occupiedEnd": -1046,
+      "civHint": "china_shang",
+      "confidence": "high"
+    },
+    {
+      "id": "changan_xian",
+      "lat": 34.266,
+      "lon": 108.951,
+      "occupiedStart": -1046,
+      "occupiedEnd": 907,
+      "civHint": "china_zhou",
+      "confidence": "high"
+    },
+    {
+      "id": "luoyang",
+      "lat": 34.62,
+      "lon": 112.454,
+      "occupiedStart": -1046,
+      "occupiedEnd": 907,
+      "civHint": "china_han",
+      "confidence": "high"
+    },
+    {
+      "id": "kaifeng",
+      "lat": 34.797,
+      "lon": 114.308,
+      "occupiedStart": 960,
+      "occupiedEnd": 1127,
+      "civHint": "china_song",
+      "confidence": "high"
+    },
+    {
+      "id": "beijing",
+      "lat": 39.904,
+      "lon": 116.407,
+      "occupiedStart": 1271,
+      "occupiedEnd": 1912,
+      "civHint": "china_ming",
+      "confidence": "high"
+    },
+    {
+      "id": "zhengzhou_shang",
+      "lat": 34.746,
+      "lon": 113.625,
+      "occupiedStart": -1600,
+      "occupiedEnd": -1300,
+      "rank": "city",
+      "civHint": "china_shang",
+      "confidence": "medium"
+    },
+    {
+      "id": "hangzhou",
+      "lat": 30.274,
+      "lon": 120.155,
+      "occupiedStart": 1127,
+      "occupiedEnd": 1279,
+      "rank": "city",
+      "civHint": "china_song",
+      "confidence": "high"
+    },
+    {
+      "id": "nanjing",
+      "lat": 32.061,
+      "lon": 118.778,
+      "occupiedStart": 1368,
+      "occupiedEnd": 1421,
+      "rank": "city",
+      "civHint": "china_ming",
+      "confidence": "high"
+    },
+    {
+      "id": "chengdu",
+      "lat": 30.572,
+      "lon": 104.066,
+      "occupiedStart": -300,
+      "occupiedEnd": 1912,
+      "rank": "city",
+      "civHint": "china_han",
+      "confidence": "medium"
+    }
+  ],
+  "spawnRadiusKm": 30,
+  "traits": [
+    {
+      "id": "oracle_bone_script",
+      "kind": "invention",
+      "from": -1250,
+      "until": -1046,
+      "sites": [
+        "yinxu_anyang"
+      ]
+    },
+    {
+      "id": "ritual_bronze",
+      "kind": "invention",
+      "from": -1600,
+      "until": -256,
+      "sites": [
+        "yinxu_anyang",
+        "changan_xian"
+      ]
+    },
+    {
+      "id": "imperial_capital_grid",
+      "kind": "architecture",
+      "from": -202,
+      "until": 907,
+      "sites": [
+        "changan_xian",
+        "luoyang"
+      ]
+    },
+    {
+      "id": "great_wall_ming",
+      "kind": "architecture",
+      "from": 1368,
+      "until": 1644,
+      "sites": [
+        "beijing"
+      ],
+      "note": "Earlier walls exist; the tourist masonry is mostly Ming."
+    }
+  ],
+  "events": [
+    {
+      "id": "unification_china_qin",
+      "year": -221,
+      "lat": 34.342,
+      "lon": 108.94,
+      "name": "Qin unification"
+    }
+  ],
+  "unknownOnPurpose": [
+    "Xia dynasty as archaeology"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "_reviewStatus": "DRAFT — sources cited inline. This scenario sits on a contested historiographical question and says so rather than picking a side. Not for release without review by someone who knows this period.",
+  "_discipline": "Deletes real consequences rather than inventing events. The central finding is that the intervention may have REMOVED something that mattered — an argument made by a named historian, presented as his argument and not as settled record.",
+  "_sensitivity": "Godse veneration is a live political controversy in India. This file states documented facts and attributes interpretation to its sources. It takes no position on Gandhi's legacy or on the RSS ban beyond the documented sequence of events.",
+
+  "scenarioId": "what_if_gandhi_1948",
+  "triggerPin": "vip:mohandas_karamchand_gandhi",
+  "triggerYear": 1948,
+  "title": "What if the three shots at Birla House had not been fired",
+  "tagline": "You stop a man in a khaki jacket. He had told the world he did not want to be protected.",
+  "author": "UNSIGNED DRAFT",
+  "provenance": "authored",
+  "authoredUntilYear": 1951,
+
+  "events": [
+    {
+      "year": 1948,
+      "form": "PREVENTED_CONSEQUENCE",
+      "name": "17:17, and then nothing",
+      "description": "[fact] At 5:17 pm on 30 January 1948, on his way to the prayer meeting in the garden of Birla House, Gandhi was shot three times at close range with a Beretta M1934. He was 78. [plausible] With the shot stopped, the meeting proceeds late. He is annoyed about the delay.",
+      "provenance": "observed",
+      "source": "",
+      "factionChanges": {}
+    },
+    {
+      "year": 1948,
+      "form": "DIVERGED",
+      "name": "You overrode him to save him",
+      "description": "[fact] Gandhi had refused additional protection and would not permit armed guards to search those attending his open prayer meetings, saying his life was in God's hands. [causal] There had already been an attempt at the same venue ten days earlier, on 20 January, when a bomb was placed near the dais. He continued the public meetings regardless. Keeping him alive required taking a decision he had explicitly refused to take himself.",
+      "provenance": "authored",
+      "source": "Gandhi's refusal of security and the 20 January 1948 Birla House bomb",
+      "factionChanges": {}
+    },
+    {
+      "year": 1948,
+      "form": "DIVERGED",
+      "name": "The country is not horror-struck",
+      "description": "[argument, not record] Historian Ramachandra Guha argues that Gandhi's martyrdom itself ended the communal violence: Hindus were horror-struck that one of their own had killed the greatest living Hindu, the attacks on Muslims ceased, and India did not see another serious Hindu-Muslim riot for more than a decade. His murder, on this reading, patched a dangerous rift between Nehru and Patel and assured the unity of the new state. [counter-reading] Other accounts credit the fast of 13-18 January, which had already produced a signed peace pledge and restorations before he died. Historians disagree. This branch removes the death and keeps the fast.",
+      "provenance": "authored",
+      "source": "R. Guha, 'How Gandhi's Martyrdom Saved India' — presented as one historian's argument",
+      "factionChanges": { "india.communal_violence": "+1" }
+    },
+    {
+      "year": 1948,
+      "form": "DIVERGED",
+      "name": "The Sangh is not banned",
+      "description": "[fact] On 4 February 1948, days after the assassination, the government declared the RSS an unlawful association, stating it was acting to 'root out the forces of hate and violence'. The ban was lifted on 11 July 1949. [causal] The ban was a response to the killing. [plausible] Without the killing there is no such response on that basis — and no year in which the organisation is forced to adopt a written constitution as the price of legality. Later proceedings found insufficient ground to declare the Sangh unlawful.",
+      "provenance": "authored",
+      "source": "RSS ban 4 Feb 1948; lifted 11 July 1949; tribunal finding — sources differ on the lifting terms",
+      "factionChanges": { "india.rss_legal_status": "unchanged" }
+    },
+    {
+      "year": 1949,
+      "form": "DIVERGED",
+      "name": "The trial is for attempted murder",
+      "description": "[fact] Nathuram Godse and Narayan Apte were tried for murder, convicted, and hanged at Ambala jail on 15 November 1949. Several others received life sentences. [plausible] Stopped before the shots, the conspirators are tried for attempted assassination and for the 20 January bomb. There is no murder conviction, no death sentence, and no execution. Their names do not become the names they became.",
+      "provenance": "authored",
+      "source": "Godse and Apte executed 15 November 1949",
+      "factionChanges": {}
+    },
+    {
+      "year": 1949,
+      "form": "DIVERGED",
+      "name": "Two lieutenants stay unreconciled",
+      "description": "[argument, not record] Guha identifies the patching of a potentially disastrous rift between Nehru and Patel as one immediate consequence of the martyrdom. [plausible] A living Gandhi might have mediated it — or might have been unable to, having already been sidelined from day-to-day government. The reconciliation that the death forced does not occur automatically.",
+      "provenance": "modelled",
+      "source": "",
+      "factionChanges": { "india.government_cohesion": "-1" }
+    },
+    {
+      "year": 1950,
+      "form": "NEW",
+      "name": "A critic, not a shrine",
+      "description": "[plausible] Gandhi was 78, his health broken by repeated fasts, and his political programme — disbanding the Congress as a political party, decentralising power, refusing to accept Partition as final — was already at odds with the government he had helped create. Alive, he continues to oppose it in public. A living critic is an obstacle. A dead martyr is a monument, and monuments are easier to live with.",
+      "provenance": "modelled",
+      "source": "",
+      "factionChanges": {}
+    },
+    {
+      "year": 1951,
+      "form": "NEW",
+      "name": "He dies unremarkably",
+      "description": "[plausible] His health does not recover. He dies at home, of natural causes, at around eighty. It is reported on the front pages for a day. There is no state funeral attended by two thousand people, no ashes carried by special trains to hundreds of places, no Martyrs' Day.",
+      "provenance": "modelled",
+      "source": "",
+      "factionChanges": {}
+    }
+  ],
+
+  "epilogue": "You did something heroic and possibly harmful, and the game will not tell you which.\n\nHe had already won. On 18 January, twelve days before the shots, thousands had signed a peace pledge and Hindu, Muslim and Sikh leaders had given him the undertaking he demanded. Of the 381 mosques and dargahs occupied in Delhi, all but fifteen would be restored within months. The fast had worked. The men who came to kill him came because he would not stop, and because they could not bear what he had won.\n\nOne historian of modern India argues that it was his death, not his fast, that ended the country's communal violence — that Hindus were horror-struck that one of their own had killed him, and that the shock bought more than a decade of quiet. Other accounts credit the fast alone.\n\nThat disagreement is not something this branch can settle. It can only put a man back on his feet at 5:17 pm and let the argument continue.\n\nHe never asked you to save him. He said his life was in God's hands. You took it out and kept it for him, and in this timeline the country grows tired of a difficult old man instead of building a shrine to him.\n\nYou did not save the Mahatma. You saved Mohandas. Whether those were the same person is the question the game leaves open."
+}

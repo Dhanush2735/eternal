@@ -20,9 +20,9 @@ check('engine falls back only remote-or-noop', 'new RemoteBrainBridge' in engine
 commands=files[Path('src/main/java/com/eternalengine/commands/EternalEngineCommands.java')]
 check('no ollama command', 'ollama-start' not in commands and 'executeBrainOllamaStart' not in commands, 'only remote-start remains')
 remote=files[Path('src/main/java/com/eternalengine/brain/RemoteBrainBridge.java')]
-check('remote allows only https', 'return lower.startsWith("https://");' in remote, 'localhost/http rejected by bridge')
+check('remote allows only https', 'return endpoint.toLowerCase(Locale.ROOT).startsWith("https://");' in remote, 'localhost/http rejected by bridge')
 check('OpenAI-compatible route retained', 'contains("/v1/chat/completions")' in remote and 'buildOpenAiRequest' in remote, 'LiteLLM/Portkey compatible')
-check('extra headers retained for Portkey', 'remoteBrainExtraHeaders' in files[Path('src/main/java/com/eternalengine/config/EternalEngineConfig.java')] and 'builder.header(header.getKey(), header.getValue())' in remote, 'Portkey headers supported')
+check('extra headers retained for Portkey', ('liteLlmExtraHeaders' in files[Path('src/main/java/com/eternalengine/config/EternalEngineConfig.java')] or 'remoteBrainExtraHeaders' in files[Path('src/main/java/com/eternalengine/config/EternalEngineConfig.java')]) and 'builder.header(header.getKey(), header.getValue())' in remote, 'Portkey headers supported')
 
 # Real HTTPS transport test to echo service, no secret. Try more than one public echo service.
 payload={'model':'test-model','stream':False,'messages':[{'role':'user','content':'hi'}]}

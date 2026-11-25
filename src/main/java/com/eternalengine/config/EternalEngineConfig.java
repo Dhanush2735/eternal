@@ -22,6 +22,21 @@ public class EternalEngineConfig {
     public static final ServerConfig SERVER;
     
     // ========== CLIENT CONFIG ==========
+    /**
+     * A server config value that is safe to read before the specs are loaded (turn 235: the dev
+     * server crashed in SimulationEngine's constructor, which reads config during commonSetup,
+     * before Forge loads the TOMLs; production hides the error today but every read must stay
+     * legal). Before load - or on any surprise - the given fallback stands in, so callers see the
+     * same answer the TOML would have given.
+     */
+    public static <T> T server(ForgeConfigSpec.ConfigValue<T> value, T fallback) {
+        try {
+            return SERVER_SPEC.isLoaded() ? value.get() : fallback;
+        } catch (Throwable t) {
+            return fallback;
+        }
+    }
+
     public static final ForgeConfigSpec CLIENT_SPEC;
     public static final ClientConfig CLIENT;
     
@@ -76,6 +91,19 @@ public class EternalEngineConfig {
         // Virtualization
         public final ForgeConfigSpec.IntValue virtualizationDistance;
         public final ForgeConfigSpec.IntValue maxEntitiesPerPlayer;
+
+        // Presence (the people who appear near a player because a place was occupied that year)
+        public final ForgeConfigSpec.IntValue presenceMinSpawnBlocks;
+        public final ForgeConfigSpec.IntValue presenceSpawnDistance;
+        public final ForgeConfigSpec.IntValue presenceCrowdCeiling;
+        public final ForgeConfigSpec.BooleanValue presenceDrawnCrowd;
+        public final ForgeConfigSpec.IntValue presenceDrawnFiguresMax;
+        public final ForgeConfigSpec.DoubleValue presenceCrowdConcentration;
+        public final ForgeConfigSpec.IntValue presenceCrowdInterestBlocks;
+        public final ForgeConfigSpec.BooleanValue presenceSettleGoals;
+        public final ForgeConfigSpec.IntValue presenceSettleBlocks;
+        public final ForgeConfigSpec.IntValue presenceNameTagBlocks;
+        public final ForgeConfigSpec.IntValue presenceDistrictRadius;
         
         // OSM/External data
         public final ForgeConfigSpec.IntValue osmTimeoutMs;
@@ -84,7 +112,25 @@ public class EternalEngineConfig {
         public final ForgeConfigSpec.IntValue backupIntervalMinutes;
         public final ForgeConfigSpec.IntValue maxBackups;
         public final ForgeConfigSpec.IntValue autoSaveIntervalMinutes;
+
+        // Clock (step 14)
+        public final ForgeConfigSpec.BooleanValue pauseWhenEmpty;
         
+        // Market (step 19b)
+        public final ForgeConfigSpec.IntValue merchantBuyPercent;
+        public final ForgeConfigSpec.IntValue merchantBudgetDays;
+        public final ForgeConfigSpec.IntValue moneyChangerFeePercent;
+        public final ForgeConfigSpec.IntValue moneyChangerStrangeFeePercent;
+
+        // History book (step 20)
+        public final ForgeConfigSpec.BooleanValue historyBookTimeTraveller;
+        public final ForgeConfigSpec.BooleanValue historyBookOnJoin;
+
+        // Minecraft's own monsters, raids and traders in the history world (step 21)
+        public final ForgeConfigSpec.BooleanValue minecraftMonsters;
+        public final ForgeConfigSpec.BooleanValue raidsAndPatrols;
+        public final ForgeConfigSpec.BooleanValue wanderingTraders;
+
         // Debug
         public final ForgeConfigSpec.BooleanValue debugLogging;
         public final ForgeConfigSpec.BooleanValue performanceLogging;
@@ -98,12 +144,19 @@ public class EternalEngineConfig {
                 .define("simulationEnabled", true);
             
             defaultSpeed = builder
-                .comment("Default simulation speed (1, 5, 10, 25, or 50)")
-                .defineInRange("defaultSpeed", 10, 1, 50);
+                .comment("Default simulation speed for a new world or /ee reset: days of history per Minecraft day",
+                    "(1, 5, 10, 25 or 50; the same number as the Terra++ time scale). 1 = one day per Minecraft day.")
+                .defineInRange("defaultSpeed", 1, 1, 50);
             
             startYear = builder
                 .comment("Starting simulation year (negative for BCE)")
                 .defineInRange("startYear", -3000, -300000, 2100);
+
+            pauseWhenEmpty = builder
+                .comment("Stop history (the world year, wars, disease, trade) while nobody is online, and go on",
+                         "when somebody joins. In Terra++ time the year is the Minecraft day count, so the day/night",
+                         "cycle is paused too while the server is empty (and switched back on when somebody joins).")
+                .define("pauseWhenEmpty", true);
             
             builder.pop();
             
@@ -161,6 +214,93 @@ public class EternalEngineConfig {
             
             builder.pop();
             
+            // Presence
+            builder.comment("Presence NPCs: the people who appear because a place was occupied in the simulated year")
+                   .push("presence");
+            
+            presenceMinSpawnBlocks = builder
+                .comment("A presence NPC never appears closer to a player than this, in blocks",
+                         "Vanilla mobs use 24: they never spawn within 24 blocks of a player",
+                         "Lower it to bring people closer; 8 is the minimum that still counts as 'not beside you'")
+                .defineInRange("presenceMinSpawnBlocks", 24, 8, 96);
+            
+            presenceSpawnDistance = builder
+                .comment("How far away people may appear, in blocks -- and the distance beyond which",
+                         "they despawn immediately, exactly as a vanilla mob does at 128",
+                         "Vanilla: 128")
+                .defineInRange("presenceSpawnDistance", 128, 48, 192);
+            
+            presenceDistrictRadius = builder
+                .comment("The area a place's crowd occupies, in blocks: people gather inside this",
+                         "radius around the site's centre (or a nearby district) and are kept in it",
+                         "Smaller means a denser-looking crowd for the same number of people")
+                .defineInRange("presenceDistrictRadius", 28, 8, 64);
+            
+            presenceNameTagBlocks = builder
+                .comment("A nameplate floats over a presence NPC only within this distance, in blocks",
+                         "Keeps a distant crowd as figures rather than a list of names you can count",
+                         "Set it equal to presenceSpawnDistance to always show names")
+                .defineInRange("presenceNameTagBlocks", 24, 4, 128);
+            
+            presenceCrowdCeiling = builder
+                .comment("The most people allowed to stand in one place at once, whatever their",
+                         "population says. The density curve's own city ceiling is 40; this caps it",
+                         "further. Measure with /debug before raising it -- the AI is cheap now, but",
+                         "bodies still collide, tick physics and get sent to your client, and a packed",
+                         "square is where collisions turn into lag. 8..64")
+                .defineInRange("presenceCrowdCeiling", 40, 8, 64);
+            
+            presenceDrawnCrowd = builder
+                .comment("Draw a crowd of figures around the living few. This is the answer to",
+                         "\"a group is not a crowd\": a couple of dozen people can think, but a square",
+                         "looks busy at a few hundred, so the rest are stood up as figures with their",
+                         "AI switched off -- no goals, no navigation, no path search, nothing to tick",
+                         "Set false to go back to the living people being all anyone sees")
+                .define("presenceDrawnCrowd", true);
+
+            presenceDrawnFiguresMax = builder
+                .comment("The most figures drawn in one district, whatever the population says",
+                         "The drawn count is the square root of the population: 348 -> 25, 142,174 ->",
+                         "377, 980,600 -> 400. This caps it. Figures do not tick, but they are sent to",
+                         "your client and drawn, so this is a client-side budget, not a server one.",
+                         "Set it to 25 to see the old group of people; 100..400 is a readable crowd")
+                .defineInRange("presenceDrawnFiguresMax", 400, 25, 600);
+
+            presenceCrowdConcentration = builder
+                .comment("How much more than the average a chunk at the place's heart carries",
+                         "The population is divided over the chunks of the place's area: an average",
+                         "chunk of Secunderabad, 1948 holds 0.32 people. 0 is exactly that division --",
+                         "people evenly spread, which is honest but looks empty. Higher gathers them:",
+                         "at 40 the market's chunk holds 13 and a 64-block view holds about 530; at 241",
+                         "the market's chunk is packed full (77) and the view holds thousands, which",
+                         "needs the drawn-renderer route to afford. 0..400")
+                .defineInRange("presenceCrowdConcentration", 40.0d, 0.0d, 400.0d);
+
+            presenceCrowdInterestBlocks = builder
+                .comment("How far from a player the crowd is stood up at all, in blocks",
+                         "The place exists across its whole area, but figures only exist where a",
+                         "player can see them: 64 blocks is about 49 chunks, a few hundred figures",
+                         "Raise it to 128 to see further and pay for it; lower it to 32 to pay less")
+                .defineInRange("presenceCrowdInterestBlocks", 64, 32, 160);
+
+            presenceSettleGoals = builder
+                .comment("A district crowd stands its ground instead of pacing about",
+                         "Pacing means pathfinding -- an A* search, the most expensive thing a mob does",
+                         "Settled people still watch you and glance around; they just stop picking a",
+                         "destination. Set false to restore vanilla wandering at roughly twice the cost")
+                .define("presenceSettleGoals", true);
+            
+            presenceSettleBlocks = builder
+                .comment("Past this many blocks from every player, a crowd member stops thinking:",
+                         "the AI is switched off and comes back the moment somebody is close again",
+                         "Default 32 matches vanilla's 'never randomly despawned' radius, so you pay",
+                         "for the thinking of exactly the people the game considers in play. Vanilla",
+                         "does the same thing at the simulation-distance boundary. 8..96; a large",
+                         "value effectively disables it")
+                .defineInRange("presenceSettleBlocks", 32, 8, 96);
+            
+            builder.pop();
+            
             // External data
             builder.comment("External data settings")
                    .push("external");
@@ -176,7 +316,8 @@ public class EternalEngineConfig {
                    .push("persistence");
             
             backupIntervalMinutes = builder
-                .comment("Backup interval in minutes")
+                .comment("Minutes between two backups of the same save file (a save in between overwrites the file",
+                         "without a new backup), so maxBackups backups cover maxBackups x this many minutes")
                 .defineInRange("backupIntervalMinutes", 30, 5, 180);
             
             maxBackups = builder
@@ -189,6 +330,71 @@ public class EternalEngineConfig {
             
             builder.pop();
             
+            // Market (step 19b)
+            builder.comment("Merchants and the money-changer (step 19b). Amounts follow an ordinary labourer's pay",
+                            "for a day in the place and year.")
+                   .push("market");
+
+            merchantBuyPercent = builder
+                .comment("What share of a good's worth a merchant pays for it (he sells it on for more)")
+                .defineInRange("merchantBuyPercent", 70, 10, 100);
+
+            merchantBudgetDays = builder
+                .comment("How much one merchant can pay out in one Minecraft day, in days of a labourer's pay here")
+                .defineInRange("merchantBudgetDays", 8, 0, 1000);
+
+            moneyChangerFeePercent = builder
+                .comment("The money-changer's cut, in every 100, for money with a fixed rate (Indian rupees in",
+                         "Hyderabad, pounds into rupees)")
+                .defineInRange("moneyChangerFeePercent", 2, 0, 50);
+
+            moneyChangerStrangeFeePercent = builder
+                .comment("His cut for money with no fixed rate (old money, money from far away), which he values by",
+                         "what it buys")
+                .defineInRange("moneyChangerStrangeFeePercent", 10, 0, 50);
+
+            builder.pop();
+
+            // History book (step 20)
+            builder.comment("The history book (step 20): your notes of what people told you and what you read.")
+                   .push("historyBook");
+
+            historyBookTimeTraveller = builder
+                .comment("Time traveller view: the book also shows what comes later (after today's date). Off: the",
+                         "book holds only what you have heard or read, as villagers know nothing of the future.")
+                .define("historyBookTimeTraveller", false);
+
+            historyBookOnJoin = builder
+                .comment("Step 22: give every new player a history book on joining (the step-20 way). Off: the book is",
+                         "bought from a seller (a merchant, trader, pedlar, paper seller or newsletter writer), in the",
+                         "form people keep notes in there and then; your notes are kept either way.")
+                .define("historyBookOnJoin", false);
+
+            builder.pop();
+
+            // Minecraft's own monsters, raids and traders (step 21)
+            builder.comment("Minecraft's own monsters, raids and wandering traders in the history world (step 21). The",
+                            "world is the real Earth in a real year: zombies, creepers, pillager raids and a wandering",
+                            "trader with a llama do not belong in it, so they are off unless you turn them on here. Only",
+                            "things that come by themselves are stopped; spawn eggs, spawners and /summon still work.",
+                            "The Nether and the End are not touched.")
+                   .push("minecraftMobs");
+
+            minecraftMonsters = builder
+                .comment("Monsters spawn by themselves: zombies, skeletons, creepers, spiders, slimes, phantoms, drowned,",
+                         "witches, zombie sieges at night, and other mods' monsters.")
+                .define("minecraftMonsters", false);
+
+            raidsAndPatrols = builder
+                .comment("Pillager patrols, and raids on villages (off: nobody gets the Bad Omen, so no raid starts).")
+                .define("raidsAndPatrols", false);
+
+            wanderingTraders = builder
+                .comment("The wandering trader and his llamas.")
+                .define("wanderingTraders", false);
+
+            builder.pop();
+
             // Debug
             builder.comment("Debug settings")
                    .push("debug");

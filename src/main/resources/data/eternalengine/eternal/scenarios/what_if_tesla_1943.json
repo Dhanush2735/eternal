@@ -1,0 +1,91 @@
+{
+  "_reviewStatus": "DRAFT — sources cited inline. Counterfactual claims are reasoning from verified facts, never presented as record.",
+  "_discipline": "Deletes real consequences rather than inventing events. The central finding is that saving Tesla changes almost nothing technically — and the scenario says so instead of inventing a death ray.",
+  "_note": "Uses a namespaced trigger id (vip:) because Tesla's death is not a gazetteer event pin. This validates the namespace fix flagged in FORK_ANYTHING.md §4.2.",
+
+  "scenarioId": "what_if_tesla_1943",
+  "triggerPin": "vip:nikola_tesla",
+  "triggerYear": 1943,
+  "title": "What if Nikola Tesla had not died alone in room 3327",
+  "tagline": "You break down the door. He lives. Nothing you hoped for happens, and one thing you did not expect does.",
+  "author": "UNSIGNED DRAFT",
+  "provenance": "authored",
+  "authoredUntilYear": 1950,
+
+  "events": [
+    {
+      "year": 1943,
+      "form": "PREVENTED_CONSEQUENCE",
+      "name": "The door opens",
+      "description": "[fact] Tesla died on 7 January 1943, aged 86, in room 3327 of the Hotel New Yorker. His body was found by a maid, Alice Monaghan, after she ignored a do-not-disturb sign that had hung on the door for two days. The cause was coronary thrombosis. [plausible] With the door opened while he was still alive, he is taken to hospital and survives the clot.",
+      "provenance": "observed",
+      "source": "",
+      "factionChanges": {}
+    },
+    {
+      "year": 1943,
+      "form": "DIVERGED",
+      "name": "The papers are never seized",
+      "description": "[fact] Within days of his death, the Office of Alien Property Custodian impounded his belongings — despite Tesla having been a US citizen since 1891. The wartime fear was that his claimed particle-beam weapon could reach Axis or Soviet hands. [causal] That seizure was triggered by his death and the absence of heirs, not by any assessment of the papers. A living Tesla keeps his papers.",
+      "provenance": "authored",
+      "source": "Office of Alien Property Custodian seizure, Jan 1943",
+      "factionChanges": {}
+    },
+    {
+      "year": 1943,
+      "form": "DIVERGED",
+      "name": "John Trump is never asked to look",
+      "description": "[fact] In January 1943 MIT engineer John G. Trump was asked to evaluate the seized papers. He reported that the material was 'primarily speculative' and contained no new, workable principles or methods for their realisation. [plausible] With no seizure, there is no evaluation. The question of what was in Tesla's papers is never officially answered.",
+      "provenance": "authored",
+      "source": "John G. Trump assessment, Jan 1943",
+      "factionChanges": {}
+    },
+    {
+      "year": 1944,
+      "form": "DIVERGED",
+      "name": "The tax seizure does not follow",
+      "description": "[fact] After federal custody released the papers in 1943, they were taken by the New York Department of Taxation over an outstanding tax obligation. [plausible] The sequence that scattered his archive — federal seizure, then state seizure — does not occur in this order, or does not occur at all.",
+      "provenance": "authored",
+      "source": "New York Department of Taxation seizure, 1943",
+      "factionChanges": {}
+    },
+    {
+      "year": 1945,
+      "form": "NEW",
+      "name": "He is in the room when the war ends",
+      "description": "[fact] Tesla had approached the US, British and Soviet governments about his teleforce weapon repeatedly from 1934 onwards, and had been refused. He secured a $25,000 advance from the Soviet Union in 1935 for a partial proposal, and no prototype was ever built. [plausible] After August 1945 the appetite for physics-based weapons changed completely. Tesla, alive and internationally famous, is invited to conversations he was shut out of in 1939.",
+      "provenance": "modelled",
+      "source": "",
+      "factionChanges": { "usa.directed_energy_interest": "+1" }
+    },
+    {
+      "year": 1945,
+      "form": "DIVERGED",
+      "name": "The weapon is still not built",
+      "description": "[fact] No working prototype of teleforce was ever constructed. No detailed engineering drawings have ever been found — not among the Belgrade papers, not in the declassified FBI files, not anywhere. [plausible] Being alive does not supply what was missing. He is 89 years old, and the physics of a practical charged-particle weapon remained out of reach for decades. He is listened to. He still does not build it.",
+      "provenance": "authored",
+      "source": "No prototype; no drawings in Belgrade or FBI files",
+      "factionChanges": {}
+    },
+    {
+      "year": 1947,
+      "form": "NEW",
+      "name": "He sees the transistor",
+      "description": "[fact] The transistor is demonstrated at Bell Labs in December 1947. [plausible] Tesla, who spent his life on the movement of charge through matter, lives to see a solid-state device begin to replace the vacuum and the arc he had spent fifty years mastering.",
+      "provenance": "modelled",
+      "source": "",
+      "factionChanges": {}
+    },
+    {
+      "year": 1948,
+      "form": "NEW",
+      "name": "Recognition, four years early",
+      "description": "[plausible] The reassessment of Tesla as a founder of modern electrical systems — which in the record largely followed his death — begins while he is still alive to receive it. He is honoured, cited, and interviewed. The branch where he lives is a branch where the world apologises to him in person.",
+      "provenance": "modelled",
+      "source": "",
+      "factionChanges": {}
+    }
+  ],
+
+  "epilogue": "You saved a man's life and got nothing you wanted. No weapon was built, because none was ever buildable — the one expert who examined his papers in 1943 said so, and there were never any drawings. What changed instead was smaller and stranger: his papers stayed his, the seizure never happened, and the recognition that arrived in our timeline after he was dead arrived in this one while he could hear it.\n\nHe was eighty-six, and his arteries were failing. He was never going to live long. But somebody was in the room, and the sign came off the door.\n\nThe death of Nikola Tesla was not resisted. It was postponed. The chronicle cannot tell you which of those is the greater victory."
+}

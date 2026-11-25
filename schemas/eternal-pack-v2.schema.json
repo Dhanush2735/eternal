@@ -1,0 +1,324 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eternal-engine.local/schemas/pack-v2.json",
+  "title": "Eternal Engine data pack, schema eternal/2",
+  "description": "One pack = one kind of record. Every value that is not data names the source it came from; every value that is modelled names the model that made it. Nothing is inferred from a neighbouring field.",
+  "type": "object",
+  "required": ["schema", "id", "title", "kind", "sources", "records"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "eternal/2",
+      "description": "The format version. A loader refuses a version it does not know, rather than reading half of it."
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "The pack id. Unique across all packs; used in ids and in partOf."
+    },
+    "title": { "type": "string", "minLength": 3 },
+    "kind": {
+      "enum": ["places", "population", "events", "traits", "borders", "model"],
+      "description": "Decides which record schema applies. A file holds one kind, never three."
+    },
+    "present": {
+      "type": "boolean",
+      "default": false,
+      "description": "True for packs describing the world as it is now. Replaces the pack-level presentOnly flag that silently changed every record's confidence."
+    },
+    "spawnRadiusKm": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "description": "Engine spawning radius for the pack's places. Named for what it is: it is NOT a settlement's area, and the loader must not present it as one."
+    },
+    "generator": {
+      "$ref": "#/$defs/generator",
+      "description": "Required on any pack that is machine-generated. A generated file that cannot say what made it is not data, it is a rumour."
+    },
+    "sources": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "$ref": "#/$defs/source" },
+      "description": "The pack's bibliography, listed once. Records reference a key, so a citation is never retyped (and never drifts)."
+    },
+    "records": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/record" }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["citation"],
+      "additionalProperties": false,
+      "properties": {
+        "citation": { "type": "string", "minLength": 8 },
+        "url": { "type": "string" },
+        "retrieved": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "note": { "type": "string" }
+      }
+    },
+    "generator": {
+      "type": "object",
+      "required": ["tool", "version", "created", "inputs"],
+      "additionalProperties": false,
+      "properties": {
+        "tool": { "type": "string" },
+        "version": { "type": "string" },
+        "created": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "inputs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "sha256"],
+            "properties": {
+              "name": { "type": "string" },
+              "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+            }
+          },
+          "description": "Every input, hashed. The same inputs must give the same file, or the file is not a fact."
+        },
+        "seed": { "type": "integer" }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source", "confidence"],
+      "additionalProperties": false,
+      "properties": {
+        "source": { "type": "string", "description": "A key in the pack's sources map, or 'modelled'." },
+        "confidence": { "enum": ["measured", "estimated", "modelled"] },
+        "note": { "type": "string" }
+      }
+    },
+    "span": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "from": {
+          "type": ["integer", "null"],
+          "description": "The year it began. Null means unknown — never the beginning of time, and never a placeholder year."
+        },
+        "until": {
+          "type": ["integer", "null"],
+          "description": "The year it stopped. Null means it has not stopped."
+        },
+        "present": {
+          "type": "boolean",
+          "default": false,
+          "description": "Shorthand for until = null. Replaces the 9999 sentinel that 15,826 rows currently carry."
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "present": { "const": true } } },
+          "then": { "properties": { "until": { "type": "null" } } }
+        }
+      ]
+    },
+    "extent": {
+      "type": "object",
+      "required": ["shape", "radiusKm"],
+      "additionalProperties": false,
+      "properties": {
+        "shape": { "enum": ["disc", "box", "polygon"] },
+        "radiusKm": { "type": "number", "exclusiveMinimum": 0 },
+        "box": {
+          "type": "object",
+          "required": ["minLat", "minLon", "maxLat", "maxLon"],
+          "properties": {
+            "minLat": { "type": "number", "minimum": -90, "maximum": 90 },
+            "minLon": { "type": "number", "minimum": -180, "maximum": 180 },
+            "maxLat": { "type": "number", "minimum": -90, "maximum": 90 },
+            "maxLon": { "type": "number", "minimum": -180, "maximum": 180 }
+          }
+        },
+        "polygon": { "type": "array", "items": { "type": "array", "items": { "type": "number" } } }
+      },
+      "description": "The only place a real area is stated. A place inherits its area from the population record it points at; it does not carry a spawn radius pretending to be one."
+    },
+    "seriesPoint": {
+      "type": "object",
+      "required": ["year", "people", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "year": { "type": "integer" },
+        "people": { "type": "integer", "minimum": 1 },
+        "source": { "type": "string" },
+        "footprint": {
+          "type": "string",
+          "description": "What the number counts — city, urban agglomeration, cantonment board, households×mean. City figures change meaning as boundaries grow; this field is what keeps them comparable."
+        }
+      }
+    },
+    "populationRef": {
+      "type": "object",
+      "required": ["region", "role"],
+      "additionalProperties": false,
+      "properties": {
+        "region": { "type": "string", "description": "The population record that supplies this place's number." },
+        "role": { "enum": ["own", "inside", "near", "scaled", "none"] },
+        "distanceKm": { "type": ["number", "null"] },
+        "note": { "type": "string" }
+      },
+      "description": "States, in the file, where a place's people come from. Today this is computed by silent proximity, which is how 475 localities came to hold a whole city's population without anybody intending it."
+    },
+    "record": {
+      "type": "object",
+      "required": ["kind", "id"],
+      "properties": { "kind": { "enum": ["place", "population", "event", "trait", "border", "model"] } },
+      "oneOf": [
+        { "$ref": "#/$defs/place" },
+        { "$ref": "#/$defs/population" },
+        { "$ref": "#/$defs/event" },
+        { "$ref": "#/$defs/trait" },
+        { "$ref": "#/$defs/border" },
+        { "$ref": "#/$defs/model" }
+      ]
+    },
+    "place": {
+      "type": "object",
+      "required": ["kind", "id", "uid", "name", "lat", "lon", "rank", "occupied", "provenance"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "const": "place" },
+        "id": { "type": "string" },
+        "uid": {
+          "type": "string",
+          "description": "Pack-scoped unique id. 825 ids in the shipped packs belong to two packs at once; uid removes the ambiguity without renaming the data."
+        },
+        "name": { "type": "string" },
+        "alsoKnownAs": { "type": "array", "items": { "type": "string" } },
+        "lat": { "type": "number", "minimum": -90, "maximum": 90 },
+        "lon": { "type": "number", "minimum": -180, "maximum": 180 },
+        "precisionM": { "type": "integer", "description": "How precise the coordinates are, in metres. Five decimals is about one metre; a Wikidata town is often a kilometre." },
+        "rank": { "enum": ["village", "town", "city"] },
+        "partOf": { "type": "array", "items": { "type": "string" }, "description": "Container ids that must exist — a stray value must fail the build, not be discovered months later." },
+        "occupied": { "$ref": "#/$defs/span" },
+        "urban": { "$ref": "#/$defs/span" },
+        "polity": { "type": "string", "description": "What the place is attributed to in this period. Replaces civHint, which reads as a guess because it is one." },
+        "population": { "$ref": "#/$defs/populationRef" },
+        "roles": { "type": "array", "items": { "type": "string" }, "description": "What people do here, when a trait says. Derived, but written down." },
+        "provenance": { "$ref": "#/$defs/provenance" }
+      }
+    },
+    "population": {
+      "type": "object",
+      "required": ["kind", "id", "name", "recordKind", "rank", "lat", "lon", "extent", "series", "provenance"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "const": "population" },
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "recordKind": { "enum": ["settlement", "aggregate", "polity"], "description": "A polity of 16,338,534 people and a cantonment of 135,370 are not the same sort of thing, and the schema now says so." },
+        "rank": { "enum": ["village", "town", "city"] },
+        "lat": { "type": "number" },
+        "lon": { "type": "number" },
+        "extent": { "$ref": "#/$defs/extent" },
+        "members": { "type": "integer", "minimum": 1, "description": "For an aggregate: how many settlements it covers. 847 for Atraf-i-Balda." },
+        "span": { "$ref": "#/$defs/span", "description": "For a polity: the years it existed." },
+        "series": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/seriesPoint" } },
+        "derivation": {
+          "type": "object",
+          "description": "How a year between records is answered — declared here rather than assumed by the resolver.",
+          "additionalProperties": false,
+          "properties": {
+            "between": { "enum": ["log", "linear"], "default": "log" },
+            "maxGapYears": { "type": "integer", "default": 60 },
+            "beyond": { "enum": ["hold-nearest", "none"], "default": "hold-nearest" },
+            "clampToRecordMax": { "type": "boolean", "default": true, "description": "A modelled year may never exceed the largest record of the same region. This single rule removes the 1,050,000-in-1840 class of defect." }
+          }
+        },
+        "provenance": { "$ref": "#/$defs/provenance" }
+      }
+    },
+    "event": {
+      "type": "object",
+      "required": ["kind", "id", "name", "lat", "lon", "eventKind", "effect", "radiusKm", "when", "provenance"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "const": "event" },
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "lat": { "type": "number" },
+        "lon": { "type": "number" },
+        "eventKind": { "enum": ["battle", "siege", "disaster", "incident", "political", "military"] },
+        "effect": { "enum": ["military_presence", "lockdown", "memorial", "political", "disruption"] },
+        "radiusKm": { "type": "number", "minimum": 1, "maximum": 200 },
+        "when": { "$ref": "#/$defs/span" },
+        "provenance": { "$ref": "#/$defs/provenance" }
+      },
+      "description": "One shape for every event. The shipped packs hold three shapes at once, and 10 rows carry none of the fields that make an event an event."
+    },
+    "trait": {
+      "type": "object",
+      "required": ["kind", "id", "traitKind", "when", "sites", "provenance"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "const": "trait" },
+        "id": { "type": "string" },
+        "traitKind": { "enum": ["architecture", "invention", "introduction", "discovery"] },
+        "when": { "$ref": "#/$defs/span" },
+        "sites": { "type": "array", "minItems": 1, "items": { "type": "string" }, "description": "Place uids. Every reference must resolve; the lint fails a build otherwise." },
+        "provenance": { "$ref": "#/$defs/provenance" }
+      }
+    },
+    "border": {
+      "type": "object",
+      "required": ["kind", "id", "polity", "when", "box", "rank", "provenance"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "const": "border" },
+        "id": { "type": "string" },
+        "polity": { "type": "string" },
+        "when": { "$ref": "#/$defs/span" },
+        "box": {
+          "type": "object",
+          "required": ["minLat", "minLon", "maxLat", "maxLon"],
+          "properties": {
+            "minLat": { "type": "number" }, "minLon": { "type": "number" },
+            "maxLat": { "type": "number" }, "maxLon": { "type": "number" }
+          }
+        },
+        "rank": { "enum": ["village", "town", "city"], "description": "What the ground is treated as inside the box. All 16 shipped borders say village — quiet ground — and the schema keeps that explicit." },
+        "provenance": { "$ref": "#/$defs/provenance" }
+      }
+    },
+    "model": {
+      "type": "object",
+      "required": ["kind", "id", "rankUnits", "bands"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "const": "model" },
+        "id": { "type": "string" },
+        "rankUnits": {
+          "type": "object",
+          "required": ["village", "town", "city"],
+          "properties": {
+            "village": { "type": "number", "const": 1 },
+            "town": { "type": "number" },
+            "city": { "type": "number" }
+          },
+          "description": "village 1, town 26, city 2500 today. These are model constants, not history, and they now live in their own file so a data update cannot silently change every modelled value."
+        },
+        "bands": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["fromYear", "toYear", "village", "town", "city"],
+            "properties": {
+              "fromYear": { "type": "integer" }, "toYear": { "type": "integer" },
+              "village": { "type": "array", "items": { "type": "integer" }, "minItems": 2, "maxItems": 2 },
+              "town": { "type": "array", "items": { "type": "integer" }, "minItems": 2, "maxItems": 2 },
+              "city": { "type": "array", "items": { "type": "integer" }, "minItems": 2, "maxItems": 2 }
+            }
+          }
+        },
+        "gravityDecayKm": { "type": "number", "default": 250 },
+        "gravityRadiusKm": { "type": "number", "default": 250 },
+        "maxInterpolationGapYears": { "type": "integer", "default": 60 }
+      },
+      "description": "The calibration constants, in one file with a version of their own. Changing them changes every modelled number in the game, so they get a changelog, not a corner of a data pack."
+    }
+  }
+}

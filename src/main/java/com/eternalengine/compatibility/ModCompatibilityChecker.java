@@ -5,6 +5,7 @@ import net.minecraftforge.fml.ModList;
 import org.slf4j.Logger;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -25,6 +26,26 @@ public class ModCompatibilityChecker {
     public static final String MOD_JOURNEYMAP = "journeymap";
     public static final String MOD_XAEROS_MINIMAP = "xaerominimap";
     public static final String MOD_XAEROS_WORLDMAP = "xaeroworldmap";
+    // Step 45 part 5 (A13). THE MOD SHIPS NO WEAPONS: it names these and resolves them, and
+    // works the same with none of them installed. The ids are read from the item resolver's own
+    // register (war/WeaponItems), so the two cannot drift apart - this list is only the handle
+    // the rest of the mod reaches for.
+    public static final String MOD_SPARTAN_WEAPONRY = "spartanweaponry";
+    public static final String MOD_MUSKET_MOD = "musketmod";
+    public static final String MOD_EPIC_KNIGHTS = "epicknights";
+    public static final String MOD_EPIC_KNIGHTS_ANTIQUE = "epic_knights_antique";
+    public static final String MOD_AGE_OF_WEAPONS = "ageofweapons";
+    public static final String MOD_TACZ = "tacz";
+    public static final String MOD_SCORCHED_GUNS = "scorched_guns";
+    public static final String MOD_VICS_POINT_BLANK = "vic_point_blank";
+    public static final String MOD_CHINESE_ANCIENT_BLADE = "chinese_ancient_blade";
+    // The libraries those mods need. A mod whose dependency is missing is not usable, and the
+    // resolver must fall back rather than hand back an item that does not exist.
+    public static final String MOD_CLOTH_CONFIG = "cloth_config";
+    public static final String MOD_ARCHITECTURY = "architectury";
+    public static final String MOD_GECKOLIB = "geckolib";
+    public static final String MOD_CURIOS = "curios";
+    public static final String MOD_PLAYER_ANIMATOR = "playeranimator";
     
     // Cached mod presence results
     private static final Map<String, Boolean> modPresenceCache = new HashMap<>();
@@ -102,6 +123,27 @@ public class ModCompatibilityChecker {
     /**
      * Check if MCA Reborn is present
      */
+    /** Every weapon mod and library the item resolver can name, whether it is installed or not. */
+    public static final List<String> WEAPON_MOD_IDS = List.of(MOD_SPARTAN_WEAPONRY,
+            MOD_MUSKET_MOD, MOD_EPIC_KNIGHTS, MOD_EPIC_KNIGHTS_ANTIQUE, MOD_AGE_OF_WEAPONS,
+            MOD_TACZ, MOD_SCORCHED_GUNS, MOD_VICS_POINT_BLANK, MOD_CHINESE_ANCIENT_BLADE,
+            MOD_CLOTH_CONFIG, MOD_ARCHITECTURY, MOD_GECKOLIB, MOD_CURIOS, MOD_PLAYER_ANIMATOR);
+
+    /**
+     * The modids that are actually loaded, for {@code WarGear}.
+     *
+     * <p>Every id the resolver names is asked about, not only the weapon mods: a dependency
+     * counts as loaded or it does not, and Musket Mod without Cloth Config is unusable either
+     * way.
+     */
+    public static java.util.Set<String> loadedWeaponModIds() {
+        java.util.Set<String> out = new java.util.LinkedHashSet<>();
+        for (String id : WEAPON_MOD_IDS) {
+            if (isModLoaded(id)) out.add(id);
+        }
+        return out;
+    }
+
     public static boolean isMcaRebornPresent() {
         return isModLoaded(MOD_MCA_REBORN);
     }

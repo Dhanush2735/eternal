@@ -1,0 +1,10 @@
+-nowarn
+-encoding
+UTF-8
+-cp
+/home/user/A/tools/jars/gson.jar:/tmp/jsr305.jar
+-sourcepath
+.
+-d
+/tmp/hc
+com/eternalengine/civilization/HistoryChecks.java

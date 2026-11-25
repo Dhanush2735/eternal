@@ -2,10 +2,16 @@ package com.eternalengine.affairs;
 
 import com.eternalengine.anomaly.AnomalyDetectionEngine;
 import com.eternalengine.anomaly.AnomalyScanResult;
+import com.eternalengine.civilization.EventNews;
+import com.eternalengine.civilization.HistoricalPresence;
 import com.eternalengine.clock.SimulationClockManager;
+import com.eternalengine.core.SimulationEngine;
 import com.eternalengine.core.WorldStateManager;
 import com.eternalengine.incident.IncidentRecord;
+import com.eternalengine.people.Scenes;
+import com.eternalengine.population.PopulationResolver;
 import com.eternalengine.telemetry.WorldDebugSnapshot;
+import com.eternalengine.terrabridge.TerraCoordinateHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 
@@ -54,6 +60,72 @@ public final class CurrentAffairsEngine {
 
         facts.add(new CurrentAffairsFact("time", "The current simulation year is " + formatYear(year) + ".", 100));
         facts.add(new CurrentAffairsFact("timeline", "The active timeline branch is " + state.getActiveTimelineBranchId() + ".", 92));
+
+        if (level != null && position != null) {
+            try {
+                var geo = TerraCoordinateHelper.toGeoPoint(position);
+                var civs = SimulationEngine.getInstance().getCivilizationManager();
+                HistoricalPresence.Result presence = com.eternalengine.core.WorldQuery.presence(civs, com.eternalengine.core.WorldKey.at(level, position, year));
+                facts.add(new CurrentAffairsFact("place", EventNews.placeLine(presence), 96));
+                // Talk of the land: ruler, languages and faiths, famous people (Wikipedia registers),
+                // and the estimated way of life. Each is skipped when the data has nothing to say.
+                String[][] land = {
+                        {"ruler", EventNews.rulerLine(presence), "94"},
+                        {"culture", EventNews.cultureLine(presence), "90"},
+                        {"people", EventNews.famousLine(presence, year), "84"},
+                        {"life", EventNews.wayOfLifeLine(presence), "80"},
+                        {"trade", EventNews.tradeLine(presence), "82"},
+                        {"road", EventNews.roadLine(presence), "78"}};
+                for (String[] f : land) {
+                    if (!f[1].isBlank()) {
+                        facts.add(new CurrentAffairsFact(f[0], f[1], Integer.parseInt(f[2])));
+                    }
+                }
+                presence.event().ifPresent(eh -> facts.add(new CurrentAffairsFact(
+                        "event",
+                        EventNews.rumor(eh.event(), year),
+                        99)));
+                // Step 39 (D9): what an incident has brought onto the street here. Three of the
+                // twenty scenes hang off the incident engine -- an election, a protest and a
+                // trial -- because an incident is generated rather than recorded, so no register
+                // that already exists can say when one is on. The caller hands the name over and
+                // the register casts the scene from the people this place actually has; a good
+                // harvest sets nothing off, and that is deliberate.
+                try {
+                    var pop = PopulationResolver.get().resolve(
+                            presence.site().map(h -> h.site().id()).orElse(null),
+                            presence.lat(), presence.lon(), year, presence.rank());
+                    long crowd = Math.max(1L, pop == null ? 200L : pop.population());
+                    if (recentIncidents != null) {
+                        for (IncidentRecord inc : recentIncidents) {
+                            if (inc == null || inc.type() == null) {
+                                continue;
+                            }
+                            String id = Scenes.incidentScene(inc.type().name());
+                            if (id.isEmpty()) {
+                                continue;
+                            }
+                            Scenes.Scene scene = Scenes.find(id);
+                            if (scene == null) {
+                                continue;
+                            }
+                            Scenes.Occasion occ = Scenes.make(scene,
+                                    Scenes.Where.of(presence.lat(), presence.lon(), year)
+                                            .town(crowd > 1000)
+                                            .folk((int) Math.min(Integer.MAX_VALUE, crowd))
+                                            .after(inc.type().name()));
+                            if (occ != null) {
+                                facts.add(new CurrentAffairsFact("scene", occ.line(), 80));
+                            }
+                        }
+                    }
+                } catch (Exception ignored) {
+                    // The scene register is optional at briefing time, as the gazetteer is.
+                }
+            } catch (Exception ignored) {
+                // Gazetteer is optional at briefing time.
+            }
+        }
 
         Map<String, WorldStateManager.WarState> wars = state.getAllActiveWars();
         if (wars.isEmpty()) {

@@ -1,0 +1,373 @@
+{
+  "id": "indus_harappan",
+  "title": "Indus / Harappan occupancy pack",
+  "scope": "Sites, traits, and architecture only. No named kings, wars, or invented yearly events.",
+  "comparedSources": [
+    "Wikipedia: Indus Valley Civilisation; Rakhigarhi; Indo-Mesopotamia relations",
+    "Lumen / Boundless world history (Harappan culture, cities)",
+    "ASI / standard site lists (Harappa 1921, Mohenjo-daro 1922, Lothal, Kalibangan, Dholavira, Rakhigarhi)",
+    "Scholarly phase consensus: Early ~3300–2600, Mature ~2600–1900, Late ~1900–1300 BCE"
+  ],
+  "rejected": [
+    "hist_indus_valley_* template events (Golden Dynasty, astrolabe, naval blockade, imperial statutes)",
+    "Template VIPs (Supreme Sovereign / Grand Marshal of IVC)",
+    "vedic_proto as Indus state religion",
+    "Aryan invasion as a proven destruction event",
+    "Exact invention dates (day/year) for weights, drains, cotton"
+  ],
+  "phases": [
+    {
+      "id": "early_harappan",
+      "start": -3300,
+      "end": -2600,
+      "name": "Early Harappan",
+      "note": "Villages and regional centres; not full grid cities everywhere."
+    },
+    {
+      "id": "mature_harappan",
+      "start": -2600,
+      "end": -1900,
+      "name": "Mature Harappan",
+      "note": "Urban peak: brick cities, drains, weights, seals, long-distance trade."
+    },
+    {
+      "id": "late_harappan",
+      "start": -1900,
+      "end": -1300,
+      "name": "Late Harappan",
+      "note": "Deurbanisation; writing and weights fade. Cause debated (rivers/climate/trade), not a recorded war."
+    }
+  ],
+  "sites": [
+    {
+      "id": "harappa",
+      "lat": 30.629,
+      "lon": 72.864,
+      "occupiedStart": -3300,
+      "occupiedEnd": -1300,
+      "urbanStart": -2600,
+      "urbanEnd": -1900,
+      "confidence": "high",
+      "civHint": "indus_valley"
+    },
+    {
+      "id": "mohenjo_daro",
+      "lat": 27.329,
+      "lon": 68.139,
+      "occupiedStart": -2600,
+      "occupiedEnd": -1900,
+      "urbanStart": -2600,
+      "urbanEnd": -1900,
+      "confidence": "high",
+      "civHint": "indus_valley"
+    },
+    {
+      "id": "rakhigarhi",
+      "lat": 29.293,
+      "lon": 76.114,
+      "occupiedStart": -3500,
+      "occupiedEnd": -1900,
+      "urbanStart": -2600,
+      "urbanEnd": -1900,
+      "confidence": "high",
+      "civHint": "indus_valley"
+    },
+    {
+      "id": "bhirrana",
+      "lat": 29.55,
+      "lon": 75.99,
+      "occupiedStart": -3300,
+      "occupiedEnd": -1900,
+      "rank": "village",
+      "confidence": "medium",
+      "note": "Very early dates (7th millennium) are contested; pack uses Early Harappan onward.",
+      "civHint": "indus_valley"
+    },
+    {
+      "id": "kalibangan",
+      "lat": 29.47,
+      "lon": 74.13,
+      "occupiedStart": -3000,
+      "occupiedEnd": -1700,
+      "urbanStart": -2600,
+      "urbanEnd": -1900,
+      "confidence": "high",
+      "civHint": "indus_valley"
+    },
+    {
+      "id": "dholavira",
+      "lat": 23.888,
+      "lon": 70.213,
+      "occupiedStart": -2650,
+      "occupiedEnd": -1450,
+      "urbanStart": -2600,
+      "urbanEnd": -1900,
+      "confidence": "high",
+      "civHint": "indus_valley"
+    },
+    {
+      "id": "lothal",
+      "lat": 22.522,
+      "lon": 72.249,
+      "occupiedStart": -2400,
+      "occupiedEnd": -1600,
+      "urbanStart": -2400,
+      "urbanEnd": -1900,
+      "confidence": "high",
+      "civHint": "indus_valley"
+    },
+    {
+      "id": "balu",
+      "lat": 29.52,
+      "lon": 76.45,
+      "occupiedStart": -3000,
+      "occupiedEnd": -1900,
+      "urbanStart": null,
+      "urbanEnd": null,
+      "rank": "village",
+      "civHint": "indus_valley",
+      "confidence": "medium",
+      "note": "Rural Harappan settlement, Kaithal district; near 29.47,76.49 example."
+    },
+    {
+      "id": "farmana",
+      "lat": 29.067,
+      "lon": 76.567,
+      "occupiedStart": -2600,
+      "occupiedEnd": -1900,
+      "urbanStart": null,
+      "urbanEnd": null,
+      "rank": "town",
+      "civHint": "indus_valley",
+      "confidence": "high",
+      "note": "Mature Harappan town + cemetery (Rohtak)."
+    },
+    {
+      "id": "banawali",
+      "lat": 29.37,
+      "lon": 75.57,
+      "occupiedStart": -3000,
+      "occupiedEnd": -1900,
+      "urbanStart": -2600,
+      "urbanEnd": -1900,
+      "civHint": "indus_valley",
+      "confidence": "high"
+    },
+    {
+      "id": "kunal",
+      "lat": 29.383,
+      "lon": 75.683,
+      "occupiedStart": -3300,
+      "occupiedEnd": -2600,
+      "rank": "village",
+      "civHint": "indus_valley",
+      "confidence": "medium"
+    },
+    {
+      "id": "chanhudaro",
+      "lat": 26.17,
+      "lon": 68.32,
+      "occupiedStart": -2600,
+      "occupiedEnd": -1900,
+      "rank": "town",
+      "civHint": "indus_valley",
+      "confidence": "high",
+      "note": "Craft-production town."
+    },
+    {
+      "id": "kot_diji",
+      "lat": 27.346,
+      "lon": 68.709,
+      "occupiedStart": -2800,
+      "occupiedEnd": -1900,
+      "urbanStart": -2600,
+      "urbanEnd": -1900,
+      "civHint": "indus_valley",
+      "confidence": "medium"
+    },
+    {
+      "id": "ropar",
+      "lat": 30.966,
+      "lon": 76.533,
+      "occupiedStart": -2600,
+      "occupiedEnd": -1300,
+      "rank": "town",
+      "civHint": "indus_valley",
+      "confidence": "medium"
+    }
+  ],
+  "spawnRadiusKm": 30,
+  "traits": [
+    {
+      "id": "mud_brick_village",
+      "kind": "architecture",
+      "from": -3300,
+      "until": -1900,
+      "sites": [
+        "harappa",
+        "rakhigarhi",
+        "bhirrana",
+        "kalibangan"
+      ]
+    },
+    {
+      "id": "fired_brick_grid_city",
+      "kind": "architecture",
+      "from": -2600,
+      "until": -1900,
+      "sites": [
+        "harappa",
+        "mohenjo_daro",
+        "rakhigarhi",
+        "kalibangan",
+        "dholavira"
+      ]
+    },
+    {
+      "id": "street_drainage",
+      "kind": "architecture",
+      "from": -2600,
+      "until": -1900,
+      "sites": [
+        "harappa",
+        "mohenjo_daro",
+        "lothal",
+        "rakhigarhi"
+      ]
+    },
+    {
+      "id": "great_bath",
+      "kind": "architecture",
+      "from": -2600,
+      "until": -1900,
+      "sites": [
+        "mohenjo_daro"
+      ]
+    },
+    {
+      "id": "granary_warehouse",
+      "kind": "architecture",
+      "from": -2600,
+      "until": -1900,
+      "sites": [
+        "harappa",
+        "mohenjo_daro",
+        "lothal"
+      ]
+    },
+    {
+      "id": "lothal_dock",
+      "kind": "architecture",
+      "from": -2400,
+      "until": -1900,
+      "sites": [
+        "lothal"
+      ],
+      "note": "Tidal dock interpretation is widely taught; some scholars debate function."
+    },
+    {
+      "id": "dholavira_reservoirs",
+      "kind": "architecture",
+      "from": -2600,
+      "until": -1450,
+      "sites": [
+        "dholavira"
+      ]
+    },
+    {
+      "id": "ploughed_field",
+      "kind": "introduction",
+      "from": -3000,
+      "until": -1900,
+      "sites": [
+        "kalibangan"
+      ]
+    },
+    {
+      "id": "standardized_chert_weights",
+      "kind": "invention",
+      "from": -2600,
+      "until": -1900,
+      "sites": [
+        "harappa",
+        "mohenjo_daro",
+        "lothal"
+      ]
+    },
+    {
+      "id": "steatite_seals_script",
+      "kind": "invention",
+      "from": -2600,
+      "until": -1900,
+      "sites": [
+        "harappa",
+        "mohenjo_daro",
+        "rakhigarhi",
+        "lothal"
+      ],
+      "note": "Script undeciphered. Do not treat as readable laws."
+    },
+    {
+      "id": "cotton_textiles",
+      "kind": "introduction",
+      "from": -3000,
+      "until": -1900,
+      "sites": [
+        "harappa",
+        "mohenjo_daro"
+      ]
+    },
+    {
+      "id": "copper_bronze_tools",
+      "kind": "invention",
+      "from": -3300,
+      "until": -1900,
+      "sites": [
+        "harappa",
+        "mohenjo_daro",
+        "chanhudaro"
+      ]
+    },
+    {
+      "id": "bullock_cart",
+      "kind": "introduction",
+      "from": -2600,
+      "until": -1300,
+      "sites": [
+        "harappa",
+        "mohenjo_daro"
+      ]
+    },
+    {
+      "id": "bead_carnelian_craft",
+      "kind": "discovery",
+      "from": -2600,
+      "until": -1900,
+      "sites": [
+        "lothal",
+        "harappa"
+      ]
+    },
+    {
+      "id": "meluhha_gulf_trade",
+      "kind": "introduction",
+      "from": -2400,
+      "until": -1900,
+      "sites": [
+        "lothal",
+        "harappa",
+        "mohenjo_daro"
+      ],
+      "note": "Mesopotamian texts name Meluhha; majority identify it with the Indus. Not proven 100%."
+    }
+  ],
+  "events": [],
+  "unknownOnPurpose": [
+    "personal names",
+    "kings / emperors",
+    "state religion",
+    "deciphered language",
+    "dated battles",
+    "cause of decline (single event)"
+  ]
+}

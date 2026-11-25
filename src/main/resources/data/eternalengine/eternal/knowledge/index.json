@@ -1,0 +1,5 @@
+{
+ "format": 1,
+ "note": "Knowledge packs: hand-checked cards villagers can talk about. Each pack covers a region and a date range. Everywhere else, villagers build basic cards from the history data.",
+ "packs": ["hyderabad_1948.json"]
+}

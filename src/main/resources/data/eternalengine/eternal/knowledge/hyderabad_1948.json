@@ -1,0 +1,1898 @@
+{
+ "format": 1,
+ "id": "hyderabad_1948",
+ "title": "Hyderabad, September 1948",
+ "region": {
+  "lat": 17.6,
+  "lon": 77.9,
+  "radiusKm": 450
+ },
+ "from": 19470815,
+ "to": 19481231,
+ "note": "Hand-checked cards for the end of Hyderabad State (Operation Polo, 13-18 September 1948). Villagers only say these lines; no source names are shown in the game. Step 18b: lines with today/yesterday hold for their own day (\"to\"); 15 September and the days after 18 September have their own lines.",
+ "refer": {
+  "text": "That is court business. I wouldn't know. Ask the clerks at [[king_kothi|King Kothi Palace]].",
+  "track": "king_kothi"
+ },
+ "topics": {
+  "ruler": "hyderabad_state.who",
+  "place": "hyderabad_state.what"
+ },
+ "news": [
+  {
+   "from": 19480912,
+   "level": 1,
+   "text": "Have you heard? Hyderabad has told the [[un|United Nations]] that India may invade."
+  },
+  {
+   "from": 19480913,
+   "level": 1,
+   "text": "The Indian Army entered the state at four this morning. India calls it a [[polo|police action]].",
+   "to": 19480913
+  },
+  {
+   "from": 19480914,
+   "level": 1,
+   "text": "Have you heard? The Indian Army has entered the state. India calls it a [[polo|police action]]. They fought at [[naldurg|Naldurg]] yesterday.",
+   "to": 19480914
+  },
+  {
+   "level": 1,
+   "from": 19480915,
+   "text": "The fighting goes on. They say the army has taken [[suryapet|Suryapet]] in the east."
+  },
+  {
+   "from": 19480916,
+   "level": 1,
+   "text": "The army is near [[zahirabad|Zahirabad]], and the [[un|UN Security Council]] takes up Hyderabad's complaint today, in Paris.",
+   "to": 19480916
+  },
+  {
+   "from": 19480917,
+   "level": 1,
+   "text": "[[nizam|The Nizam]] has announced a ceasefire!"
+  },
+  {
+   "from": 19480918,
+   "level": 1,
+   "text": "The Hyderabad army has surrendered at [[secunderabad|Secunderabad]].",
+   "to": 19480930
+  },
+  {
+   "from": 19480912,
+   "level": 2,
+   "text": "Everyone at court is waiting for news from the [[un|United Nations]]."
+  },
+  {
+   "from": 19480913,
+   "level": 2,
+   "text": "The Indian Army crossed into the state this morning. India calls it a [[polo|police action]].",
+   "to": 19480913
+  },
+  {
+   "from": 19480914,
+   "level": 2,
+   "text": "The army is fighting in the west and in the east. [[aurangabad|Aurangabad]] has surrendered."
+  },
+  {
+   "level": 2,
+   "from": 19480915,
+   "text": "In the east the army has taken [[suryapet|Suryapet]]; in the west it has reached Latur."
+  },
+  {
+   "from": 19480916,
+   "level": 2,
+   "text": "The [[un|Security Council]] takes up our complaint in Paris today.",
+   "to": 19480916
+  },
+  {
+   "from": 19480917,
+   "level": 2,
+   "text": "A heavy day. This morning the prime minister, [[laiq_ali|Mir Laiq Ali]], and the whole cabinet resigned.",
+   "to": 19480917
+  },
+  {
+   "from": 19480918,
+   "level": 2,
+   "text": "It is over. [[el_edroos|General El Edroos]] has surrendered to [[chaudhuri|General Chaudhuri]].",
+   "to": 19480930
+  }
+ ],
+ "cards": [
+  {
+   "id": "polo",
+   "title": "Operation Polo",
+   "short": "Operation Polo",
+   "kind": "Event",
+   "level": 1,
+   "from": 19480913,
+   "aliases": [
+    "operation polo",
+    "police action",
+    "annexation of hyderabad",
+    "polo",
+    "invasion",
+    "army"
+   ],
+   "links": [
+    "nizam",
+    "razakars",
+    "chaudhuri",
+    "el_edroos",
+    "hyderabad_state",
+    "naldurg",
+    "suryapet",
+    "zahirabad",
+    "nehru",
+    "patel",
+    "un"
+   ],
+   "questions": [
+    {
+     "id": "what",
+     "label": "What is it?",
+     "answers": [
+      {
+       "from": 19480913,
+       "text": "India's army has marched into [[hyderabad_state|Hyderabad State]] to make it join India. [[nizam|The Nizam]] wants to stay independent. India calls it a 'police action'."
+      }
+     ]
+    },
+    {
+     "id": "where",
+     "label": "Where is it now?",
+     "answers": [
+      {
+       "from": 19480913,
+       "text": "The army came in at dawn on the Solapur road. They are fighting at [[naldurg|Naldurg fort]], {d:naldurg}. Another army came from the east, to [[kodad|Kodad]].",
+       "track": "naldurg"
+      },
+      {
+       "from": 19480914,
+       "text": "Yesterday they fought at [[naldurg|Naldurg fort]], {d:naldurg}. Today the eastern army is fighting near [[suryapet|Suryapet]], {d:suryapet}, and [[aurangabad|Aurangabad]] has surrendered.",
+       "track": "suryapet",
+       "to": 19480914
+      },
+      {
+       "from": 19480915,
+       "text": "In the west the army has reached Latur. In the east it has taken [[suryapet|Suryapet]], {d:suryapet}.",
+       "track": "suryapet"
+      },
+      {
+       "from": 19480916,
+       "text": "The army is on the Solapur road near [[zahirabad|Zahirabad]], {d:zahirabad}.",
+       "track": "zahirabad"
+      },
+      {
+       "from": 19480917,
+       "text": "This morning the army entered [[bidar|Bidar]]. Another column is at [[chityal|Chityal]], about 60 km from the city. At five this evening [[nizam|the Nizam]] announced a ceasefire.",
+       "track": "chityal",
+       "to": 19480917
+      },
+      {
+       "from": 19480918,
+       "text": "It is over. This afternoon an Indian armoured column came into the city, and the Hyderabad army surrendered at [[secunderabad|Secunderabad]], {d:secunderabad}.",
+       "track": "secunderabad",
+       "to": 19480918
+      },
+      {
+       "from": 19480919,
+       "text": "It is over. On 18 September an Indian armoured column came into the city, and the Hyderabad army surrendered at [[secunderabad|Secunderabad]], {d:secunderabad}.",
+       "track": "secunderabad"
+      }
+     ]
+    },
+    {
+     "id": "when",
+     "label": "When did it start?",
+     "answers": [
+      {
+       "from": 19480913,
+       "text": "This morning, at four o'clock.",
+       "to": 19480913
+      },
+      {
+       "from": 19480914,
+       "text": "Yesterday, 13 September, at four in the morning.",
+       "to": 19480914
+      },
+      {
+       "from": 19480915,
+       "text": "On 13 September, two days ago.",
+       "to": 19480915
+      },
+      {
+       "from": 19480916,
+       "text": "On 13 September, three days ago.",
+       "to": 19480916
+      },
+      {
+       "from": 19480917,
+       "text": "On 13 September. This evening at five, the Nizam announced a ceasefire.",
+       "to": 19480917
+      },
+      {
+       "from": 19480918,
+       "text": "On 13 September. The fighting stopped with the ceasefire yesterday evening.",
+       "to": 19480918
+      },
+      {
+       "from": 19480919,
+       "text": "It began on 13 September, and the fighting stopped with the ceasefire on the evening of 17 September."
+      }
+     ]
+    },
+    {
+     "id": "who",
+     "label": "Who is fighting?",
+     "answers": [
+      {
+       "from": 19480913,
+       "text": "The Indian Army, led by [[chaudhuri|Major General J. N. Chaudhuri]], against the Nizam's army and the [[razakars|Razakars]]."
+      },
+      {
+       "from": 19480917,
+       "text": "The Indian Army, led by [[chaudhuri|Major General J. N. Chaudhuri]], against the Nizam's army and the [[razakars|Razakars]]. Now there is a ceasefire."
+      },
+      {
+       "from": 19480918,
+       "text": "The Indian Army, led by [[chaudhuri|Major General J. N. Chaudhuri]], against the Nizam's army and the [[razakars|Razakars]]. The Hyderabad army has surrendered."
+      }
+     ]
+    },
+    {
+     "id": "size",
+     "label": "How big are the armies?",
+     "answers": [
+      {
+       "from": 19480913,
+       "text": "About 35,000 Indian troops. The state's own army has about 22,000 men, and the [[razakars|Razakars]] are said to number about 200,000."
+      }
+     ],
+     "level": 2
+    }
+   ],
+   "later": [
+    {
+     "at": 19480917,
+     "text": "17 September, 5 pm: the Nizam announces a ceasefire."
+    },
+    {
+     "at": 19480918,
+     "text": "18 September, about 4 pm: General Chaudhuri's armoured column enters Hyderabad. Major General El Edroos surrenders the Hyderabad army at Secunderabad."
+    },
+    {
+     "at": 19490101,
+     "text": "Hyderabad becomes part of India, as Hyderabad State (1948–1956)."
+    },
+    {
+     "at": 19490101,
+     "text": "Violence during and after the operation: an official committee led by Pandit Sunder Lal gave a 'very conservative estimate' of 27,000–40,000 deaths. Other scholars put it at 200,000 or more."
+    }
+   ]
+  },
+  {
+   "id": "nizam",
+   "title": "The Nizam: Mir Osman Ali Khan",
+   "short": "The Nizam",
+   "kind": "Person",
+   "level": 1,
+   "from": null,
+   "aliases": [
+    "nizam",
+    "osman ali khan",
+    "mir osman ali khan",
+    "asaf jah vii",
+    "ruler",
+    "king"
+   ],
+   "links": [
+    "king_kothi",
+    "asaf_jahi",
+    "mahbub",
+    "azam_jah",
+    "moazzam_jah",
+    "laiq_ali",
+    "hyderabad_state",
+    "chowmahalla"
+   ],
+   "location": {
+    "lat": 17.3928,
+    "lon": 78.4808
+   },
+   "questions": [
+    {
+     "id": "who",
+     "label": "Who is he?",
+     "answers": [
+      {
+       "from": null,
+       "text": "Mir Osman Ali Khan, the seventh Nizam, Asaf Jah VII. He has ruled [[hyderabad_state|Hyderabad State]] since 1911."
+      },
+      {
+       "from": 19480917,
+       "text": "Mir Osman Ali Khan, the seventh Nizam. He has ruled since 1911. This evening he announced a ceasefire.",
+       "to": 19480917
+      },
+      {
+       "from": 19480918,
+       "text": "Mir Osman Ali Khan, the seventh Nizam, ruler since 1911. Yesterday he announced the ceasefire.",
+       "to": 19480918
+      },
+      {
+       "from": 19480919,
+       "text": "Mir Osman Ali Khan, the seventh Nizam, ruler since 1911. On 17 September he announced the ceasefire."
+      }
+     ]
+    },
+    {
+     "id": "where",
+     "label": "Where does he live?",
+     "answers": [
+      {
+       "from": null,
+       "text": "At [[king_kothi|King Kothi Palace]], {d:king_kothi}. He never moved to [[chowmahalla|Chowmahalla Palace]], where his father lived.",
+       "track": "king_kothi"
+      }
+     ]
+    },
+    {
+     "id": "age",
+     "label": "How old is he?",
+     "answers": [
+      {
+       "from": null,
+       "text": "He was born in Hyderabad in 1886, so he is 62 this year."
+      }
+     ]
+    },
+    {
+     "id": "family",
+     "label": "His family?",
+     "answers": [
+      {
+       "from": null,
+       "text": "His father was [[mahbub|Mahbub Ali Khan]], the sixth Nizam. His sons are [[azam_jah|Azam Jah]] and [[moazzam_jah|Moazzam Jah]]. The family is the [[asaf_jahi|Asaf Jahi dynasty]]."
+      }
+     ]
+    },
+    {
+     "id": "ministers",
+     "label": "Who are his ministers?",
+     "answers": [
+      {
+       "from": null,
+       "text": "His prime minister is [[laiq_ali|Mir Laiq Ali]], since late 1947. Before him it was the [[chhatari|Nawab of Chhatari]]."
+      },
+      {
+       "from": 19480917,
+       "text": "This morning [[laiq_ali|Mir Laiq Ali]] and the whole cabinet resigned. The Nizam asked for it last night.",
+       "to": 19480917
+      },
+      {
+       "from": 19480918,
+       "text": "[[laiq_ali|Mir Laiq Ali]] and the whole cabinet resigned yesterday morning.",
+       "to": 19480918
+      },
+      {
+       "from": 19480919,
+       "text": "[[laiq_ali|Mir Laiq Ali]] and the whole cabinet resigned on the morning of 17 September."
+      }
+     ],
+     "level": 2
+    }
+   ],
+   "later": [
+    {
+     "at": 19490101,
+     "text": "1950–1956: Rajpramukh, the head of Hyderabad State inside India."
+    },
+    {
+     "at": 19490101,
+     "text": "Dies on 24 February 1967 at King Kothi and is buried at the Judi Mosque, facing his home."
+    }
+   ]
+  },
+  {
+   "id": "king_kothi",
+   "title": "King Kothi Palace",
+   "short": "King Kothi Palace",
+   "kind": "Place",
+   "level": 1,
+   "from": null,
+   "aliases": [
+    "king kothi",
+    "nazri bagh",
+    "palace",
+    "kothi"
+   ],
+   "links": [
+    "nizam",
+    "mahbub",
+    "chowmahalla",
+    "charminar"
+   ],
+   "location": {
+    "lat": 17.3928,
+    "lon": 78.4808
+   },
+   "questions": [
+    {
+     "id": "what",
+     "label": "What is it?",
+     "answers": [
+      {
+       "from": null,
+       "text": "[[nizam|The Nizam]]'s palace, also called Nazri Bagh. The eastern half is used for official work and ceremonies; the western half is his home."
+      }
+     ]
+    },
+    {
+     "id": "where",
+     "label": "Where is it?",
+     "answers": [
+      {
+       "from": null,
+       "text": "It is {d:king_kothi}.",
+       "track": "king_kothi"
+      }
+     ]
+    },
+    {
+     "id": "built",
+     "label": "Who built it?",
+     "answers": [
+      {
+       "from": null,
+       "text": "A noble, Kamal Khan, built it. [[mahbub|The Nizam's father]] bought it, and the Nizam moved in when he was 13. He stayed on after he became Nizam in 1911."
+      }
+     ]
+    },
+    {
+     "id": "name",
+     "label": "Why “King Kothi”?",
+     "answers": [
+      {
+       "from": null,
+       "text": "Kamal Khan put his initials, KK, on everything, even the doors and window grilles. So the palace was called King Kothi, the 'King's house'."
+      }
+     ]
+    },
+    {
+     "id": "home",
+     "label": "Is the Nizam at home?",
+     "answers": [
+      {
+       "from": null,
+       "text": "Look at the curtain on the main gate, the purdah. When the Nizam goes out, it is lifted; while it is down, he is at home."
+      }
+     ],
+     "level": 2
+    }
+   ],
+   "later": [
+    {
+     "at": 19490101,
+     "text": "The Nizam lives here until his death in 1967."
+    },
+    {
+     "at": 19490101,
+     "text": "One of its buildings, Usman Mansion, is pulled down in the early 1980s; a hospital stands in its place."
+    }
+   ]
+  },
+  {
+   "id": "laiq_ali",
+   "title": "Mir Laiq Ali",
+   "short": "Mir Laiq Ali",
+   "kind": "Person",
+   "level": 2,
+   "from": null,
+   "aliases": [
+    "laiq ali",
+    "laik ali",
+    "prime minister",
+    "minister"
+   ],
+   "links": [
+    "nizam",
+    "chhatari"
+   ],
+   "questions": [
+    {
+     "id": "who",
+     "label": "Who is he?",
+     "answers": [
+      {
+       "from": null,
+       "text": "The Nizam's prime minister since late 1947."
+      },
+      {
+       "from": 19480917,
+       "text": "He was the Nizam's prime minister from late 1947. This morning he and the whole cabinet resigned.",
+       "to": 19480917
+      },
+      {
+       "from": 19480918,
+       "text": "He was the prime minister until he and the whole cabinet resigned yesterday morning.",
+       "to": 19480918
+      },
+      {
+       "from": 19480919,
+       "text": "He was the Nizam's prime minister from late 1947 until he and the whole cabinet resigned on 17 September."
+      }
+     ]
+    }
+   ],
+   "later": []
+  },
+  {
+   "id": "chhatari",
+   "title": "Nawab of Chhatari",
+   "short": "Nawab of Chhatari",
+   "kind": "Person",
+   "level": 2,
+   "from": null,
+   "aliases": [
+    "chhatari",
+    "nawab of chhatari"
+   ],
+   "links": [
+    "laiq_ali",
+    "nizam"
+   ],
+   "questions": [
+    {
+     "id": "who",
+     "label": "Who is he?",
+     "answers": [
+      {
+       "from": null,
+       "text": "Muhammad Ahmad Said Khan, the Nawab of Chhatari. He was the Nizam's prime minister until November 1947."
+      }
+     ]
+    }
+   ],
+   "later": [
+    {
+     "at": 19480923,
+     "text": "23 September 1948: in a radio speech the Nizam says that a group led by Qasim Razvi forced Chhatari and other trusted ministers to resign in November 1947."
+    }
+   ]
+  },
+  {
+   "id": "razakars",
+   "title": "Razakars",
+   "short": "Razakars",
+   "kind": "Group",
+   "level": 1,
+   "from": null,
+   "aliases": [
+    "razakar",
+    "razakars"
+   ],
+   "links": [
+    "razvi",
+    "nizam",
+    "polo"
+   ],
+   "questions": [
+    {
+     "id": "what",
+     "label": "Who are they?",
+     "answers": [
+      {
+       "from": null,
+       "text": "Armed volunteers who back the Nizam's government and fight against joining India. Their leader is [[razvi|Qasim Razvi]]."
+      }
+     ]
+    },
+    {
+     "id": "many",
+     "label": "How many are there?",
+     "answers": [
+      {
+       "from": null,
+       "text": "Nobody knows exactly. Some say about 200,000."
+      }
+     ]
+    }
+   ],
+   "later": [
+    {
+     "at": 19490101,
+     "text": "Their leader, Qasim Razvi, surrenders after the operation."
+    }
+   ]
+  },
+  {
+   "id": "razvi",
+   "title": "Qasim Razvi",
+   "short": "Qasim Razvi",
+   "kind": "Person",
+   "level": 1,
+   "from": null,
+   "aliases": [
+    "qasim razvi",
+    "kasim razvi",
+    "razvi"
+   ],
+   "links": [
+    "razakars",
+    "nizam"
+   ],
+   "questions": [
+    {
+     "id": "who",
+     "label": "Who is he?",
+     "answers": [
+      {
+       "from": null,
+       "text": "The leader of the [[razakars|Razakars]]. He was born in 1902."
+      }
+     ]
+    }
+   ],
+   "later": [
+    {
+     "at": 19490101,
+     "text": "He surrenders after the operation, and dies in 1970."
+    }
+   ]
+  },
+  {
+   "id": "chaudhuri",
+   "title": "Major General J. N. Chaudhuri",
+   "short": "Gen. Chaudhuri",
+   "kind": "Person",
+   "level": 1,
+   "from": 19480913,
+   "aliases": [
+    "chaudhuri",
+    "j. n. chaudhuri",
+    "jayanto nath chaudhuri",
+    "general"
+   ],
+   "links": [
+    "polo",
+    "el_edroos"
+   ],
+   "questions": [
+    {
+     "id": "who",
+     "label": "Who is he?",
+     "answers": [
+      {
+       "from": 19480913,
+       "text": "He leads the Indian Army's attack on [[hyderabad_state|Hyderabad State]]."
+      },
+      {
+       "from": 19480918,
+       "text": "He led the Indian Army's attack. This afternoon the Hyderabad army surrendered to him.",
+       "to": 19480918
+      },
+      {
+       "from": 19480919,
+       "text": "He led the Indian Army's attack. On 18 September the Hyderabad army surrendered to him."
+      }
+     ]
+    }
+   ],
+   "later": [
+    {
+     "at": 19480918,
+     "text": "18 September: the Hyderabad army surrenders to him at Secunderabad."
+    },
+    {
+     "at": 19490101,
+     "text": "He later becomes Chief of the Indian Army."
+    }
+   ]
+  },
+  {
+   "id": "el_edroos",
+   "title": "Major General El Edroos",
+   "short": "Gen. El Edroos",
+   "kind": "Person",
+   "level": 2,
+   "from": null,
+   "aliases": [
+    "el edroos",
+    "edroos",
+    "army commander"
+   ],
+   "links": [
+    "chaudhuri",
+    "polo",
+    "nizam"
+   ],
+   "questions": [
+    {
+     "id": "who",
+     "label": "Who is he?",
+     "answers": [
+      {
+       "from": null,
+       "text": "Syed Ahmed El Edroos, commander of the Hyderabad State Army."
+      },
+      {
+       "from": 19480917,
+       "text": "Syed Ahmed El Edroos, commander of the Hyderabad State Army. After the ceasefire the Nizam sent him orders to keep the people safe."
+      },
+      {
+       "from": 19480918,
+       "text": "Syed Ahmed El Edroos, commander of the Hyderabad State Army. This afternoon he surrendered to [[chaudhuri|General Chaudhuri]] at Secunderabad.",
+       "to": 19480918
+      },
+      {
+       "from": 19480919,
+       "text": "Syed Ahmed El Edroos, commander of the Hyderabad State Army. On 18 September he surrendered to [[chaudhuri|General Chaudhuri]] at Secunderabad."
+      }
+     ]
+    }
+   ],
+   "later": [
+    {
+     "at": 19480918,
+     "text": "18 September: he surrenders the Hyderabad State Forces to General Chaudhuri at Secunderabad."
+    }
+   ]
+  },
+  {
+   "id": "nehru",
+   "title": "Jawaharlal Nehru",
+   "short": "Nehru",
+   "kind": "Person",
+   "level": 1,
+   "from": null,
+   "aliases": [
+    "nehru",
+    "jawaharlal nehru"
+   ],
+   "links": [
+    "patel",
+    "polo"
+   ],
+   "questions": [
+    {
+     "id": "who",
+     "label": "Who is he?",
+     "answers": [
+      {
+       "from": null,
+       "text": "India's prime minister."
+      },
+      {
+       "from": 19480918,
+       "text": "India's prime minister. Today he spoke on the radio about the end of the fighting.",
+       "to": 19480918
+      },
+      {
+       "from": 19480919,
+       "text": "India's prime minister. On 18 September he spoke on the radio about the end of the fighting."
+      }
+     ]
+    }
+   ],
+   "later": [
+    {
+     "at": 19480918,
+     "text": "18 September: in a radio broadcast he says it is natural to rejoice at the 'swift termination' of the action."
+    }
+   ]
+  },
+  {
+   "id": "patel",
+   "title": "Vallabhbhai Patel",
+   "short": "Sardar Patel",
+   "kind": "Person",
+   "level": 1,
+   "from": null,
+   "aliases": [
+    "patel",
+    "sardar patel",
+    "vallabhbhai patel"
+   ],
+   "links": [
+    "nehru",
+    "polo"
+   ],
+   "questions": [
+    {
+     "id": "who",
+     "label": "Who is he?",
+     "answers": [
+      {
+       "from": null,
+       "text": "India's deputy prime minister and home minister, one of the leaders behind the action against Hyderabad."
+      }
+     ]
+    }
+   ],
+   "later": []
+  },
+  {
+   "id": "munshi",
+   "title": "K. M. Munshi",
+   "short": "K. M. Munshi",
+   "kind": "Person",
+   "level": 2,
+   "from": null,
+   "aliases": [
+    "munshi",
+    "k. m. munshi",
+    "agent general"
+   ],
+   "links": [
+    "nizam",
+    "el_edroos"
+   ],
+   "questions": [
+    {
+     "id": "who",
+     "label": "Who is he?",
+     "answers": [
+      {
+       "from": null,
+       "text": "India's Agent General in Hyderabad, India's man in our city."
+      },
+      {
+       "from": 19480917,
+       "text": "India's Agent General in Hyderabad. This afternoon the Nizam called him to his office.",
+       "to": 19480917
+      },
+      {
+       "from": 19480918,
+       "text": "India's Agent General in Hyderabad. On 17 September the Nizam called him to his office."
+      }
+     ]
+    }
+   ],
+   "later": [
+    {
+     "at": 19480917,
+     "text": "17 September, 4 pm: the Nizam tells him, “The vultures have resigned. I don't know what to do.” Munshi advises him to order the army commander to keep the people safe."
+    }
+   ]
+  },
+  {
+   "id": "un",
+   "title": "Hyderabad at the United Nations",
+   "short": "The UN",
+   "kind": "Event",
+   "level": 1,
+   "from": null,
+   "aliases": [
+    "united nations",
+    "un",
+    "security council"
+   ],
+   "links": [
+    "hyderabad_state",
+    "polo"
+   ],
+   "questions": [
+    {
+     "id": "what",
+     "label": "What is happening there?",
+     "answers": [
+      {
+       "from": null,
+       "text": "On 21 August Hyderabad asked the UN Security Council to look at its dispute with India."
+      },
+      {
+       "from": 19480912,
+       "text": "On 21 August Hyderabad took its dispute with India to the UN Security Council. Now it has told the Council of a threat of invasion."
+      },
+      {
+       "from": 19480913,
+       "text": "Hyderabad has told the UN Security Council that India has invaded."
+      },
+      {
+       "from": 19480916,
+       "text": "Today the Security Council, meeting in Paris, put Hyderabad's complaint on its agenda.",
+       "to": 19480916
+      },
+      {
+       "from": 19480917,
+       "text": "The Security Council took up Hyderabad's complaint yesterday, in Paris.",
+       "to": 19480917
+      },
+      {
+       "from": 19480918,
+       "text": "On 16 September the Security Council, meeting in Paris, put Hyderabad's complaint on its agenda."
+      }
+     ]
+    },
+    {
+     "id": "where",
+     "label": "Where?",
+     "answers": [
+      {
+       "from": null,
+       "text": "At the UN Security Council. This month it is meeting in Paris."
+      }
+     ]
+    }
+   ],
+   "later": [
+    {
+     "at": 19490101,
+     "text": "20–24 September: the complaint is withdrawn; the Nizam's cable of 22 September confirms it."
+    }
+   ]
+  },
+  {
+   "id": "hyderabad_state",
+   "title": "Hyderabad State",
+   "short": "Hyderabad State",
+   "kind": "State",
+   "level": 1,
+   "from": null,
+   "aliases": [
+    "hyderabad state",
+    "state",
+    "hyderabad",
+    "kingdom"
+   ],
+   "links": [
+    "nizam",
+    "polo",
+    "un",
+    "king_kothi"
+   ],
+   "questions": [
+    {
+     "id": "what",
+     "label": "What is it?",
+     "answers": [
+      {
+       "from": null,
+       "text": "A princely state ruled by [[nizam|the Nizam]]. Its capital is Hyderabad. When the British left India in August 1947, the Nizam chose to stay independent."
+      }
+     ]
+    },
+    {
+     "id": "who",
+     "label": "Who rules here?",
+     "answers": [
+      {
+       "from": null,
+       "text": "[[nizam|The Nizam]], Mir Osman Ali Khan."
+      },
+      {
+       "from": 19480918,
+       "text": "[[nizam|The Nizam]] is still the Nizam, but the Indian Army now holds the state."
+      }
+     ]
+    }
+   ],
+   "later": [
+    {
+     "at": 19490101,
+     "text": "After the operation it becomes part of India, as Hyderabad State (1948–1956)."
+    }
+   ]
+  },
+  {
+   "id": "asaf_jahi",
+   "title": "The Asaf Jahi dynasty",
+   "short": "Asaf Jahi dynasty",
+   "kind": "Family",
+   "level": 2,
+   "from": null,
+   "aliases": [
+    "asaf jahi",
+    "asaf jah",
+    "dynasty",
+    "nizams",
+    "family tree"
+   ],
+   "links": [
+    "nizam",
+    "mahbub",
+    "azam_jah",
+    "moazzam_jah"
+   ],
+   "questions": [
+    {
+     "id": "what",
+     "label": "Who are they?",
+     "answers": [
+      {
+       "from": null,
+       "text": "The family of the Nizams. They have ruled Hyderabad since 1724, when Asaf Jah I made it his own. [[nizam|The Nizam]] is the seventh Asaf Jah."
+      }
+     ]
+    }
+   ],
+   "later": [
+    {
+     "at": 19490101,
+     "text": "1967: his grandson Mukarram Jah is given the title Asaf Jah VIII."
+    }
+   ],
+   "familyTree": true
+  },
+  {
+   "id": "mahbub",
+   "title": "Mahbub Ali Khan, Asaf Jah VI",
+   "short": "Mahbub Ali Khan",
+   "kind": "Person",
+   "level": 1,
+   "from": null,
+   "aliases": [
+    "mahbub ali khan",
+    "mahboob ali pasha",
+    "asaf jah vi",
+    "father"
+   ],
+   "links": [
+    "nizam",
+    "asaf_jahi",
+    "king_kothi",
+    "chowmahalla"
+   ],
+   "questions": [
+    {
+     "id": "who",
+     "label": "Who was he?",
+     "answers": [
+      {
+       "from": null,
+       "text": "The sixth Nizam, who ruled from 1869 to 1911, and the Nizam's father. He bought [[king_kothi|King Kothi]] and lived at [[chowmahalla|Chowmahalla Palace]]."
+      }
+     ]
+    }
+   ],
+   "later": []
+  },
+  {
+   "id": "azam_jah",
+   "title": "Azam Jah",
+   "short": "Azam Jah",
+   "kind": "Person",
+   "level": 2,
+   "from": null,
+   "aliases": [
+    "azam jah",
+    "prince of berar"
+   ],
+   "links": [
+    "nizam",
+    "moazzam_jah",
+    "asaf_jahi"
+   ],
+   "questions": [
+    {
+     "id": "who",
+     "label": "Who is he?",
+     "answers": [
+      {
+       "from": null,
+       "text": "The Nizam's elder son, the Prince of Berar."
+      }
+     ]
+    }
+   ],
+   "later": [
+    {
+     "at": 19490101,
+     "text": "1967: his son Mukarram Jah becomes Asaf Jah VIII."
+    }
+   ]
+  },
+  {
+   "id": "moazzam_jah",
+   "title": "Moazzam Jah",
+   "short": "Moazzam Jah",
+   "kind": "Person",
+   "level": 2,
+   "from": null,
+   "aliases": [
+    "moazzam jah"
+   ],
+   "links": [
+    "nizam",
+    "azam_jah",
+    "asaf_jahi"
+   ],
+   "questions": [
+    {
+     "id": "who",
+     "label": "Who is he?",
+     "answers": [
+      {
+       "from": null,
+       "text": "The Nizam's younger son."
+      }
+     ]
+    }
+   ],
+   "later": []
+  },
+  {
+   "id": "chowmahalla",
+   "title": "Chowmahalla Palace",
+   "short": "Chowmahalla Palace",
+   "kind": "Place",
+   "level": 1,
+   "from": null,
+   "aliases": [
+    "chowmahalla"
+   ],
+   "links": [
+    "mahbub",
+    "nizam",
+    "king_kothi"
+   ],
+   "location": {
+    "lat": 17.3578,
+    "lon": 78.4717
+   },
+   "questions": [
+    {
+     "id": "what",
+     "label": "What is it?",
+     "answers": [
+      {
+       "from": null,
+       "text": "The palace where the Nizam's father, [[mahbub|Mahbub Ali Khan]], lived. The Nizam chose to stay at [[king_kothi|King Kothi]] instead."
+      }
+     ]
+    },
+    {
+     "id": "where",
+     "label": "Where is it?",
+     "answers": [
+      {
+       "from": null,
+       "text": "It is {d:chowmahalla}.",
+       "track": "chowmahalla"
+      }
+     ]
+    }
+   ],
+   "later": []
+  },
+  {
+   "id": "charminar",
+   "title": "Charminar",
+   "short": "Charminar",
+   "kind": "Place",
+   "level": 1,
+   "from": null,
+   "aliases": [
+    "charminar"
+   ],
+   "links": [
+    "chowmahalla",
+    "king_kothi"
+   ],
+   "location": {
+    "lat": 17.3616,
+    "lon": 78.4747
+   },
+   "questions": [
+    {
+     "id": "what",
+     "label": "What is it?",
+     "answers": [
+      {
+       "from": null,
+       "text": "The great monument with four minarets at the heart of the old city. Muhammad Quli Qutb Shah built it in 1591."
+      }
+     ]
+    },
+    {
+     "id": "where",
+     "label": "Where is it?",
+     "answers": [
+      {
+       "from": null,
+       "text": "It is {d:charminar}.",
+       "track": "charminar"
+      }
+     ]
+    }
+   ],
+   "later": []
+  },
+  {
+   "id": "naldurg",
+   "title": "Naldurg fort",
+   "short": "Naldurg",
+   "kind": "Place",
+   "level": 1,
+   "from": 19480913,
+   "aliases": [
+    "naldurg"
+   ],
+   "links": [
+    "polo"
+   ],
+   "location": {
+    "lat": 17.8167,
+    "lon": 76.2833
+   },
+   "questions": [
+    {
+     "id": "what",
+     "label": "What is it?",
+     "answers": [
+      {
+       "from": 19480913,
+       "text": "A fort on the Solapur–Secunderabad road. The first battle of the operation was fought here on 13 September."
+      }
+     ]
+    },
+    {
+     "id": "where",
+     "label": "Where is it?",
+     "answers": [
+      {
+       "from": 19480913,
+       "text": "It is {d:naldurg}.",
+       "track": "naldurg"
+      }
+     ]
+    }
+   ],
+   "later": []
+  },
+  {
+   "id": "suryapet",
+   "title": "Suryapet",
+   "short": "Suryapet",
+   "kind": "Place",
+   "level": 1,
+   "from": 19480914,
+   "aliases": [
+    "suryapet"
+   ],
+   "links": [
+    "polo"
+   ],
+   "location": {
+    "lat": 17.1405,
+    "lon": 79.6236
+   },
+   "questions": [
+    {
+     "id": "what",
+     "label": "What happened there?",
+     "answers": [
+      {
+       "from": 19480914,
+       "text": "A town on the road from the east. The eastern army is fighting near it."
+      },
+      {
+       "from": 19480915,
+       "text": "A town on the road from the east. The Indian Army took it today.",
+       "to": 19480915
+      },
+      {
+       "from": 19480916,
+       "text": "A town on the road from the east. The Indian Army took it on 15 September."
+      }
+     ]
+    },
+    {
+     "id": "where",
+     "label": "Where is it?",
+     "answers": [
+      {
+       "from": 19480914,
+       "text": "It is {d:suryapet}.",
+       "track": "suryapet"
+      }
+     ]
+    }
+   ],
+   "later": [
+    {
+     "at": 19480915,
+     "text": "15 September: the Indian Army occupies Suryapet."
+    }
+   ]
+  },
+  {
+   "id": "zahirabad",
+   "title": "Zahirabad",
+   "short": "Zahirabad",
+   "kind": "Place",
+   "level": 1,
+   "from": 19480916,
+   "aliases": [
+    "zahirabad"
+   ],
+   "links": [
+    "polo"
+   ],
+   "location": {
+    "lat": 17.6814,
+    "lon": 77.6074
+   },
+   "questions": [
+    {
+     "id": "what",
+     "label": "What happened there?",
+     "answers": [
+      {
+       "from": 19480916,
+       "text": "A town on the Solapur–Hyderabad road. The army is passing it today.",
+       "to": 19480916
+      },
+      {
+       "from": 19480917,
+       "text": "A town on the Solapur–Hyderabad road. The army passed it on 16 September."
+      }
+     ]
+    },
+    {
+     "id": "where",
+     "label": "Where is it?",
+     "answers": [
+      {
+       "from": 19480916,
+       "text": "It is {d:zahirabad}.",
+       "track": "zahirabad"
+      }
+     ]
+    }
+   ],
+   "later": []
+  },
+  {
+   "id": "bidar",
+   "title": "Bidar",
+   "short": "Bidar",
+   "kind": "Place",
+   "level": 1,
+   "from": 19480917,
+   "aliases": [
+    "bidar"
+   ],
+   "links": [
+    "polo"
+   ],
+   "location": {
+    "lat": 17.9104,
+    "lon": 77.5199
+   },
+   "questions": [
+    {
+     "id": "what",
+     "label": "What happened there?",
+     "answers": [
+      {
+       "from": 19480917,
+       "text": "The Indian Army entered Bidar early this morning.",
+       "to": 19480917
+      },
+      {
+       "from": 19480918,
+       "text": "The Indian Army entered Bidar early on 17 September."
+      }
+     ]
+    },
+    {
+     "id": "where",
+     "label": "Where is it?",
+     "answers": [
+      {
+       "from": 19480917,
+       "text": "It is {d:bidar}.",
+       "track": "bidar"
+      }
+     ]
+    }
+   ],
+   "later": []
+  },
+  {
+   "id": "aurangabad",
+   "title": "Aurangabad",
+   "short": "Aurangabad",
+   "kind": "Place",
+   "level": 1,
+   "from": 19480914,
+   "aliases": [
+    "aurangabad"
+   ],
+   "links": [
+    "polo"
+   ],
+   "location": {
+    "lat": 19.8762,
+    "lon": 75.3433
+   },
+   "questions": [
+    {
+     "id": "what",
+     "label": "What happened there?",
+     "answers": [
+      {
+       "from": 19480914,
+       "text": "A city in the north of the state. It surrendered to the Indian Army today.",
+       "to": 19480914
+      },
+      {
+       "from": 19480915,
+       "text": "A city in the north of the state. It surrendered to the Indian Army on 14 September."
+      }
+     ]
+    },
+    {
+     "id": "where",
+     "label": "Where is it?",
+     "answers": [
+      {
+       "from": 19480914,
+       "text": "It is {d:aurangabad}.",
+       "track": "aurangabad"
+      }
+     ]
+    }
+   ],
+   "later": []
+  },
+  {
+   "id": "kodad",
+   "title": "Kodad",
+   "short": "Kodad",
+   "kind": "Place",
+   "level": 1,
+   "from": 19480913,
+   "aliases": [
+    "kodad"
+   ],
+   "links": [
+    "polo"
+   ],
+   "location": {
+    "lat": 16.9978,
+    "lon": 79.9653
+   },
+   "questions": [
+    {
+     "id": "what",
+     "label": "What happened there?",
+     "answers": [
+      {
+       "from": 19480913,
+       "text": "A town on the road from the east. The eastern army reached it this morning.",
+       "to": 19480913
+      },
+      {
+       "from": 19480914,
+       "text": "A town on the road from the east. The eastern army reached it on the morning of 13 September."
+      }
+     ]
+    },
+    {
+     "id": "where",
+     "label": "Where is it?",
+     "answers": [
+      {
+       "from": 19480913,
+       "text": "It is {d:kodad}.",
+       "track": "kodad"
+      }
+     ]
+    }
+   ],
+   "later": []
+  },
+  {
+   "id": "chityal",
+   "title": "Chityal",
+   "short": "Chityal",
+   "kind": "Place",
+   "level": 1,
+   "from": 19480917,
+   "aliases": [
+    "chityal"
+   ],
+   "links": [
+    "polo"
+   ],
+   "location": {
+    "lat": 17.2347,
+    "lon": 79.134
+   },
+   "questions": [
+    {
+     "id": "what",
+     "label": "What happened there?",
+     "answers": [
+      {
+       "from": 19480917,
+       "text": "A town on the eastern road, about 60 km from the city. An Indian armoured column is here today.",
+       "to": 19480917
+      },
+      {
+       "from": 19480918,
+       "text": "A town on the eastern road, about 60 km from the city. An armoured column was here on 17 September."
+      }
+     ]
+    }
+   ],
+   "later": []
+  },
+  {
+   "id": "secunderabad",
+   "title": "Secunderabad",
+   "short": "Secunderabad",
+   "kind": "Place",
+   "level": 1,
+   "from": null,
+   "aliases": [
+    "secunderabad"
+   ],
+   "links": [
+    "polo",
+    "el_edroos"
+   ],
+   "location": {
+    "lat": 17.4399,
+    "lon": 78.4983
+   },
+   "questions": [
+    {
+     "id": "what",
+     "label": "What is it?",
+     "answers": [
+      {
+       "from": null,
+       "text": "The twin city just north of Hyderabad."
+      },
+      {
+       "from": 19480918,
+       "text": "The twin city just north of Hyderabad. The Hyderabad army surrendered here this afternoon.",
+       "to": 19480918
+      },
+      {
+       "from": 19480919,
+       "text": "The twin city just north of Hyderabad. The Hyderabad army surrendered here on 18 September."
+      }
+     ]
+    },
+    {
+     "id": "where",
+     "label": "Where is it?",
+     "answers": [
+      {
+       "from": null,
+       "text": "It is {d:secunderabad}.",
+       "track": "secunderabad"
+      }
+     ]
+    }
+   ],
+   "later": [
+    {
+     "at": 19480918,
+     "text": "18 September: the Hyderabad army surrenders here."
+    }
+   ]
+  }
+ ],
+ "paperName": "The Evening Herald",
+ "papers": [
+  {
+   "date": 19480912,
+   "stories": [
+    {
+     "headline": "Hyderabad tells the UN of a threat of invasion",
+     "text": "Hyderabad, which took its dispute with India to the [[un|UN Security Council]] on 21 August, has now told the Council of a threat of invasion."
+    }
+   ]
+  },
+  {
+   "date": 19480913,
+   "stories": [
+    {
+     "headline": "Indian Army enters the state",
+     "text": "Indian forces crossed into [[hyderabad_state|Hyderabad State]] at four this morning. India calls it a [[polo|police action]]."
+    },
+    {
+     "headline": "Fighting at Naldurg fort",
+     "text": "The first battle was fought at [[naldurg|Naldurg fort]], on the Solapur road.",
+     "places": [
+      "Naldurg"
+     ]
+    },
+    {
+     "headline": "Eastern column at Kodad",
+     "text": "Another column came from the east and reached [[kodad|Kodad]] this morning.",
+     "places": [
+      "Kodad"
+     ]
+    }
+   ]
+  },
+  {
+   "date": 19480914,
+   "stories": [
+    {
+     "headline": "Aurangabad surrenders",
+     "text": "In the north, [[aurangabad|Aurangabad]] surrendered to the Indian Army this afternoon.",
+     "places": [
+      "Aurangabad"
+     ]
+    },
+    {
+     "headline": "Fighting near Suryapet",
+     "text": "The eastern column of the [[polo|police action]] is fighting near [[suryapet|Suryapet]].",
+     "places": [
+      "Suryapet"
+     ]
+    },
+    {
+     "headline": "Street fighting in Osmanabad",
+     "text": "Osmanabad was taken after heavy street fighting with the [[razakars|Razakars]].",
+     "places": [
+      "Osmanabad"
+     ]
+    }
+   ]
+  },
+  {
+   "date": 19480916,
+   "stories": [
+    {
+     "headline": "Army nears Zahirabad",
+     "text": "The Indian column on the Solapur road has reached [[zahirabad|Zahirabad]].",
+     "places": [
+      "Zahirabad"
+     ]
+    },
+    {
+     "headline": "Latur and Suryapet taken",
+     "text": "Yesterday the Indian Army took Latur and [[suryapet|Suryapet]].",
+     "places": [
+      "Latur",
+      "Suryapet"
+     ]
+    },
+    {
+     "headline": "Hyderabad's case at the UN",
+     "text": "The [[un|Security Council]], meeting in Paris, put Hyderabad's complaint on its agenda today."
+    }
+   ]
+  },
+  {
+   "date": 19480917,
+   "stories": [
+    {
+     "headline": "Nizam announces ceasefire",
+     "text": "At five this evening [[nizam|the Nizam]] announced a ceasefire."
+    },
+    {
+     "headline": "Prime minister and cabinet resign",
+     "text": "[[laiq_ali|Mir Laiq Ali]] and the whole cabinet resigned this morning."
+    },
+    {
+     "headline": "Army in Bidar; a column at Chityal",
+     "text": "The Indian Army entered [[bidar|Bidar]] early today. An armoured column is at [[chityal|Chityal]], about 60 km from the city.",
+     "places": [
+      "Bidar",
+      "Chityal"
+     ]
+    }
+   ]
+  },
+  {
+   "date": 19480918,
+   "stories": [
+    {
+     "headline": "Hyderabad army surrenders",
+     "text": "At about four this afternoon an Indian armoured column entered the city. [[el_edroos|Major General El Edroos]] surrendered the Hyderabad army to [[chaudhuri|Major General J. N. Chaudhuri]] at [[secunderabad|Secunderabad]].",
+     "places": [
+      "Secunderabad"
+     ]
+    },
+    {
+     "headline": "Nehru speaks on the radio",
+     "text": "[[nehru|Jawaharlal Nehru]] said in a broadcast that it was natural to rejoice at the 'swift termination' of the action."
+    }
+   ]
+  }
+ ],
+ "map": {
+  "title": "Map of Hyderabad State",
+  "subtitle": "towns and main roads",
+  "box": [
+   15.9,
+   20.3,
+   74.9,
+   80.6
+  ],
+  "note": "Step 19e: the towns and the two main roads the Indian columns took in September 1948 (the Solapur road and the road from the east).",
+  "towns": [
+   [
+    "Hyderabad",
+    17.3616,
+    78.4747,
+    1
+   ],
+   [
+    "Secunderabad",
+    17.4399,
+    78.4983,
+    0
+   ],
+   [
+    "Aurangabad",
+    19.8762,
+    75.3433,
+    1
+   ],
+   [
+    "Jalna",
+    19.8347,
+    75.8816,
+    0
+   ],
+   [
+    "Parbhani",
+    19.2608,
+    76.7748,
+    0
+   ],
+   [
+    "Nanded",
+    19.1383,
+    77.321,
+    1
+   ],
+   [
+    "Hingoli",
+    19.7173,
+    77.1494,
+    0
+   ],
+   [
+    "Bidar",
+    17.9104,
+    77.5199,
+    1
+   ],
+   [
+    "Gulbarga",
+    17.3297,
+    76.8343,
+    1
+   ],
+   [
+    "Raichur",
+    16.212,
+    77.3439,
+    1
+   ],
+   [
+    "Latur",
+    18.4088,
+    76.5604,
+    0
+   ],
+   [
+    "Osmanabad",
+    18.186,
+    76.0419,
+    0
+   ],
+   [
+    "Tuljapur",
+    18.0081,
+    76.073,
+    0
+   ],
+   [
+    "Naldurg",
+    17.8167,
+    76.2833,
+    0
+   ],
+   [
+    "Umarga",
+    17.8384,
+    76.6224,
+    0
+   ],
+   [
+    "Zahirabad",
+    17.6814,
+    77.6074,
+    0
+   ],
+   [
+    "Nizamabad",
+    18.6725,
+    78.0941,
+    1
+   ],
+   [
+    "Karimnagar",
+    18.4386,
+    79.1288,
+    0
+   ],
+   [
+    "Warangal",
+    17.9689,
+    79.5941,
+    1
+   ],
+   [
+    "Chityal",
+    17.2347,
+    79.134,
+    0
+   ],
+   [
+    "Suryapet",
+    17.1405,
+    79.6236,
+    0
+   ],
+   [
+    "Kodad",
+    16.9978,
+    79.9653,
+    0
+   ],
+   [
+    "Mahbubnagar",
+    16.7488,
+    78.0035,
+    0
+   ],
+   [
+    "Mominabad",
+    18.7333,
+    76.3833,
+    0
+   ]
+  ],
+  "roads": [
+   [
+    [
+     17.8167,
+     76.2833
+    ],
+    [
+     17.8384,
+     76.6224
+    ],
+    [
+     17.6814,
+     77.6074
+    ],
+    [
+     17.3616,
+     78.4747
+    ]
+   ],
+   [
+    [
+     16.9978,
+     79.9653
+    ],
+    [
+     17.1405,
+     79.6236
+    ],
+    [
+     17.2347,
+     79.134
+    ],
+    [
+     17.3616,
+     78.4747
+    ]
+   ]
+  ]
+ }
+}

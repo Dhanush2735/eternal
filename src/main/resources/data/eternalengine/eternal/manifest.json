@@ -1,0 +1,3163 @@
+{
+ "format": 1,
+ "about": "Step 26 (A3, A7, K4): every data file of the mod with its size, SHA-256, rows, role, sources, licences, recorded/estimated mark, builder and pack. Built by worldfill/build_manifest.py; checked by /ee check all (com.eternalengine.data.DataManifest). Files with shipped=false are masters kept for the build scripts and left out of the jar.",
+ "packs": {
+  "core": "everything, inside the mod (decision 5: data inside the mod, split into region packs only if it grows too big; no download server)"
+ },
+ "totals": {
+  "files": 136,
+  "shipped": 135,
+  "shippedBytes": 59976879,
+  "mastersOnly": 1
+ },
+ "sources": {
+  "cliopatria": {
+   "name": "Cliopatria v0.2.1, Seshat Global History Databank (state borders 3400 BC to 2024)",
+   "licence": "CC BY 4.0",
+   "duty": "credit Seshat / Cliopatria"
+  },
+  "wikipedia": {
+   "name": "English Wikipedia (dump 2026-10-01; decade and century pages, 2023 revisions)",
+   "licence": "CC BY-SA 4.0",
+   "duty": "credit Wikipedia contributors; a file built from Wikipedia text stays CC BY-SA 4.0"
+  },
+  "wikidata": {
+   "name": "Wikidata (query.wikidata.org and the QLever endpoint of the University of Freiburg)",
+   "licence": "CC0 1.0",
+   "duty": "nothing required"
+  },
+  "laouenan": {
+   "name": "Laouenan, M. et al. A cross-verified database of notable people, 3500BC-2018AD. Scientific Data 9, 290 (2022); Sciences Po doi:10.21410/7E4/RDAG3O",
+   "licence": "CC BY-SA 4.0",
+   "duty": "credit the authors; the file stays CC BY-SA 4.0"
+  },
+  "pleiades": {
+   "name": "Pleiades, a community-built gazetteer and graph of ancient places (pleiades.stoa.org)",
+   "licence": "CC BY 3.0",
+   "duty": "credit Pleiades"
+  },
+  "chgis": {
+   "name": "CHGIS, Version 6. Fairbank Center for Chinese Studies (Harvard) and Center for Historical Geographical Studies (Fudan), 2016; doi:10.7910/DVN/Q9VOF5",
+   "licence": "CC0 1.0",
+   "duty": "nothing required; citation appreciated"
+  },
+  "reba": {
+   "name": "Reba, M., Reitsma, F. & Seto, K. C. Spatializing 6,000 years of global urbanization from 3700 BC to AD 2000. Scientific Data 3, 160034 (2016)",
+   "licence": "CC BY 4.0",
+   "duty": "credit the authors"
+  },
+  "hyde": {
+   "name": "HYDE 3.2.1 (Klein Goldewijk, K. et al. Anthropogenic land use estimates for the Holocene - HYDE 3.2. Earth System Science Data 9, 927-953 (2017)); DANS doi:10.17026/DANS-25G-GEZ3",
+   "licence": "CC0 1.0 (DANS record; the release readme says CC BY 3.0)",
+   "duty": "credit HYDE"
+  },
+  "imperial_gazetteer": {
+   "name": "Imperial Gazetteer of India, Hyderabad State (1909)",
+   "licence": "public domain",
+   "duty": "nothing required"
+  },
+  "keynes": {
+   "name": "Keynes, J. M. Indian Currency and Finance (Macmillan, 1913)",
+   "licence": "public domain",
+   "duty": "nothing required; out of copyright"
+  },
+  "india_banking": {
+   "name": "Banking Enquiry Committee and the histories of the Presidency Banks of Bengal, Bombay and Madras (1806-1935)",
+   "licence": "public domain",
+   "duty": "nothing required"
+  },
+  "siddham": {
+   "name": "Siddham Epigraphic Archive (siddham.network)",
+   "licence": "free with attribution",
+   "duty": "credit Siddham"
+  },
+  "noaa": {
+   "name": "NOAA NCEI Global Significant Earthquake, Tsunami and Volcano databases (doi:10.7289/V5TD9V7K, 10.7289/V5PN93H7, 10.7289/V5JW8BSH)",
+   "licence": "public domain (US government work)",
+   "duty": "cite NOAA NCEI"
+  },
+  "ibtracs": {
+   "name": "NOAA NCEI International Best Track Archive for Climate Stewardship (IBTrACS) v04r01 (Knapp, K. R. et al. Bulletin of the American Meteorological Society 91, 363-376 (2010); Gahtan, J. et al. NOAA NCEI doi:10.25921/82ty-9e16)",
+   "licence": "public domain (US government work)",
+   "duty": "cite IBTrACS (Knapp et al. 2010)"
+  },
+  "owid": {
+   "name": "Our World in Data, Literacy rate (cross-country-literacy-rates): UNESCO (1953, 1957), Buringh and van Zanden (2009), van Zanden et al. (2014), UNESCO Institute for Statistics",
+   "licence": "CC BY 4.0",
+   "duty": "credit Our World in Data and the sources it names"
+  },
+  "allenunger": {
+   "name": "Allen, R. C. and Unger, R. W., The Allen-Unger Global Commodity Prices Database (2019); DANS doi:10.17026/dans-zsu-xavf (deposited by the International Institute of Social History)",
+   "licence": "CC BY-NC 4.0",
+   "duty": "credit Allen and Unger; the licence is non-commercial"
+  },
+  "maddison": {
+   "name": "Maddison Project Database, version 2023 (Bolt, J. and van Zanden, J. L., Groningen Growth and Development Centre)",
+   "licence": "CC BY 4.0",
+   "duty": "credit Bolt and van Zanden (2024)"
+  },
+  "natural_earth": {
+   "name": "Natural Earth, Admin 0 - Countries, 1:10m (naturalearthdata.com)",
+   "licence": "public domain",
+   "duty": "nothing required; credit Natural Earth appreciated"
+  },
+  "chat": {
+   "name": "CHAT, the Cross-country Historical Adoption of Technology dataset (Comin, D. and Hobijn, B., NBER working paper 15319, 2009; data.nber.org; datahub.io core/historical-adoption-of-technology)",
+   "licence": "public domain (ODC-PDDL)",
+   "duty": "cite Comin and Hobijn (2009)"
+  },
+  "gvp": {
+   "name": "Smithsonian Global Volcanism Program, Volcanoes of the World v5",
+   "licence": "free use with citation",
+   "duty": "cite the Smithsonian GVP"
+  },
+  "plague": {
+   "name": "Plague outbreaks 1339-1900: Biraben (1975), digitised by Buentgen et al. 2012 and Atanasiu et al. 2008, merged by Schmid et al. 2015 (PNAS 112:3020), Zenodo record 14973",
+   "licence": "EPL-1.0",
+   "duty": "credit Schmid et al. 2015 and the original compilers"
+  },
+  "ucdp": {
+   "name": "UCDP Georeferenced Event Dataset (GED) Global version 25.1, Uppsala Conflict Data Program (Sundberg & Melander 2013; Davies, Pettersson & Oeberg 2025)",
+   "licence": "CC BY 4.0",
+   "duty": "credit UCDP and cite the two papers"
+  },
+  "glottolog": {
+   "name": "Glottolog 5.3 (Hammarstroem, Forkel, Haspelmath & Bank)",
+   "licence": "CC BY 4.0",
+   "duty": "credit Glottolog"
+  },
+  "sil": {
+   "name": "SIL International, ISO 639-3 code tables (living status, ISO 639-1 codes)",
+   "licence": "free to use under SIL's terms of use",
+   "duty": "credit SIL"
+  },
+  "cow": {
+   "name": "Correlates of War World Religion Data v1.1 (Maoz, Z. & Henderson, E. A. The World Religion Dataset, 1945-2010. International Interactions 39, 265-291 (2013))",
+   "licence": "free to use with citation",
+   "duty": "cite Maoz & Henderson 2013"
+  },
+  "itinere": {
+   "name": "Itiner-e (de Soto, P. et al. A high-resolution dataset of roads of the Roman Empire. Scientific Data 12, 1731 (2025); Zenodo doi:10.5281/zenodo.17122148)",
+   "licence": "CC BY 4.0",
+   "duty": "credit Itiner-e"
+  },
+  "archaeoglobe": {
+   "name": "ArchaeoGLOBE Project, Science 365, 897-902 (2019); Harvard Dataverse doi:10.7910/DVN/CNCANQ and doi:10.7910/DVN/CQWUBI",
+   "licence": "CC0 1.0",
+   "duty": "nothing required (credit appreciated)"
+  },
+  "khoury2016": {
+   "name": "Khoury, C. K. et al., 'Origins of food crops connect countries worldwide', Proceedings of the Royal Society B 283: 20160792 (2016), supplementary tables S1 and S2; Dryad doi:10.5061/dryad.s08t2, Zenodo record 5006466",
+   "licence": "CC0 1.0",
+   "duty": "credit the paper and the dataset"
+  },
+  "osm": {
+   "name": "OpenStreetMap (place names and points of cities, towns, villages and hamlets, via Overpass)",
+   "licence": "ODbL 1.0",
+   "duty": "credit \"(c) OpenStreetMap contributors\"; the files built from it stay under the ODbL"
+  },
+  "census": {
+   "name": "Census of India and the district gazetteers (each row names its own census or gazetteer)",
+   "licence": "public record (government statistics)",
+   "duty": "credit the census named in each row"
+  },
+  "meeus": {
+   "name": "Meeus, J. Astronomical Algorithms, 2nd ed. (Willmann-Bell, 1998), chapters 25 and 49: the series for the sun's apparent longitude and the times of the new moon, implemented in the mod to compute the Chinese calendar",
+   "licence": "nothing of the book ships: the algorithms are implemented, no tables are copied",
+   "duty": "cite Meeus where the numbers are quoted"
+  },
+  "britannica": {
+   "name": "Britannica (britannica.com: 'Germ theory', 'History of Public Health: A Timeline')",
+   "licence": "free use with attribution",
+   "duty": "credit Britannica"
+  },
+  "fao": {
+   "name": "Food and Agriculture Organization of the United Nations (fao.org): working-capacity figures for camels and other draught animals",
+   "licence": "FAO content is copyright FAO unless stated; the figures here are quoted summary values with credit to FAO",
+   "duty": "commercial"
+  },
+  "who": {
+   "name": "World Health Organization (who.int: the history of smallpox vaccination; the Global Commission for the Certification of Smallpox Eradication, final report 1980)",
+   "licence": "free use with attribution",
+   "duty": "credit WHO"
+  },
+  "own": {
+   "name": "Eternal Engine's own work: rules, estimates, cards and tables written for the mod",
+   "licence": "MIT (the mod's licence)",
+   "duty": "nothing beyond the mod's licence"
+  }
+ },
+ "files": [
+  {
+   "path": "README.md",
+   "bytes": 587,
+   "sha256": "aec39ac1b89d7b6f6e645cb0ce1c2d2f881980bdea19f00f2d4b4b25b9f97367",
+   "contentSha256": "aec39ac1b89d7b6f6e645cb0ce1c2d2f881980bdea19f00f2d4b4b25b9f97367",
+   "shipped": true,
+   "rows": null,
+   "rowsAre": null,
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "buildings/foundation_buildings.json",
+   "bytes": 985,
+   "sha256": "9674f7c0c14baa41e1ddf018b0075a834b12874c42f698d0e3382d8a53589ae0",
+   "contentSha256": "e114acb92461ca7a99a0f397772f34ca8f8db1325b5e0e3d4f6474cb2e79b47f",
+   "shipped": true,
+   "rows": 2,
+   "rowsAre": "buildings",
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "cards/cards.tiles",
+   "bytes": 8926031,
+   "sha256": "b72a927601c934ba542726e54c7316c0dad9e2ec5b1d6cef845568ba54495833",
+   "contentSha256": "b72a927601c934ba542726e54c7316c0dad9e2ec5b1d6cef845568ba54495833",
+   "shipped": true,
+   "rows": 175365,
+   "rowsAre": "rows",
+   "role": "knowledge cards for every place: famous people and groups (who, what, when, where, links), in tiles by land and century",
+   "sources": [
+    "wikidata",
+    "wikipedia"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "CC0 1.0"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "fetch_cards_wd.py, build_cards.py",
+   "pack": "core"
+  },
+  {
+   "path": "cards/events.tiles",
+   "bytes": 1680349,
+   "sha256": "0450cec6c1fd1a6a95375f40c83e000fefaf1bb587c9cbdcd3a9db0b98da6cca",
+   "contentSha256": "0450cec6c1fd1a6a95375f40c83e000fefaf1bb587c9cbdcd3a9db0b98da6cca",
+   "shipped": true,
+   "rows": 32542,
+   "rowsAre": "rows",
+   "role": "event cards and the cause-and-effect graph: what, when, where, who took part, why, what came of it",
+   "sources": [
+    "wikidata",
+    "wikipedia",
+    "ibtracs"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "CC0 1.0",
+    "public domain (US government work)"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "fetch_events_wd.py, build_event_cards.py",
+   "pack": "core"
+  },
+  {
+   "path": "civilizations/foundation_civilizations.json",
+   "bytes": 49296,
+   "sha256": "7c9c5a0dd54b79132d14420532f372e9743de0303b38db495ed6cf2ac1a0dc53",
+   "contentSha256": "2426185bd2fe4d134d67b8c4ca249115f1d8ff9230d5c1abc2ee2b41a9cbd0fe",
+   "shipped": true,
+   "rows": 133,
+   "rowsAre": "items",
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "civilizations/polities_second_register.json",
+   "bytes": 7426,
+   "sha256": "2dab2212265261e2b9881283e35acba7d7f4c39f3aa5dd2cf79450b1da65f6ab",
+   "contentSha256": "0fd4efeda5c8b7f68444da9d4353ba953b5223a09b1e3f8f73c00d03c3c946de",
+   "shipped": true,
+   "rows": 18,
+   "rowsAre": "polities",
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "climate/foundation_climate_events.json",
+   "bytes": 2125,
+   "sha256": "a6425c0a99e2a0237cf534b765071db0f43a49f0345729909a964d7d88b42208",
+   "contentSha256": "eb9db2dcbbdcab87ad56c7b809c0d5424126760acf786e6edec011ce6796d4f0",
+   "shipped": true,
+   "rows": 2,
+   "rowsAre": "events",
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "data_source_config.json",
+   "bytes": 406,
+   "sha256": "efd77e8a5fe8ad77b5b9acc48d1fbb65922f3a1c06a2c022388f254acd4e81da",
+   "contentSha256": "af623e9a1a2a8898c3155d75e40714b649072ef8b7d9bb1187247861951737a8",
+   "shipped": true,
+   "rows": 3,
+   "rowsAre": "notes",
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "economy/anachronisms.json.gz",
+   "bytes": 3776,
+   "sha256": "e4ca149708087d5e66d0c4b5fb01439b46c20ada3829e5eaf8aa0c5f3d940355",
+   "contentSha256": "1d79efeb1c7d0f68b6e4215184eb672c9643f0d87f63aa4ad7dc0079861ed2f1",
+   "shipped": true,
+   "rows": 19,
+   "rowsAre": "rows",
+   "role": "step 47 part 3 (E8, E22): vanilla things that do not belong, and what a year may use. E22 was decided in turns 73 to 81 for swords and NEVER BUILT; this is it. **The pack distinguishes three kinds of impossible thing, because they need three answers.** `real` - a real thing existed and the game's version is just better: allowed from its year, and a golden sword is worse than iron in vanilla and in history, which is one of the few places the game is accidentally right. `myth` - people believed in it, so it existed as a belief and not as a function: ALLOWED AND RENAMED, because the object is real and the power is not. `never` - nothing like it has existed at any date: locked in a strict world and allowed only for a time traveller, who is then SEEN carrying it. Treating all of it as fantasy to delete would remove the game; treating all of it as allowed would make the year meaningless. **The middle kind is the one worth having and it is what turns a blacklist into a translation**: alchemy is real history, running from Hellenistic Egypt through the Islamic world to Newton, who wrote more on alchemy than on physics and gave us distillation and the mineral acids, so a brewing stand in 1300 is an ALCHEMIST'S BENCH and the enchanting table is a SHRINE. Six of the 19 rows are renamed and 10 locked. The diamond is the sharpest: a real gem, traded from India to the Mediterranean by 300 BC, which nobody made a tool of for two thousand years because it is brittle, so the gem is allowed and the pickaxe is not. An unknown item is always allowed and the verdict says it was never judged, which is step 45's and step 46's rule again. It never decides whether a potion WORKS: that is step 38's health register. 55 checks.",
+   "sources": [
+    "own",
+    "wikipedia"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_anachronisms.py, anachronism_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "economy/animals.json.gz",
+   "bytes": 4417,
+   "sha256": "31d50b1bfea546ad7e800bde5349d7ca44840aaaaf42068badd3b92ae66d5a78",
+   "contentSha256": "9d7d7be480f03d7fcbeb8d1fe471657b033756f09d8a822d049491b9205bbaf7",
+   "shipped": true,
+   "rows": 12,
+   "rowsAre": "animals",
+   "role": "the working animals - what carried the world's goods and drew its ploughs: 12 entries (11 beasts and the human porter), each with what it does (pack, ride, pull, plough), what it carries in kilograms, how far in a day, the year it reaches each of 17 areas, and where it never reached and why. BUILT TO FIX ONE BUG: `trade/LogisticsManager` spawned TWO TO FOUR DONKEYS for every caravan in every era on every continent - three donkeys at Cusco in 1500, when the Andes had llamas for four thousand years, and three donkeys in Australia in 1700, eighty-eight years before donkeys arrived. A 500 kg caravan at Cusco in 1500 is **12 llamas**; at Timbuktu in 1300 it is **3 camels**. The years are READ from the products atlas, not rewritten. Two corrections to that atlas are recorded, not hidden: **reindeer were dated -2000 in West Africa**, a step-44 part-C artefact, and are removed from six areas; and **donkeys and horses shared a date everywhere**, which cannot be right because the donkey is African and the horse is a steppe animal, so in Africa the donkey is moved earlier. The tsetse belt cannot be drawn at 17 areas, so three areas are marked MIXED and say so: the Sahel has camels and the forest has none. Loads and distances from the FAO working-capacity tables, Britannica, the Logistics Cluster pack-animal table, Murra's ethnohistoric llama caravans (1965), the pre-colonial Kano trade study and Rockel's Carriers of Culture (2006); the tsetse effect is Alsan 2014.",
+   "sources": [
+    "own",
+    "fao",
+    "britannica"
+   ],
+   "licences": [
+    "FAO content is copyright FAO unless stated; the figures here are quoted summary values with credit to FAO",
+    "MIT (the mod's licence)",
+    "free use with attribution"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_animals.py, animal_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "economy/credit.json.gz",
+   "bytes": 6566,
+   "sha256": "72b8d63a8fbcbff2a878f064fd6b1306570cc6a91b839382435b39189702204b",
+   "contentSha256": "d9b9bed6d4f121f54d49382f3455120c82ee4e50bf91dc4931f394d2d4a56394",
+   "shipped": true,
+   "rows": 29,
+   "rowsAre": "rows",
+   "role": "what it costs to borrow: 29 rows from -3500 BC to 1950, each with the rate, who lends, whether charging interest is lawful there, and what was done instead where it was not. 12 recorded (a document states the rate), 9 measured (read off many records, like the 1,563 cash waqfs of Bursa at 10.8-11.5 per cent), 8 estimated. Hand-written: no register anywhere carries rates. Not a European table - Mesopotamia, Egypt, Athens, Rome, Byzantium, Tang and Song China, the Ottomans, Mughal India, colonial India, Italy, England, Holland, the United States, West Africa and the Andes are all present. 5 rows carry no rate on purpose and say so: the Inca had no money at all, and pre-colonial West Africa ran on cowries, pawnship and rotating savings clubs rather than a price for credit",
+   "sources": [
+    "wikipedia",
+    "keynes",
+    "india_banking",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)",
+    "public domain"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_credit.py, credit_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "economy/goods.json",
+   "bytes": 5550,
+   "sha256": "436fc2a3febb2d7d430dcda8d58902b92972ea2f44a6783e63d98e952c814bca",
+   "contentSha256": "94b1643d0e3d42f6c5577032fecfaa255f94ba1b7ac61cf26d2ec20c09df7629",
+   "shipped": true,
+   "rows": 13,
+   "rowsAre": "goods",
+   "role": "what is made, sold and bought where and when",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_goods_table.py, build_product_atlas.py",
+   "pack": "core"
+  },
+  {
+   "path": "economy/herds.json.gz",
+   "bytes": 8319,
+   "sha256": "a352f553561f9079d228ea87f8adafda61e3997cd356573045e40106798fea3c",
+   "contentSha256": "2e416814de77d5b2ed2e2588c14effc5542f3f82e705a687790a85eaf45e6094",
+   "shipped": true,
+   "rows": 28,
+   "rowsAre": "herds",
+   "role": "step 46 part 7 (D14, the second half): HERDS, and the roads they made. Part 2 built the register of working animals and said plainly what it had left out, that sheep, goats, pigs and poultry were not yet read as herds; this is that register, 28 rows over 15 animals and 13 areas. It answers what is kept in a herd, where, from when and how many to a herd, because the herd size is what makes a road necessary, and what a herd yields that one beast does not: wool, milk, manure, hides, eggs, blood, dung for fuel. THE FINDING REORDERS THE SUBJECT: **the herd is the missing reason for the road.** Part 5 found that a road is almost never a right of way and never found why the road is there at all. A Roman road is 4 to 6 m wide, which is two carts; a Spanish canada real is 75 m wide, and it is 75 m wide because sheep spread out while they graze and a flock must walk and eat at the same time. **A road you can eat is a different object from a road you can drive on.** The largest road-building institution in early modern Europe was a shepherds' guild. 10 droves are carried with their width, length, animals a year and law shape, from the canadas of 1273 to the Chisholm Trail of 1867, which existed for 17 years and was closed by barbed wire and a Kansas quarantine law. Four claims are refused in the pack: the giant medieval flock, wool at the start, the chicken at 8000 BC, and the herd as a thing you can count. The chicken is carried on the 2022 PNAS date, 1650 to 1250 BC at Ban Non Wat in Thailand and NOT the Indian subcontinent, reaching Mediterranean Europe about 800 BC. The bison is carried as the one herd in the register that ENDED: 30 to 60 million in 1800, and 1,091 counted by Hornaday in 1889, and it is still gone in AD 3000. 124 checks.",
+   "sources": [
+    "own",
+    "wikipedia"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_herds.py, herd_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "economy/money_table.json",
+   "bytes": 293666,
+   "sha256": "e40603e693a9ce6cbcae1b79692a9bd6c32fa8fc596aa6878b460ae6d13de484",
+   "contentSha256": "73ce6cc5045397d90d9f7f1c3faf251e4f47e4b603124d7126ea77f7ca003101",
+   "shipped": true,
+   "rows": 1007,
+   "rowsAre": "rows",
+   "role": "the money of every place and year, and its pieces",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_money_table.py, money_world.py, fix_history_data.py",
+   "pack": "core"
+  },
+  {
+   "path": "economy/products.json",
+   "bytes": 5553,
+   "sha256": "bd81c6d9c3524d39dd50aac2a0823002fcbfddfef53583908891a3a44c7480bd",
+   "contentSha256": "e1f589dfa29bb927eec9bc7dc9bcec175e022b43b088672cc67e135b6df120d0",
+   "shipped": true,
+   "rows": 13,
+   "rowsAre": "products",
+   "role": "what is made, sold and bought where and when",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_goods_table.py, build_product_atlas.py",
+   "pack": "core"
+  },
+  {
+   "path": "economy/products_world.json",
+   "bytes": 342403,
+   "sha256": "2ff25929ac816a3a442beae41f73e3c1042bfca54dc32c9d9325d1fa5d2f282c",
+   "contentSha256": "8de5590cb1d2d1d91d1031a204a2e8b4085ecd9571029c27598bd664f9369758",
+   "shipped": true,
+   "rows": 539,
+   "rowsAre": "products",
+   "role": "the product atlas: 529 products in 14 families, each with the year it is first made and first brought in each of the 17 areas of the ways-of-life survey. 132 rows are part B, hand-written estimates from the history of each product; 397 are part C (step 44), whose years are derived from the technology atlas (130 technologies x 258 countries), a parent product, and the natural range of a material - no part C year was written by hand",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_product_atlas.py, build_products_c.py, product_derivation.py, country_areas.py",
+   "pack": "core"
+  },
+  {
+   "path": "economy/spread.json.gz",
+   "bytes": 5775,
+   "sha256": "2c5e5d09d8283a70582117d8e0623370ee8c9f9ebf74e4e61566b8b192ebabdd",
+   "contentSha256": "fa3a2758f337b2c5c4fc5925acc72ba8d16b94b6d5cc3ad7959f87735b097fb2",
+   "shipped": true,
+   "rows": 26,
+   "rowsAre": "rows",
+   "role": "step 47 part 5 (B6, E18): CROPS AND ANIMALS AS ITEMS, AS THEY SPREAD. **No date is written for this pack.** Step 44's atlas already puts maize in Europe in 1520 and in Mesoamerica in 7000 BC, and chillies in Goa in 1540, so the plan's example ('no maize, potatoes or chillies in India before the 1500s') was already true. What was missing is the OTHER half of a spread, which is where the thing came from: a year alone cannot tell a potato in Bengal in 1700 from a potato that was always there. So this is a JOIN of the atlas (when) with the crop-origins register (where, Khoury et al. 2016, 150 crops against 23 regions, no dates at all), and the year a crop left home falls out of it as the earliest year it is made outside its origin, which is exactly what E18 asks for. 26 rows, 18 crops and 8 animals. **The finding: the Columbian exchange is measurable and it took about a lifetime** - the chilli is in Goa by 1540 and has displaced long pepper in Indian cooking within fifty years, so a New World fruit made South Asian food into what the world now calls South Asian food in less than one life, which is a story about ships and not about food. **The limit is real and the data declares it**: the atlas has 133 hand-written rows and 406 derived ones, and a derived row takes its parent's dates, which is right for flour and wrong for sorghum (parent millet, so derived sorghum 'originates' in China) and for groundnut (which inherits West Asia from oilseeds). An origin is therefore claimed only for a hand-written row, and every other row says `inherited` and names its parent. Three rows (cotton, pulses, wool) are more than one species domesticated in different hemispheres and declare `poly`, because the exchange rule is not a rule for them: cotton alone is four species, two Old World and two American. 47 checks.",
+   "sources": [
+    "own",
+    "wikipedia"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_spread.py, spread_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "economy/substitutes.json.gz",
+   "bytes": 2790,
+   "sha256": "96bbfa2ea93d721f7cdd7e3644284902eae588d132fb9bf0d1ee2cbda58f06e0",
+   "contentSha256": "35e195b77be4d7a7f1fa57365eb48820b4fe1e45819f631668873a1781643c94",
+   "shipped": true,
+   "rows": 38,
+   "rowsAre": "products",
+   "role": "what people use when the thing they would use is not there: 38 products and the 89 goods that stand in for them, each marked good, serves or last resort, plus how hard a shock to the land, the hands, the roofs or the road reaches each of the twelve kinds of work. Written by hand for this mod - no register anywhere carries substitutions - and every product id is checked against the product atlas so no answer names something that does not exist. The disruption half of part E needs no pack: it reads the 37,201 disasters, the 84 climate periods and the 14 trade routes that already ship",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "product_substitutes.py, build_substitutes.py",
+   "pack": "core"
+  },
+  {
+   "path": "economy/tools.json.gz",
+   "bytes": 7699,
+   "sha256": "e0b06a1e017b5cab4b49f30b7d1bab102a8bdcd6e40092f4e2d7a4d52d4e5015",
+   "contentSha256": "0683c95725b913f9ed2d999e5d24c778a5b9992816ede2a52f357aa71c881a1f",
+   "shipped": true,
+   "rows": 27,
+   "rowsAre": "tools",
+   "role": "step 47 part 2 (E7): TOOLS AND INVENTIONS AS ITEMS - the thing in a person's hands, what it does, what it REPLACED, and what in Minecraft stands for it, where step 44's products atlas asks only what a place makes and sells. 27 tools over 8 families of work and all 17 areas, 21 of them reading their dates from the products atlas by id and 6 written here with a source. THE RULE THE PACK EXISTS TO ENFORCE: **a tool's date is not its material's date.** Step 44 derives a product from its parent, and for tools the parent is a material, so a microscope whose parent is glass became as old as glass: 2500 BC in West Asia. Step 46 found the same fault in reindeer and donkeys, which makes three instances and a class of error, so no row here is derived from a material. **The microscope bug is fixed at its source**: the atlas now derives it from the telescope technology and dates it AD 1608, and this row carries the finer 1590 with the Janssen attribution and the warning that the attribution comes from a recollection given sixty-five years after the fact. **Two of the seven things the plan names had no row anywhere and are this pack's main additions**: the atlas has woodblock_prints, which is the print and not the press, and no loom of any kind. The treadle loom is the sharper of them because it is not only a machine: it is expensive, so it moved weaving out of the household and into guilds, and the guilds excluded women. A tool can reorganise who is allowed to work. The warp-weighted loom is 5000 BC and so OLDER THAN THE WORLD, which begins at 3000 BC, and is marked before_world rather than clamped. Every tool resolves to a vanilla item or says why it cannot, which is A13's rule from step 46 applied where it was always needed: an inventory. Four have none, including the watermill and the windmill. 82 checks.",
+   "sources": [
+    "own",
+    "wikipedia"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_tools.py, tool_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "economy/traffic.json.gz",
+   "bytes": 3413,
+   "sha256": "13b26c28d971e960c4600dcfd1b26778e53d36f621db09ef59088b1d3a020d14",
+   "contentSha256": "14857475adc6f17b70c91424df9337a8add628dc3478cd9490360b3fa22668dc",
+   "shipped": true,
+   "rows": 15,
+   "rowsAre": "goods",
+   "role": "E11, traffic: how much moves along a road, river, canal, railway or sea here, and BY WHICH MEDIUM. 15 goods, 5 routes, 4 gates that cap throughput, 12 working speeds, and 5 DOCUMENTED traffic counts. THE DECISIVE FACT IS THAT FREIGHT IS PRICED BY THE KILOGRAM AND THE KILOMETRE, and so is the good: Diocletian's Edict on Maximum Prices (AD 301) prices both in the same currency on the same day, which is why its ratios are usable where later reconstructions are not - 1 sea : 5 downriver : 10 upriver : 52 ROAD per kg-km. So a cargo goes exactly as far as its own value pays for, and the BREAKING DISTANCES are DERIVED, not invented: wheat (10 denarii/kg, the Edict's own price) reaches 286 km by road before freight doubles its price, 2,941 km downriver, 14,925 km by sea - WHICH IS WHY ROME WAS FED BY SEA AND NOT BY ROAD, and why every great pre-industrial city sits on water. Silk, at 36,697 denarii a kilogram, has effectively no leash at all, which is why the Silk Road carried silk and not wheat. Rail and canal cannot come from the Edict, which predates railways, so they are given as fractions of the road rate from Bogart's British ton-mile series (rail road/12, canal road/6). A CROSS-CHECK WORTH KEEPING: a free river in England in 1700 cost road/10.00 and the Edict's downriver rate is road/10.29 - two documents 1,400 years apart, to within 3 per cent. THE MODEL IS CHECKED AGAINST THREE DOCUMENTED JOURNEYS, not asserted: Bolton Massachusetts' 14,000 tons a year in forty wagons comes back as 40 at the measured 0.8 LOAD FACTOR (wagons ran five-sixths full); the 1333 Exchequer carriage Westminster-York, 330 km in nine days, comes back at 37 km a day inside Spufford's 30-40; and the turnpike wagon limits (6 tons summer, 4 winter) and the packhorse's hundredweight are the capacities. Fourth of four registers: WaysGrid knows whether a road is HERE, Vehicles knows WHICH vehicle and what it NEEDS, WorkingAnimals knows whether the beast has ARRIVED, and this knows HOW MUCH and BY WHICH MEDIUM.",
+   "sources": [
+    "own",
+    "wikipedia"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_traffic.py, traffic_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "economy/vehicle_mods.json.gz",
+   "bytes": 3761,
+   "sha256": "f95b936b4f5baae95e74834a3be56b2f146b32b28c892dba20f4265f8aa6d9cc",
+   "contentSha256": "381e1a49ff3389b6014d920c6f61fa7ea75c85bc8a8fe7caf173291c9b58989f",
+   "shipped": true,
+   "rows": 32,
+   "rowsAre": "vehicles",
+   "role": "step 46 part 6 (A13, the vehicle half): WHICH mod supplies which vehicle, and what stands in when none is installed. A13's own line is \"optional links; everything also works without them\", which imposes three duties and this pack keeps all of them. **Never hand back nothing**: all 32 of part 3's vehicles resolve to a mod, to a vanilla stand-in, or to a written statement of why there is neither, and 11 take the third answer. **Never pretend a stand-in is the real thing**: a boat is not a ship and a minecart is not a cart, and each answer carries that flag. **Never invent an id**: 5 providers are marked read (AstikorCarts Redux, MIT, whose supply_cart, animal_cart, plow and wheel come from the mod's own DeferredRegisters; Small Ships; Minecraft itself), or content (Immersive Vehicles and Create, whose ids come from JSON content packs, so those providers name NO id at all and claim only vehicle KINDS; a content-marked provider that names an id fails the build). Two of those mods ship a config list that is exactly a question this step already answers - AstikorCarts' pull_animals and Small Ships' dockyardBuildableShips - so this step REPORTS what those lists should hold for a place and year through the mod's public surface rather than editing its config. **Small Ships has no crafting recipes at all** - ships are built at a Dockyard - so there is no result slot to empty and the gate must refuse the Dockyard itself, the same shape as step 45's gun bench; and it refuses it for two different reasons that it distinguishes: Paris in 1400 for want of water, Marseille in 3000 BC for want of years. The four working animals with no entity anywhere - ox, elephant, reindeer, water buffalo - are named as such rather than glossed over. 139 checks.",
+   "sources": [
+    "own",
+    "wikipedia"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_vehicle_mods.py, vehicle_mod_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "economy/vehicles.json.gz",
+   "bytes": 8574,
+   "sha256": "cfad76ecc18118333d8c4d0f4de96f457d379400f83a6c20bbcb628e49056a74",
+   "contentSha256": "33d9a684b0d8532f1765c8c5cb7b84681dd7e38c7120271f02bee1e0564163c6",
+   "shipped": true,
+   "rows": 32,
+   "rowsAre": "vehicles",
+   "role": "every way there has been of getting somewhere: 32 vehicles over six mediums - foot, beast, wheel, rail, water, air - covering the plan's whole E10 list (porters, palanquins, carts, chariots, horses, camels, elephants, bicycles, rickshaws, trams, buses, cars, lorries; rafts, dhows, galleys, junks, sailing ships, steamships; trains; balloons, airships, planes), each with what it carries, how far in a day, the year it reaches each of 17 areas, and WHERE IT NEVER REACHED. THE DATES ARE READ, NOT REWRITTEN: three registers in the mod already owned them - the products atlas (per area), the technology atlas (spread curves for 258 countries) and the armoury (the war chariot, with its never-map). WHAT IS NEW IS THE `needs` COLUMN: the other registers say when a thing exists, none of them says WHAT IT RUNS ON - a train is not 'the railway exists' but 'the railway exists HERE', a canal boat needs a canal here, a cart needs a beast that has arrived here (a step-46 part-2 question). That join is the whole of E11. A SYSTEMATIC ARTEFACT IS RECORDED, NOT PATCHED AROUND: the products atlas dates `rickshaws` and `wheelbarrows` at EUR -3000 - the exact date of `carts` - and `oars` at -10000 in all 17 areas; those are template copies from step 44 part C, where a child inherited its parent's row unchanged. TEN VEHICLES carry explicit sourced dates instead and every one is listed in the pack: rickshaw (Japan, c. 1868), wheelbarrow (Han China c. AD 100, Europe c. 1200), galley, dhow (the Indian Ocean's monsoon trades), junk (China, not Europe), sledge (snow and dogs, not Australia), balloon (Paris 1783, not 1919), helicopter (1936, not before the aeroplane) and the sailing ship (the sail of c. -3200, not a boat of -10000). The chariot is dated by the technology atlas and still carries the armoury's never-map - no chariots in the Americas, none in the tsetse belt - because arrival and beast are two different questions.",
+   "sources": [
+    "own",
+    "wikipedia"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_vehicles.py, vehicle_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "events/foundation_events.json",
+   "bytes": 63505,
+   "sha256": "980493440d607db7db65f993e88c33e24785631f4e8dac7fd7ab1903b5f6c84b",
+   "contentSha256": "978aeb8d66e3a017d656f85d46143df738deaa96bb7c5eb785e84c0c4a8b4251",
+   "shipped": true,
+   "rows": 76,
+   "rowsAre": "items",
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "food/seats.json.gz",
+   "bytes": 1373,
+   "sha256": "fcbf2937f8959fa4c562a17f9c2e8810ad5a4b63841bef79ee08bdfc930d915d",
+   "contentSha256": "5211bb3cc02580088f7ab571d09267f64a2fbd201023a79ed102d7a585daf8f7",
+   "shipped": true,
+   "rows": 80,
+   "rowsAre": "foods",
+   "role": "what part of a meal each of 80 foods is - the grain, the pulse, the greens, the fruit, the meat or fish, the fat it is cooked in, what sharpens it, the sweet, the seasoning, the drink, the stimulant - so a place with wheat, lentils, ghee and chillies has a meal to describe and a place with wheat alone does not. Written by hand: no register records that a lentil and a mango play different parts at a table. Every id is checked against the product atlas, and every food in the atlas is checked to hold a seat. Which food fills which seat is not written down anywhere - it is read from the atlas at the time, so the maize that reaches Italy in 1500 takes the grain's seat on its own",
+   "sources": [
+    "own",
+    "khoury2016"
+   ],
+   "licences": [
+    "CC0 1.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "diet_roles.py, build_diet.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/ATTRIBUTION.md",
+   "bytes": 19740,
+   "sha256": "16ee99685ebd822ee036a2fc52ca48b2951aaaa44f0e6b251998d064bf74fdf6",
+   "contentSha256": "16ee99685ebd822ee036a2fc52ca48b2951aaaa44f0e6b251998d064bf74fdf6",
+   "shipped": true,
+   "rows": null,
+   "rowsAre": null,
+   "role": "list of the history packs, and their notes",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/README.md",
+   "bytes": 23308,
+   "sha256": "eb8e949d2c6edfe67c4bed597e5d654d5521e5ff6d9c8511e1529d58770597c9",
+   "contentSha256": "eb8e949d2c6edfe67c4bed597e5d654d5521e5ff6d9c8511e1529d58770597c9",
+   "shipped": true,
+   "rows": null,
+   "rowsAre": null,
+   "role": "list of the history packs, and their notes",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/afro_islamic.json",
+   "bytes": 3990,
+   "sha256": "685e2de0f359d2f5e790002b6953c65ac73503ed14fc769fd8a9e6d9ad3fd23c",
+   "contentSha256": "c324146e708deb990fb238a2acbc0ec9e436e143b755be388847090c1f3451d9",
+   "shipped": true,
+   "rows": 11,
+   "rowsAre": "sites",
+   "role": "hand-made region pack of well-known sites and events",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/americas.json",
+   "bytes": 4875,
+   "sha256": "a4688222c69053ee8016e1628fde73ffed3df9976c412fe78e7fb53b0d3707b4",
+   "contentSha256": "9fbfd3a5988f34d9ec0c363485440fc21b2afed13e9262fef97378b3b711b09b",
+   "shipped": true,
+   "rows": 11,
+   "rowsAre": "sites",
+   "role": "hand-made region pack of well-known sites and events",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/battles.json.gz",
+   "bytes": 2574,
+   "sha256": "6432aa6b876b0b8787e9f495cea86010fd95c8ece581c052737903e5a0ccbe02",
+   "contentSha256": "de88c2c78a07da8446c02a9bcb1b22f928963ba461857cbe3a6955b3de3570a3",
+   "shipped": true,
+   "rows": 1,
+   "rowsAre": "ways of losing",
+   "role": "how a battle came out (D10): four casualty bands by weapon -- shock, bow, musket, rifle -- each giving the winner's share and the loser's, and four ways of losing -- gave ground in order, broke and ran, was ridden down, was encircled -- each multiplying the loser's band. The shock band is Krentz's survey of every surviving casualty figure from Classical Greek sources: the winner 3-10%, the loser 10-20%, and the gap between those two numbers is not marksmanship but the pursuit. The rifle band is lower than the musket band because casualty rates have been falling since the seventeenth century as armies dispersed faster than weapons got more lethal. Twenty matchups and nine kinds of ground decide the odds",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "battle_table.py, build_battles.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/beliefs.json.gz",
+   "bytes": 4715,
+   "sha256": "b1b75fb9df372129b453842c832963f6f0b4ce7425331dc7e6e425e821035b8f",
+   "contentSha256": "f9dcb816316c3e6453b6a1d4ebfdbbbfa5b7d9323f3665f2ceab01a7a0e303e4",
+   "shipped": true,
+   "rows": 30,
+   "rowsAre": "beliefs",
+   "role": "what people believed, by place and year: the shape of the world, the body, matter, rule and the unseen, each row saying who held it and what we would say instead",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_beliefs.py, hand-written from the Wikipedia article each row names",
+   "pack": "core"
+  },
+  {
+   "path": "history/border.json.gz",
+   "bytes": 5137,
+   "sha256": "ecd02750a46d31b541dc165a6fd746074e265d7b146db436ea4282de91722441",
+   "contentSha256": "ade43e1b218b8e0cebbeecb9925f7c1f865dd875353cb24e156e7f4cc4687326",
+   "shipped": true,
+   "rows": 198,
+   "rowsAre": "countries",
+   "role": "step 42 (F8): what a crossing demands of you - 12 kinds, a gate and a gift to a passport desk - by country and year, and by whether you arrive by land or by sea. Written by hand and estimated throughout, except the five dates read out of the articles themselves (Ragusa 1377, the passport 1914 and 1920, the Zollverein 1834, sakoku 1633-1853, Canton 1757-1842). WHERE THE BORDER RUNS IS NOT IN THIS FILE: it is derived at runtime from the step-31 ruler register",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "build_border.py, borders_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/borders.json",
+   "bytes": 4607,
+   "sha256": "0395e4bf9299c59f04617292c50a14b37ae7a21cda9636223e5bdd20efda4d54",
+   "contentSha256": "d97d96c9144f381d1c9400a1378ef55bc06faedcd792b2abac3de91f2bfd466a",
+   "shipped": true,
+   "rows": 16,
+   "rowsAre": "borders",
+   "role": "hand-made region pack of well-known sites and events",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/building_culture.json.gz",
+   "bytes": 21902,
+   "sha256": "ee05af7c9e31233ad16978a39e702ffc108b0c769ebbd0e3c99a9f6079fea61f",
+   "contentSha256": "22f205edc3e520df8e423331e93f969d305cde6ee424a41df6dbce43afd15235",
+   "shipped": true,
+   "rows": 109,
+   "rowsAre": "rows",
+   "role": "what a town is made of, by place and year (B9 houses, B11 insides, B13 streets and their surfacing, B20 lighting, E14 markets, E16 materials, B25 water): 109 building cultures, each naming the house, its walls, roof and floor, how the town is laid out, what the lanes are surfaced with, where the water comes from, what it is lit by after dark, what is inside a home, where people trade, and how many storeys. Written by hand from English Wikipedia's articles, every row naming the one it came from; the years a technology reached a place are NOT here and are asked of the technology atlas instead",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "building_culture_table.py, build_building_culture.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/buildings_famous.json.gz",
+   "bytes": 560665,
+   "sha256": "c30800670ba09a5e1246619756c844436494c5f120dbfb70ce172a74d9abda8c",
+   "contentSha256": "ff08f395b42eb7b220a8ad29d2ffd725a7eb837a82182c02ee581127a6023c96",
+   "shipped": true,
+   "rows": 23535,
+   "rowsAre": "buildings",
+   "role": "famous buildings, walls and ruins with a map point, the year they were built and the year they ended: temples, churches, mosques, castles, forts, palaces, bridges, towers, tombs, monasteries, stupas, citadels, city gates, theatres, monuments and archaeological sites; where Wikidata has no year at all, the year is the gazetteer's occupation window for the site and is marked estimated (B8, B16, B19)",
+   "sources": [
+    "wikidata",
+    "pleiades",
+    "chgis",
+    "reba",
+    "own"
+   ],
+   "licences": [
+    "CC BY 3.0",
+    "CC BY 4.0",
+    "CC0 1.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "fetch_buildings_wd.py, date_undated.py, build_famous_buildings.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/calendars.json.gz",
+   "bytes": 3442,
+   "sha256": "7c40459dc02ee0976dca9e6b1cbec997e28e32a20c216ef0f83d767131818736",
+   "contentSha256": "917e5ee9a6f5a5246e5c8fc7e6410c62dc29ba41da35c495f9a640f5c0e17120",
+   "shipped": true,
+   "rows": 33,
+   "rowsAre": "regions",
+   "role": "which calendar each place actually used, by year: Hijri, Vikram Samvat, Saka, Fasli, Chinese, Julian before 1582, regnal years of the ruling polity",
+   "sources": [
+    "wikipedia",
+    "meeus",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)",
+    "nothing of the book ships: the algorithms are implemented, no tables are copied"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_calendars.py, hand-written from the Wikipedia article each row names",
+   "pack": "core"
+  },
+  {
+   "path": "history/china.json",
+   "bytes": 4037,
+   "sha256": "0e406576e3bf1a3b52cf778c8b5e7f3bc9cff85e0a125ce5b3676ee003b8149c",
+   "contentSha256": "6245927a1c29c9018683661c9415ad77ad9ba07efc6c518a4a14a6c92f6a121d",
+   "shipped": true,
+   "rows": 9,
+   "rowsAre": "sites",
+   "role": "hand-made region pack of well-known sites and events",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/climate_periods.json.gz",
+   "bytes": 10315,
+   "sha256": "a4fc114bb70d57e6bba20dfb8af6c4c02427ace1483b7216f51cdd7d30de0a9a",
+   "contentSha256": "6461781b08b78e6b5b69ae3aafa1d3bb070aef4743f0029300b7d6c8c7dc86c0",
+   "shipped": true,
+   "rows": 84,
+   "rowsAre": "periods",
+   "role": "the climate of every era (B4): 84 periods, written by hand because the mod's whole climate used to be two events typed into ClimateEngine -- the Little Ice Age and the Year Without a Summer -- and nothing at all for the four thousand three hundred years before them. The warm and cold ages (Roman, Sui-Tang, Medieval, Little Ice Age), the solar minima (Homeric, Oort, Wolf, Sporer, Maunder, Dalton), twelve volcanic winters with their Northern Hemisphere anomalies (536 and 540, Samalas 1257, the 1452 mystery eruptions, Huaynaputina 1600, Parker 1641, Laki 1783, Tambora 1815, Krakatoa 1883, Pinatubo 1991), the megadroughts (the four Maya pulses of 760-910, Tiwanaku, the Ancestral Puebloan Great Drought of 1276-1299, the Sahel, the Dust Bowl), the failed monsoons and the famines (the Global Famine of 1876-78 with its fifty million dead, Bengal 1770, the Deccan 1630, the last Ming years, the Irish famine), and the heat and drought of our own day. Temperatures are degrees Celsius against the twentieth-century mean; rainfall and harvest are percentages. The thing that shaped the table: a 2019 synthesis of more than ninety proxy records found the Roman Warm Period, the Medieval Warm Period and the Little Ice Age to be regional phenomena rather than globally coherent episodes, so every row carries a centre and a radius and only the volcanic winters are marked as everywhere. The Little Ice Age is therefore four rows with different dates -- the North Atlantic, Asia, North America and the Andes -- and a civ in Cusco in 1650 feels the Andean one and not Europe's. 49 of the 84 are recorded, 34 estimated; 29 of the mod's 31 test places have a period standing in their year, and the two that do not (Ur and Mohenjo-daro in 2500 BC) are real gaps rather than bugs. The Meghalayan stage row carries no anomaly on purpose, because the twentieth century these numbers are measured against is itself in the Meghalayan, and counting it too would take the same thing off twice",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "climate_periods_table.py, build_climate_periods.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/climate_projection.json.gz",
+   "bytes": 2697,
+   "sha256": "189ed577fbd9bd179034ef4789b0f4c2aabbb1b5caf4817125b61a32ef382963",
+   "contentSha256": "e78da05985890a39f267d3fd95d18ceae08392ae4abd265a15ff57229e732475",
+   "shipped": true,
+   "rows": 11,
+   "rowsAre": "marks",
+   "role": "step 47d: CLIMATE TO AD 3000, AS ARITHMETIC UNDER A STATED ASSUMPTION. Allowed where a price is refused, because it is physics and not prophecy: carbon leaves the air at rates measured from the isotope record, temperature follows the logarithm of carbon with a thermal lag, and sea level follows temperature with a slower lag still. It does not forecast, because it does not say what people will do - it says IF emissions follow this path THEN this is what the physics does, and the assumption is a field on every scenario. Three paths: emissions stop in 2027, end by 2060, or stay flat to 2050 and end by 2120. **Every value is a BAND, not a point**, which is the lesson the backtest In step 47c taught: the same kind of projection printed as a single number is wrong by about twenty points, so each value carries low, mid and high from running the same physics at the two parameters nobody knows, climate sensitivity (2.0 to 4.5 C per doubling) and the ice response rate. **The finding: about a fifth of every tonne of carbon is still in the air in AD 3000** - the carbon box that never empties holds 18.6 per cent forever - so even the zero scenario does not put the world back, and **sea level is the one number in this project that only ever goes up**. By 3000 the gap between acting and waiting has widened rather than closed, because the ice term keeps integrating after the temperature has stopped falling. 36 checks.",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "projected",
+   "markNote": "",
+   "builder": "build_climate_projection.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/countries.grid.gz",
+   "bytes": 88792,
+   "sha256": "d9d41fd0cdace0dd69ca0606016635df6da5e627d4926ec1ff4476f5c11dac43",
+   "contentSha256": "d9d41fd0cdace0dd69ca0606016635df6da5e627d4926ec1ff4476f5c11dac43",
+   "shipped": true,
+   "rows": null,
+   "rowsAre": null,
+   "role": "which country of today a point lies in (0.1-degree grid), and each country's biggest town",
+   "sources": [
+    "natural_earth",
+    "wikidata"
+   ],
+   "licences": [
+    "CC0 1.0",
+    "public domain"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "build_country_grid.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/culture.json.gz",
+   "bytes": 53912,
+   "sha256": "1f32c6d8ddf1bd735b0a5c82c2b2c5d852f6dbe034a05b00fed4e8486f8247bf",
+   "contentSha256": "f92e3c1f4b31c7cb62b31983db618c31daf0fd9c44a9b72eadd7f9f3737974fe",
+   "shipped": true,
+   "rows": 258,
+   "rowsAre": "countries",
+   "role": "who can read (by country and year), scripts, weights and measures, the metric year, wealth, hard times, festivals and pilgrimages",
+   "sources": [
+    "owid",
+    "maddison",
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY 4.0",
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_culture.py, culture_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/dated_events.json",
+   "bytes": 68464,
+   "sha256": "c89a0c0f6e646d6f0b7c18facc063877d961b3b566d1041b035f12814af259c9",
+   "contentSha256": "8b69d3343f975797d90da5e87c1dfdb1cc2edb96a627b25a6e1c65f0b0014861",
+   "shipped": true,
+   "rows": 1141,
+   "rowsAre": "events",
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/day_round.json.gz",
+   "bytes": 5504,
+   "sha256": "74129879b2fda346865ebf790a8c56abebb6c8635d1322daff9e60d353b8e4c4",
+   "contentSha256": "43da5fbaf5aad1f14f00ee269b2af4deff0d25d4c291724da7042eec7b4fc814",
+   "shipped": true,
+   "rows": 20,
+   "rowsAre": "rounds",
+   "role": "the shape of the day and of the year, by place and year (D5): whether the day is set by the task or by the clock, how many hours it runs, whether there is a day on which nobody works, how often the market comes round (the Roman nundinae every eighth day, the Javanese pasaran every fifth), how many times the day stops for prayer and in which faith, and how many seasons the year has. Hand-written from the Wikipedia article each row names",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "day_round_table.py, build_day_round.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/deccan_events.json.gz",
+   "bytes": 28252,
+   "sha256": "ca2c78bf5c8ccc732cb675df840d160c4aacd28304da73f9fac098e6aee01854",
+   "contentSha256": "a7355d86bf4005d5b03d59b114231d2d22f58dee7b14f8fdd12ae40dcbb091c1",
+   "shipped": true,
+   "rows": 248,
+   "rowsAre": "events",
+   "role": "events of the Deccan",
+   "sources": [
+    "imperial_gazetteer",
+    "siddham"
+   ],
+   "licences": [
+    "free with attribution",
+    "public domain"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "hand-written from the sources, fix_history_data.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/deccan_rulers.json.gz",
+   "bytes": 408833,
+   "sha256": "25703bb1b5d6af3ab54ec6daf6ea950a0839b8b688619152782cee0cb20fc2dd",
+   "contentSha256": "daf55508cacd55d68ebf7eb7fb4bc45fe81c49956c12fa6ee1a0fc4871159d85",
+   "shipped": true,
+   "rows": 15741,
+   "rowsAre": "places",
+   "role": "who ruled each place of the Deccan, in detail",
+   "sources": [
+    "cliopatria",
+    "own"
+   ],
+   "licences": [
+    "CC BY 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "recorded until 2024, later years carry the last states forward",
+   "builder": "build_deccan_rulers.py, fix_history_data.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/disaster_supplement.json.gz",
+   "bytes": 7483,
+   "sha256": "6e54f2867caf9fec895ff0537ba6f2caeace17f4e6f6b350aa10212aeafbc8a2",
+   "contentSha256": "11fc7055cdb049aa5c842edce31e4bbb70956011b75ed3616a9bdaf5d9cb8ef0",
+   "shipped": true,
+   "rows": 79,
+   "rowsAre": "events",
+   "role": "the great disasters the scraped hazards pack misses, written by hand",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_disasters.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/disputed_lands.json",
+   "bytes": 3868,
+   "sha256": "55c22d1a14af6534d3812812f84c1783dec3188d457351f12ff580f0bb736596",
+   "contentSha256": "1b195d0a063403426d28289c6a527f1d3ca0b3cad211cf58e411d62dbf7dbef9",
+   "shipped": true,
+   "rows": 6,
+   "rowsAre": "areas",
+   "role": "land one state holds and another claims, in the mod's own words",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/egypt.json",
+   "bytes": 4514,
+   "sha256": "6fcc1a630d329d73b26de8ca5067378f9417c4c2db38568b5e49eb0a19beba86",
+   "contentSha256": "c8377ab341eaaa300790e033f3b1d56665e65ab7c3cc60c4ad5ad4c0f75b8833",
+   "shipped": true,
+   "rows": 11,
+   "rowsAre": "sites",
+   "role": "hand-made region pack of well-known sites and events",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/events.json",
+   "bytes": 16599,
+   "sha256": "4bde38e17450b470b00544adf411f63f334f8771415a4da17f486746636fb944",
+   "contentSha256": "290ce2dad58c260a79a5bc68e0b8c73d9243f3d189439444d2dd11d6254592f0",
+   "shipped": true,
+   "rows": 83,
+   "rowsAre": "events",
+   "role": "hand-made region pack of well-known sites and events",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/events_hazards.json.gz",
+   "bytes": 729885,
+   "sha256": "8ae6771c2e0e6a4880bf885289da250948591d6bfe948c07d396f95c9f1018a7",
+   "contentSha256": "4019da67a6b0397baa4504a643d4cd876b976c340f9ae2f41acd218f594984ff",
+   "shipped": true,
+   "rows": 25457,
+   "rowsAre": "events",
+   "role": "epidemics, famines, earthquakes, eruptions, tsunamis and floods",
+   "sources": [
+    "wikipedia",
+    "noaa",
+    "gvp",
+    "plague"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "EPL-1.0",
+    "free use with citation",
+    "public domain (US government work)"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "build_hazards.py, fix_history_data.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/events_nature.json.gz",
+   "bytes": 51394,
+   "sha256": "b648a93b7663a79302ac27d8b0bb3c5e967412b0cdd438eb03a0eab8b1fb4068",
+   "contentSha256": "b14b4135153661133ca756f00b2e8bf90493e7374b829f548fedb5fac3a699a9",
+   "shipped": true,
+   "rows": 1843,
+   "rowsAre": "events",
+   "role": "floods, wildfires, landslides, avalanches, tornadoes, heat waves, droughts, famines and epidemics",
+   "sources": [
+    "wikidata"
+   ],
+   "licences": [
+    "CC0 1.0"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "fetch_events_wd.py, build_nature.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/events_storms.json.gz",
+   "bytes": 115355,
+   "sha256": "827935c02763c9e7c8f470c9a2558fb44510d94d2fe8f6b522804a5604cc7219",
+   "contentSha256": "e16df54bc8f3d3b05d99a5ab282f066aef261cfd9a5cd2ff8b93d0c600e24736",
+   "shipped": true,
+   "rows": 5884,
+   "rowsAre": "events",
+   "role": "tropical cyclones where they came ashore or passed close to land, 1842 on",
+   "sources": [
+    "ibtracs",
+    "wikidata"
+   ],
+   "licences": [
+    "CC0 1.0",
+    "public domain (US government work)"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "build_nature.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/events_ucdp.json.gz",
+   "bytes": 1088417,
+   "sha256": "7417bd5dc0f17781784dc72dec06184ccc06e67d6ba2805d65ea8c09e3258e12",
+   "contentSha256": "89f06a1a27e721892cf58fca0bc080cc725f5033b0e1d10c08629d55e0f23acf",
+   "shipped": true,
+   "rows": 28639,
+   "rowsAre": "events",
+   "role": "organised violence 1989 to 2024",
+   "sources": [
+    "ucdp"
+   ],
+   "licences": [
+    "CC BY 4.0"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "build_ucdp.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/events_wars.json.gz",
+   "bytes": 92471,
+   "sha256": "b1f1d207c212bd4b57831011612a654069dcd3f4b1f832204c49bb2a5f8b3bb1",
+   "contentSha256": "409fa2744778444028be53a54642916a9294d699f686141e1a0a7e3ef7723262",
+   "shipped": true,
+   "rows": 2371,
+   "rowsAre": "events",
+   "role": "wars, over the lands of their sides",
+   "sources": [
+    "wikipedia",
+    "cliopatria"
+   ],
+   "licences": [
+    "CC BY 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_wars.py, fix_history_data.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/events_wikidata_more.json.gz",
+   "bytes": 200530,
+   "sha256": "e784c6d1a72729f6e961527fa5b0bbe102dad689e129e6ebf99ac5a9940ded84",
+   "contentSha256": "88d198b4f2a24e7b6aad66e961ca68272ea209acf87bc00717fed33df0dca0ab",
+   "shipped": true,
+   "rows": 6020,
+   "rowsAre": "events",
+   "role": "dated events with a place: battles, sieges, disasters",
+   "sources": [
+    "wikidata"
+   ],
+   "licences": [
+    "CC0 1.0"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "build_events.py, fix_history_data.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/events_wikipedia.json.gz",
+   "bytes": 1616476,
+   "sha256": "5a751caded507a29ece53f06cf012cfafbbbccea3087718ca00dc58729727097",
+   "contentSha256": "078c8ad1cb3d2b26100448a434b04fa028b4399d9771ad15e9c0f4724d51d8d2",
+   "shipped": true,
+   "rows": 19370,
+   "rowsAre": "events",
+   "role": "events of the Wikipedia year, decade and century pages",
+   "sources": [
+    "wikipedia",
+    "wikidata"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "CC0 1.0"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "build_wikipedia_events.py, fix_history_data.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/events_wikipedia_decades.json.gz",
+   "bytes": 159986,
+   "sha256": "164fba712115ed10ebe3991cbc1940ec69954a44f765d354725799c340044ed1",
+   "contentSha256": "af41e7ee96a26aa67dc4defbcd3ad5a6f18bd4410011ea8309eceacba6ead58b",
+   "shipped": true,
+   "rows": 1763,
+   "rowsAre": "events",
+   "role": "events of a whole state or region, placed at its people's centre",
+   "sources": [
+    "wikipedia",
+    "cliopatria",
+    "hyde"
+   ],
+   "licences": [
+    "CC BY 4.0",
+    "CC BY-SA 4.0",
+    "CC0 1.0 (DANS record; the release readme says CC BY 3.0)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_regional.py, build_decades.py, fix_history_data.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/events_wikipedia_regional.json.gz",
+   "bytes": 1983577,
+   "sha256": "22d004aa74332af3392828bd90b773b6181bec33fee72d2ed5fd2e5e909972b1",
+   "contentSha256": "a399668dff5eefc8be170f292e51d9b47d171a0242f78dd480082ec97c7aa505",
+   "shipped": true,
+   "rows": 23940,
+   "rowsAre": "events",
+   "role": "events of a whole state or region, placed at its people's centre",
+   "sources": [
+    "wikipedia",
+    "cliopatria",
+    "hyde"
+   ],
+   "licences": [
+    "CC BY 4.0",
+    "CC BY-SA 4.0",
+    "CC0 1.0 (DANS record; the release readme says CC BY 3.0)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_regional.py, build_decades.py, fix_history_data.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/events_world.json.gz",
+   "bytes": 447588,
+   "sha256": "2afaaeca9fb82d6c4b30c9c0111edd53ecdf9ed22088756ffd62e2883aec0199",
+   "contentSha256": "b60f72d7da93d608f80b44c22591255934c10863d449ba1cf8ffefe2341c760f",
+   "shipped": true,
+   "rows": 13968,
+   "rowsAre": "events",
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/famous_people.json.gz",
+   "bytes": 4223345,
+   "sha256": "9266115dcaf5dd923a5a0edb6bc2faeb93c92219a89d851fbe3d0a335ed405a8",
+   "contentSha256": "9e705af7818c78a7f9d3dd9f2570006284829d0a08567289e380b1a9e2318592",
+   "shipped": false,
+   "rows": 184060,
+   "rowsAre": "people",
+   "role": "famous people of every land (the master; the game reads famous_people.tiles)",
+   "sources": [
+    "wikipedia",
+    "laouenan",
+    "wikidata",
+    "cliopatria"
+   ],
+   "licences": [
+    "CC BY 4.0",
+    "CC BY-SA 4.0",
+    "CC0 1.0"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "build_people.py, build_notable_people.py, fill_famous_gaps.py, fix_history_data.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/famous_people.tiles",
+   "bytes": 12520386,
+   "sha256": "1fa8d625244923f8d6b666df00396a20140e8063dcfc9343afe489c819a59f2f",
+   "contentSha256": "1fa8d625244923f8d6b666df00396a20140e8063dcfc9343afe489c819a59f2f",
+   "shipped": true,
+   "rows": 184060,
+   "rowsAre": "rows",
+   "role": "famous people of every land, in tiles by land and century",
+   "sources": [
+    "wikipedia",
+    "laouenan",
+    "wikidata",
+    "cliopatria"
+   ],
+   "licences": [
+    "CC BY 4.0",
+    "CC BY-SA 4.0",
+    "CC0 1.0"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "build_tiles.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/formations.json.gz",
+   "bytes": 6870,
+   "sha256": "a8c1359267151d08bd163717f089df5fc3962d09b24a68ac563e02cf361d5f70",
+   "contentSha256": "40c9b06d0f672cb61389101b32d930b341987232aa6b0817d51d470caa1ae1ab",
+   "shipped": true,
+   "rows": 16,
+   "rowsAre": "formations",
+   "role": "how armies stood (D10): 16 named formations, each with the place and years it was used, the ground it wants, how deep and how wide it stands, and what it is carrying -- the chariot swarm, the hoplite phalanx, the Macedonian phalanx, the Roman line of cohorts, the elephant screen, the shield wall, the steppe horse archers, the ashigaru pike block, the Swiss pike square, the Spanish tercio, the Swedish brigade, the line and the column, the Civil War skirmish line, open order, the horns of the buffalo, and the fire team. A formation is asked for by latitude, longitude and year, and answers with the one the record says that place and year used. No row for the Americas before 1491, none for Oceania, and none for sub-Saharan Africa outside the Zulu kingdom -- not because those peoples did not form up, but because no article was read for them",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "formations_table.py, build_formations.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/future_story.json",
+   "bytes": 33911,
+   "sha256": "6d0c9b16713c76859ed9bc56c311f4c6b2a577121b87a135e183ba8c5a65f31c",
+   "contentSha256": "ac65f8433bc39453a4e354a9d206d985b6dff97b12bbe796cbbcfbfa6703243b",
+   "shipped": true,
+   "rows": 119,
+   "rowsAre": "computed",
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/healers.json.gz",
+   "bytes": 5120,
+   "sha256": "e5e7351ae3da100d6478174cdd0934af18e4aed6ee8cf7f901ead100b49001a4",
+   "contentSha256": "0d1d9d0eb4d474023975751d91682cfa5b6bbad7a5711de8c0db0c83bd44dea3",
+   "shipped": true,
+   "rows": 17,
+   "rowsAre": "areas",
+   "role": "step 47 part 6 (E15): MEDICINE AND HEALERS BY ERA - the half the plan did not know was missing. **The medicine half is already done**: step 38's health register carries 14 remedies with a year, a place, a multiplier and a note saying what each actually did, and MedicineSystem.tierAt asks it by coordinates, so the old fault of the whole planet becoming modern on one day in 1945 is fixed and the plan's row saying 'old code' is wrong. **The healers were not done at all.** A healer is not a remedy: a remedy is a thing that works and spreads as technology spreads, and a healer is a person you can get to, so their data is a different shape - who is available, how far a patient travels, what they will touch, and whether the neighbours approve. 16 trades over 17 areas and 12 kinds of complaint. **Two things a one-axis register cannot say.** (1) **Surgery is four thousand years older than anaesthesia**: trepanation is Neolithic, cataract couching is described by Sushruta, a Roman army surgeon could ligate an artery, and the part where the patient does not feel it starts in 1846, so a game that gates the knife on anaesthesia has the order of events exactly backwards. (2) **The midwife is the oldest trained practitioner and the least respected one.** Childbirth happens everywhere in every year, so she is the only universal healer, which is why the coverage check demands somebody for a birth in every area in 3000 BC; and in Europe from about 1450 to 1750 she is the one prosecuted, which is a change in STANDING and not an arrival, so this register carries two axes and her row uses both. 82 checks.",
+   "sources": [
+    "own",
+    "wikipedia"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_healers.py, healers_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/health.json.gz",
+   "bytes": 6485,
+   "sha256": "c9d8956c9e78ccf1ce9660b4082eb487ea9b9839399c8dca25f08fa11ed967ff",
+   "contentSha256": "74c7c519f5652602a84e3e7f2a874caab038d5ad159e090e3ad62af85e71587d",
+   "shipped": true,
+   "rows": 18,
+   "rowsAre": "diseases",
+   "role": "what can kill you here and what anybody here can do about it (C20): 14 remedies -- the medicine of the four humours, quarantine, variolation, vaccination, clean water, epidemiology, the germ theory, anaesthesia, antiseptic surgery, penicillin, children's vaccines, oral rehydration -- each with the year and place it was learned in, and 18 named diseases with how they move, where they were first seen and how many of the people who caught them died. Six of the remedies ask step 30a's technology atlas when they reached a place, and the rest run the atlas's spread function from their origin, so medicine arrives somewhere rather than everywhere at once",
+   "sources": [
+    "wikipedia",
+    "britannica",
+    "who",
+    "owid",
+    "own"
+   ],
+   "licences": [
+    "CC BY 4.0",
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)",
+    "free use with attribution"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "health_table.py, build_health.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/holy_places.json.gz",
+   "bytes": 433043,
+   "sha256": "f931a902bdad6d239a2017d5a71436ca4a427965bfee7da4e8430eaeee4f5831",
+   "contentSha256": "be45ac68766bf8c11e416ab44344a12b4c526a794c232788874f3e141f7470b3",
+   "shipped": true,
+   "rows": 19828,
+   "rowsAre": "holy places",
+   "role": "holy places (mosques, temples, churches ...) with their faith and the years they stood",
+   "sources": [
+    "wikidata",
+    "wikipedia"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "CC0 1.0"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "build_culture.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/households.json.gz",
+   "bytes": 5165,
+   "sha256": "79d69742961b1e89acfbdcb719f6dd8663a7f9c986280737e2c41714ac3a2fe5",
+   "contentSha256": "620b2891768f49902e83dd96a9b3557f96442e75c6acc92f21d0b0ac4493338e",
+   "shipped": true,
+   "rows": 25,
+   "rowsAre": "households",
+   "role": "what a household is made of, by place and year (D3): 25 regimes giving the mean number of people under one roof, the shares of nuclear, stem, joint and one-person houses, the age a child leaves, how often the head is a widow, and how often a house kept a servant. Hand-written from the Wikipedia article each row names",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "households_table.py, build_households.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/index.json",
+   "bytes": 1219,
+   "sha256": "2eeb13f9b89c785e12d4f9b07cd9bb40b3ddcd0d83b2226627b472b1a29b7133",
+   "contentSha256": "311f0d38c68f055283307e4fbde6a0a559bf5bb7b01642ca503da398ba02ee81",
+   "shipped": true,
+   "rows": 26,
+   "rowsAre": "packs",
+   "role": "list of the history packs, and their notes",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/indus.json",
+   "bytes": 8731,
+   "sha256": "2de62200b3a8fb96fc56f9d0579fc6bb58b2f4af825342817219c4102cf312a0",
+   "contentSha256": "3720d1e18f6af31aa5333dd2064ce9d043638ef48b78a4e86927a462728c9d3a",
+   "shipped": true,
+   "rows": 15,
+   "rowsAre": "traits",
+   "role": "hand-made region pack of well-known sites and events",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/jobs.json.gz",
+   "bytes": 5321,
+   "sha256": "35cf97c968bde92f024349a101867895dda2579dadeb1a821a263f3304a67c1b",
+   "contentSha256": "31fa85336d97647c455388f6ba829cc4c68071b3a0d5e688807e935c21e59b1d",
+   "shipped": true,
+   "rows": 23,
+   "rowsAre": "jobs",
+   "role": "what work there was, by place and year (D4): 23 occupations with the share of the people who did each, whether it is town work or country work, and the technology it needs. Bound to step 30a's technology atlas, so a job does not exist before the thing it is made of",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "jobs_table.py, build_jobs.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/justice.json.gz",
+   "bytes": 7720,
+   "sha256": "db54d1735f1f2aafae25aa1dc6a4283488746c1129233a00762826dd704b28a3",
+   "contentSha256": "fff381d167b16eb7b6f940090a34e910619a47e097de1433f5a4e3eb7ed64e50",
+   "shipped": true,
+   "rows": 197,
+   "rowsAre": "countries",
+   "role": "step 42 (F3): who keeps the peace, who judges, and what can be done to a man - 16 kinds of guard, 14 of court, 8 of punishment. Written by hand and estimated throughout. Whether a polity still puts men to death is NOT from here: it is the C18 law pack's own dated abolitions",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "build_justice.py, justice_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/kinship.json.gz",
+   "bytes": 3408378,
+   "sha256": "6ecc9b246c02821e9eaf16836ddb27e9cda2b8a685a6fe0d1cae7929958ca6c8",
+   "contentSha256": "2463ee64957874615364ed2e68c70babddfd7c1c0e5154f7619b7ab6992cad2b",
+   "shipped": true,
+   "rows": 95585,
+   "rowsAre": "parent",
+   "role": "step 41 (C11): who was whose parent, who married whom, what house they were of, and the families that held one office across generations - derived, not asserted",
+   "sources": [
+    "wikidata"
+   ],
+   "licences": [
+    "CC0 1.0"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "fetch_step41.py, read_cards.py, build_kinship.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/land_use.grid.gz",
+   "bytes": 2690831,
+   "sha256": "75f15db7da8c8629cb79d94c01e5273a064f8c45a805b688eddd15dbc43a1a61",
+   "contentSha256": "75f15db7da8c8629cb79d94c01e5273a064f8c45a805b688eddd15dbc43a1a61",
+   "shipped": true,
+   "rows": null,
+   "rowsAre": null,
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/law.json.gz",
+   "bytes": 31170,
+   "sha256": "18d8d848a155deb51ce4668f7e0d208a5c7945793629afa986131120d60f410b",
+   "contentSha256": "cfc32e3f467946e60562bf73f4232aebc3e3ac6fb94eb6506d327e9461e59218",
+   "shipped": true,
+   "rows": 655,
+   "rowsAre": "rows",
+   "role": "step 42 (C18): dated changes in the law, by the state that made them - abolitions of slavery and serfdom, the vote, capital punishment - 620 rows over 237 polities; keyed by the ruler register's own polity QIDs so a row can never name a state the mod cannot find. The dated abolitions are read from three Wikipedia tables and are recorded; 250 rows are this pack's reading of a tradition for a region and era and are marked estimated. **KIND 7, THE LAW OF THE ROAD, WAS ADDED BY STEP 46 PART 5 (E10 B)** and is not one of C18's six kinds: 22 hand-written rows over 10 jurisdictions and 9 shapes - closed, toll, forced, gauge, side, speed, hours, labour, ban - because **a road is not a right of way and never was**. The cursus publicus, which a man without a warrant might not ride; Caesar's ban on carts in Rome by daylight, which is why Juvenal could not sleep; the Qin axle standard, the only ancient gauge law with a ruler's name on it; Cologne's staple right, which forbade you to PASS THROUGH without selling, and which the French Revolution abolished in 1790; the Rhine tolls at every castle, ended by the Congress of Vienna in 1815; England's six days' statute labour, which is why the roads were bad; the first turnpike gate of 1663 and the 8,000 that followed; keep-left in 1835, which Britain has never repealed; the red flag of 1865, whose purpose was to make the motor car useless; the Inca royal road and the Tokugawa sekisho checkpoints. **A law of the road is a law about a class of vehicle or a class of person**, like step 45's weapon laws, and each row names its source. The claim that Roman ruts are the ancestor of standard gauge is a MYTH and this pack does not repeat it.",
+   "sources": [
+    "wikipedia",
+    "cliopatria",
+    "wikidata",
+    "own"
+   ],
+   "licences": [
+    "CC BY 4.0",
+    "CC BY-SA 4.0",
+    "CC0 1.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_law.py, road_law_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/life_table.json.gz",
+   "bytes": 7365,
+   "sha256": "6d27ab88f121d9d09a8c6b315fc0e8b38fdc040ee3ed892a32c96b801742dac1",
+   "contentSha256": "b12d54ddeaeaec83e7fc4add249f8553816b4904c6a36324a7973d3f2b19b895",
+   "shipped": true,
+   "rows": 30,
+   "rowsAre": "mortality",
+   "role": "how long people lived and when they married, by place and year (D2, D17): 30 mortality regimes and 14 marriage regimes, each a life table with survival from birth to ninety, and the age a man and a woman first married. Hand-written from the Wikipedia article each row names; the pre-modern regimes are marked estimated, because nobody counted",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "life_table.py, build_life_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/local_languages.json.gz",
+   "bytes": 84208,
+   "sha256": "2bc12db936c8557b61a9ea833c039dbc9ce45d50a13c208174ec10a3c7bfc19d",
+   "contentSha256": "5f07e926733152b76ddd33ba1c3fbf270d0258c18d81cfacabb3ace0d2b53789",
+   "shipped": true,
+   "rows": 6741,
+   "rowsAre": "languages",
+   "role": "the language of the people of each place",
+   "sources": [
+    "glottolog",
+    "sil"
+   ],
+   "licences": [
+    "CC BY 4.0",
+    "free to use under SIL's terms of use"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "build_languages.py, fix_history_data.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/mediterranean.json",
+   "bytes": 4392,
+   "sha256": "1b779df5aedfe9c14822380f40cb155bd45b579263396b5225c4a53c038cdc1d",
+   "contentSha256": "6bf7023fd687017e62fba06ea3b4a650813bc03b325fbe3726b1dac4556748d3",
+   "shipped": true,
+   "rows": 12,
+   "rowsAre": "sites",
+   "role": "hand-made region pack of well-known sites and events",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/mesopotamia.json",
+   "bytes": 4621,
+   "sha256": "44a9b40bc49b32ac5409d47acdcb2571247650acf7b75d534d3a38af0c79d573",
+   "contentSha256": "e8b5f4ff256c371a6fd68ca84664095a21e4bff75b115685ee689f490df0a191",
+   "shipped": true,
+   "rows": 12,
+   "rowsAre": "sites",
+   "role": "hand-made region pack of well-known sites and events",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/migrations.json.gz",
+   "bytes": 8920,
+   "sha256": "918e2c486e34f4b7daaddd45d095cb40c94f209a2d202f1165e70c3d1d5dce41",
+   "contentSha256": "d29857f7869cbdd61a7c9a2e7203f2918d44b72642e110fd6d6dc5a1724181c3",
+   "shipped": true,
+   "rows": 38,
+   "rowsAre": "migrations",
+   "role": "the roads people took when they had to go (C7): 38 movements, each with where they left, where they arrived, in what years, how many, whether anybody made them go, and what kind of going it was -- from the Partition of India in 1947 to the refugees of the Syrian civil war. Each route is handed to step 37's news-travel register, so a migration is a number of days and not a line on a map. Hand-written from the Wikipedia article each row names",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "migrations_table.py, build_migrations.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/minerals.json.gz",
+   "bytes": 2276439,
+   "sha256": "e69f19ca307291baef25cd0bfa16204de5410a9c0e710e4ee6c8ea9d3a5663af",
+   "contentSha256": "74a6edb8618489e8ed44c385d8a189ab91831672e447f620f8b78c5300044756",
+   "shipped": true,
+   "rows": 143302,
+   "rowsAre": "sites",
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/morale.json.gz",
+   "bytes": 13711,
+   "sha256": "3a018fff2a64a74f2793ea7ec76fd30881097ea9e9361c88c466f715a9b54995",
+   "contentSha256": "b404a30a3e5e4fdc5354cb7ca47fa6e5e49297fc6de60550b9869f9a0943748d",
+   "shipped": true,
+   "rows": 32,
+   "rowsAre": "factors",
+   "role": "why men stand and what makes them stop (D10): 32 factors, each with the reason attached rather than a bare number, in two kinds -- what keeps a man in the army and what keeps him fighting -- and 23 tests that switch them on: the primary group, pay in arrears, plunder denied, the nation after the levée en masse, decimation in republican Rome, blocking detachments in the age of total war. Nine ways of raising an army, 11 measured desertion rates (Prussia 1713 at 3.2% a year, Saxony 1717 at 7.0%, the Army of Northern Virginia in 1864 at 8.0%), and four ways of breaking. dispersion costs morale rather than granting it, after du Picq: the skirmish line needs more cohesion than the phalanx did, not less",
+   "sources": [
+    "wikipedia",
+    "britannica",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)",
+    "free use with attribution"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "morale_table.py, build_morale.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/obsolescence.json.gz",
+   "bytes": 15917,
+   "sha256": "17ce23526eccc3b5fa02d461a65cd1281e7b908530f7059ef963e404a6ce4d34",
+   "contentSha256": "67a277ec8bddd839fcbb985dd84fb7c6c90e6b712840b934a1fde38d38f30809",
+   "shipped": true,
+   "rows": 130,
+   "rowsAre": "technologies",
+   "role": "step 47c: THE OBSOLESCENCE ATLAS, the half the projection atlas does not measure. That pack computes what ARRIVES; this one computes what LEAVES, and it is computable for the same reason: TechnologyAtlas has always carried the `replaces` graph and `share()` already multiplies a dying technology by the share of what replaced it. A technology is GONE at one per cent of its own ceiling and COMMON at half of it. **The finding is also the limit: the last technology this register can say goodbye to is the steamship, and it leaves Australia in 2051.** Only 11 of the 130 technologies carry a successor at all, so only 102 area-and-technology pairs have an end that can be computed, 98 before the seam and 4 after; the other 1,956 pairs have no successor in the data, so nothing computes their end and they persist to 3000. That is the carry rule working and it is also the honest shape of the register: **it can say goodbye to eleven things.** The general point it earns is that an obsolete technology is not a dead one - the matchlock is superseded in the 1720s and flintlocks are in use in the 1930s, gas light and the kerosene lamp are both superseded by electricity in the 1930s and both are still sold - so a world in a single year is not of one era but of several standing next to each other. 29 checks.",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "projected",
+   "markNote": "",
+   "builder": "build_obsolescence.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/occupations.json.gz",
+   "bytes": 18382,
+   "sha256": "dbe73b74baf728d14c49fcc596a58a3bcbede212fc36f1fa5cc803aa218b45fd",
+   "contentSha256": "febc51fda089dada8621acfdc7d557346171941961ffc672c74df3dad8c74c49",
+   "shipped": true,
+   "rows": 59,
+   "rowsAre": "groups",
+   "role": "squares held by an occupying power in the Second World War (the record before step 26's fix)",
+   "sources": [
+    "cliopatria",
+    "own"
+   ],
+   "licences": [
+    "CC BY 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "build_occupations.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/places_chgis.json.gz",
+   "bytes": 219146,
+   "sha256": "f09405c25cce75ee043a79a197a13c8f101b5f6a0e6a3164e9c5b7c933d5a1b4",
+   "contentSha256": "4d19d76874aec19aabdf0ba981668fcf8a5c4f23a1959dd04e3a989d0a5d3913",
+   "shipped": true,
+   "rows": 10446,
+   "rowsAre": "sites",
+   "role": "Chinese county seats through history",
+   "sources": [
+    "chgis"
+   ],
+   "licences": [
+    "CC0 1.0"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "build_chgis.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/places_pleiades.json.gz",
+   "bytes": 436236,
+   "sha256": "64a18e085a64eed25096bf77eca08e7666e487cf0500345db8891109605c92a9",
+   "contentSha256": "8ebfe8b65a76ce3f8a25fd38bbc5411fc113e3e6b6077eaf36c16e22a98597fa",
+   "shipped": true,
+   "rows": 18677,
+   "rowsAre": "sites",
+   "role": "ancient places",
+   "sources": [
+    "pleiades"
+   ],
+   "licences": [
+    "CC BY 3.0"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_pleiades.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/places_reba.json.gz",
+   "bytes": 44998,
+   "sha256": "d5ea276e02cb286cd828a33ed1b178d3f33ddbf85c8f2bfbdf582f5349e1130c",
+   "contentSha256": "f59f949cdd5eaa50a8f45c56ee25ad48fdb8b8e425fab4fe3dee425ac08e53bc",
+   "shipped": true,
+   "rows": 1787,
+   "rowsAre": "sites",
+   "role": "cities 3700 BC to AD 2000",
+   "sources": [
+    "reba"
+   ],
+   "licences": [
+    "CC BY 4.0"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "build_reba.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/polity_facts.json.gz",
+   "bytes": 350457,
+   "sha256": "b5bb07def6e243503bbf7d5376eea0bf4301634e0621af4a79623d1daeb140e7",
+   "contentSha256": "f54ca789572602b50e912b18cc4726ec4ecceb7fb2457e48332b934d0220cb16",
+   "shipped": true,
+   "rows": 1315,
+   "rowsAre": "polities",
+   "role": "each state's heads of state and government, languages, faiths and capital",
+   "sources": [
+    "wikipedia",
+    "cliopatria",
+    "wikidata",
+    "cow",
+    "own"
+   ],
+   "licences": [
+    "CC BY 4.0",
+    "CC BY-SA 4.0",
+    "CC0 1.0",
+    "MIT (the mod's licence)",
+    "free to use with citation"
+   ],
+   "mark": "mixed",
+   "markNote": "217 reigns whose end the list does not give (start + 25 years) are marked estimated",
+   "builder": "build_polity_facts.py, fill_rulers.py, fix_history_data.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/presence.json.gz",
+   "bytes": 3366556,
+   "sha256": "3dee3033849fc90a457aee94b38e8b64db1674a6230411b6b4bc46ba4b381eb7",
+   "contentSha256": "0266fa4ac91f28f99417f363a8900f42117f775b1a3ed7a2577f545289d982c9",
+   "shipped": true,
+   "rows": 352250,
+   "rowsAre": "rows",
+   "role": "step 41 (D11): where a famous person was, in which years, and why - born, died, studied, worked, served, joined, founded, lived (the master; the game reads presence.tiles)",
+   "sources": [
+    "wikidata",
+    "wikipedia",
+    "laouenan",
+    "cliopatria"
+   ],
+   "licences": [
+    "CC BY 4.0",
+    "CC BY-SA 4.0",
+    "CC0 1.0"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "fetch_step41.py, read_cards.py, build_presence.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/presence.tiles",
+   "bytes": 6073168,
+   "sha256": "6ab633507e3e56a2c2bbca3065b1b39c45d4ca5067f2bd6f18a5d996f779bebb",
+   "contentSha256": "6ab633507e3e56a2c2bbca3065b1b39c45d4ca5067f2bd6f18a5d996f779bebb",
+   "shipped": true,
+   "rows": 352250,
+   "rowsAre": "rows",
+   "role": "step 41 (D11): where a famous person was, in tiles by the box of the place and by the person",
+   "sources": [
+    "wikidata",
+    "wikipedia",
+    "laouenan",
+    "cliopatria"
+   ],
+   "licences": [
+    "CC BY 4.0",
+    "CC BY-SA 4.0",
+    "CC0 1.0"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "build_tiles.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/present_hyderabad_metro.json.gz",
+   "bytes": 47982,
+   "sha256": "dd97771fd23e79b8a8a241feb4b999020b103abe988f50439e969b284f0a4deb",
+   "contentSha256": "02bdcc98915512447667bc291b1506dcecd4326cada3f810e917a372b1c7fcea",
+   "shipped": true,
+   "rows": 1841,
+   "rowsAre": "sites",
+   "role": "today's named places; their founding years are estimated",
+   "sources": [
+    "osm",
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)",
+    "ODbL 1.0"
+   ],
+   "mark": "estimated",
+   "markNote": "the places are recorded (OpenStreetMap); the years they were founded are estimated",
+   "builder": "Overpass export; years by SettlementYearEstimator",
+   "pack": "core"
+  },
+  {
+   "path": "history/present_kamareddy.json.gz",
+   "bytes": 16134,
+   "sha256": "3859222f428f72fd0782ab0eb8aa62b2c0c792449b4df31f2804d7a2e62cd596",
+   "contentSha256": "787e9ef537f048a272b28764817d3205564cad20102abad16a89444943932fa6",
+   "shipped": true,
+   "rows": 599,
+   "rowsAre": "sites",
+   "role": "today's named places; their founding years are estimated",
+   "sources": [
+    "osm",
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)",
+    "ODbL 1.0"
+   ],
+   "mark": "estimated",
+   "markNote": "the places are recorded (OpenStreetMap); the years they were founded are estimated",
+   "builder": "Overpass export; years by SettlementYearEstimator",
+   "pack": "core"
+  },
+  {
+   "path": "history/present_telangana.json.gz",
+   "bytes": 335015,
+   "sha256": "76ebb725a5c8d6b4d0c613b1662fbe9efbd0721684f623e9392119eb6d1ef6ee",
+   "contentSha256": "193e69dc2d58f8d773882f59c4940b1ddebccd803933779534477095f1d12187",
+   "shipped": true,
+   "rows": 13287,
+   "rowsAre": "sites",
+   "role": "today's named places; their founding years are estimated",
+   "sources": [
+    "osm",
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)",
+    "ODbL 1.0"
+   ],
+   "mark": "estimated",
+   "markNote": "the places are recorded (OpenStreetMap); the years they were founded are estimated",
+   "builder": "Overpass export; years by SettlementYearEstimator",
+   "pack": "core"
+  },
+  {
+   "path": "history/prices.json.gz",
+   "bytes": 657691,
+   "sha256": "b090d59267d1984badf34b269c5173cd175c4ea6e8c24e6cd0407a7d6f32f46e",
+   "contentSha256": "61613538baba9f336b0e351d212d15e12489053009897b8ffcefade60fecbf72",
+   "shipped": true,
+   "rows": 193,
+   "rowsAre": "markets",
+   "role": "step 44 (E4): measured prices in grams of silver per unit - 773 series over 193 markets and 89 goods, the years 965 to 1914 - each with an index against the price of its own time, plus 1,225 shortage years read out of the grain prices themselves",
+   "sources": [
+    "allenunger",
+    "own"
+   ],
+   "licences": [
+    "CC BY-NC 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "derived",
+   "markNote": "",
+   "builder": "build_prices.py, price_markets.py, price_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/projection.json.gz",
+   "bytes": 2633,
+   "sha256": "78870ebdb974d5eb0f0abb4c7e94b3803f0cb0d0af7e17572bd68cc60ea69a55",
+   "contentSha256": "3d51c96fb70c6461677163de86493a77bc50dc0bdda80b86342570a8f9e72d15",
+   "shipped": true,
+   "rows": 11,
+   "rowsAre": "steps",
+   "role": "step 47b: THE PROJECTION ATLAS, and the answer to 'can the data for 3000 BC to AD 2026 be built for 2027 to 3000'. **Not all of it, and the reason is not effort.** `projection_plan.py` classifies every one of the 120 shipped packs into computed (5), carried (64), refused (32), past only (14) and template (5), and fails if any pack is left without a stated answer for 2400 - so no part of the engine goes silent at the seam. The refused 32 are people, rulers, events, wars, disasters, prices and populations, which Projector will not invent. What IS computable is built here: **no technology in the atlas arrives after 2025**, so between 2027 and 3000 the only honest change is the SPREAD of what already exists, and the engine's diffusion curve never clamped at the seam. This pack reads that curve forward. **Its finding is that the future in it runs out in 2300**: 42 area-and-technology pairs are short of common in 2026, all 42 clear by 2300, and after that the curve is flat for seven hundred years. So the honest answer to 'what is the world like in 2400' is 'the world of 2026, fully spread', and everything a story adds beyond that is an invention this engine refuses to make. It names nobody, dates nothing, prices nothing and counts no population. 92 checks.",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "projected",
+   "markNote": "",
+   "builder": "build_projection_atlas.py, projection_plan.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/prophecies.json",
+   "bytes": 22148,
+   "sha256": "054427b8a33546ad5714122031b44fd33d8e8925c359ebdf714d2e13c948967b",
+   "contentSha256": "bd481a687d87f105ef14913dbe116a0e397770a476608d2f1c8837819dc8d993",
+   "shipped": true,
+   "rows": 27,
+   "rowsAre": "items",
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/scenes.json.gz",
+   "bytes": 4711,
+   "sha256": "78fd2564d5291e42eb9d6b7829ab4d7be744e1f49bfaa9cdda530e7e2c93d9f5",
+   "contentSha256": "8bbe2afec675e5182a968cc50effbf0c94176bc9fed78ed1d286bb004a60adab",
+   "shipped": true,
+   "rows": 20,
+   "rowsAre": "scenes",
+   "role": "what is going on here, and who is in it (D9): the twenty event scenes -- a crowning, a court day, a procession, an election, a protest, a trial, an hour of prayer, a festival, a market day, a caravan or ship arriving, building works, a plague, a famine, a flight, refugees, a fire, a battle, a siege, a wedding and a funeral. Each one says what kind of ground it stands on, what sets it off, what the people in it are doing, and a cast given in the twelve work sectors of step 38's jobs register, so the scene is cast from the people this place and year actually has rather than drawn from thin air. The customs that had to be right were fetched rather than cited: the route of a Roman triumph, the assize courts and the end of trial by ordeal in 1215, the weekly market against the annual fair on its saint's day, the banns read on three Sundays, and the wake the night before a funeral. Five rows are recorded, four mixed and eleven estimated, and the estimated ones say so in the printed sentence",
+   "sources": [
+    "wikipedia",
+    "britannica",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)",
+    "free use with attribution"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "scenes_table.py, build_scenes.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/scripts.json.gz",
+   "bytes": 5516,
+   "sha256": "fcb16f5be9c6da5ca51246ff26d13413fa717b5881c4e7124ce79f2c84d2d756",
+   "contentSha256": "e6ec4e0de54709fac2794c5fd62171c9b71fc7ed5ad687573a23a292c4627ec3",
+   "shipped": true,
+   "rows": 40,
+   "rowsAre": "scripts",
+   "role": "what the signs at a place are written in (J3): 40 scripts over 17 areas, each with the years it ran and what was written in it, and 11 kinds of sign standing at a place -- the edict cut in the rock, the boundary stone, the temple inscription, the grave, the milestone, the graffiti, the shop sign, the posted notice, the street name, the road sign and the official notice in two scripts -- each gated on the share of people who could read it and on the technologies that must have arrived first. Written by hand because the script of an inscription is not in any data set, and because the obvious chain (place -> language -> script) answers \"Aymara in the Latin alphabet\" at Cuzco in 1400, a century before any alphabet reached Peru. The gaps are listed in the file itself",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "script_table.py, build_scripts.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/sides.json.gz",
+   "bytes": 5711,
+   "sha256": "1ffde0c6cb1d224982ffcc016ec5127cb0d02d72456b3a27be3052a80106df93",
+   "contentSha256": "81bc0fd715db105ccde9b88ac73b5df1d38704728e8b14e4509a6ef5e31639a8",
+   "shipped": true,
+   "rows": 14,
+   "rowsAre": "kinds of party",
+   "role": "who was fighting, and as what (D10): 14 kinds of party -- a sovereign state, a dynastic house, a city commune, a religious body, a slave-soldier state, a rebellion, a separatist movement, a tribal confederacy, a warlord band, a steppe khanate, a hired company, a chartered company, a coalition, and civilians -- each saying whether it can be bound by a treaty, whether it can start a war, and how its men were raised. Brecke's rule that a party need not be a state is what puts a warlord band in the table at all, and the consequence is kept: a side containing a warlord band cannot be offered terms, which is the difference between a town opening its gates and a town being sacked. The catalog itself was not loaded; the taxonomy is read from its description of its own fields",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "sides_table.py, build_sides.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/sieges.json.gz",
+   "bytes": 8138,
+   "sha256": "7526039c8956b6276dd7bc68645838759335a736f3b1da3df24f3990bf695b6a",
+   "contentSha256": "7563ce4ac4f4e2fcd6b21ec46d6475c2157e42d26eff14eefe8d1e6795de9c0f",
+   "shipped": true,
+   "rows": 11,
+   "rowsAre": "kinds of wall",
+   "role": "what a siege cost (D10): 11 kinds of wall from a ditch and a palisade to a city held street by street, 10 methods a besieger had from blockade to heavy guns, five ways a siege stops -- terms, starvation, relief, abandonment, storm -- and the two clocks that decide which: the wall clock, how long to make a practicable breach, and the food clock, how much bread the town has. Siege length is checked against the dates the record kept: Constantinople 1453 at 53 days against 53, Rochester 1215 at 50 against about 50, Kenilworth 1266 where no breach was ever made and hunger decided it. The distribution of the five endings is estimated, and it says so",
+   "sources": [
+    "wikipedia",
+    "britannica",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)",
+    "free use with attribution"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "siege_table.py, build_sieges.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/sky_comets.json.gz",
+   "bytes": 2171,
+   "sha256": "2482633fe2397fddd8d938914853ac1679b467239aec23d876c37962a1f601f3",
+   "contentSha256": "9de211a00b5bf2b25af751a2af2734b8f3c6f2b90320cc9438bd7995d6d3ec29",
+   "shipped": true,
+   "rows": 98,
+   "rowsAre": "comets",
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/sky_eclipses.bin.gz",
+   "bytes": 987341,
+   "sha256": "2d3d0dd1b8620f872b166b21523fc813b08f489bde1b83dae36c643797dd2d01",
+   "contentSha256": "2d3d0dd1b8620f872b166b21523fc813b08f489bde1b83dae36c643797dd2d01",
+   "shipped": true,
+   "rows": null,
+   "rowsAre": null,
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/sky_stars.json.gz",
+   "bytes": 100064,
+   "sha256": "6ed665c2d2d38a0568ff53ce26a289cc26433255e63ed9d64c0eee4d1556b43e",
+   "contentSha256": "4fac96bc681dad706ee5f914d7dd4a1c592176807e225df752fe58621db71477",
+   "shipped": true,
+   "rows": 5666,
+   "rowsAre": "stars",
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/social_order.json.gz",
+   "bytes": 8397,
+   "sha256": "ae338ea87363e375e5e514c6bf009e794985964abff07d1b67636abd705dcd76",
+   "contentSha256": "e9f0843d0cac2b5abf5df8631937a09d61c7f504de1eec68f926c3dbcdb40a37",
+   "shipped": true,
+   "rows": 198,
+   "rowsAre": "countries",
+   "role": "step 42 (D7): the order of a society by place and year - 12 orders, 58 strata, and who may address whom uninvited. Written by hand and estimated throughout: no source states what share of a society was brahmin or shudra in a given century, and the plan's \"old code (class system)\" never existed",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "build_social.py, social_order_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/soundscape.json.gz",
+   "bytes": 5589,
+   "sha256": "43e77b08b7586afb02414d29f5b660a31d3746a20fe6db365e571ef64d92e8df",
+   "contentSha256": "07230b555ed8103dc7704e50780570e6ee6b4ec7e3680c1ae200999fedced5f8",
+   "shipped": true,
+   "rows": 27,
+   "rowsAre": "sounds",
+   "role": "what a place sounds like, by layer (J2): 27 sounds -- ground, crowd, voice and machine -- each with the faith or the technology that puts it there, the time of day it belongs to, and whether it is a recorded fact or a reading. The voices of faith (the call to prayer, the bell, the chant, the sermon) hang off the religion of the polity ruling the place, dated by that polity's own span in the ruler register, which is how 960 states get a faith at all when only twelve have hand-written dated ones. The machines hang off the technology atlas, so a place hears trains when the railway reached its country and not when a list happens to mention a station there. Written by hand, and every row says where it was read from",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "soundscape_table.py, build_soundscape.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/south_asia.json",
+   "bytes": 44248,
+   "sha256": "8ea18a0e96721b47ffa9facc5206540f1d59cf0b984a0cecc54bcea9e19fe259",
+   "contentSha256": "c96731f00c0b20417e9c8ad364f6ed21b82274a95058ff03698c2670cd322161",
+   "shipped": true,
+   "rows": 147,
+   "rowsAre": "sites",
+   "role": "hand-made region pack of well-known sites and events",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/state_relations.json.gz",
+   "bytes": 6759,
+   "sha256": "b795060daeee7f0d8352da49d9951e1d102e8218ec33ec0285929722fea41f94",
+   "contentSha256": "e2661a1455fe121614df03cd68ae0439d452b872b9dd6a4901cfc3b31b67aaf6",
+   "shipped": true,
+   "rows": 538,
+   "rowsAre": "ties",
+   "role": "ties between states by year: alliances, allegiance, vassals, shared rulers, realms, military alliances",
+   "sources": [
+    "cliopatria",
+    "wikidata"
+   ],
+   "licences": [
+    "CC BY 4.0",
+    "CC0 1.0"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "build_relations.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/technology_atlas.json.gz",
+   "bytes": 76206,
+   "sha256": "a0f95349399850a64abf3250ec92971c92362b27031f4d3a5c6f976df720d24e",
+   "contentSha256": "b8f7088923d9197b032418763df9287fa93b2181fc802fadc4dd0e6f88fe73f3",
+   "shipped": true,
+   "rows": 130,
+   "rowsAre": "technologies",
+   "role": "which technology reached which country when (130 technologies), how common it was; estimates marked",
+   "sources": [
+    "wikipedia",
+    "chat",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)",
+    "public domain (ODC-PDDL)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_technology_atlas.py, technology_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/towns.json.gz",
+   "bytes": 1905466,
+   "sha256": "29ff2ba5fdae1cf157612f8a8ffd0cb58c6f9c529146281fd4816d70ecf7b3ee",
+   "contentSha256": "1a3e79e7c339b88910303dca9329748e02f4a558c9aecce1c99d6df4ef12c783",
+   "shipped": true,
+   "rows": 30151,
+   "rowsAre": "towns",
+   "role": "towns through time: names by era, people by year, founding, provinces by era, who runs them",
+   "sources": [
+    "wikidata",
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "CC0 1.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "fetch_towns_wd.py, build_towns.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/trade_routes.json.gz",
+   "bytes": 308136,
+   "sha256": "c0a398c8707a1b4493b311a73106c98fd0b0cb4c668114747dd740101fe4aac2",
+   "contentSha256": "603834c9d6b9601e27c5ee9097a8dc3783dacbd9bd4498dad331561b1816a6ca",
+   "shipped": true,
+   "rows": 14769,
+   "rowsAre": "roads",
+   "role": "roads and trade routes and their towns",
+   "sources": [
+    "itinere",
+    "wikipedia"
+   ],
+   "licences": [
+    "CC BY 4.0",
+    "CC BY-SA 4.0"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_trade_routes.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/water_changes.json.gz",
+   "bytes": 14992,
+   "sha256": "66c325ebd02ed64820a95e974d6bd7fdcf1867206bf9a9029db25491dcee66e6",
+   "contentSha256": "24be1e0ce74ce19fce3e84cdaa5df0c279a6784417b13a43a4bf226be16a84bf",
+   "shipped": true,
+   "rows": 158,
+   "rowsAre": "changes",
+   "role": "the water that moved, by year (B2): 158 changes written by hand because no data set has them -- rivers that changed course, coasts and deltas that grew or were eaten back, seas and lakes that dried or were made, marshes drained, straits opened and shut, from the Yellow River's six recorded avulsions and the drowning of Doggerland to the closing of the Zuiderzee and the drying of the Aral. Each row gives the place, the year, how wide a thing it was, and whether that year is recorded or estimated; 98 are recorded, 60 estimated. The years of the Yellow River, the Zuiderzee works, the Aral Sea, the Caspian, Ghaggar-Hakra, the Kosi and the Rann of Kutch were checked against English Wikipedia and Britannica",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "water_changes_table.py, build_water_changes.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/water_works.json.gz",
+   "bytes": 75396,
+   "sha256": "c0240110c29f9deeb743955888694e0436c2097acf3c6b17762d8cfd43247498",
+   "contentSha256": "5778461a23007e78efc4da3cc3af99605a648982bd71a5e8b709980c931f68c4",
+   "shipped": true,
+   "rows": 3884,
+   "rowsAre": "works",
+   "role": "water supply, bathing and sanitation by year (B25): wells, stepwells, cisterns, qanats, aqueducts, fountains, reservoirs, water towers, bath houses and hammams with a map point and the year they were made; where Wikidata has no year at all, the year is the gazetteer's occupation window for the site and is marked estimated. Fetched at 3 Wikipedias rather than 5, because water works are far less written about than monuments. Sanitation is nearly absent: Wikidata has articles about sewers, not about individual ones. Step 35 part 4 added the field (B17, and B2's rule that no reservoir stands before its dam): 21 more classes -- dams, canals, irrigation canals, weirs, polders, levees, watermills, oases, acequias, terraces, ditches -- bringing it to 3,884 works in eleven groups. The irrigation tank class gives nothing at all, however many tanks there are in South India, and neither do chinampas or anicuts; that zero is recorded too. The gazetteer may date a work only when the name matches the site it stands on, not merely because it is near one -- a canal two kilometres from an abandoned site is usually not of it, and Dujiangyan, built in 256 BCE, was being given a Sui county seat's window of 568 CE",
+   "sources": [
+    "wikidata",
+    "pleiades",
+    "chgis",
+    "reba",
+    "own"
+   ],
+   "licences": [
+    "CC BY 3.0",
+    "CC BY 4.0",
+    "CC0 1.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "fetch_town_wd.py, fetch_farm_water_wd.py, date_undated.py --water, build_water_works.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/ways.grid.gz",
+   "bytes": 183580,
+   "sha256": "5452ae5f33023be5a49227711d825ea578ad52fcbeb19fd29f2ddf246cf1c7cb",
+   "contentSha256": "5452ae5f33023be5a49227711d825ea578ad52fcbeb19fd29f2ddf246cf1c7cb",
+   "shipped": true,
+   "rows": null,
+   "rowsAre": null,
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/ways_of_life.json.gz",
+   "bytes": 177050,
+   "sha256": "f1dea027e016a9663ead6ceed27ee0300083380ede3db1d01096c231956c4968",
+   "contentSha256": "5d7ca177b2e499428369d4444803bf079a2488ae56fa1ef7df0de33268ab3d32",
+   "shipped": true,
+   "rows": 146,
+   "rowsAre": "regions",
+   "role": "how people lived: foraging, farming, herding, cities",
+   "sources": [
+    "archaeoglobe"
+   ],
+   "licences": [
+    "CC0 1.0"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "build_ways_of_life.py",
+   "pack": "core"
+  },
+  {
+   "path": "history/ways_works.json.gz",
+   "bytes": 2114353,
+   "sha256": "6a9ec3419f4aca0494f841a4143eec00e206159cac7330e83f21970385d13c8e",
+   "contentSha256": "aebf16c99f6366b1d7492b0a197c4ac8d7aa18db5f6175969e229353f47adb83",
+   "shipped": true,
+   "rows": 110447,
+   "rowsAre": "works",
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "history/world_rulers.json.gz",
+   "bytes": 428332,
+   "sha256": "68b74dbc97fade4b556bc532133902ffb25c0d48dbfdd305db686a0741247a0e",
+   "contentSha256": "33c03c137a4c3eb82854aa1315b7b30b94232db918bd0a93cd5ba58c171feef3",
+   "shipped": true,
+   "rows": 62754,
+   "rowsAre": "squares",
+   "role": "who ruled each half-degree square of the world, 3400 BC to 2026",
+   "sources": [
+    "cliopatria",
+    "wikidata",
+    "own"
+   ],
+   "licences": [
+    "CC BY 4.0",
+    "CC0 1.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "recorded until 2024, later years carry the last states forward; 7358 stretches of coastal squares taken from their neighbours",
+   "builder": "build_rulers.py, fix_history_data.py",
+   "pack": "core"
+  },
+  {
+   "path": "knowledge/hyderabad_1948.json",
+   "bytes": 41179,
+   "sha256": "792c67f3942744426b22ebdb9cf83e7fcbab37bd8968bcf954f2d4eff9aff909",
+   "contentSha256": "8c32c76cf6c8098f62c57ed06755ba03b06014e380ab3b96cbcb3e26aca3d06f",
+   "shipped": true,
+   "rows": 28,
+   "rowsAre": "cards",
+   "role": "talk cards of a place and time",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "knowledge/index.json",
+   "bytes": 238,
+   "sha256": "f76603e6ed278e0020d0c147ef2d572b2da7c3f3f67a669eaf08709706d61336",
+   "contentSha256": "879345865aafd925a66a037c89a74701e9fd65af6983a9291c6550e10ee315e5",
+   "shipped": true,
+   "rows": 1,
+   "rowsAre": "packs",
+   "role": "talk cards of a place and time",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "names/arts.json.gz",
+   "bytes": 4611,
+   "sha256": "327c3110d60f57f13de644fdc3d52286a35177be572858c10ff2b9d1d1ddd73e",
+   "contentSha256": "6e2a36804813a3d8a10cc114da9f2fc9b39cecd8a9ac04c3ca175870f1163c88",
+   "shipped": true,
+   "rows": 17,
+   "rowsAre": "areas",
+   "role": "step 47 part 6 (C15): CULTURE, the last part of it - music and the arts. The plan's row is 'clothes, food, music, games, customs, arts' and by the end of this part five of the six live somewhere: clothes in part 4's 27 period garments, food in the products atlas and the diet register, games in the games register, customs in CultureAtlas's 21,000 holy places with feasts, scripts and measures. **Music and the arts had nothing at all.** There is no such thing as the year a place got music - every human group sings, and the oldest instrument known is a bone flute about 40,000 years old, thirty-seven thousand years before the span begins - so the register is not of music but of THE THINGS THAT CARRY MUSIC AND PICTURES: an instrument, a medium, a way of copying. That is a technology history and it dates honestly, and it has the same shape as the tools register because a violin is a manufactured object. 14 rows over 9 kinds, 12 of them universal from the first year. **The finding: every art form here is older than the means of copying it, and copying changes what the art is.** The two sharpest dates are the phonograph in 1877, which separates a performance from the performer for the first time in the history of the species, and photography in 1839, which arrives after the oil painting it replaces as the way to record a face and before the cinema it makes possible in 1895. 70 checks.",
+   "sources": [
+    "own",
+    "wikipedia"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_arts.py, arts_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "names/foundation_names.json",
+   "bytes": 665,
+   "sha256": "cae7f76553105740b6ef12a887f5c89bbb2e42730202611e5e60ecf93a80ee2a",
+   "contentSha256": "bd94a399e4d7c24784eebf6855a95cf67a8c3fc641f94e750cb5a46160b94363",
+   "shipped": true,
+   "rows": null,
+   "rowsAre": null,
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "names/games.json.gz",
+   "bytes": 6257,
+   "sha256": "d714aacde2fcde8c6d42006631ffb5cfa14ba11a3b96fa42220fe472255b25c5",
+   "contentSha256": "5156c31e191e414164f59e41bfd5a4172830f52e5881a3e31f784111cab9dfd9",
+   "shipped": true,
+   "rows": 21,
+   "rowsAre": "games",
+   "role": "step 47 part 6 (E17): GAMES AND SPORTS. The plan names chess, polo, cricket, kites, theatre and cinema and the survey said 'not yet', which was right about the code and wrong about the data: the products atlas already carries chess, dice, backgammon, kites, playing_cards, puppets, dolls, drums, flutes, theatre and fireworks with a year for all 17 areas. What nothing carried is the GAME as a thing people play. 21 games over 9 kinds. **The finding: a game is the cheapest thing a culture exports and the last thing it gives up.** Board games travel with merchants and cross every border within a few centuries (backgammon from Mesopotamia, chess from India, cards from China), while the sports travel with empires and then with schools - and the codified ones are astonishingly late: football is a folk game in every European village and a RULE in 1863, basketball is 1891, the modern Olympics are 1896 and the ancient ones end about 393, so the two things with the same name are two thousand years apart. Before the nineteenth century a crowd does not watch a sport, it watches a SPECTACLE, and the Mesoamerican ball game is the extreme case: a religious obligation with a ballcourt in the middle of the city and, at the end of some of them, a death. **The register also refuses to guess**: a crop has an arrival in every area because the atlas computed one, and nobody can say when polo reached Java, so a game has an origin and only the spread years the record gives - everywhere else the answer is `unknown`, which is not `never`. 39 checks.",
+   "sources": [
+    "own",
+    "wikipedia"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_games.py, games_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "names/skin_pool.json",
+   "bytes": 22547,
+   "sha256": "19ffee154dc19bc1dd4b9050a2bb2382dddc6f06904eeed0a2b19dd7e064bb7a",
+   "contentSha256": "4bbe7558d870554f98ac3d7e37b1b45f3f73e52e8499109b38ec860bbfeccc14",
+   "shipped": true,
+   "rows": null,
+   "rowsAre": null,
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "names/wardrobe.json.gz",
+   "bytes": 4785,
+   "sha256": "fbbb2d38f0f99238c04ede99d64743c773e93df1ac18b56c902fdcfe1669f1d3",
+   "contentSha256": "7757e745a763eb860be8368294f5f5d0574163489c719eda9f15388bae27df08",
+   "shipped": true,
+   "rows": 27,
+   "rowsAre": "garments",
+   "role": "step 47 part 4 (E12): THE PERIOD WARDROBE, and the bug it fixes is the sharpest in this step. SkinPoolDatabase holds 40 garments and **every one arrives in 1873 or later**: jeans 1873, button_down 1900, crew_tee 1913. So its own code does the only thing it can, returning an EMPTY outfit for any year before the pool's modern turning point, and **every person in the world before 1945 is dressed in nothing**. The plan called E12 'partly: looks by era' and it was not: it was looks by the MODERN era, and six thousand years of the world were bare. The culture pools carry a `lower` (dhoti, sari, tunic, robe, wrap) and a handful of cultural items, so the missing half is precise and a little comic: **the top half of the body**. A weaver in the Deccan in 1400 wore a dhoti and no shirt. This pack adds 27 garments that exist before the machine age, all 27 before 1873, over all 11 culture pools and 17 areas. **The finding: the wardrobe is a technology and its dates are the history of tailoring.** Almost everything before 1300 is a RECTANGLE - the tunic, the chiton, the hanfu, the huipil, the poncho, the wrapper - and none of them needs a curved seam. The doublet of the 1340s is the first European garment CUT to a body, and everything fitted that Europe has worn since follows from that one change in a tailor's technique, in the same decade as the Black Death. It also refuses the tempting error: the sherwani is a 19th-century coat and is dated 1850, so a Mughal nobleman of 1600 wears the kaftan and the angarkha. The check caught its own gap twice: the African pool had no upper garment at all, and Europe had no coat between 600 BC and 1873 until the cloak was added. 73 checks.",
+   "sources": [
+    "own",
+    "wikipedia"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_wardrobe.py, wardrobe_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "names/wildlife.json.gz",
+   "bytes": 4622,
+   "sha256": "baf9c72ab0e74c5b03ba2201e3d8ccfebe2a8523f160ac63367db4c3c6eaf315",
+   "contentSha256": "9b6a0ca3a95e2252a069b64c5b7c4f8c364c8befb653b568e8a90d064edb970d",
+   "shipped": true,
+   "rows": 17,
+   "rowsAre": "areas",
+   "role": "step 47 part 5 (B5): WILD ANIMALS BY ERA. The plan asks for 'lions and cheetahs in India, aurochs in Europe, no horses in the Americas before 1493', and the survey found that the only wild animal anywhere in this project was the bison, which was there because it was hunted in herds and not because it was in a place. 14 species over all 17 areas. **The point of the pack is that a wild animal's data is not its birth date but the year its range ENDED**, and almost every row is one of three stories. The animal is GONE FROM HERE and alive there: the lion is a predator of the Greek hills in the Iliad and fights in Roman arenas, and it is out of Greece by about 100 BC, out of the Balkans by 500 and out of India outside Gujarat in 1884. The animal is GONE EVERYWHERE and the year is known because somebody was counting: the aurochs at Jaktorow in 1627, the passenger pigeon in Cincinnati in 1914, the thylacine in Hobart in 1936, the dodo about 1681 by nobody's count at all. Or the animal was NEVER THERE and the absence is the fact, which is the plan's own horse: it died out in the Americas at the end of the Pleistocene and the continent had none for ten thousand years, so **a horse in the Americas in 1200 is not a small anachronism but the largest biological fact about the continent**. The register keeps that as an absence WITH A REASON, because the three stories need different things from a game: an extirpated animal can be reintroduced, an extinct one cannot, and an animal that never lived there is not a conservation problem. 43 checks.",
+   "sources": [
+    "own",
+    "wikipedia"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_wildlife.py, wildlife_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "population/hyde_density.bin.gz",
+   "bytes": 903162,
+   "sha256": "9f93720800a3419b1af6bd4ba294354c14e5dcbd28ffdb46db1babc79fef4048",
+   "contentSha256": "9f93720800a3419b1af6bd4ba294354c14e5dcbd28ffdb46db1babc79fef4048",
+   "shipped": true,
+   "rows": null,
+   "rowsAre": null,
+   "role": "how many people lived on each square, 10000 BC to 2026",
+   "sources": [
+    "hyde"
+   ],
+   "licences": [
+    "CC0 1.0 (DANS record; the release readme says CC BY 3.0)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "build_hyde.py",
+   "pack": "core"
+  },
+  {
+   "path": "population/index.json",
+   "bytes": 365,
+   "sha256": "da8405a233e4e8564cabb116d4343d055916e4f2abaefb02b9969eaf7b252ecb",
+   "contentSha256": "e8cc53a856b7488ea8022d5479fee38496c89b9af83b7b4e43ce32f57128d0f6",
+   "shipped": true,
+   "rows": 1,
+   "rowsAre": "packs",
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "population/population_south_asia.json",
+   "bytes": 7256,
+   "sha256": "3c682c5acc4658ddf4ffa5dd18282e18d3440be16e6b3e7d32031ca4b10ef828",
+   "contentSha256": "129940fc388b5c9834d761b31d5ed4b0fcc5b19a4f02da73e7bcfb63d65705c6",
+   "shipped": true,
+   "rows": 6,
+   "rowsAre": "regions",
+   "role": "census figures of South Asian towns",
+   "sources": [
+    "census"
+   ],
+   "licences": [
+    "public record (government statistics)"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "hand-written from the censuses",
+   "pack": "core"
+  },
+  {
+   "path": "religions/foundation_religions.json",
+   "bytes": 559,
+   "sha256": "4714d933d314fb96352ff09646951b187494aebb40a2811d83dbf37dabc927e7",
+   "contentSha256": "cef15ecfabeb28dd00f65b57d50f20e094870854c534a58d76665ec4a6665958",
+   "shipped": true,
+   "rows": 2,
+   "rowsAre": "items",
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "scenarios/what_if_gandhi_1948.json",
+   "bytes": 7814,
+   "sha256": "4df50bbdd360c9b058dcc14e2e01176cbd3dabfc34b0313aee03c8913af47185",
+   "contentSha256": "a1197ceba736a318e8e57c20985817eb11488d16674efea37aa7edbcf4f7e41c",
+   "shipped": true,
+   "rows": 8,
+   "rowsAre": "events",
+   "role": "what-if scenarios",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "scenarios/what_if_mumbai_26_11.json",
+   "bytes": 6048,
+   "sha256": "a924b1db2e7a5f51c9f7ec4b02435a4a13068fccdae7a01af544b7539a9569de",
+   "contentSha256": "697539d16154573c9ec252a0d161ee75625d799784fd95e927d4b4224baf2726",
+   "shipped": true,
+   "rows": 8,
+   "rowsAre": "events",
+   "role": "what-if scenarios",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "scenarios/what_if_tesla_1943.json",
+   "bytes": 6323,
+   "sha256": "7b71a739dda921b95a3cfdd874dad3a6d8b5fe4725194874d2ce5aede85d6831",
+   "contentSha256": "8f6faf46d794939c2f59ec62ad98c509c19dc845f262cc0bf17e0802d16d8c94",
+   "shipped": true,
+   "rows": 8,
+   "rowsAre": "events",
+   "role": "what-if scenarios",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "technologies/foundation_technology_tree.json",
+   "bytes": 774,
+   "sha256": "436753c97be4e297aa7759be626f8b3fdd918242f56f287913a27d95935dc66f",
+   "contentSha256": "86a9e8d22a79f4b2ea307cb6f253e99b8a93e681bcc94de8c0c2844dc8910d79",
+   "shipped": true,
+   "rows": 7,
+   "rowsAre": "items",
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "templates/current_affairs_templates.json",
+   "bytes": 528,
+   "sha256": "a33283b07a768119283d9f50155fc5a0aa431178ae8e815de62329d17d86a962",
+   "contentSha256": "d89f2045db3b265e40ce13e4ba91616714e2f1c04b7fe7ddd681d32ffa1eae4f",
+   "shipped": true,
+   "rows": 2,
+   "rowsAre": "WAR",
+   "role": "engine settings and starting tables",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "estimated",
+   "markNote": "",
+   "builder": "hand-written",
+   "pack": "core"
+  },
+  {
+   "path": "vips/foundation_vips.json",
+   "bytes": 20611,
+   "sha256": "5145305c375b24eb66e8f5b6a26a204a234060d31bc6eb8c84d5d8b10e3576be",
+   "contentSha256": "49f5d7b74ef99cdc4b73583e3f16c03e7888fef984733a3ea46b53ea5371d86b",
+   "shipped": true,
+   "rows": 102,
+   "rowsAre": "items",
+   "role": "well-known people the engine can meet",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "recorded",
+   "markNote": "",
+   "builder": "hand-written, fix_history_data.py",
+   "pack": "core"
+  },
+  {
+   "path": "war/armory.json.gz",
+   "bytes": 5431,
+   "sha256": "2b6d95fe64afe71d9a33b893aa8c0909b075a5ac1fe9d034f18a291412ecd1b9",
+   "contentSha256": "cfec6896e5c571ca0b177b58a8a606958aa862d81de3c2c17e15808019fe2dc6",
+   "shipped": true,
+   "rows": 24,
+   "rowsAre": "rows",
+   "role": "the armoury: 24 kinds of weapon and armour, each dated where it exists and recorded where it never did. 11 are hand-dated per area (spear, club, dagger, bow, javelin, sling, pike, lance, shield, elephant, horsebow) because the product atlas derives those from MATERIALS rather than weapons - spears from bows, daggers from copper, shields from leather - which put the spear in Australia in 1800 and the dagger in North America in 1700. 13 read their dates from the technology atlas (258 countries, spread-modelled) or the product atlas. Every kind answers to one of D10's twelve arms, so step 40's 16 dated formations and 4 casualty bands join without a translation layer. 39 absences in 9 areas are recorded as facts: no bow in Australia (step 44 left a note asking this step to decide), no metal sword anywhere in the Americas before 1492, no war chariot in Africa south of the tsetse belt, no war elephant outside Asia. 17 kinds name the technology that ended them, so the rifle retires the bow, the sword, the lance and the shield at a different time in every country",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_armory.py, armory_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "war/arms.json.gz",
+   "bytes": 5631,
+   "sha256": "e6fdb79baf8342d1bc5753c6da86e7daae9ff13ab968eae06d9158e8faae52cd",
+   "contentSha256": "198a6286f4990dbd828a3324f7f6bfb71cfdd59a5c492b4fea40dc49767d80a8",
+   "shipped": true,
+   "rows": 18,
+   "rowsAre": "rows",
+   "role": "how a weapon reaches a man's hand: 18 rows over 17 areas from 10000 BC to AD 2000, each saying which of the five ways are open - issued by the state, brought from home, bought, taken off a beaten enemy, or given - plus a sixth flag for whether he may CARRY it, which is not a way of getting one but is the law that matters most of the time. KEEPING AND CARRYING ARE DIFFERENT LAWS IN EVERY AGE: the Statute of Northampton 1328 never touched a man's right to own a sword, it forbade him to walk into a market wearing one, so that row has buy open and carry shut while the 1181 Assize of Arms - a DUTY, not a restriction - has buy open and gift shut, because a freeman must own arms and may not sell or pledge them. 12 of the 18 rows name a polity, and a row naming the state that rules a square outranks one that names none, because an area is not a country: East Asia holds both Japan and China, and in 1700 a Japanese peasant could not own a sword while a Qing subject could buy one. Hand-written and ILLUSTRATIVE, not comprehensive - there is no table of army supply to be read - so a place-year with no row of its own falls through to the default, which is the honest answer for most of the map and most of time: you bring your own. The weapon LAWS themselves are not in this pack; they are kind 5 of history/law.json.gz, keyed by polity rather than by area, and the two are meant to be read together",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_arms.py, arms_ways_table.py, weapon_law_table.py, build_law.py",
+   "pack": "core"
+  },
+  {
+   "path": "war/units.json.gz",
+   "bytes": 10685,
+   "sha256": "c7bd5bbd9a00956ff0caa70db7282285e0923e4468e868ac4de6f41be75b7b36",
+   "contentSha256": "e4c3f0293877ff4f75919519fc56d4d161091356db66cb590775c7839d509462",
+   "shipped": true,
+   "rows": 17,
+   "rowsAre": "areas",
+   "role": "units and ranks: 15 systems over 17 areas from 10000 BC to AD 2000, each a ladder of rungs from the smallest unit to the largest with who commanded each. **The finding that organises it: an army is counted in whatever base the society counts in** - ten on the steppe, in the Andes and in Ming China (arban 10 / zuun 100 / mingghan 1000 / tumen 10000, where a mingghan was also a thousand households, so the regiment and the tax roll were the same list); twenty among the Aztecs, because Nahuatl counts in twenties and the xiquipilli of 8000 is also the word for the pouch that held 8000 cacao beans; three in the Indian epics, whose smallest unit the patti is not ten soldiers but a combined-arms team of 1 elephant, 1 chariot, 3 horse and 5 foot, tripled eight times to reach an akshauhini of 218,700; two in Sparta (36-72-144-576); and no base at all in Rome, which counted in eights because a century of EIGHTY kept the name of a levy of a hundred. **The Zulu amabutho count by birth year and not by number at all** - a man belongs to the regiment of his age set, is quartered in its ikhanda, wears its shield colours and may not marry until the king releases his whole age set at once. Also the Mughal mansabdari, which ranks MEN rather than units: a mansab is two numbers, zat (personal rank and pay) and sawar (the cavalry he must maintain), decimal in inheritance from Mongol and Timurid practice. 10 of the 15 name a polity, and one that does outranks one that does not wherever that state rules, because an area is not a country. Every polity fragment is checked at build time against the 1,581 names in the ruler register, so a row that can never fire is caught before it ships. Hand-written and ILLUSTRATIVE - there is no table of military units to be read - so a place-year with no system of its own falls through to the default, the war party of kin, which is the honest answer for most of the map and most of time",
+   "sources": [
+    "wikipedia",
+    "own"
+   ],
+   "licences": [
+    "CC BY-SA 4.0",
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_units.py, unit_table.py",
+   "pack": "core"
+  },
+  {
+   "path": "war/weapon_items.json.gz",
+   "bytes": 5914,
+   "sha256": "dc33228f7d4d28bb80636c96791542543cde535037840146e338535edfe5bf78",
+   "contentSha256": "8c8efcec7522f328c2ccb125c3a4c75db5b5fcd96d15c412dac221608a03d8b0",
+   "shipped": true,
+   "rows": 20,
+   "rowsAre": "entries",
+   "role": "what goes in a soldier's hand, and THE MOD SHIPS NO WEAPONS: 9 optional weapon mods named by modid with their licence and dependencies, 20 item rows, 2 ammunition rows, 163 name tokens for guessing a kind from an unknown item, and local names for 15 areas. Three rules: an item TAG beats an item id (Spartan Weaponry renamed its registry between 1.16.5 and 1.19.2 and broke datapacks that hard-coded ids); an unknown item is GUESSED from its name and the guess is logged; and a missing weapon is never an error, because with no mod installed every kind falls back to the vanilla item the armoury already names on all 24 kinds (read, NOT duplicated here). Only 6 rows are recorded - Musket Mod's five, read from its own source - the rest are estimated and say so. No Indian weapons exist for Java 1.20.1 (only a Bedrock add-on, unusable) and no matchlock mod exists at all, so a talwar in 1650 Agra is a modded sabre CARRYING the name talwar: the local-name table is the honest fix for a gap no mod fills. Dependencies are a chain, not a list: Musket Mod without Cloth Config is unusable and falls back rather than handing back an item that does not exist.",
+   "sources": [
+    "own"
+   ],
+   "licences": [
+    "MIT (the mod's licence)"
+   ],
+   "mark": "mixed",
+   "markNote": "",
+   "builder": "build_weapon_items.py, weapon_items_table.py",
+   "pack": "core"
+  }
+ ]
+}

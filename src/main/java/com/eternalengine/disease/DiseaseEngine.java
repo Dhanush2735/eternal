@@ -2,6 +2,9 @@ package com.eternalengine.disease;
 
 import com.eternalengine.core.WorldStateManager;
 import com.eternalengine.incident.IncidentSeed;
+import com.eternalengine.terrabridge.TerraBridge;
+import com.eternalengine.terrabridge.TerraCoordinateHelper;
+import net.minecraft.server.level.ServerLevel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +19,10 @@ public final class DiseaseEngine {
     private final ConcurrentHashMap<String, DiseaseOutbreak> activeOutbreaks = new ConcurrentHashMap<>();
     private final MedicineSystem medicineSystem;
     private final EpidemicTracker epidemicTracker;
+    private final ContagionTransmissionBrain contagionBrain = new ContagionTransmissionBrain();
+    private final QuarantineCheckpointController checkpointController = new QuarantineCheckpointController();
+    private final PlagueDoctorHospitalManager hospitalManager = new PlagueDoctorHospitalManager();
+    private final HistoricalDisasterEngine disasterEngine = new HistoricalDisasterEngine();
 
     public DiseaseEngine() {
         this(new MedicineSystem(), new EpidemicTracker());
@@ -42,12 +49,7 @@ public final class DiseaseEngine {
     }
 
     public DiseaseOutbreak triggerDisease(String diseaseId, String regionId, int year, WorldStateManager state) {
-        Disease disease = diseaseDatabase.get(diseaseId);
-        if (disease == null) {
-            disease = new Disease(diseaseId, diseaseId, diseaseId, DiseaseType.BACTERIAL, SpreadType.CONTACT,
-                year, 0.0d, 0.0d, 100.0d, 0.05d, -1, "unknown", List.of(), 1.0d, 1.0d, 1.0d);
-            diseaseDatabase.put(disease.id(), disease);
-        }
+        Disease disease = ensureDisease(diseaseId, year);
         String outbreakId = "outbreak_" + IncidentSeed.stableHex(diseaseId, regionId, year).substring(0, 12);
         DiseaseOutbreak outbreak = new DiseaseOutbreak(outbreakId, disease.id(), regionId, year);
         activeOutbreaks.put(outbreakId, outbreak);
@@ -113,9 +115,63 @@ public final class DiseaseEngine {
         }
     }
 
+    /** A disease nobody described (a typed id): a plain contact disease, so its outbreak can still spread. */
+    private Disease ensureDisease(String diseaseId, int year) {
+        Disease disease = diseaseDatabase.get(diseaseId);
+        if (disease == null) {
+            disease = new Disease(diseaseId, diseaseId, diseaseId, DiseaseType.BACTERIAL, SpreadType.CONTACT,
+                year, 0.0d, 0.0d, 100.0d, 0.05d, -1, "unknown", List.of(), 1.0d, 1.0d, 1.0d);
+            diseaseDatabase.put(disease.id(), disease);
+        }
+        return disease;
+    }
+
+    /**
+     * World start (step 14): the outbreaks this world had when it was saved, with their regions, how hard
+     * each is hit and the dead so far. Before, they lived in memory only and a restart cured them all.
+     *
+     * @return the number of outbreaks restored
+     */
+    public int restoreFrom(WorldStateManager state) {
+        activeOutbreaks.clear();
+        if (state == null) {
+            return 0;
+        }
+        int restored = 0;
+        for (WorldStateManager.DiseaseState ds : state.getAllActiveDiseases().values()) {
+            if (ds == null || ds.diseaseId == null || ds.diseaseId.isBlank() || !ds.active) {
+                continue;
+            }
+            String diseaseId = ds.name == null || ds.name.isBlank() ? "disease_unknown" : ds.name;
+            ensureDisease(diseaseId, ds.startYear);
+            String origin = ds.origin;
+            if ((origin == null || origin.isBlank()) && ds.affectedRegions != null && !ds.affectedRegions.isEmpty()) {
+                origin = ds.affectedRegions.iterator().next();
+            }
+            DiseaseOutbreak outbreak = new DiseaseOutbreak(ds.diseaseId, diseaseId, origin, ds.startYear);
+            if (ds.affectedRegions != null) {
+                for (String region : ds.affectedRegions) {
+                    double severity = ds.severity == null ? 0.25d : ds.severity.getOrDefault(region, 0.25d);
+                    outbreak.affectRegion(region, severity);
+                }
+            }
+            outbreak.addDeaths(ds.deaths);
+            activeOutbreaks.put(outbreak.outbreakId(), outbreak);
+            restored++;
+        }
+        return restored;
+    }
+
     private void syncToWorldState(WorldStateManager state) {
         if (state == null) {
             return;
+        }
+        // An outbreak that ended by itself (its cure year came) leaves the save too; otherwise it was
+        // written as active forever and a restart would bring it back.
+        for (DiseaseOutbreak outbreak : activeOutbreaks.values()) {
+            if (outbreak.isEnded() && state.getDisease(outbreak.outbreakId()) != null) {
+                state.removeDisease(outbreak.outbreakId());
+            }
         }
         for (DiseaseOutbreak outbreak : getActiveDiseases()) {
             WorldStateManager.DiseaseState ds = new WorldStateManager.DiseaseState();
@@ -125,6 +181,9 @@ public final class DiseaseEngine {
             ds.spreadRadius = outbreak.affectedRegionIds().size();
             ds.affectedRegions = java.util.Set.copyOf(outbreak.affectedRegionIds());
             ds.active = true;
+            ds.origin = outbreak.originRegionId();
+            ds.severity = new java.util.TreeMap<>(outbreak.regionSeverity());
+            ds.deaths = outbreak.totalDeaths();
             state.addDisease(outbreak.outbreakId(), ds);
         }
     }
@@ -141,6 +200,23 @@ public final class DiseaseEngine {
             "vaccination", List.of(), 1.5d, 1.5d, 1.0d));
     }
 
+    /** Where this level is, as {latitude, longitude}, or null when the bridge cannot say.
+     * Terra++ hands back {longitude, latitude}, so the two are swapped here — once, and with a
+     * comment, because a latitude and a longitude swapped silently is the oldest bug there is. */
+    private static double[] placeOf(ServerLevel level) {
+        try {
+            double[] geo = TerraCoordinateHelper.toGeo(level.getSharedSpawnPos());
+            if (geo == null || geo.length < 2) {
+                return null;
+            }
+            double lon = geo[0];
+            double lat = geo[1];
+            return TerraBridge.isValidLatLon(lat, lon) ? new double[] {lat, lon} : null;
+        } catch (RuntimeException e) {
+            return null;
+        }
+    }
+
     private double clamp01(double value) {
         if (Double.isNaN(value)) {
             return 0.0d;
@@ -150,4 +226,27 @@ public final class DiseaseEngine {
 
     public MedicineSystem medicineSystem() { return medicineSystem; }
     public EpidemicTracker epidemicTracker() { return epidemicTracker; }
+    public ContagionTransmissionBrain contagionBrain() { return contagionBrain; }
+    public QuarantineCheckpointController checkpointController() { return checkpointController; }
+    public PlagueDoctorHospitalManager hospitalManager() { return hospitalManager; }
+    public HistoricalDisasterEngine disasterEngine() { return disasterEngine; }
+
+    /**
+     * Step 38 (C20): the tier is read for <b>where this level is</b>, not for the year alone.
+     * Before, every level on Earth in 1945 was MODERN at once, which cured people with drugs that
+     * had never been near them. Where the coordinates cannot be had — a level with no bridge — the
+     * old world-wide year tier stands in, and it is the only place it is still used.
+     */
+    public void tickLevel(ServerLevel level, int simYear) {
+        if (level == null) return;
+        MedicineTier tier = medicineSystem.getMedicineTier("global", simYear, 5);
+        double[] geo = placeOf(level);
+        if (geo != null) {
+            tier = medicineSystem.tierAt(geo[0], geo[1], simYear);
+        }
+        contagionBrain.tick(level, tier);
+        checkpointController.tick(level, contagionBrain);
+        hospitalManager.tick(level, contagionBrain);
+        disasterEngine.tick(level);
+    }
 }

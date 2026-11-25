@@ -1,0 +1,90 @@
+{
+  "_reviewStatus": "DRAFT — every claim tagged [fact] or [causal] must be verified against a cited source before this ships. Claims tagged [plausible] are reasoning from a verified fact. Nothing here is tagged as recorded unless it can be attributed.",
+  "_discipline": "This scenario deletes real consequences rather than inventing new events. Invented material is confined to the connective tissue and is always labelled 'modelled'.",
+
+  "scenarioId": "what_if_mumbai_26_11",
+  "triggerPin": "mumbai_taj_2008",
+  "triggerYear": 2008,
+  "title": "What if the attackers were stopped at the Taj Mahal Palace",
+  "tagline": "The attack is stopped at the entrance. Everything that followed from it is gone — and one thing that it held back survives.",
+  "author": "UNSIGNED DRAFT",
+  "provenance": "authored",
+  "authoredUntilYear": 2016,
+
+  "events": [
+    {
+      "year": 2008,
+      "form": "PREVENTED_CONSEQUENCE",
+      "name": "The siege that never begins",
+      "description": "[fact] The attacks of 26-29 November 2008 lasted roughly sixty hours and were ended when the last gunman was captured. [plausible] With the attackers stopped at the hotel entrance, the siege does not occur. The four-hour engagement at the railway terminus does not occur either — it was the same squad, the same night.",
+      "provenance": "observed",
+      "source": "",
+      "factionChanges": { "india.civilian_security_feeling": "+1" }
+    },
+    {
+      "year": 2009,
+      "form": "DIVERGED",
+      "name": "The investigation agency is never established",
+      "description": "[causal] India's National Investigation Agency was established in the aftermath of the 2008 attacks, as a direct response to the failure to anticipate and coordinate. [plausible] Without the attack there is no such pressure, and no such agency. Federal counter-terror investigation continues to run through the existing state and central structures.",
+      "provenance": "authored",
+      "source": "NIA Act, 2008 (enacted 31 December 2008) — VERIFY exact framing and attribution",
+      "factionChanges": { "india.counter_terror_capability": "-1" }
+    },
+    {
+      "year": 2009,
+      "form": "DIVERGED",
+      "name": "The rapid-response hubs are never built",
+      "description": "[causal] The National Security Guard's regional hubs — created because the force took hours to reach Mumbai from Delhi — were announced in the wake of the attack. [plausible] Without it, the force remains concentrated near the capital. Response times to any future incident outside Delhi are unchanged.",
+      "provenance": "authored",
+      "source": "NSG regional hub expansion announced post-2008 — VERIFY announcement date and city list",
+      "factionChanges": { "india.rapid_response": "-1" }
+    },
+    {
+      "year": 2009,
+      "form": "DIVERGED",
+      "name": "Coastal security is not rebuilt",
+      "description": "[causal] The attackers arrived by sea, and the coastal security apparatus was subsequently overhauled — coastal police stations, radar coverage, and a clearer division of responsibility between agencies. [plausible] An attack that never arrives by sea produces none of this. The coastline in 2026 is policed roughly as it was in 2008.",
+      "provenance": "authored",
+      "source": "Post-2008 coastal security review — VERIFY scope and timelines",
+      "factionChanges": { "india.coastal_security": "-2" }
+    },
+    {
+      "year": 2009,
+      "form": "DIVERGED",
+      "name": "The political consequences do not fall",
+      "description": "[causal] The attacks produced immediate political consequences at the centre, including a change at the Home Ministry. [plausible] Without the attack, that reshuffle does not happen. The ministers who would have left office remain, and the policy direction they were pursuing continues.",
+      "provenance": "authored",
+      "source": "Home Ministry change, late 2008 — VERIFY",
+      "factionChanges": { "india.government_continuity": "+1" }
+    },
+    {
+      "year": 2012,
+      "form": "DIVERGED",
+      "name": "No trial, no verdict, no execution",
+      "description": "[fact] The sole surviving attacker was captured, tried over several years, and executed in November 2012. [plausible] If no attacker survives, none of that occurs. There is no trial to follow, and no public reckoning through the courts.",
+      "provenance": "authored",
+      "source": "Trial and execution sequence 2008-2012 — VERIFY",
+      "factionChanges": {}
+    },
+    {
+      "year": 2013,
+      "form": "NEW",
+      "name": "The network is never identified",
+      "description": "[plausible] The organisation behind the attack is identified substantially through the recovery of the surviving attacker and the material left behind. Stopped at the entrance, with no survivor, the chain back to the planners is far harder to establish — and the people who sent them are never charged.",
+      "provenance": "modelled",
+      "source": "",
+      "factionChanges": { "south_asia.militant_capacity": "+1" }
+    },
+    {
+      "year": 2013,
+      "form": "DIVERGED",
+      "name": "The diplomatic rupture does not occur",
+      "description": "[plausible] The attack produced a suspension of the composite dialogue between India and Pakistan, and years of degraded relations. Without it, the two governments continue talking. Neither the rupture that followed, nor any of the partial re-engagement that grew out of it, takes place.",
+      "provenance": "modelled",
+      "source": "",
+      "factionChanges": { "india_pakistan.relations": "+2" }
+    }
+  ],
+
+  "epilogue": "You saved something nobody can count, and removed the pressure that forced a decade of reform. In this branch, the machinery that was built in response to the attacks — the investigation agency, the rapid-response hubs, the coastal watch — was never built, because the thing that demanded it never happened. The organisation that planned it was never identified, and is still there. This branch is quieter. It is not safer."
+}

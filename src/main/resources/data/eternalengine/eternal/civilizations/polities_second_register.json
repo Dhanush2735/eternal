@@ -1,0 +1,212 @@
+{
+ "_about": "The second polity register (2026-10-24, step R2-a2). Cliopatria v0.2.1, the ruler register's only source, does not hold these eighteen polities, so sites citing them resolved to nothing and CivHints had to declare them absent. Each row here restores one: a name, the years it stood, the centre of its territory, and where the row came from. confidence is 'recorded' when a source states the span and 'estimated' when sources disagree or the span is conventional; nothing is invented, and an estimated row says so rather than borrowing certainty.",
+ "format": 1,
+ "id": "polities_second_register",
+ "source": "Wikipedia and Wikidata, read 2026-10-24; one row per polity, each carrying its own citation below",
+ "polities": [
+  {
+   "id": "ahom",
+   "name": "Ahom Kingdom",
+   "startYear": 1228,
+   "endYear": 1826,
+   "lat": 26.98,
+   "lon": 94.63,
+   "capital": "Sibsagar",
+   "confidence": "recorded",
+   "note": "Founded by Sukaphaa in 1228; annexed by the British after the Treaty of Yandabo, 1826."
+  },
+  {
+   "id": "amber",
+   "name": "Jaipur State (Amber)",
+   "startYear": 1028,
+   "endYear": 1949,
+   "lat": 26.99,
+   "lon": 75.85,
+   "capital": "Amber, then Jaipur",
+   "confidence": "recorded",
+   "note": "Start changed 1128 -> 1028 to the en.wiki infobox. SOURCES DISAGREE WIDELY: Dausa 966, Dulha Rai 1006-1036, Kingdom established 1028, Dhundhar founded 1093, and some mirrors say 1128. 1028 is used because it is the infobox the page itself gives; the spread is recorded rather than hidden.",
+   "source": "en.wikipedia.org/wiki/Kingdom_of_Amber - Established 1028; acceded to India 1949"
+  },
+  {
+   "id": "bhati",
+   "name": "Jaisalmer State (Bhati)",
+   "startYear": 1156,
+   "endYear": 1949,
+   "lat": 26.92,
+   "lon": 70.91,
+   "capital": "Jaisalmer",
+   "confidence": "recorded",
+   "note": "Rawal Jaisal founded Jaisalmer in 1156; the state acceded to India in 1949."
+  },
+  {
+   "id": "bhopal_state",
+   "name": "Bhopal State",
+   "startYear": 1723,
+   "endYear": 1948,
+   "lat": 23.26,
+   "lon": 77.41,
+   "capital": "Bhopal",
+   "confidence": "recorded",
+   "note": "Founded by Dost Mohammad Khan in 1723; merged into India in 1948."
+  },
+  {
+   "id": "bundela",
+   "name": "Orchha State (Bundela)",
+   "startYear": 1531,
+   "endYear": 1950,
+   "lat": 25.35,
+   "lon": 78.64,
+   "capital": "Orchha",
+   "confidence": "recorded",
+   "note": "Rudra Pratap Singh founded Orchha in 1531; merged into Madhya Bharat in 1950."
+  },
+  {
+   "id": "dogra",
+   "name": "Jammu and Kashmir (Dogra)",
+   "startYear": 1846,
+   "endYear": 1947,
+   "lat": 32.73,
+   "lon": 74.87,
+   "capital": "Jammu, then Srinagar",
+   "confidence": "recorded",
+   "note": "Created for Gulab Singh by the Treaty of Amritsar, 1846; acceded to India in 1947."
+  },
+  {
+   "id": "holkar",
+   "name": "Indore State (Holkar)",
+   "startYear": 1728,
+   "endYear": 1948,
+   "lat": 22.72,
+   "lon": 75.86,
+   "capital": "Indore",
+   "confidence": "recorded",
+   "note": "Malhar Rao Holkar took Indore in 1728; acceded to India in 1948."
+  },
+  {
+   "id": "ikshvaku",
+   "name": "Ikshvaku dynasty of Andhra",
+   "startYear": 227,
+   "endYear": 306,
+   "lat": 16.53,
+   "lon": 79.24,
+   "capital": "Vijayapuri (Nagarjunakonda)",
+   "confidence": "recorded",
+   "note": "The Andhra Ikshvakus ruled the Krishna valley in the 3rd and early 4th centuries CE, known from their own inscriptions at Nagarjunakonda."
+  },
+  {
+   "id": "kandy",
+   "name": "Kingdom of Kandy",
+   "startYear": 1469,
+   "endYear": 1815,
+   "lat": 7.29,
+   "lon": 80.64,
+   "capital": "Kandy",
+   "confidence": "recorded",
+   "note": "The last independent kingdom of Sri Lanka; ceded to Britain by the Kandyan Convention, 1815."
+  },
+  {
+   "id": "kolathiri",
+   "name": "Kolathunadu (Kolathiri)",
+   "startYear": 1122,
+   "endYear": 1800,
+   "lat": 11.87,
+   "lon": 75.37,
+   "capital": "Cannanore",
+   "confidence": "recorded",
+   "note": "Start moved 1100 -> 1122 to the first attestation of the ruling house. The end (1800) remains an estimate: the page says \"modern era\", so the closing year is not sourced.",
+   "source": "en.wikipedia.org/wiki/Kolathunadu - Udayavarman attested 1122 (Kuruvakkavu inscription); infobox: established c.6th c. BCE conventional, disestablished modern era"
+  },
+  {
+   "id": "ladakh",
+   "name": "Namgyal Ladakh",
+   "startYear": 1460,
+   "endYear": 1842,
+   "lat": 34.16,
+   "lon": 77.58,
+   "capital": "Leh",
+   "confidence": "recorded",
+   "note": "The Namgyal dynasty ruled Ladakh from the 15th century until the Dogra conquest in 1842."
+  },
+  {
+   "id": "manipur",
+   "name": "Kangleipak (Manipur)",
+   "startYear": 1110,
+   "endYear": 1949,
+   "lat": 24.82,
+   "lon": 93.94,
+   "capital": "Imphal",
+   "confidence": "recorded",
+   "note": "Confirmed. The Ningthouja dynasty itself is dated to 33 CE (Nongda Lairen Pakhangba); 1110 is when Loiyumba's written constitution made it a kingdom, which is the date the row now states.",
+   "source": "en.wikipedia.org/wiki/Manipur_(princely_state) - Foundation of the Kangleipak Kingdom 1110; merger with India 1949"
+  },
+  {
+   "id": "marwar",
+   "name": "Marwar (Jodhpur)",
+   "startYear": 1256,
+   "endYear": 1949,
+   "lat": 26.29,
+   "lon": 73.02,
+   "capital": "Jodhpur",
+   "confidence": "recorded",
+   "note": "The Rathore house took Mandore in the 13th century and founded Jodhpur in 1459; acceded to India in 1949."
+  },
+  {
+   "id": "mewar",
+   "name": "Kingdom of Mewar",
+   "startYear": 566,
+   "endYear": 1949,
+   "lat": 24.58,
+   "lon": 73.68,
+   "capital": "Nagda, Ahar, Chittor, then Udaipur",
+   "confidence": "recorded",
+   "note": "Verified by fetch this session: established 566, acceded to the Union of India 1949; capitals Nagda (c.734-948), Ahar (948-1213), Chittor (1213-1567), Udaipur (1568 onward)."
+  },
+  {
+   "id": "somavamshi",
+   "name": "Somavamshi dynasty",
+   "startYear": 882,
+   "endYear": 1110,
+   "lat": 20.3,
+   "lon": 85.84,
+   "capital": "Bhubaneswar",
+   "confidence": "recorded",
+   "note": "Start changed 850 -> 882 to the first ruler the page lists. A wider claim of 850 exists (cbc.gov.in gives 850-1279) but is not what the dynasty page itself supports.",
+   "source": "en.wikipedia.org/wiki/Somavamshi_dynasty - ruler list: Janmejaya I c.882 to Karnadeva c.1110"
+  },
+  {
+   "id": "tomara",
+   "name": "Tomara dynasty of Delhi",
+   "startYear": 736,
+   "endYear": 1152,
+   "lat": 28.61,
+   "lon": 77.21,
+   "capital": "Delhi (Lal Kot)",
+   "confidence": "recorded",
+   "note": "End moved 1165 -> 1152. Sources disagree on the close: the Tomara page gives c.1152, Timeline of Delhi gives 731-1160. The earlier year is used and the disagreement is recorded here.",
+   "source": "en.wikipedia.org/wiki/Tomaras_of_Delhi - Established c.736, Disestablished c.1152"
+  },
+  {
+   "id": "travancore",
+   "name": "Travancore",
+   "startYear": 1729,
+   "endYear": 1949,
+   "lat": 8.52,
+   "lon": 76.94,
+   "capital": "Padmanabhapuram, then Trivandrum",
+   "confidence": "recorded",
+   "note": "Marthanda Varma consolidated Travancore from 1729; acceded to India in 1949."
+  },
+  {
+   "id": "zamorin",
+   "name": "Zamorin of Calicut",
+   "startYear": 1124,
+   "endYear": 1806,
+   "lat": 11.25,
+   "lon": 75.78,
+   "capital": "Calicut",
+   "confidence": "recorded",
+   "note": "Formation 1124, abolition 1806; confirmed against the Zamorin page.",
+   "source": "en.wikipedia.org/wiki/Zamorin - Formation 1124, Abolition 1806"
+  }
+ ]
+}

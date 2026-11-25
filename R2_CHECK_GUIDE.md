@@ -1,0 +1,15 @@
+# Testing history, NPCs and VIP NPCs
+
+After building and installing the updated mod, enter a test world as a player, stand near an ordinary NPC and a spawned VIP, and run `/ee check`. `/ee check all` does the same full check. You need permission to run the command. The command reports the focused results among its existing checks and writes detailed lines to `logs/latest.log` with `[EE check]`.
+
+- **History events:** checks six reviewed event records, their Gazetteer year boundaries, their presence in the news index, and four uncertain disaster records which should be notes, not damaging hazards. These are sampled data checks, not proof of complete or correct world history, actual event execution or save behavior. A deliberate update to a sampled record also requires reviewing and updating the baseline in `R2EventChecks`. The indexes currently disagree on some end years; that appears as a known limitation.
+- **Ordinary NPCs:** inspects loaded Eternal humans and vanilla villagers within a 96-block expanded bounding box of the player, checking IDs and the Eternal humans' basic role/civilization fields. This does not click or spawn them.
+- **VIPs:** inspects the live registry and nearby loaded VIP-tagged entities (any entity type), checking fields, tags and registry matches. A registered slot is not proof of a spawned VIP. Missing/default-like values are warnings, not historical proof. The loader can silently fall back to defaults, so a populated registry does not prove the installed file loaded. The alive-by-date count also excludes dead/claimed slots but does not test spawn preconditions.
+
+`KNOWN` includes skipped checks and limitations. No nearby entity means the relevant check is skipped, not passed; the console has no player position. Right-click interaction, actual spawning, historical behavior and alternate timelines are **not** tested by these focused inspections. An existing optional `/ee villager vip-spawn-test` command creates an entity; it is not run by the focused checks. The rest of the existing full `/ee check` may have its own tests and side effects; do not assume the entire command is non-mutating. Use a disposable test world when investigating gameplay.
+
+Headless development regression: `bash /home/user/r2_wikipedia/probe_r2_checks.sh`. This uses the real loaded history resources with Minecraft stubs plus snapshot fixtures. It is not a live Minecraft test.
+
+## Build status (2026-10-29)
+
+Java 17 `compileJava` and `reobfJar` completed successfully in the sandbox. The generated mod is `build/libs/eternalengine-1.0.0.jar`, SHA-256 `d190c454353b7dfcc4fe6a17d8f127dff844934f18a3ac2146f9cc9368526ab9`. The `build` directory is temporary in this workspace; download the presented jar now or rebuild it locally with Java 17 using `bash ./gradlew jar --no-daemon --max-workers=1` (the local Terra++ dependency must be in `libs/`). The older `artifacts/eternalengine-1.0.0.jar` (SHA-256 `7fbb6eb758687a802eefa8b1f8f0053ceedeb4f9e82beb434dabad3c9204a1e5`) was removed during workspace cleanup; it did not include these changes. The new jar has not been launched in Minecraft or tested against an existing save.

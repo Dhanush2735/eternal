@@ -1,0 +1,59 @@
+{
+  "id": "disputed_lands",
+  "note": "Step 28 (known problem 39): land that one state holds and another claims, in the mod's own words. Each area is a rough outline (longitude, latitude pairs; a few kilometres out near its edges) with the years and the line villagers there say instead of the record's \"This land belongs to ...\". Written from Wikipedia's articles on each area (West Bank; Gaza Strip; Golan Heights; Annexation of Crimea by the Russian Federation; Northern Cyprus; Western Sahara).",
+  "areas": [
+    {
+      "id": "west_bank",
+      "name": "the West Bank",
+      "outline": [[35.55, 32.40], [35.30, 32.56], [35.05, 32.40], [34.98, 32.25], [34.96, 32.13], [35.00, 31.93], [35.10, 31.85], [35.225, 31.81], [35.225, 31.76], [35.10, 31.72], [34.95, 31.50], [34.90, 31.38], [35.10, 31.34], [35.40, 31.45], [35.48, 31.65], [35.55, 31.85]],
+      "spans": [
+        {"from": 1967, "to": 1993, "line": "Israel has held this land since 1967. The Palestinians claim it for a state of their own."},
+        {"from": 1994, "to": 2026, "line": "Israel has held this land since 1967, and since 1994 the Palestinian Authority runs many of its towns. The Palestinians claim it all for a state of their own."}
+      ]
+    },
+    {
+      "id": "gaza",
+      "name": "the Gaza Strip",
+      "outline": [[34.48, 31.60], [34.57, 31.55], [34.39, 31.31], [34.27, 31.22], [34.22, 31.32]],
+      "spans": [
+        {"from": 1967, "to": 2005, "line": "Israel has held this land since 1967. The Palestinians claim it for a state of their own."},
+        {"from": 2006, "to": 2022, "line": "Israel left this land in 2005, and Hamas has run it since 2007, while Israel and Egypt hold its borders. The Palestinians claim it for a state of their own."},
+        {"from": 2023, "to": 2026, "line": "Hamas has run this land since 2007, and since October 2023 war between Israel and Hamas has torn it apart. The Palestinians claim it for a state of their own."}
+      ]
+    },
+    {
+      "id": "golan",
+      "name": "the Golan Heights",
+      "outline": [[35.62, 33.30], [35.85, 33.33], [35.95, 32.95], [35.80, 32.70], [35.62, 32.75]],
+      "spans": [
+        {"from": 1967, "to": 1980, "line": "Israel has held this land since 1967. Syria claims it back."},
+        {"from": 1981, "to": 2026, "line": "Israel has held this land since 1967 and made it part of Israel in 1981. Syria claims it back, and most countries agree it is Syria's."}
+      ]
+    },
+    {
+      "id": "crimea",
+      "name": "Crimea",
+      "outline": [[32.48, 45.40], [33.60, 46.15], [34.60, 45.95], [35.40, 45.30], [36.65, 45.40], [36.00, 44.85], [34.00, 44.38], [33.40, 44.50]],
+      "spans": [
+        {"from": 2014, "to": 2026, "line": "Russia has held this land since 2014. Ukraine claims it, and most countries agree it is Ukraine's."}
+      ]
+    },
+    {
+      "id": "northern_cyprus",
+      "name": "Northern Cyprus",
+      "outline": [[32.70, 35.20], [33.00, 35.17], [33.35, 35.18], [33.75, 35.05], [34.05, 35.10], [34.60, 35.70], [33.90, 35.45], [33.10, 35.40]],
+      "spans": [
+        {"from": 1974, "to": 1982, "line": "Turkish troops have held this land since 1974. The Republic of Cyprus claims it."},
+        {"from": 1983, "to": 2026, "line": "Turkish troops have held this land since 1974; the state set up here in 1983 is accepted only by Turkey. The Republic of Cyprus claims it."}
+      ]
+    },
+    {
+      "id": "western_sahara",
+      "name": "Western Sahara",
+      "outline": [[-17.10, 20.77], [-13.00, 21.33], [-13.00, 23.00], [-12.00, 23.45], [-12.00, 26.00], [-8.67, 26.00], [-8.67, 27.67], [-13.20, 27.67], [-14.50, 26.20], [-16.00, 24.00], [-17.10, 21.50]],
+      "spans": [
+        {"from": 1976, "to": 2026, "line": "Morocco has held most of this land since 1976. The Sahrawi people, led by the Polisario Front, claim it for a state of their own."}
+      ]
+    }
+  ]
+}

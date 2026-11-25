@@ -22,7 +22,7 @@ public final class VehicleEngine {
                 VehicleVirtualizationMode.SUSPENDED, "Route is null");
         }
 
-        boolean eraValid = route.vehicleType().availableIn(route.era());
+        boolean eraValid = route.vehicleExists(); // step 21: in the route's year when known (no train before 1825)
         double speed = eraValid ? route.vehicleType().baseKmPerDay() : fallbackSpeed(route.era());
         double travelDays = route.distanceKm() / Math.max(1.0d, speed);
         double incidentRisk = VehicleIncidentRisk.calculate(route, difficulty, hardcore,
@@ -31,6 +31,9 @@ public final class VehicleEngine {
             ? VehicleVirtualizationMode.MATERIALIZED
             : VehicleVirtualizationMode.VIRTUAL;
         String explanation = route.vehicleType().name() + " in " + route.era().name()
+            + (route.year() == Integer.MIN_VALUE ? "" : " (" + (route.year() < 0 ? -route.year() + " BCE" : route.year())
+                + "; first known " + (route.vehicleType().firstYear() < 0 ? -route.vehicleType().firstYear() + " BCE"
+                : route.vehicleType().firstYear()) + ")")
             + " uses " + speed + " km/day; eraValid=" + eraValid
             + ", difficulty=" + (difficulty == null ? "NORMAL" : difficulty.name());
         return new VehicleRouteReport(route, eraValid, travelDays, incidentRisk, mode, explanation);
@@ -55,8 +58,8 @@ public final class VehicleEngine {
         }
         return switch (era) {
             case ANCIENT -> VehicleType.CARAVAN.baseKmPerDay();
-            case MEDIEVAL -> VehicleType.WAGON.baseKmPerDay();
-            case INDUSTRIAL -> VehicleType.TRAIN.baseKmPerDay();
+            case MEDIEVAL, EARLY_MODERN -> VehicleType.WAGON.baseKmPerDay();
+            case INDUSTRIAL -> VehicleType.WAGON.baseKmPerDay(); // step 21: a train only from 1825
             case MODERN -> VehicleType.TRUCK.baseKmPerDay();
         };
     }

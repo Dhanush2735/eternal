@@ -1,0 +1,235 @@
+{
+ "format": 1,
+ "about": "Step 19c: the product atlas, part A: product cards for the step-19 goods and Hyderabad in 1948. Cards with an item and a box are sold by the sellers named, in that box and those years; cards with a good give that good's lot a local name there. Prices are in days of work (the money table turns them into money). Years marked estimate are estimates.",
+ "products": [
+  {
+   "id": "newspaper",
+   "name": "Newspaper",
+   "family": "writing and knowledge",
+   "item": "eternalengine:newspaper",
+   "count": 1,
+   "sellers": [
+    "paper_seller"
+   ],
+   "price": "by era: a quarter of a day's pay before 1830, a twelfth to 1899, a sixteenth from 1900 (1 anna in Hyderabad in 1948)",
+   "life": "printed papers from 1605 (Strasbourg); India from 1780 (Calcutta); a region's cities first, towns 50 years later (estimate)",
+   "madeFrom": [
+    "paper",
+    "ink"
+   ],
+   "madeBy": "printer",
+   "usedFor": "news; its names go into the history book and its places onto a map",
+   "inGame": "item"
+  },
+  {
+   "id": "newsletter",
+   "name": "Handwritten newsletter",
+   "family": "writing and knowledge",
+   "item": "eternalengine:newsletter",
+   "count": 1,
+   "sellers": [
+    "news_writer"
+   ],
+   "price": "a day's pay",
+   "life": "Roman Acta copies 59 BCE to about 235; Mughal news-writers from Akbar's time; Venetian avvisi from 1566; Chinese court gazettes from 713",
+   "madeFrom": [
+    "paper or palm leaf",
+    "ink"
+   ],
+   "madeBy": "news-writer",
+   "usedFor": "news for those who can pay",
+   "inGame": "item"
+  },
+  {
+   "id": "map",
+   "name": "Map",
+   "family": "writing and knowledge",
+   "item": "eternalengine:map",
+   "count": 1,
+   "sellers": [
+    "paper_seller",
+    "news_writer"
+   ],
+   "price": "half a day's pay printed (8 annas in Hyderabad in 1948), three days' pay drawn by hand",
+   "life": "towns and roads of its year",
+   "madeFrom": [
+    "paper",
+    "ink"
+   ],
+   "madeBy": "map maker",
+   "usedFor": "finding places; marks from papers; Xaero's map",
+   "inGame": "item"
+  },
+  {
+   "id": "coins",
+   "name": "Money",
+   "family": "money",
+   "item": "",
+   "sellers": [
+    "money_changer"
+   ],
+   "price": "the money table",
+   "life": "barter before 600 BCE; coins after; the money of each place and year (step 19a)",
+   "inGame": "the purse"
+  },
+  {
+   "id": "grain",
+   "name": "Grain",
+   "family": "staple food",
+   "good": "WHEAT",
+   "sellers": [
+    "merchant"
+   ],
+   "inGame": "item (wheat)"
+  },
+  {
+   "id": "bread",
+   "name": "Bread",
+   "family": "staple food",
+   "good": "BREAD",
+   "sellers": [
+    "merchant"
+   ],
+   "inGame": "item (bread)"
+  },
+  {
+   "id": "osmania_biscuits",
+   "name": "Osmania biscuits",
+   "short": "Osmania biscuits",
+   "family": "other food and drink",
+   "item": "minecraft:cookie",
+   "count": 8,
+   "days": 0.0625,
+   "sellers": [
+    "merchant"
+   ],
+   "from": 1940,
+   "to": 9999,
+   "box": [
+    15.9,
+    20.3,
+    74.9,
+    80.6
+   ],
+   "lore": "Biscuits named after the Nizam, eaten with Irani tea.",
+   "madeFrom": [
+    "flour",
+    "butter",
+    "sugar"
+   ],
+   "madeBy": "bakery",
+   "life": "a hospital snack in the 1940s, sold in Irani cafés",
+   "inGame": "item with a local name"
+  },
+  {
+   "id": "toddy",
+   "name": "Toddy",
+   "short": "Toddy (kallu)",
+   "family": "other food and drink",
+   "item": "minecraft:honey_bottle",
+   "count": 1,
+   "days": 0.0625,
+   "sellers": [
+    "merchant"
+   ],
+   "from": -1000,
+   "to": 9999,
+   "box": [
+    15.8,
+    19.95,
+    77.2,
+    81.3
+   ],
+   "estimate": true,
+   "lore": "Palm wine, tapped from palm trees each morning and sold at licensed shops.",
+   "madeFrom": [
+    "palm sap"
+   ],
+   "madeBy": "toddy tapper",
+   "laws": "licensed shops",
+   "life": "tapped by the Goud community; very old (start year estimated)",
+   "inGame": "item with a local name"
+  },
+  {
+   "id": "gongadi",
+   "name": "Gongadi blanket",
+   "short": "Gongadi blanket",
+   "family": "cloth and clothes",
+   "item": "minecraft:black_wool",
+   "count": 1,
+   "days": 3.0,
+   "sellers": [
+    "merchant"
+   ],
+   "from": 1300,
+   "to": 9999,
+   "box": [
+    15.9,
+    20.3,
+    74.9,
+    80.6
+   ],
+   "estimate": true,
+   "lore": "A blanket of black Deccani sheep wool, woven by Kuruma shepherds. It lasts ten years.",
+   "madeFrom": [
+    "wool"
+   ],
+   "madeBy": "Kuruma shepherds (women spin, men weave)",
+   "life": "old Deccan craft (start year estimated)",
+   "inGame": "item with a local name"
+  },
+  {
+   "id": "singareni_coal",
+   "name": "Singareni coal",
+   "short": "Singareni coal",
+   "family": "fuel and light",
+   "good": "COAL",
+   "sellers": [
+    "merchant"
+   ],
+   "from": 1889,
+   "to": 9999,
+   "box": [
+    15.8,
+    19.95,
+    77.2,
+    81.3
+   ],
+   "lore": "Coal from the Singareni mines, first worked in 1889.",
+   "madeBy": "Singareni collieries",
+   "life": "found 1871, first mined 23 December 1889",
+   "inGame": "item with a local name"
+  },
+  {
+   "id": "gold",
+   "name": "Gold",
+   "family": "luxury",
+   "good": "GOLD_INGOT",
+   "sellers": [
+    "merchant"
+   ],
+   "inGame": "item (gold ingot)"
+  },
+  {
+   "id": "gems",
+   "name": "Gems",
+   "family": "luxury",
+   "good": "EMERALD",
+   "sellers": [
+    "merchant"
+   ],
+   "inGame": "item (emerald)"
+  },
+  {
+   "id": "weapons",
+   "name": "Weapons",
+   "family": "weapons and armour",
+   "item": "",
+   "sellers": [],
+   "price": "later (weapons step)",
+   "life": "see WEAPONS_RESEARCH.md; in India a licence from 1878",
+   "laws": "licence",
+   "inGame": "later: the weapons step"
+  }
+ ]
+}

@@ -1,6 +1,8 @@
 package com.eternalengine.civilization;
 
 import com.eternalengine.terrabridge.TerraCoordinateHelper;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 
@@ -105,4 +107,30 @@ public final class Civilization {
     public void setPeakYear(int peakYear) { this.peakYear = peakYear; }
     public int fallYear() { return fallYear; }
     public void setFallYear(int fallYear) { this.fallYear = fallYear; }
+
+    public static Civilization fromJson(JsonObject json) {
+        String id = json.has("id") ? json.get("id").getAsString() : "unknown";
+        String name = json.has("name") ? json.get("name").getAsString() : id;
+        int founding = json.has("foundingYear") ? json.get("foundingYear").getAsInt() : 0;
+        double lat = json.has("capitalLat") ? json.get("capitalLat").getAsDouble() : 0.0D;
+        double lon = json.has("capitalLon") ? json.get("capitalLon").getAsDouble() : 0.0D;
+
+        Civilization civ = new Civilization(id, name, founding, lat, lon);
+        if (json.has("laterName")) civ.setLaterName(json.get("laterName").getAsString());
+        if (json.has("nameChangeYear")) civ.setNameChangeYear(json.get("nameChangeYear").getAsInt());
+        if (json.has("peakYear")) civ.setPeakYear(json.get("peakYear").getAsInt());
+        if (json.has("fallYear")) civ.setFallYear(json.get("fallYear").getAsInt());
+        if (json.has("population")) civ.setPopulation(json.get("population").getAsLong());
+        if (json.has("militarySize")) civ.setMilitarySize(json.get("militarySize").getAsLong());
+        if (json.has("treasury")) civ.setTreasury(json.get("treasury").getAsLong());
+        if (json.has("technologyLevel")) civ.setTechnologyLevel(json.get("technologyLevel").getAsInt());
+        if (json.has("currentTechEra")) civ.setCurrentTechEra(json.get("currentTechEra").getAsString());
+        if (json.has("religionId")) civ.setReligionId(json.get("religionId").getAsString());
+        if (json.has("governmentType")) civ.setGovernmentType(json.get("governmentType").getAsString());
+        if (json.has("culturalSignificance")) civ.setCulturalSignificance(json.get("culturalSignificance").getAsInt());
+        if (json.has("active")) civ.setActive(json.get("active").getAsBoolean());
+        else civ.setActive(true);
+
+        return civ;
+    }
 }

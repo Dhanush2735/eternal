@@ -10,6 +10,8 @@ public final class VehicleRoute {
     private final String routeId;
     private final VehicleType vehicleType;
     private final VehicleEra era;
+    /** Step 21: the year of the journey, or {@link Integer#MIN_VALUE} when only the era is known. */
+    private final int year;
     private final double originLat;
     private final double originLon;
     private final double destLat;
@@ -24,6 +26,16 @@ public final class VehicleRoute {
                         double originLat, double originLon, double destLat, double destLon,
                         double distanceKm, double dangerLevel, String ownerCivId,
                         boolean tradeRoute, boolean militaryRoute) {
+        this(routeId, vehicleType, era, originLat, originLon, destLat, destLon, distanceKm, dangerLevel, ownerCivId,
+                tradeRoute, militaryRoute, Integer.MIN_VALUE);
+    }
+
+    /** Step 21: a route in a known year (the vehicle must exist in that year, not only somewhere in the era). */
+    public VehicleRoute(String routeId, VehicleType vehicleType, VehicleEra era,
+                        double originLat, double originLon, double destLat, double destLon,
+                        double distanceKm, double dangerLevel, String ownerCivId,
+                        boolean tradeRoute, boolean militaryRoute, int year) {
+        this.year = year;
         this.routeId = Objects.requireNonNullElse(routeId, "vehicle_route_unknown");
         this.vehicleType = vehicleType == null ? VehicleType.CARAVAN : vehicleType;
         this.era = era == null ? VehicleEra.ANCIENT : era;
@@ -41,6 +53,12 @@ public final class VehicleRoute {
     public String routeId() { return routeId; }
     public VehicleType vehicleType() { return vehicleType; }
     public VehicleEra era() { return era; }
+    /** Step 21: the year of the journey, or {@link Integer#MIN_VALUE} when only the era is known. */
+    public int year() { return year; }
+    /** Step 21: whether its vehicle exists then: in its year if known, else at some time in its era. */
+    public boolean vehicleExists() {
+        return year == Integer.MIN_VALUE ? vehicleType.availableIn(era) : vehicleType.availableInYear(year);
+    }
     public double originLat() { return originLat; }
     public double originLon() { return originLon; }
     public double destLat() { return destLat; }
